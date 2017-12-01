@@ -15,6 +15,9 @@
                     <div class="panel-body">
                         <?php
                         echo $this->session->flashdata('error');
+                        if ($this->uri->segment(2) == 'inserted'){
+                            echo '<div class="alert alert-success" role="alert">Data Inserted Successfully</div>';
+                        }
                         ?>
                         <form method="post" action="<?php echo base_url()?>Company/login_validation">
                             <div class="form-group">
@@ -35,7 +38,8 @@
                             <div class="text-center">
                                 <button type="submit" class="btn btn-success">Login</button>
                                 <br/>
-                                <a href="#">Forget password?</a>
+                                <a href="#">Forget password?</a><br/>
+                                Not having Account?<a href="<?php echo base_url(); ?>Company/Signup">Join Now</a>
                             </div>
                         </form>
                     </div>

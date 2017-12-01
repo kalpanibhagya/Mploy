@@ -14,11 +14,6 @@
                     </div>
                     <div class="panel-body">
                         <form method="post" action="<?php echo base_url()?>Company/form_validation">
-                            <?php
-                            if ($this->uri->segment(2) == 'inserted'){
-                                echo '<div class="alert alert-success" role="alert">Data Inserted Successfully</div>';
-                            }
-                            ?>
                             <div class="form-group">
                                 <label for="name">Username</label>
                                 <input type="text" class="form-control" id="username" name="username" placeholder="Userame" required="">
@@ -26,7 +21,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="email">Email address</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required="">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Use Company Email" required="">
                                 <span class="text-danger"><?php echo form_error('email')?></span>
                             </div>
                             <div class="form-group">

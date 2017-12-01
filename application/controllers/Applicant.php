@@ -43,7 +43,11 @@ class Applicant extends CI_Controller {
     }
 
     public function inserted(){
-        $this->Signup();
+        $this->Login();
+    }
+
+    public function createProfile(){
+        $this->load->view('Pages/Applicant/createProfile');
     }
 
     function login_validation(){

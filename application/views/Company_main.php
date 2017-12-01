@@ -5,7 +5,7 @@
                 <div class="jumbotron text-center" style="background-color: black; color: white">
                     <h2>Web Portal to meet Job and Internship applicants with IT Industry</h2>
                     <p>Find skilled employees for your company!!</p>
-                    <p><a class="btn btn-success btn-lg" href="<?php echo base_url(); ?>Company/Signup" role="button">Get Started</a></p>
+                    <p><a class="btn btn-success btn-lg" href="<?php echo base_url(); ?>Company/createProfile" role="button">Get Started</a></p>
                 </div>
             </div>
         </div>

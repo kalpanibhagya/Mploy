@@ -17,6 +17,15 @@ class Company_m extends CI_Model{
             return false;
         }
     }
+
+    public function insert_profile_data($data){
+        $this->db->insert('registered_company', $data);
+    }
+
+    public function fetch_data(){
+        $query = $this->db->get("registered_company");
+        return $query;
+    }
 }
 
 ?>

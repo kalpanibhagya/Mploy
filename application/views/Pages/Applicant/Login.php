@@ -1,4 +1,4 @@
-<section style="margin-top: 80px">
+<section style="margin-top: 80px;margin-bottom: 20px">
     <div class="container" align="center">
         <img src='<?php echo base_url();?>assets/images/logo.png' width="100px" height="100px"><br/>
     </div>
@@ -16,6 +16,9 @@
                     <div class="panel-body">
                         <?php
                         echo $this->session->flashdata('error');
+                        if ($this->uri->segment(2) == 'inserted'){
+                            echo '<div class="alert alert-success" role="alert">Data Inserted Successfully</div>';
+                        }
                         ?>
                         <form method="post" action="<?php echo base_url()?>Applicant/login_validation">
                             <div class="form-group">
@@ -31,7 +34,8 @@
                             <div class="form-group" align="center">
                                 <input type="submit" class="btn btn-success" value="Login">
                                 <br/>
-                                <a href="#">Forget password?</a>
+                                <a href="#">Forget password?</a><br/>
+                                Not a member?<a href="<?php echo base_url(); ?>Applicant/Signup">Join Now</a>
                             </div>
                         </form>
                     </div>
