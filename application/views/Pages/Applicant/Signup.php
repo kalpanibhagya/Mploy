@@ -47,7 +47,7 @@
                             <div class="form-group" align="center">
                                 <input type="submit" class="btn btn-success" value="Register">
                                 <br/>
-                                <a href="<?php echo base_url(); ?>Applicant/Login">Already have an account?</a>
+                                Already have an account?<a href="<?php echo base_url(); ?>Applicant/Login">Login</a>
                             </div>
                         </form>
                     </div>

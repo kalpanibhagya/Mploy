@@ -68,7 +68,7 @@ class Company extends CI_Controller {
                 $this->session->set_userdata($session_data);
                 redirect(base_url().'Company/enter');
             }else {
-                $this->session->set_flashdata('error', 'Invalid username or password!');
+                $this->session->set_flashdata('error', '<div class="alert alert-danger" role="alert">Invalid username or password!</div>');
                 redirect(base_url().'Company/Login');
             }
 
