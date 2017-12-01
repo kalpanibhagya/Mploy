@@ -58,7 +58,7 @@
                     <span class="text-danger"><?php echo form_error('confirm_password')?></span>
                 </div>
                 <div class="text-center">
-                    Already have an account?<a href="<?php echo base_url(); ?>Company/Login"> Login</a><br/>
+                    Already registered?<a href="<?php echo base_url(); ?>Company/Login"> Login</a><br/>
                     By continuing you agree to our<a href="<?php echo base_url(); ?>Company/Login"> Terms and Privacy Policy</a>
                 </div>
                 <div class="wizard-buttons">
@@ -351,14 +351,15 @@
                 </div>
                 <div class="form-group">
                     <label>Hiring Status (Currently Hiring or Not)</label>
-                    <p><input type="radio" name="hiring_status" class="form-control" value="Yes"/>Yes<input type="radio" name="hiring_status" class="form-control" value="Yes"/>No</p>
+                    <input type="radio" name="hiring_status" class="form-control" value="Yes"/>Yes<br/>
+                    <input type="radio" name="hiring_status" class="form-control" value="No"/>No
                 </div>
                 <div class="form-group">
                     <label>Description</label>
                     <textarea name="description" rows="10" class="form-control" placeholder="About your company"></textarea>
                 </div>
                 <div class="text-center">
-                    Already have an account?<a href="<?php echo base_url(); ?>Company/Login"> Login</a><br/>
+                    Already registered?<a href="<?php echo base_url(); ?>Company/Login"> Login</a><br/>
                     By continuing you agree to our<a href="<?php echo base_url(); ?>Company/Login"> Terms and Privacy Policy</a>
                 </div>
                 <div class="wizard-buttons">
@@ -384,7 +385,7 @@
                     <input type="url" name="website" class="form-control" placeholder="web site url"/>
                 </div>
                 <div class="text-center">
-                    Already have an account?<a href="<?php echo base_url(); ?>Company/Login"> Login</a><br/>
+                    Already registered?<a href="<?php echo base_url(); ?>Company/Login"> Login</a><br/>
                     By continuing you agree to our<a href="<?php echo base_url(); ?>Company/Login"> Terms and Privacy Policy</a>
                 </div>
                 <div class="wizard-buttons">
@@ -406,7 +407,7 @@
                     <input type="text" name="ctelephone" class="form-control" placeholder="Contact person telephone number"/>
                 </div>
                 <div class="text-center">
-                    Already have an account?<a href="<?php echo base_url(); ?>Company/Login"> Login</a><br/>
+                    Already registered?<a href="<?php echo base_url(); ?>Company/Login"> Login</a><br/>
                     By continuing you agree to our<a href="<?php echo base_url(); ?>Company/Login"> Terms and Privacy Policy</a>
                 </div>
                 <div class="wizard-buttons">
@@ -419,7 +420,7 @@
                 <h1>Please click submit button to save your data</h1>
                 </div>
                 <div class="text-center">
-                    Already have an account?<a href="<?php echo base_url(); ?>Company/Login"> Login</a><br/>
+                    Already registered?<a href="<?php echo base_url(); ?>Company/Login"> Login</a><br/>
                     By continuing you agree to our<a href="<?php echo base_url(); ?>Company/Login"> Terms and Privacy Policy</a>
                 </div>
                 <div class="wizard-buttons">
