@@ -10,6 +10,8 @@
 <body>
 
     <div class="container">
+        <div class="row">
+            <div class="col-md-12">
         <form action="<?php echo base_url()?>Company/profile_validation" method="post">
             <div class="wizards">
                 <div class="progressbar">
@@ -351,8 +353,10 @@
                 </div>
                 <div class="form-group">
                     <label>Hiring Status (Currently Hiring or Not)</label>
-                    <input type="radio" name="hiring_status" class="form-control" value="Yes"/>Yes<br/>
-                    <input type="radio" name="hiring_status" class="form-control" value="No"/>No
+                    <select class="form-control" name="hiring_status" style="height: 50px">
+                        <option value="Yes">Currently Hiring</option>
+                        <option value="No">Currently Not Hiring</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label>Description</label>
@@ -429,6 +433,8 @@
                 </div>
             </fieldset>
         </form>
+            </div>
+        </div>
     </div>
     
     <script src="<?php echo base_url()."assets/form-wizard/"; ?>js/jquery.min.js"></script>

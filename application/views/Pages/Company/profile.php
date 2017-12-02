@@ -108,8 +108,8 @@
             </div>
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
-                <li class="active">
-                    <a href="#">
+                <li>
+                    <a href="<?php echo base_url(); ?>Company/enter">
                         <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                     </a>
                 </li>
@@ -153,13 +153,15 @@
         <section class="content-header">
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Dashboard</li>
+                <li class="active">Profile</li>
             </ol>
         </section><br/>
 
         <section class="content">
             <div class="row">
-                <div class="container">
+
+                <div class="col-md-12">
+                    <div class="box box-widget" style="padding: 20px">
                     <form action="<?php echo base_url()?>Company/profile_validation" method="post">
                             <div class="form-group">
                                 <label>Company Name</label>
@@ -196,7 +198,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Hiring Status (Currently Hiring or Not)</label>
-                                <p><input type="radio" name="hiring_status" class="form-control" value="Yes"/>Yes<input type="radio" name="hiring_status" class="form-control" value="Yes"/>No</p>
+                                <input type="radio" name="hiring_status" class="form-control" value="Yes"/>Yes<input type="radio" name="hiring_status" class="form-control" value="No"/>No
                             </div>
                             <div class="form-group">
                                 <label>Description</label>
@@ -234,6 +236,8 @@
                             <button type="submit" name="save" class="btn btn-primary btn-submit">Submit</button>
 
                     </form>
+                    </div>
+                    </div>
                 </div>
             </div>
             <!-- /.row -->

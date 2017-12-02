@@ -48,4 +48,8 @@ class Admin extends CI_Controller {
         $this->session->unset_userdata('email');
         redirect(base_url().'Admin');
     }
+
+    function addAdmin(){
+
+    }
 }

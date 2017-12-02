@@ -16,7 +16,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2 class="text-center">Other companies with us..</h2>
+                <h2 class="text-center">Companies with us..</h2>
             </div>
             <div class="col-sm-6 col-md-4">
                 <div class="thumbnail">

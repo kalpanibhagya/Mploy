@@ -77,10 +77,10 @@
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="<?php echo base_url();?>" class="btn btn-default btn-flat">Profile</a>
+                                    <a href="<?php echo base_url();?>Admin/addAdmin" class="btn btn-default btn-flat">Add Admin</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="<?php echo base_url(); ?>Company/logout" class="btn btn-default btn-flat">Sign out</a>
+                                    <a href="<?php echo base_url(); ?>Admin/logout" class="btn btn-default btn-flat">Sign out</a>
                                 </div>
                             </li>
                         </ul>

@@ -158,7 +158,7 @@
         </section><br/>
 
         <section class="content">
-            <h4>Employees</h4>
+            <h4>Jobs Posted by Others</h4>
             <div class="row">
                 <div class="col-md-6">
                     <!-- Box Comment -->
