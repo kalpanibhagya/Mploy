@@ -156,12 +156,13 @@
                         <h3 class="profile-username text-center">Nina Mcintire</h3>
 
                         <p class="text-muted text-center">Software Engineer</p>
+                        <p class="text-muted text-center">DOB</p>
+                        <p class="text-muted text-center">Gender</p>
                     </div>
                     <!-- /.box-body -->
                 </div>
                 <!-- /.box -->
 
-                <!-- About Me Box -->
                 <div class="box box-primary">
                     <div class="box-header with-border">
                         <h3 class="box-title">Contact Details</h3>
@@ -208,276 +209,541 @@
             <div class="col-md-9">
                 <div class="nav-tabs-custom">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#activity" data-toggle="tab">Activity</a></li>
-                        <li><a href="#timeline" data-toggle="tab">Timeline</a></li>
-                        <li><a href="#settings" data-toggle="tab">Settings</a></li>
+                        <li class="active"><a data-toggle="tab" href="#sectionA">Personal Details</a></li>
+                        <li><a data-toggle="tab" href="#sectionB">Education qualifications</a></li>
+                        <li><a data-toggle="tab" href="#sectionC">Experience</a></li>
+                        <li><a data-toggle="tab" href="#sectionD">Other qualifications</a></li>
                     </ul>
                     <div class="tab-content">
-                        <div class="active tab-pane" id="activity">
-                            <!-- Post -->
-                            <div class="post">
-                                <div class="user-block">
-                                    <img class="img-circle img-bordered-sm" src="../../dist/img/user1-128x128.jpg" alt="user image">
-                                    <span class="username">
-                          <a href="#">Jonathan Burke Jr.</a>
-                          <a href="#" class="pull-right btn-box-tool"><i class="fa fa-times"></i></a>
-                        </span>
-                                    <span class="description">Shared publicly - 7:30 PM today</span>
-                                </div>
-                                <!-- /.user-block -->
-                                <p>
-                                    Lorem ipsum represents a long-held tradition for designers,
-                                    typographers and the like. Some people hate it and argue for
-                                    its demise, but others ignore the hate as they create awesome
-                                    tools to help create filler text for everyone from bacon lovers
-                                    to Charlie Sheen fans.
-                                </p>
-                                <ul class="list-inline">
-                                    <li><a href="#" class="link-black text-sm"><i class="fa fa-share margin-r-5"></i> Share</a></li>
-                                    <li><a href="#" class="link-black text-sm"><i class="fa fa-thumbs-o-up margin-r-5"></i> Like</a>
-                                    </li>
-                                    <li class="pull-right">
-                                        <a href="#" class="link-black text-sm"><i class="fa fa-comments-o margin-r-5"></i> Comments
-                                            (5)</a></li>
-                                </ul>
-
-                                <input class="form-control input-sm" type="text" placeholder="Type a comment">
-                            </div>
-                            <!-- /.post -->
-
-                            <!-- Post -->
-                            <div class="post clearfix">
-                                <div class="user-block">
-                                    <img class="img-circle img-bordered-sm" src="../../dist/img/user7-128x128.jpg" alt="User Image">
-                                    <span class="username">
-                          <a href="#">Sarah Ross</a>
-                          <a href="#" class="pull-right btn-box-tool"><i class="fa fa-times"></i></a>
-                        </span>
-                                    <span class="description">Sent you a message - 3 days ago</span>
-                                </div>
-                                <!-- /.user-block -->
-                                <p>
-                                    Lorem ipsum represents a long-held tradition for designers,
-                                    typographers and the like. Some people hate it and argue for
-                                    its demise, but others ignore the hate as they create awesome
-                                    tools to help create filler text for everyone from bacon lovers
-                                    to Charlie Sheen fans.
-                                </p>
-
-                                <form class="form-horizontal">
-                                    <div class="form-group margin-bottom-none">
-                                        <div class="col-sm-9">
-                                            <input class="form-control input-sm" placeholder="Response">
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <button type="submit" class="btn btn-danger pull-right btn-block btn-sm">Send</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <!-- /.post -->
-
-                            <!-- Post -->
-                            <div class="post">
-                                <div class="user-block">
-                                    <img class="img-circle img-bordered-sm" src="../../dist/img/user6-128x128.jpg" alt="User Image">
-                                    <span class="username">
-                          <a href="#">Adam Jones</a>
-                          <a href="#" class="pull-right btn-box-tool"><i class="fa fa-times"></i></a>
-                        </span>
-                                    <span class="description">Posted 5 photos - 5 days ago</span>
-                                </div>
-                                <!-- /.user-block -->
-                                <div class="row margin-bottom">
-                                    <div class="col-sm-6">
-                                        <img class="img-responsive" src="../../dist/img/photo1.png" alt="Photo">
-                                    </div>
-                                    <!-- /.col -->
-                                    <div class="col-sm-6">
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <img class="img-responsive" src="../../dist/img/photo2.png" alt="Photo">
-                                                <br>
-                                                <img class="img-responsive" src="../../dist/img/photo3.jpg" alt="Photo">
+                        <div id="sectionA" class="tab-pane fade in active">
+                        <br/>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6"  class="col-sm-6" >
+                                    <div class="col10">
+                                        <form class="form-inline">
+                                            <div class="form-group">
+                                                <label for="sel1">* Applicant Type</label>
+                                                <select id="sel1" name="sel1" onchange="java_script_:show(this.options[this.selectedIndex].value)" class="form-control">
+                                                    <option selected>job</option>
+                                                    <option>intern</option>
+                                                </select>
                                             </div>
-                                            <!-- /.col -->
-                                            <div class="col-sm-6">
-                                                <img class="img-responsive" src="../../dist/img/photo4.jpg" alt="Photo">
-                                                <br>
-                                                <img class="img-responsive" src="../../dist/img/photo1.png" alt="Photo">
-                                            </div>
-                                            <!-- /.col -->
-                                        </div>
-                                        <!-- /.row -->
+                                        </form>
                                     </div>
-                                    <!-- /.col -->
                                 </div>
-                                <!-- /.row -->
-
-                                <ul class="list-inline">
-                                    <li><a href="#" class="link-black text-sm"><i class="fa fa-share margin-r-5"></i> Share</a></li>
-                                    <li><a href="#" class="link-black text-sm"><i class="fa fa-thumbs-o-up margin-r-5"></i> Like</a>
-                                    </li>
-                                    <li class="pull-right">
-                                        <a href="#" class="link-black text-sm"><i class="fa fa-comments-o margin-r-5"></i> Comments
-                                            (5)</a></li>
-                                </ul>
-
-                                <input class="form-control input-sm" type="text" placeholder="Type a comment">
                             </div>
-                            <!-- /.post -->
+                            <div class="row">
+                                <div class="col-md-6" class="col-sm-6">
+                                    <div class="col11">
+                                        <fieldset>
+                                            <legend><b>Main Facts</b></legend>
+                                            <div class="form-group">
+                                                <label for="fn"> Full Name</label>
+                                                <input type="text" class="form-control" id="fname">
+                                            </div>
+                                            <div class="form-group"> <!-- Date input -->
+                                                <label class="control-label" for="dob"> Date of Birth:</label>
+                                                <input class="form-control" id="dob" name="date" type="date"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="age"> Age</label>
+                                                <input type="text" class="form-control" id="age">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="gen"> Gender</label>
+                                                <select id="sel1" name="sel1" class="form-control">
+                                                    <option selected>Male</option>
+                                                    <option>Female</option>
+                                                </select>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                                <div class="col-md-6" class="col-sm-6">
+                                    <div class="col12">
+                                        <div id="hiddenDiv" style="display:none">
+                                            <fieldset>
+                                                <legend><b>Preferred area and companies</b></legend>
+                                                <div class="form-group">
+                                                    <label for="selpa"> Preferred Area</label>
+                                                    <select class="form-control" id="selpa">
+                                                        <option>Developer</option>
+                                                        <option>Business Analyst</option>
+                                                        <option>UX/UI</option>
+                                                        <option>Networking</option>
+                                                        <option>Research</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="selc"> Companies</label>
+                                                    <form class="form-inline">
+                                                        <input class="form-control" id="sel1" name="company1" type="text"/>
+                                                        <input class="form-control" id="sel2" name="company2" type="text"/>
+                                                        <input class="form-control" id="sel3" name="company3" type="text"/>
+                                                    </form>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                        <fieldset>
+                                            <legend><b>Contacts</b></legend>
+                                            <div class="form-group">
+                                                <label for="email"> Email</label>
+                                                <input type="email" class="form-control" id="email">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cn"> Contact number</label>
+                                                <input type="text" class="form-control" id="cn">
+                                            </div>
+                                        </fieldset>
+                                        <fieldset>
+                                            <legend><b> Address</b></legend>
+                                            <div class="form-group">
+                                                <input class="form-control" id="address" name="address" type="text"/>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <!-- /.tab-pane -->
-                        <div class="tab-pane" id="timeline">
-                            <!-- The timeline -->
-                            <ul class="timeline timeline-inverse">
-                                <!-- timeline time label -->
-                                <li class="time-label">
-                        <span class="bg-red">
-                          10 Feb. 2014
-                        </span>
-                                </li>
-                                <!-- /.timeline-label -->
-                                <!-- timeline item -->
-                                <li>
-                                    <i class="fa fa-envelope bg-blue"></i>
 
-                                    <div class="timeline-item">
-                                        <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+                    </div>
 
-                                        <h3 class="timeline-header"><a href="#">Support Team</a> sent you an email</h3>
-
-                                        <div class="timeline-body">
-                                            Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
-                                            weebly ning heekya handango imeem plugg dopplr jibjab, movity
-                                            jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
-                                            quora plaxo ideeli hulu weebly balihoo...
+                    <div id="sectionB" class="tab-pane fade">
+                        <br/>
+                        <div class="container-fluid">
+                            <div class="panel panel-default">
+                                <div class="panel-heading"><b>University/Institute</b></div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-sm-6" class="col-md-6">
+                                            <div class="col8">
+                                                <fieldset>
+                                                    <legend><b>Degree Details</b></legend>
+                                                    <div class="form-group">
+                                                        <label for="n1">* Degree</label>
+                                                        <input type="text" class="form-control" id="n1">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="n1">* Degree Level</label>
+                                                        <select class="form-control" id="level">
+                                                            <option value="1">Certificate</option>
+                                                            <option value="2">Diploma</option>
+                                                            <option value="3">Bachelor</option>
+                                                            <option value="4">Master</option>
+                                                            <option value="5">PhD</option>
+                                                        </select>
+                                                    </div>
+                                                    <form method="post">
+                                                        <div class="form-group"> <!-- Date input -->
+                                                            <label class="control-label" for="date">* Date</label>
+                                                            <input class="form-control" id="date" name="date" type="date"/>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input class="form-control" id="date" name="date" type="date"/>
+                                                        </div>
+                                                    </form>
+                                                    <div class="form-group">
+                                                        <label for="n1">* Grade/GPA</label>
+                                                        <input type="text" class="form-control" id="n1">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="sel1">* Class</label>
+                                                        <select class="form-control" id="sel1">
+                                                            <option>none</option>
+                                                            <option>First class</option>
+                                                            <option>Second - upper</option>
+                                                            <option>Second - lower</option>
+                                                        </select>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
                                         </div>
-                                        <div class="timeline-footer">
-                                            <a class="btn btn-primary btn-xs">Read more</a>
-                                            <a class="btn btn-danger btn-xs">Delete</a>
+                                        <div class="col-sm-6" class="col-md-6">
+                                            <div class="col9">
+                                                <fieldset>
+                                                    <legend><b>University/Institute details</b></legend>
+                                                    <div class="form-group">
+                                                        <label for="sel1">* University/Institute</label>
+                                                        <select class="form-control" id="sel1">
+                                                            <option>University of Colombo</option>
+                                                            <option>University of Moratuwa</option>
+                                                            <option>University of Peradeniya</option>
+                                                            <option>University of Ruhuna</option>
+                                                            <option>University of Kelaniya</option>
+                                                            <option>University of Wayamba</option>
+                                                            <option>SLIIT</option>
+                                                            <option>APIIT</option>
+                                                            <option>NIBM</option>
+                                                            <option>NSBM</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="cn1"></label>
+                                                        <input type="text" class="form-control" id="cn1" placeholder="Other">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="web1">Website</label>
+                                                        <input type="url" class="form-control" id="web1">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="con1">Country</label>
+                                                        <input type="text" class="form-control" id="con1">
+                                                    </div>
+
+                                                    <div>
+                                                        <ul>
+                                                            <li><input type="submit" name="" value="save" class="btn" id="save5"></li>
+                                                            <li><input type="submit" name="" value="cancel" class="btn" id="cancel5"></li>
+                                                        </ul>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
                                         </div>
                                     </div>
-                                </li>
-                                <!-- END timeline item -->
-                                <!-- timeline item -->
-                                <li>
-                                    <i class="fa fa-user bg-aqua"></i>
-
-                                    <div class="timeline-item">
-                                        <span class="time"><i class="fa fa-clock-o"></i> 5 mins ago</span>
-
-                                        <h3 class="timeline-header no-border"><a href="#">Sarah Young</a> accepted your friend request
-                                        </h3>
-                                    </div>
-                                </li>
-                                <!-- END timeline item -->
-                                <!-- timeline item -->
-                                <li>
-                                    <i class="fa fa-comments bg-yellow"></i>
-
-                                    <div class="timeline-item">
-                                        <span class="time"><i class="fa fa-clock-o"></i> 27 mins ago</span>
-
-                                        <h3 class="timeline-header"><a href="#">Jay White</a> commented on your post</h3>
-
-                                        <div class="timeline-body">
-                                            Take me to your leader!
-                                            Switzerland is small and neutral!
-                                            We are more like Germany, ambitious and misunderstood!
-                                        </div>
-                                        <div class="timeline-footer">
-                                            <a class="btn btn-warning btn-flat btn-xs">View comment</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- END timeline item -->
-                                <!-- timeline time label -->
-                                <li class="time-label">
-                        <span class="bg-green">
-                          3 Jan. 2014
-                        </span>
-                                </li>
-                                <!-- /.timeline-label -->
-                                <!-- timeline item -->
-                                <li>
-                                    <i class="fa fa-camera bg-purple"></i>
-
-                                    <div class="timeline-item">
-                                        <span class="time"><i class="fa fa-clock-o"></i> 2 days ago</span>
-
-                                        <h3 class="timeline-header"><a href="#">Mina Lee</a> uploaded new photos</h3>
-
-                                        <div class="timeline-body">
-                                            <img src="http://placehold.it/150x100" alt="..." class="margin">
-                                            <img src="http://placehold.it/150x100" alt="..." class="margin">
-                                            <img src="http://placehold.it/150x100" alt="..." class="margin">
-                                            <img src="http://placehold.it/150x100" alt="..." class="margin">
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- END timeline item -->
-                                <li>
-                                    <i class="fa fa-clock-o bg-gray"></i>
-                                </li>
-                            </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
                         </div>
-                        <!-- /.tab-pane -->
 
-                        <div class="tab-pane" id="settings">
-                            <form class="form-horizontal">
-                                <div class="form-group">
-                                    <label for="inputName" class="col-sm-2 control-label">Name</label>
+                    </div>
 
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="inputName" placeholder="Name">
+                    <div id="sectionC" class="tab-pane fade">
+                        <br/>
+                        <div class="container-fluid">
+                            <div class="panel panel-default">
+                                <div class="panel-heading"><b>Projects</b></div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-sm-6" class="col-md-6">
+                                            <div class="col4">
+                                                <div class="form-group">
+                                                    <label for="n2">* Name</label>
+                                                    <input type="text" class="form-control" id="n2">
+                                                </div>
+                                                <div class="form-group"> <!-- Date input -->
+                                                    <label class="control-label" for="date">* Date</label>
+                                                    <input class="form-control" id="date" name="date" type="date"/>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input class="form-control" id="date" name="date" type="date"/>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="git">Github Link</label>
+                                                    <input type="url" class="form-control" id="git">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6" class="col-md-6">
+                                            <div class="col5">
+                                                <div class="form-group">
+                                                    <textarea class="form-control" rows="9" id="comment" placeholder="Description and Achievements"></textarea>
+                                                </div>
+                                                <p id="req">* Required</p>
+                                                <div>
+                                                    <ul>
+                                                        <li><input type="submit" name="" value="save" class="btn" id="save3"></li>
+                                                        <li><input type="submit" name="" value="cancel" class="btn" id="cancel3"></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
+                                    <div class="clearfix"></div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading"><b>Work Experience</b></div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-sm-6" class="col-md-6">
+                                            <div class="col6">
+                                                <fieldset>
+                                                    <legend><b>Job/Internship details</b></legend>
+                                                    <div class="form-group">
+                                                        <label for="jt">* Job Title</label>
+                                                        <input type="text" class="form-control" id="jt">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="selct">* Contract Type</label>
+                                                        <select class="form-control" id="selct">
+                                                            <option>Full time</option>
+                                                            <option>Part time</option>
+                                                            <option>Internship - Full time</option>
+                                                            <option>Internship - Part time</option>
+                                                        </select>
+                                                    </div>
+                                                    <form method="post">
+                                                        <div class="form-group"> <!-- Date input -->
+                                                            <label class="control-label" for="date">* Date</label>
+                                                            <input class="form-control" id="date" name="date" type="date"/>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input class="form-control" id="date" name="date" type="date"/>
+                                                        </div>
+                                                    </form>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6" class="col-md-6">
+                                            <div class="col7">
+                                                <fieldset>
+                                                    <legend><b>Company details</b></legend>
+                                                    <div class="form-group">
+                                                        <label for="cn">* Company Name</label>
+                                                        <input type="text" class="form-control" id="cn">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="web">Website</label>
+                                                        <input type="url" class="form-control" id="web">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="con">Country</label>
+                                                        <input type="text" class="form-control" id="con">
+                                                    </div>
 
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                                    <div>
+                                                        <ul>
+                                                            <li><input type="submit" name="" value="save" class="btn" id="save4"></li>
+                                                            <li><input type="submit" name="" value="cancel" class="btn" id="cancel4"></li>
+                                                        </ul>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                        </div>
                                     </div>
+                                    <div class="clearfix"></div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="inputName" class="col-sm-2 control-label">Name</label>
+                            </div>
+                        </div>
 
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputName" placeholder="Name">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputExperience" class="col-sm-2 control-label">Experience</label>
+                    </div>
 
-                                    <div class="col-sm-10">
-                                        <textarea class="form-control" id="inputExperience" placeholder="Experience"></textarea>
+                    <div id="sectionD" class="tab-pane fade">
+                        <br/>
+                        <div class="container-fluid">
+                            <div class="panel panel-default">
+                                <div class="panel-heading"><b>Professional Qualifications</b></div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-sm-6" class="col-md-6">
+                                            <div class="col8">
+                                                <fieldset>
+                                                    <legend><b>Qualification Details</b></legend>
+                                                    <div class="form-group">
+                                                        <label for="n1">* Title</label>
+                                                        <input type="text" class="form-control" id="n1">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="n1">* Licence no.</label>
+                                                        <select class="form-control" id="level">
+                                                            <option value="1">Certificate</option>
+                                                            <option value="2">Diploma</option>
+                                                            <option value="3">Bachelor</option>
+                                                            <option value="4">Master</option>
+                                                            <option value="5">PhD</option>
+                                                        </select>
+                                                    </div>
+                                                    <form method="post">
+                                                        <div class="form-group"> <!-- Date input -->
+                                                            <label class="control-label" for="date">* Date</label>
+                                                            <input class="form-control" id="date" name="date" type="date"/>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input class="form-control" id="date" name="date" type="date"/>
+                                                        </div>
+                                                    </form>
+                                                    <div class="form-group">
+                                                        <label for="n1">* Grade/GPA</label>
+                                                        <input type="text" class="form-control" id="n1">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="sel1">* Class</label>
+                                                        <select class="form-control" id="sel1">
+                                                            <option>none</option>
+                                                            <option>First class</option>
+                                                            <option>Second - upper</option>
+                                                            <option>Second - lower</option>
+                                                        </select>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6" class="col-md-6">
+                                            <div class="col9">
+                                                <fieldset>
+                                                    <legend><b>Professional Organization details</b></legend>
+                                                    <div class="form-group">
+                                                        <label for="sel1">* University/Institute</label>
+                                                        <select class="form-control" id="sel1">
+                                                            <option>University of Colombo</option>
+                                                            <option>University of Moratuwa</option>
+                                                            <option>University of Peradeniya</option>
+                                                            <option>University of Ruhuna</option>
+                                                            <option>University of Kelaniya</option>
+                                                            <option>University of Wayamba</option>
+                                                            <option>SLIIT</option>
+                                                            <option>APIIT</option>
+                                                            <option>NIBM</option>
+                                                            <option>NSBM</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="cn1"></label>
+                                                        <input type="text" class="form-control" id="cn1" placeholder="Other">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="web1">Website</label>
+                                                        <input type="url" class="form-control" id="web1">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="con1">Country</label>
+                                                        <input type="text" class="form-control" id="con1">
+                                                    </div>
+                                                    <div>
+                                                        <ul>
+                                                            <li><input type="submit" name="" value="save" class="btn" id="save5"></li>
+                                                            <li><input type="submit" name="" value="cancel" class="btn" id="cancel5"></li>
+                                                        </ul>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                        </div>
                                     </div>
+                                    <div class="clearfix"></div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="inputSkills" class="col-sm-2 control-label">Skills</label>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="panel panel-default">
+                                <div class="panel-heading"><b>Extra curricular activity</b></div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-sm-6" class="col-md-6">
+                                            <div class="col1">
+                                                <form>
+                                                    <div class="form-group">
+                                                        <label for="n1">* Name</label>
+                                                        <input type="text" class="form-control" id="n1">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="selt">* Type</label>
+                                                        <select class="form-control" id="selt">
+                                                            <option>none</option>
+                                                            <option>Hackthons</option>
+                                                            <option>Competitions</option>
+                                                            <option>Sports</option>
+                                                            <option>Clubs</option>
+                                                            <option>Music</option>
+                                                        </select>
+                                                    </div>
+                                                    <form method="post">
+                                                        <div class="form-group"> <!-- Date input -->
+                                                            <label class="control-label" for="date">* Date</label>
+                                                            <input class="form-control" id="date" name="date" type="date"/>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input class="form-control" id="date" name="date" type="date"/>
+                                                        </div>
+                                                    </form>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6" class="col-md-6">
+                                            <div class="col2">
+                                                <div class="form-group">
+                                                    <textarea class="form-control" rows="12" id="comment" placeholder="Description and Achievements, any links"></textarea>
+                                                </div>
 
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputSkills" placeholder="Skills">
+                                                <div>
+                                                    <ul>
+                                                        <li><input type="submit" name="" value="save" class="btn" id="save1"></li>
+                                                        <li><input type="submit" name="" value="cancel" class="btn" id="cancel1"></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
+                                    <div class="clearfix"></div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox"> I agree to the <a href="#">terms and conditions</a>
-                                            </label>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6" class="col-sm-6">
+                                    <div class="col3">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading"><b>Skill</b></div>
+                                            <div class="panel-body">
+                                                <div class="form-group">
+                                                    <label for="seln">* Name</label>
+                                                    <select class="form-control" id="seln">
+                                                        <option>none</option>
+                                                        <option>Singing</option>
+                                                        <option>Instruments playing</option>
+                                                        <option>Public Speeking</option>
+                                                        <option>Documentation</option>
+                                                        <option>Team working</option>
+                                                    </select>
+                                                </div>
+                                                <!--star rating buttons-->
+                                                <label for="reviewStars-input">* Rating</label></br>
+                                                <div id="reviewStars-input">
+                                                    <input id="star-4" type="radio" name="reviewStars"/>
+                                                    <label title="gorgeous" for="star-4"></label>
+
+                                                    <input id="star-3" type="radio" name="reviewStars"/>
+                                                    <label title="good" for="star-3"></label>
+
+                                                    <input id="star-2" type="radio" name="reviewStars"/>
+                                                    <label title="regular" for="star-2"></label>
+
+                                                    <input id="star-1" type="radio" name="reviewStars"/>
+                                                    <label title="poor" for="star-1"></label>
+
+                                                    <input id="star-0" type="radio" name="reviewStars"/>
+                                                    <label title="bad" for="star-0"></label>
+                                                </div></br>
+                                                <br>
+                                                <br>
+
+                                                <div>
+                                                    <ul>
+                                                        <li><input type="submit" name="" value="save" class="btn" id="save2"></li>
+                                                        <li><input type="submit" name="" value="cancel" class="btn" id="cancel2"></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" class="btn btn-danger">Submit</button>
-                                    </div>
-                                </div>
-                            </form>
+                            </div>
+
                         </div>
-                        <!-- /.tab-pane -->
+
+                        <!--div id="dropdown1" class="tab-pane fade">
+
+                            <p>Dropdown 1 content…</p>
+
+                        </div>
+
+                        <div id="dropdown2" class="tab-pane fade">
+
+                            <p>Dropdown 2 content…</p>
+
+                        </div-->
+
+                    </div>
+
+                    <script>
+                        function show(aval) {
+                            if (aval == "intern") {
+                                hiddenDiv.style.display='block';
+                                Form.fileURL.focus();
+                            }
+                            else{
+                                hiddenDiv.style.display='none';
+                            }
+                        }
+                    </script>
                     </div>
                     <!-- /.tab-content -->
                 </div>
