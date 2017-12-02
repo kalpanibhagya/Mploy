@@ -52,4 +52,24 @@ class Admin extends CI_Controller {
     function addAdmin(){
 
     }
+
+    function dashboard(){
+        $this->load->view('Pages/Admin/dashboard');
+    }
+
+    function employers(){
+        $this->load->view('Pages/Admin/employers');
+    }
+
+    function interns(){
+        $this->load->view('Pages/Admin/interns');
+    }
+
+    function jobapplicants(){
+        $this->load->view('Pages/Admin/jobapplicants');
+    }
+
+    function notifications(){
+        $this->load->view('Pages/Admin/notifications');
+    }
 }
