@@ -43,7 +43,7 @@
 
     <header class="main-header">
         <!-- Logo -->
-        <a href="<?php echo base_url(); ?>Welcome/Company_main" class="logo">
+        <a href="<?php echo base_url(); ?>" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>M</b></span>
             <!-- logo for regular state and mobile devices -->
@@ -119,7 +119,7 @@
                     </a>
                     <ul class="treeview-menu">
                         <li><a href="#"><i class="fa fa-circle-o"></i> Interns Selection</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Job Appliants Selection</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Job Applicants Selection</a></li>
                     </ul>
                 </li>
                 <li class="treeview">
@@ -139,11 +139,6 @@
                 <li>
                     <a href="#">
                         <i class="fa fa-calendar"></i> <span>Calendar</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-envelope"></i> <span>Mailbox</span>
                     </a>
                 </li>
                 <li>
