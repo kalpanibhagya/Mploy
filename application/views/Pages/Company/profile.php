@@ -145,10 +145,67 @@
 
         <section class="content">
             <div class="row">
+                <div class="col-md-3">
 
-                <div class="col-md-12">
-                    <div class="box box-widget" style="padding: 20px">
+                    <!-- Profile Image -->
+                    <div class="box box-success">
+                        <div class="box-body box-profile">
+                            <img class="profile-user-img img-responsive img-square" src="#" alt="User profile picture" style="height: 200px;width: 200px">
+
+                            <h3 class="profile-username text-center">User name</h3>
+
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+
+                    <div class="box box-success">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Contact Details</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <strong><i class="fa fa-envelope margin-r-5"></i> Email</strong>
+
+                            <p class="text-muted">
+                                john@gmail.com
+                            </p>
+
+                            <hr>
+
+                            <strong><i class="fa fa-map-marker margin-r-5"></i> Address</strong>
+
+                            <p class="text-muted">Colombo, Sri Lanka</p>
+
+                            <hr>
+
+                            <strong><i class="fa fa-pencil margin-r-5"></i> Contact Number</strong>
+
+                            <p class="text-muted">
+                                011-94734221
+                            </p>
+
+                            <hr>
+
+                            <strong><i class="fa fa-linkedin-square margin-r-5"></i> Linked In</strong>
+
+                            <p>http://www.linedin.com/in/john</p>
+
+                            <hr>
+
+                            <strong><i class="fa fa-internet-explorer margin-r-5"></i> Website</strong>
+
+                            <p>http://www.computer.com</p>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+                </div>
+                <!-- /.col -->
+                <div class="col-md-9">
+                    <div class="box box-success" style="padding: 20px">
                     <form action="<?php echo base_url()?>Company/profile_validation" method="post">
+                        <h3 align="center">Company details</h3>
                             <div class="form-group">
                                 <label>Company Name</label>
                                 <input type="text" name="company_name" class="form-control" placeholder="Company Name"/>
@@ -429,10 +486,6 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label>Logo</label><br/>
-                                <input type="file" class="btn btn-success" name="logo" value="#">   Select a file to upload.
-                            </div>
-                            <div class="form-group">
                                 <label>Hiring Status (Currently Hiring or Not)</label>
                                 <select class="form-control" name="hiring_status" style="height: 50px">
                                     <option value="Yes">Currently Hiring</option>
@@ -443,22 +496,10 @@
                                 <label>Description</label>
                                 <textarea name="description" rows="10" class="form-control" placeholder="About your company"></textarea>
                             </div>
-                            <div class="form-group">
-                                <label>Phone Number</label>
-                                <input type="tel" name="telephone" class="form-control" placeholder="eg: 011-4323521"/>
-                            </div>
-                            <div class="form-group">
-                                <label>Address</label>
-                                <input type="text" name="address" class="form-control" placeholder="eg: Colombo,Sri Lanka"/>
-                            </div>
-                            <div class="form-group">
-                                <label>Linked In</label>
-                                <input type="url" name="linkedin" class="form-control" placeholder="linked in profile url"/>
-                            </div>
-                            <div class="form-group">
-                                <label>Website</label>
-                                <input type="url" name="website" class="form-control" placeholder="web site url"/>
-                            </div>
+
+                            <hr/>
+
+                            <h3 align="center">Contact person's details</h3>
                             <div class="form-group">
                                 <label>Name</label>
                                 <input type="text" name="cname" class="form-control" placeholder="Contact person name"/>
