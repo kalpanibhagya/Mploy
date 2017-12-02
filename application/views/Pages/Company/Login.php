@@ -38,7 +38,7 @@
                             <div class="text-center">
                                 <button type="submit" class="btn btn-success">Login</button>
                                 <br/>
-                                <a href="#">Forget password?</a><br/>
+                                <a href="<?php echo base_url(); ?>Common/forget_password2">Forget password?</a><br/>
                                 Not a member?<a href="<?php echo base_url(); ?>Company/Signup">Join Now</a>
                             </div>
                         </form>
