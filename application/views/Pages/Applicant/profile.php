@@ -104,37 +104,28 @@
                 </div>
                 <div class="pull-left info">
                     <p>Alexander Pierce</p>
+                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
-                <li class="active">
-                    <a href="#">
+                <li>
+                    <a href="<?php echo base_url(); ?>Applicant/dashboard">
                         <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                     </a>
                 </li>
-                <li class="treeview">
-                    <a href="#">
+                <li>
+                    <a href="<?php echo base_url(); ?>Applicant/interviewRequests">
                         <i class="fa fa-folder"></i> <span>Interview Requests</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="<?php echo base_url(); ?>Applicant/employers">
                         <i class="fa fa-dashboard"></i> <span>Companies</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="fa fa-calendar"></i> <span>Calendar</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-envelope"></i> <span>Mailbox</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
+                    <a href="<?php echo base_url(); ?>Applicant/notifications">
                         <i class="fa fa-bell-o"></i> <span>Notifications</span>
                     </a>
                 </li>
@@ -147,12 +138,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            User Profile
+            My Profile
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="<?php echo base_url(); ?>Applicant/dashboard">Dashboard</a></li>
-            <li class="active">User profile</li>
+            <li class="active">Profile</li>
         </ol>
     </section>
 
@@ -165,25 +155,11 @@
                 <!-- Profile Image -->
                 <div class="box box-primary">
                     <div class="box-body box-profile">
-                        <img class="profile-user-img img-responsive img-circle" src="../../dist/img/user4-128x128.jpg" alt="User profile picture">
+                        <img class="profile-user-img img-responsive img-square" src="#" alt="User profile picture" style="height: 200px;width: 200px">
 
                         <h3 class="profile-username text-center">Nina Mcintire</h3>
 
                         <p class="text-muted text-center">Software Engineer</p>
-
-                        <ul class="list-group list-group-unbordered">
-                            <li class="list-group-item">
-                                <b>Followers</b> <a class="pull-right">1,322</a>
-                            </li>
-                            <li class="list-group-item">
-                                <b>Following</b> <a class="pull-right">543</a>
-                            </li>
-                            <li class="list-group-item">
-                                <b>Friends</b> <a class="pull-right">13,287</a>
-                            </li>
-                        </ul>
-
-                        <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
                     </div>
                     <!-- /.box-body -->
                 </div>
@@ -192,39 +168,41 @@
                 <!-- About Me Box -->
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">About Me</h3>
+                        <h3 class="box-title">Contact Details</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <strong><i class="fa fa-book margin-r-5"></i> Education</strong>
+                        <strong><i class="fa fa-envelope margin-r-5"></i> Email</strong>
 
                         <p class="text-muted">
-                            B.S. in Computer Science from the University of Tennessee at Knoxville
+                            john@gmail.com
                         </p>
 
                         <hr>
 
-                        <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
+                        <strong><i class="fa fa-map-marker margin-r-5"></i> Address</strong>
 
-                        <p class="text-muted">Malibu, California</p>
+                        <p class="text-muted">Colombo, Sri Lanka</p>
 
                         <hr>
 
-                        <strong><i class="fa fa-pencil margin-r-5"></i> Skills</strong>
+                        <strong><i class="fa fa-pencil margin-r-5"></i> Contact Number</strong>
 
-                        <p>
-                            <span class="label label-danger">UI Design</span>
-                            <span class="label label-success">Coding</span>
-                            <span class="label label-info">Javascript</span>
-                            <span class="label label-warning">PHP</span>
-                            <span class="label label-primary">Node.js</span>
+                        <p class="text-muted">
+                            011-94734221
                         </p>
 
                         <hr>
 
-                        <strong><i class="fa fa-file-text-o margin-r-5"></i> Notes</strong>
+                        <strong><i class="fa fa-linkedin-square margin-r-5"></i> Linked In</strong>
 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+                        <p>http://www.linedin.com/in/john</p>
+
+                        <hr>
+
+                        <strong><i class="fa fa-internet-explorer margin-r-5"></i> Website</strong>
+
+                        <p>http://www.computer.com</p>
                     </div>
                     <!-- /.box-body -->
                 </div>

@@ -160,4 +160,24 @@ class Company extends CI_Controller {
         $this->load->model("Company_m");
         $data["fetch_data"] = $this->Company_m->fetch_data();
     }
+
+    function dashboard(){
+        $this->load->view('Pages/Company/dashboard');
+    }
+
+    function posted_internships(){
+        $this->load->view('Pages/Company/posted_internships');
+    }
+
+    function posted_jobs(){
+        $this->load->view('Pages/Company/posted_job');
+    }
+
+    function employers(){
+        $this->load->view('Pages/Company/employers');
+    }
+
+    function notifications(){
+        $this->load->view('Pages/Company/notifications');
+    }
 }

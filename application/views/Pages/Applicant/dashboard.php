@@ -43,7 +43,7 @@
 
     <header class="main-header">
         <!-- Logo -->
-        <a href="<?php echo base_url(); ?>Welcome/Company_main" class="logo">
+        <a href="<?php echo base_url(); ?>Welcome/Applicant_main" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>M</b></span>
             <!-- logo for regular state and mobile devices -->
@@ -113,28 +113,18 @@
                         <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                     </a>
                 </li>
-                <li class="treeview">
-                    <a href="#">
+                <li>
+                    <a href="<?php echo base_url(); ?>Applicant/interviewRequests">
                         <i class="fa fa-folder"></i> <span>Interview Requests</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="<?php echo base_url(); ?>Applicant/employers">
                         <i class="fa fa-dashboard"></i> <span>Companies</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="fa fa-calendar"></i> <span>Calendar</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-envelope"></i> <span>Mailbox</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
+                    <a href="<?php echo base_url(); ?>Applicant/notifications">
                         <i class="fa fa-bell-o"></i> <span>Notifications</span>
                     </a>
                 </li>
@@ -154,7 +144,14 @@
         </section><br/>
 
         <section class="content">
-            <h4>Job Posts</h4>
+            <h4 style="text-align: center;font-weight: bolder">Jobs Posted by Others</h4>
+            <div class="input-group">
+                <input type="text" class="search form-control" placeholder="Search for: Internships, Jobs, Job Titles, City or Country" width="50px">
+                <span class="input-group-btn">
+                    <button class="btn btn-success" type="button">Go!</button>
+                </span>
+            </div>
+            <br/>
             <div class="row">
                 <div class="col-md-6">
                     <!-- Box Comment -->

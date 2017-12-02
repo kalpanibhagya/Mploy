@@ -99,4 +99,17 @@ class Applicant extends CI_Controller {
         $this->session->unset_userdata('email');
         redirect(base_url().'Applicant/Login');
     }
+
+
+    function employers(){
+        $this->load->view('Pages/Applicant/employers');
+    }
+
+    function interviewRequests(){
+        $this->load->view('Pages/Applicant/interviewRequests');
+    }
+
+    function notifications(){
+        $this->load->view('Pages/Applicant/notifications');
+    }
 }
