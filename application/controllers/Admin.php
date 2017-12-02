@@ -69,6 +69,14 @@ class Admin extends CI_Controller {
         $this->load->view('Pages/Admin/jobapplicants');
     }
 
+    function selection_interns(){
+        $this->load->view('Pages/Admin/internSelections');
+    }
+
+    function selection_jobapplicants(){
+        $this->load->view('Pages/Admin/jobSelections');
+    }
+
     function notifications(){
         $this->load->view('Pages/Admin/notifications');
     }

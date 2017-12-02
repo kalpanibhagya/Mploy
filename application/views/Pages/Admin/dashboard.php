@@ -109,7 +109,7 @@
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="active">
-                    <a href="#">
+                    <a href="<?php echo base_url(); ?>Admin/dashboard">
                         <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                     </a>
                 </li>
@@ -118,8 +118,8 @@
                         <i class="fa fa-folder"></i> <span>Selections</span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Interns Selection</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Job Applicants Selection</a></li>
+                        <li><a href="<?php echo base_url(); ?>Admin/selections_interns"><i class="fa fa-circle-o"></i> Interns Selection</a></li>
+                        <li><a href="<?php echo base_url(); ?>Admin/selections_jobapplicants"><i class="fa fa-circle-o"></i> Job Applicants Selection</a></li>
                     </ul>
                 </li>
                 <li class="treeview">
@@ -127,22 +127,22 @@
                         <i class="fa fa-folder"></i> <span>Applicants</span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Interns</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Job Appliants</a></li>
+                        <li><a href="<?php echo base_url(); ?>Admin/interns"><i class="fa fa-circle-o"></i> Interns</a></li>
+                        <li><a href="<?php echo base_url(); ?>Admin/jobapplicants"><i class="fa fa-circle-o"></i> Job Applicants</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="<?php echo base_url(); ?>Admin/employers">
                         <i class="fa fa-dashboard"></i> <span>Employers</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="<?php echo base_url(); ?>Admin/calendar">
                         <i class="fa fa-calendar"></i> <span>Calendar</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="<?php echo base_url(); ?>Admin/notifications">
                         <i class="fa fa-bell-o"></i> <span>Notifications</span>
                     </a>
                 </li>
