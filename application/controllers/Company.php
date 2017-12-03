@@ -3,6 +3,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Company extends CI_Controller {
 
+    public function __construct(){
+
+        parent::__construct();
+        $this->load->helper('url');
+        $this->load->library('session');
+
+    }
+
     public function Login(){
         $this->load->view('Includes/Company/header');
         $this->load->view('Pages/Company/Login');
@@ -61,11 +69,27 @@ class Company extends CI_Controller {
             $password = base64_encode(strrev(md5($this->input->post('password'))));
 
             $this->load->model('Company_m');
-            if ($this->Company_m->can_login($email, $password)){
-                $session_data = array(
-                    'email' => $email
-                );
-                $this->session->set_userdata($session_data);
+            $data = $this->Company_m->can_login($email, $password);
+            if ($data){
+                $this->session->set_userdata('company_id',$data['company_id']);
+                $this->session->set_userdata('email', $data['email'] );
+                $this->session->set_userdata('username', $data['username'] );
+                $this->session->set_userdata('company_name', $data['company_name'] );
+                $this->session->set_userdata('register_no', $data['register_no'] );
+                $this->session->set_userdata('logo', $data['logo'] );
+                $this->session->set_userdata('type', $data['type'] );
+                $this->session->set_userdata('size', $data['size'] );
+                $this->session->set_userdata('hiring_status', $data['hiring_status'] );
+                $this->session->set_userdata('address', $data['address'] );
+                $this->session->set_userdata('country', $data['country'] );
+                $this->session->set_userdata('contact_no', $data['contact_no'] );
+                $this->session->set_userdata('linkedin', $data['linkedin'] );
+                $this->session->set_userdata('website', $data['website'] );
+                $this->session->set_userdata('about', $data['about'] );
+                $this->session->set_userdata('cname', $data['cname'] );
+                $this->session->set_userdata('ctelephone', $data['ctelephone'] );
+                $this->session->set_userdata('cemail', $data['cemail'] );
+
                 redirect(base_url().'Company/enter');
             }else {
                 $this->session->set_flashdata('error', '<div class="alert alert-danger" role="alert">Invalid email or password!</div>');
