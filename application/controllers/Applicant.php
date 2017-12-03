@@ -92,7 +92,11 @@ class Applicant extends CI_Controller {
     }
 
     function profile(){
-        $this->load->view('Pages/Applicant/profile');
+
+        $email = $this->session->userdata('email');
+        $this->load->model('Applicant_m');
+        $data = $this->Applicant_m->get_data($email);
+        $this->load->view('Pages/Applicant/profile',$data);
     }
 
     function logout(){

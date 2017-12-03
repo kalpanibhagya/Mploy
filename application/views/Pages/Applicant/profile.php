@@ -153,11 +153,13 @@
                     <div class="box-body box-profile">
                         <img class="profile-user-img img-responsive img-square" src="#" alt="User profile picture" style="height: 200px;width: 200px">
 
-                        <h3 class="profile-username text-center">Nina Mcintire</h3>
+                        <h3  class="profile-username text-center"><b><?php echo $username?></b></h3>
+
+                        <h3 class="profile-username text-center"><?php echo $first_name. $last_name?></h3>
 
                         <p class="text-muted text-center">Software Engineer</p>
-                        <p class="text-muted text-center">DOB</p>
-                        <p class="text-muted text-center">Gender</p>
+                        <p class="text-muted text-center"><?php echo $dob ?></p>
+                        <p class="text-muted text-center"><?php echo $gender ?></p>
                     </div>
                     <!-- /.box-body -->
                 </div>

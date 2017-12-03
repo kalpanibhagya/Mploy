@@ -17,6 +17,23 @@ class Applicant_m extends CI_Model{
             return false;
         }
     }
+
+    function get_data($email)
+    {
+        $this->db->select('username, first_name, last_name, dob, gender');
+        $this->db->where('email', $email);
+        $query = $this->db->get('applicant');
+        $result = $query->row();
+
+
+        $data = array('username'=> ($result->username), 'first_name'=> ($result->first_name), 'last_name'=>($result->last_name), 'dob'=>($result->dob), 'gender'=>($result->gender));
+
+        return $data;
+
+
+
+
+    }
 }
 
 ?>
