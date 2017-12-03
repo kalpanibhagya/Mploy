@@ -99,4 +99,12 @@ class Applicant extends CI_Controller {
         $this->session->unset_userdata('email');
         redirect(base_url().'Applicant/Login');
     }
+
+    public function forgotPassword()
+    {
+        $this->load->view('Includes/Applicant/header');
+        $this->load->view('Pages/Applicant/forgotPassword');
+
+    }
+    
 }
