@@ -71,7 +71,6 @@
 
                                 <p>
                                     Alexander Pierce - Web Developer
-                                    <small>Member since Nov. 2012</small>
                                 </p>
                             </li>
                             <!-- Menu Footer-->
@@ -150,10 +149,10 @@
                     <!-- Profile Image -->
                     <div class="box box-success">
                         <div class="box-body box-profile">
+                            <a class="glyphicon glyphicon-pencil" role="button"></a>
                             <img class="profile-user-img img-responsive img-square" src="#" alt="User profile picture" style="height: 200px;width: 200px">
 
                             <h3 class="profile-username text-center">User name</h3>
-
                         </div>
                         <!-- /.box-body -->
                     </div>
@@ -161,41 +160,37 @@
 
                     <div class="box box-success">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Contact Details</h3>
+                            <h3 class="box-title">Contact Details</h3> <a class="glyphicon glyphicon-pencil" role="button"></a>
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
                             <strong><i class="fa fa-envelope margin-r-5"></i> Email</strong>
 
-                            <p class="text-muted">
-                                john@gmail.com
-                            </p>
+                            <input type="email" name="email" class="form-control" placeholder="Email"/>
 
                             <hr>
 
                             <strong><i class="fa fa-map-marker margin-r-5"></i> Address</strong>
 
-                            <p class="text-muted">Colombo, Sri Lanka</p>
+                            <input type="text" name="address" class="form-control" placeholder="Address"/>
 
                             <hr>
 
                             <strong><i class="fa fa-pencil margin-r-5"></i> Contact Number</strong>
 
-                            <p class="text-muted">
-                                011-94734221
-                            </p>
+                            <input type="text" name="telephone" class="form-control" placeholder="Contact Number"/>
 
                             <hr>
 
                             <strong><i class="fa fa-linkedin-square margin-r-5"></i> Linked In</strong>
 
-                            <p>http://www.linedin.com/in/john</p>
+                            <input type="url" name="linkedin" class="form-control" placeholder="Linkedin"/>
 
                             <hr>
 
                             <strong><i class="fa fa-internet-explorer margin-r-5"></i> Website</strong>
 
-                            <p>http://www.computer.com</p>
+                            <input type="url" name="website" class="form-control" placeholder="Website"/>
                         </div>
                         <!-- /.box-body -->
                     </div>
@@ -205,7 +200,8 @@
                 <div class="col-md-9">
                     <div class="box box-success" style="padding: 20px">
                     <form action="<?php echo base_url()?>Company/profile_validation" method="post">
-                        <h3 align="center">Company details</h3>
+                        <a class="glyphicon glyphicon-pencil" role="button"></a>
+                        <h3 align="center" style="font-weight: bold">Company details</h3>
                             <div class="form-group">
                                 <label>Company Name</label>
                                 <input type="text" name="company_name" class="form-control" placeholder="Company Name"/>
@@ -499,7 +495,8 @@
 
                             <hr/>
 
-                            <h3 align="center">Contact person's details</h3>
+                            <a class="glyphicon glyphicon-pencil" role="button"></a>
+                            <h3 align="center" style="font-weight: bold">Contact person's details</h3>
                             <div class="form-group">
                                 <label>Name</label>
                                 <input type="text" name="cname" class="form-control" placeholder="Contact person name"/>
@@ -512,9 +509,6 @@
                                 <label>Contact Number</label>
                                 <input type="text" name="ctelephone" class="form-control" placeholder="Contact person telephone number"/>
                             </div>
-
-                            <button type="submit" name="save" class="btn btn-primary btn-submit">Submit</button>
-
                     </form>
                     </div>
                     </div>
