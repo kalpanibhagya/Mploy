@@ -28,7 +28,7 @@ class Applicant extends CI_Controller {
             $this->load->model('Applicant_m');
             $data = array(
                 'username' => $this->input->post('username'),
-                'password' => $this->input->post('password'),
+                'password' => base64_encode(strrev(md5($this->input->post('password')))),
                 'email' => $this->input->post('email')
             );
 
@@ -59,7 +59,7 @@ class Applicant extends CI_Controller {
             //true
 
             $email = $this->input->post('email');
-            $password = $this->input->post('password');
+            $password = base64_encode(strrev(md5($this->input->post('password'))));
 
             $this->load->model('Applicant_m');
             if ($this->Applicant_m->can_login($email, $password)){

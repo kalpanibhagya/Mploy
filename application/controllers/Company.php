@@ -58,7 +58,7 @@ class Company extends CI_Controller {
             //true
 
             $email = $this->input->post('email');
-            $password = $this->input->post('password');
+            $password = base64_encode(strrev(md5($this->input->post('password'))));
 
             $this->load->model('Company_m');
             if ($this->Company_m->can_login($email, $password)){
@@ -120,7 +120,7 @@ class Company extends CI_Controller {
             $this->load->model('Company_m');
             $data = array(
                 'username' => $this->input->post('username'),
-                'password' => $this->input->post('password'),
+                'password' => base64_encode(strrev(md5($this->input->post('password')))),
                 'email' => $this->input->post('email'),
                 'company_name' => $this->input->post('company_name'),
                 'register_no' => $this->input->post('reg_number'),
