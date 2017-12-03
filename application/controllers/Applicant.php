@@ -28,7 +28,7 @@ class Applicant extends CI_Controller {
             $this->load->model('Applicant_m');
             $data = array(
                 'username' => $this->input->post('username'),
-                'password' => $this->input->post('password'),
+                'password' => base64_encode(strrev(md5($this->input->post('password')))),
                 'email' => $this->input->post('email')
             );
 
@@ -59,7 +59,7 @@ class Applicant extends CI_Controller {
             //true
 
             $email = $this->input->post('email');
-            $password = $this->input->post('password');
+            $password = base64_encode(strrev(md5($this->input->post('password'))));
 
             $this->load->model('Applicant_m');
             if ($this->Applicant_m->can_login($email, $password)){
@@ -69,7 +69,7 @@ class Applicant extends CI_Controller {
                 $this->session->set_userdata($session_data);
                 redirect(base_url().'Applicant/enter');
             }else {
-                $this->session->set_flashdata('error', '<div class="alert alert-danger" role="alert">Invalid username or password!</div>');
+                $this->session->set_flashdata('error', '<div class="alert alert-danger" role="alert">Invalid email or password!</div>');
                 redirect(base_url().'Applicant/Login');
             }
 
@@ -98,5 +98,18 @@ class Applicant extends CI_Controller {
     function logout(){
         $this->session->unset_userdata('email');
         redirect(base_url().'Applicant/Login');
+    }
+
+
+    function employers(){
+        $this->load->view('Pages/Applicant/employers');
+    }
+
+    function interviewRequests(){
+        $this->load->view('Pages/Applicant/interviewRequests');
+    }
+
+    function notifications(){
+        $this->load->view('Pages/Applicant/notifications');
     }
 }

@@ -104,7 +104,7 @@
             </div>
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
-                <li class="active">
+                <li>
                     <a href="<?php echo base_url(); ?>Admin/dashboard">
                         <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                     </a>
@@ -127,7 +127,7 @@
                         <li><a href="<?php echo base_url(); ?>Admin/jobapplicants"><i class="fa fa-circle-o"></i> Job Applicants</a></li>
                     </ul>
                 </li>
-                <li>
+                <li class="active">
                     <a href="<?php echo base_url(); ?>Admin/employers">
                         <i class="fa fa-dashboard"></i> <span>Companies</span>
                     </a>
@@ -148,12 +148,12 @@
         <section class="content-header">
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Dashboard</li>
+                <li class="active">Companies</li>
             </ol>
         </section><br/>
 
         <section class="content">
-            <h4 style="text-align: center;font-weight: bolder">Verify qualifications and Verify Companies</h4><br/>
+            <h4 style="text-align: center;font-weight: bolder">Companies</h4><br/>
 
 
         </section>

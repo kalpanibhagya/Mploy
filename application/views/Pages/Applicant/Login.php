@@ -34,7 +34,7 @@
                             <div class="form-group" align="center">
                                 <input type="submit" class="btn btn-success" value="Login">
                                 <br/>
-                                <a href="#">Forget password?</a><br/>
+                                <a href="<?php echo base_url(); ?>Common/forget_password">Forget password?</a><br/>
                                 Not a member?<a href="<?php echo base_url(); ?>Applicant/Signup">Join Now</a>
                             </div>
                         </form>

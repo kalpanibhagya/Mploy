@@ -104,7 +104,7 @@
             </div>
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
-                <li class="active">
+                <li>
                     <a href="<?php echo base_url(); ?>Admin/dashboard">
                         <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                     </a>
@@ -132,7 +132,7 @@
                         <i class="fa fa-dashboard"></i> <span>Companies</span>
                     </a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="<?php echo base_url(); ?>Admin/notifications">
                         <i class="fa fa-bell-o"></i> <span>Notifications</span>
                     </a>
@@ -148,12 +148,12 @@
         <section class="content-header">
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Dashboard</li>
+                <li class="active">Notifications</li>
             </ol>
         </section><br/>
 
         <section class="content">
-            <h4 style="text-align: center;font-weight: bolder">Verify qualifications and Verify Companies</h4><br/>
+            <h4 style="text-align: center;font-weight: bolder">Notifications</h4><br/>
 
 
         </section>

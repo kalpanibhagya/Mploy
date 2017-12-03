@@ -104,7 +104,7 @@
             </div>
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
-                <li class="active">
+                <li>
                     <a href="<?php echo base_url(); ?>Admin/dashboard">
                         <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                     </a>
@@ -118,13 +118,13 @@
                         <li><a href="<?php echo base_url(); ?>Admin/selection_jobapplicants"><i class="fa fa-circle-o"></i> Job Applicants Selection</a></li>
                     </ul>
                 </li>
-                <li class="treeview">
+                <li class="treeview active">
                     <a href="#">
                         <i class="fa fa-folder"></i> <span>Applicants</span>
                     </a>
                     <ul class="treeview-menu">
                         <li><a href="<?php echo base_url(); ?>Admin/interns"><i class="fa fa-circle-o"></i> Interns</a></li>
-                        <li><a href="<?php echo base_url(); ?>Admin/jobapplicants"><i class="fa fa-circle-o"></i> Job Applicants</a></li>
+                        <li class="active"><a href="<?php echo base_url(); ?>Admin/jobapplicants"><i class="fa fa-circle-o"></i> Job Applicants</a></li>
                     </ul>
                 </li>
                 <li>
@@ -148,12 +148,12 @@
         <section class="content-header">
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Dashboard</li>
+                <li class="active">Job Applicants</li>
             </ol>
         </section><br/>
 
         <section class="content">
-            <h4 style="text-align: center;font-weight: bolder">Verify qualifications and Verify Companies</h4><br/>
+            <h4 style="text-align: center;font-weight: bolder">Job Applicants</h4><br/>
 
 
         </section>

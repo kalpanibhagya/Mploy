@@ -58,7 +58,7 @@ class Company extends CI_Controller {
             //true
 
             $email = $this->input->post('email');
-            $password = $this->input->post('password');
+            $password = base64_encode(strrev(md5($this->input->post('password'))));
 
             $this->load->model('Company_m');
             if ($this->Company_m->can_login($email, $password)){
@@ -68,7 +68,7 @@ class Company extends CI_Controller {
                 $this->session->set_userdata($session_data);
                 redirect(base_url().'Company/enter');
             }else {
-                $this->session->set_flashdata('error', '<div class="alert alert-danger" role="alert">Invalid username or password!</div>');
+                $this->session->set_flashdata('error', '<div class="alert alert-danger" role="alert">Invalid email or password!</div>');
                 redirect(base_url().'Company/Login');
             }
 
@@ -120,7 +120,7 @@ class Company extends CI_Controller {
             $this->load->model('Company_m');
             $data = array(
                 'username' => $this->input->post('username'),
-                'password' => $this->input->post('password'),
+                'password' => base64_encode(strrev(md5($this->input->post('password')))),
                 'email' => $this->input->post('email'),
                 'company_name' => $this->input->post('company_name'),
                 'register_no' => $this->input->post('reg_number'),
@@ -159,5 +159,25 @@ class Company extends CI_Controller {
     public function fetch(){
         $this->load->model("Company_m");
         $data["fetch_data"] = $this->Company_m->fetch_data();
+    }
+
+    function dashboard(){
+        $this->load->view('Pages/Company/dashboard');
+    }
+
+    function posted_internships(){
+        $this->load->view('Pages/Company/posted_internships');
+    }
+
+    function posted_jobs(){
+        $this->load->view('Pages/Company/posted_job');
+    }
+
+    function employers(){
+        $this->load->view('Pages/Company/employers');
+    }
+
+    function notifications(){
+        $this->load->view('Pages/Company/notifications');
     }
 }

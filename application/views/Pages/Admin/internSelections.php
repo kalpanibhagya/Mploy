@@ -104,17 +104,17 @@
             </div>
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
-                <li class="active">
+                <li>
                     <a href="<?php echo base_url(); ?>Admin/dashboard">
                         <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                     </a>
                 </li>
-                <li class="treeview">
+                <li class="treeview active">
                     <a href="#">
                         <i class="fa fa-folder"></i> <span>Selections</span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="<?php echo base_url(); ?>Admin/selection_interns"><i class="fa fa-circle-o"></i> Interns Selection</a></li>
+                        <li class="active"><a href="<?php echo base_url(); ?>Admin/selection_interns"><i class="fa fa-circle-o"></i> Interns Selection</a></li>
                         <li><a href="<?php echo base_url(); ?>Admin/selection_jobapplicants"><i class="fa fa-circle-o"></i> Job Applicants Selection</a></li>
                     </ul>
                 </li>
@@ -148,12 +148,13 @@
         <section class="content-header">
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Dashboard</li>
+                <li class="active">Selections</li>
+                <li class="active">Interns Selections</li>
             </ol>
         </section><br/>
 
         <section class="content">
-            <h4 style="text-align: center;font-weight: bolder">Verify qualifications and Verify Companies</h4><br/>
+            <h4 style="text-align: center;font-weight: bolder">Interns Selections</h4><br/>
 
 
         </section>

@@ -26,7 +26,7 @@ class Admin extends CI_Controller {
                 $this->session->set_userdata($session_data);
                 redirect(base_url().'Admin/enter');
             }else {
-                $this->session->set_flashdata('error', 'Invalid username or password!');
+                $this->session->set_flashdata('error', '<div class="alert alert-danger" role="alert">Invalid email or password!</div>');
                 redirect(base_url().'Admin');
             }
 
@@ -51,5 +51,33 @@ class Admin extends CI_Controller {
 
     function addAdmin(){
 
+    }
+
+    function dashboard(){
+        $this->load->view('Pages/Admin/dashboard');
+    }
+
+    function employers(){
+        $this->load->view('Pages/Admin/employers');
+    }
+
+    function interns(){
+        $this->load->view('Pages/Admin/interns');
+    }
+
+    function jobapplicants(){
+        $this->load->view('Pages/Admin/jobapplicants');
+    }
+
+    function selection_interns(){
+        $this->load->view('Pages/Admin/internSelections');
+    }
+
+    function selection_jobapplicants(){
+        $this->load->view('Pages/Admin/jobSelections');
+    }
+
+    function notifications(){
+        $this->load->view('Pages/Admin/notifications');
     }
 }

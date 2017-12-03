@@ -43,7 +43,7 @@
 
     <header class="main-header">
         <!-- Logo -->
-        <a href="<?php echo base_url(); ?>" class="logo">
+        <a href="<?php echo base_url(); ?>Welcome/Company_main" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>M</b></span>
             <!-- logo for regular state and mobile devices -->
@@ -77,10 +77,10 @@
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="<?php echo base_url();?>Admin/addAdmin" class="btn btn-default btn-flat">Add Admin</a>
+                                    <a href="<?php echo base_url(); ?>Applicant/profile" class="btn btn-default btn-flat">Profile</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="<?php echo base_url(); ?>Admin/logout" class="btn btn-default btn-flat">Sign out</a>
+                                    <a href="<?php echo base_url(); ?>Applicant/logout" class="btn btn-default btn-flat">Sign out</a>
                                 </div>
                             </li>
                         </ul>
@@ -104,36 +104,23 @@
             </div>
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
-                <li class="active">
-                    <a href="<?php echo base_url(); ?>Admin/dashboard">
+                <li>
+                    <a href="<?php echo base_url(); ?>Applicant/dashboard">
                         <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                     </a>
                 </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-folder"></i> <span>Selections</span>
+                <li>
+                    <a href="<?php echo base_url(); ?>Applicant/interviewRequests">
+                        <i class="fa fa-folder"></i> <span>Interview Requests</span>
                     </a>
-                    <ul class="treeview-menu">
-                        <li><a href="<?php echo base_url(); ?>Admin/selection_interns"><i class="fa fa-circle-o"></i> Interns Selection</a></li>
-                        <li><a href="<?php echo base_url(); ?>Admin/selection_jobapplicants"><i class="fa fa-circle-o"></i> Job Applicants Selection</a></li>
-                    </ul>
-                </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-folder"></i> <span>Applicants</span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="<?php echo base_url(); ?>Admin/interns"><i class="fa fa-circle-o"></i> Interns</a></li>
-                        <li><a href="<?php echo base_url(); ?>Admin/jobapplicants"><i class="fa fa-circle-o"></i> Job Applicants</a></li>
-                    </ul>
                 </li>
                 <li>
-                    <a href="<?php echo base_url(); ?>Admin/employers">
+                    <a href="<?php echo base_url(); ?>Applicant/employers">
                         <i class="fa fa-dashboard"></i> <span>Companies</span>
                     </a>
                 </li>
-                <li>
-                    <a href="<?php echo base_url(); ?>Admin/notifications">
+                <li class="active">
+                    <a href="<?php echo base_url(); ?>Applicant/notifications">
                         <i class="fa fa-bell-o"></i> <span>Notifications</span>
                     </a>
                 </li>
@@ -148,12 +135,13 @@
         <section class="content-header">
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Dashboard</li>
+                <li class="active">Notifications</li>
             </ol>
         </section><br/>
 
         <section class="content">
-            <h4 style="text-align: center;font-weight: bolder">Verify qualifications and Verify Companies</h4><br/>
+            <h4 style="text-align: center;font-weight: bolder">Notifications</h4>
+            <br/>
 
 
         </section>
