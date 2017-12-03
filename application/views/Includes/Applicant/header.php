@@ -48,6 +48,10 @@
             margin-left: 10px;
         }
 
+        .bg-4 {
+            background-color: lightgrey; /* Black Gray */
+        }
+
         .featurette-divider {
             margin: 80px 0; /* Space out the Bootstrap <hr> more */
         }

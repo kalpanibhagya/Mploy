@@ -29,7 +29,7 @@
                         As a volunteer house you can share your house with volunteers from all around the country.</p>
                 </div>
                 <div class="col-md-5">
-                    <img class="featurette-image img-responsive center-block" style="height: 350px" src="<?php echo base_url(); ?>assets/images/software-engineer.jpg" alt="Generic placeholder image">
+                    <img class="featurette-image img-responsive center-block" style="width: 500px;height: 350px" src="<?php echo base_url(); ?>assets/images/programmer.jpg" alt="Generic placeholder image">
                 </div>
             </div>
         </div>
@@ -37,24 +37,48 @@
         <hr class="featurette-divider">
 
         <div id="getstarted" class="row">
-            <h1 style="color: forestgreen;font-weight: bolder;margin-bottom: 30px" class="text-center">Want to volunteer for the orgranic farms and learn new thing?</h1>
+            <h1 style="color: forestgreen;font-weight: bolder;margin-bottom: 30px" class="text-center">Get Started as a Job Applicant</h1>
             <div class="col-lg-4">
-                <img class="img-circle" src="<?php echo base_url(); ?>assets/images/volunteer.jpg" alt="Generic placeholder image" width="140" height="140">
+                <img class="img-circle" src="<?php echo base_url(); ?>assets/images/signup.png" alt="Generic placeholder image" width="140" height="140">
                 <h2 style="font-weight: bold">Step 1</h2>
-                <p>Sign up as a Volunteer</p><br/>
+                <p>Sign up as a Job Seeker</p><br/>
                 <p><a class="btn btn-primary" href="<?php echo base_url(); ?>main" role="button">Sign up &raquo;</a></p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
-                <img class="img-circle" src="<?php echo base_url(); ?>assets/images/calendar.png" alt="Generic placeholder image" width="140" height="140">
+                <img class="img-circle" src="<?php echo base_url(); ?>assets/images/update.png" alt="Generic placeholder image" width="140" height="140">
                 <h2 style="font-weight: bold">Step 2</h2>
-                <p>Join an event and find new friends</p><br/>
-                <p><a class="btn btn-primary" href="#" role="button">Events &raquo;</a></p>
+                <p>Update your profile</p><br/>
+                <p><a class="btn btn-primary" href="<?php echo base_url(); ?>Applicant/Login" role="button">Update &raquo;</a></p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
-                <img class="img-circle" src="<?php echo base_url(); ?>assets/images/suitcase.png" alt="Generic placeholder image" width="140" height="140">
+                <img class="img-circle" src="<?php echo base_url(); ?>assets/images/apply.png" alt="Generic placeholder image" width="140" height="140">
                 <h2 style="font-weight: bold">Step 3</h2>
-                <p>Find a Volunteer House, travel and enjoy volunteering!!</p>
-                <p><a class="btn btn-primary" href="#" role="button">Volunteer Houses &raquo;</a></p>
+                <p>Apply for a job and Wait for the Interview Request!!</p>
+                <p><a class="btn btn-primary" href="<?php echo base_url(); ?>Applicant/Login" role="button">Apply &raquo;</a></p><br/>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div id="getstarted" class="row">
+            <h1 style="color: forestgreen;font-weight: bolder;margin-bottom: 30px" class="text-center">Get Started as an Internship Applicant</h1>
+            <div class="col-lg-4">
+                <img class="img-circle" src="<?php echo base_url(); ?>assets/images/signup.png" alt="Generic placeholder image" width="140" height="140">
+                <h2 style="font-weight: bold">Step 1</h2>
+                <p>Sign up as a Job Seeker</p><br/>
+                <p><a class="btn btn-primary" href="<?php echo base_url(); ?>Applicant/Signup" role="button">Sign up &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img class="img-circle" src="<?php echo base_url(); ?>assets/images/update.png" alt="Generic placeholder image" width="140" height="140">
+                <h2 style="font-weight: bold">Step 2</h2>
+                <p>Update your profile</p><br/>
+                <p><a class="btn btn-primary" href="<?php echo base_url(); ?>Applicant/Login" role="button">Update &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img class="img-circle" src="<?php echo base_url(); ?>assets/images/clock.png" alt="Generic placeholder image" width="140" height="140">
+                <h2 style="font-weight: bold">Step 3</h2>
+                <p>You don't need to apply System will send you an Interview Request if you get selected!!</p>
+                <p><a class="btn btn-primary" href="<?php echo base_url(); ?>Applicant/Login" role="button">Interview Requests &raquo;</a></p>
             </div>
         </div>
 
