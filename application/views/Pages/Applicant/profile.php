@@ -155,7 +155,7 @@
 
                         <h3  class="profile-username text-center"><b><?php echo $username?></b></h3>
 
-                        <h3 class="profile-username text-center"><?php echo $first_name. $last_name?></h3>
+                        <h3 class="profile-username text-center"><?php echo $full_name?></h3>
 
                         <p class="text-muted text-center">Software Engineer</p>
                         <p class="text-muted text-center"><?php echo $dob ?></p>
