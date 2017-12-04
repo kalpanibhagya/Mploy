@@ -49,35 +49,9 @@ class Admin extends CI_Controller {
         redirect(base_url().'Admin');
     }
 
-    function addAdmin(){
-
-    }
 
     function dashboard(){
         $this->load->view('Pages/Admin/dashboard');
     }
 
-    function employers(){
-        $this->load->view('Pages/Admin/employers');
-    }
-
-    function interns(){
-        $this->load->view('Pages/Admin/interns');
-    }
-
-    function jobapplicants(){
-        $this->load->view('Pages/Admin/jobapplicants');
-    }
-
-    function selection_interns(){
-        $this->load->view('Pages/Admin/internSelections');
-    }
-
-    function selection_jobapplicants(){
-        $this->load->view('Pages/Admin/jobSelections');
-    }
-
-    function notifications(){
-        $this->load->view('Pages/Admin/notifications');
-    }
 }
