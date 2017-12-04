@@ -616,7 +616,7 @@
                         </div>
                         <div class="container-fluid">
                             <div class="panel panel-default">
-                                <div class="panel-heading"><b>Extra curricular activity</b></div>
+                                <div class="panel-heading"><b>Hackathons/ Societies/ Community works</b></div>
                                 <div class="panel-body">
                                     <div class="row">
                                         <div class="col-sm-6" class="col-md-6">
@@ -629,12 +629,9 @@
                                                     <div class="form-group">
                                                         <label for="selt">* Type</label>
                                                         <select class="form-control" id="selt">
-                                                            <option>none</option>
                                                             <option>Hackthons</option>
-                                                            <option>Competitions</option>
-                                                            <option>Sports</option>
-                                                            <option>Clubs</option>
-                                                            <option>Music</option>
+                                                            <option>Societies</option>
+                                                            <option>Community works</option>
                                                         </select>
                                                     </div>
                                                     <form method="post">
@@ -673,42 +670,23 @@
                                             <div class="panel-heading"><b>Skill</b></div>
                                             <div class="panel-body">
                                                 <div class="form-group">
-                                                    <label for="seln">* Name</label>
-                                                    <select class="form-control" id="seln">
-                                                        <option>none</option>
-                                                        <option>Singing</option>
-                                                        <option>Instruments playing</option>
-                                                        <option>Public Speeking</option>
-                                                        <option>Documentation</option>
-                                                        <option>Team working</option>
-                                                    </select>
-                                                </div>
-                                                <!--star rating buttons-->
-                                                <label for="reviewStars-input">* Rating</label></br>
-                                                <div id="reviewStars-input">
-                                                    <input id="star-4" type="radio" name="reviewStars"/>
-                                                    <label title="gorgeous" for="star-4"></label>
-
-                                                    <input id="star-3" type="radio" name="reviewStars"/>
-                                                    <label title="good" for="star-3"></label>
-
-                                                    <input id="star-2" type="radio" name="reviewStars"/>
-                                                    <label title="regular" for="star-2"></label>
-
-                                                    <input id="star-1" type="radio" name="reviewStars"/>
-                                                    <label title="poor" for="star-1"></label>
-
-                                                    <input id="star-0" type="radio" name="reviewStars"/>
-                                                    <label title="bad" for="star-0"></label>
-                                                </div></br>
-                                                <br>
-                                                <br>
-
-                                                <div>
+                                                    <label for="name">* Add your Skills</label>
                                                     <ul>
-                                                        <li><input type="submit" name="" value="save" class="btn" id="save2"></li>
-                                                        <li><input type="submit" name="" value="cancel" class="btn" id="cancel2"></li>
+                                                        <li onclick="this.parentNode.removeChild(this);">
+                                                            <input type="hidden" name="ingredients[]" value="None" />
+                                                            None
+                                                        </li>
                                                     </ul>
+                                                    <select class="form-control" onchange="selectIngredient(this);">
+                                                        <option value="1">Java</option>
+                                                        <option value="2">Php</option>
+                                                        <option value="3">Android</option>
+                                                        <option value="4">C</option>
+                                                        <option value="5">C++</option>
+                                                        <option value="6">Scrum</option>
+                                                        <option value="7">Firebase</option>
+                                                        <option value="Other">Other</option>
+                                                    </select>
                                                 </div>
                                                 <div class="clearfix"></div>
                                             </div>
@@ -764,7 +742,32 @@
     </footer>
 </div>
 <!-- ./wrapper -->
+<script>
+    function selectIngredient(select)
+    {
+        var option = select.options[select.selectedIndex];
+        var ul = select.parentNode.getElementsByTagName('ul')[0];
 
+        var choices = ul.getElementsByTagName('input');
+        for (var i = 0; i < choices.length; i++)
+            if (choices[i].value == option.value)
+                return;
+
+        var li = document.createElement('li');
+        var input = document.createElement('input');
+        var text = document.createTextNode(option.firstChild.data);
+
+        input.type = 'hidden';
+        input.name = 'ingredients[]';
+        input.value = option.value;
+
+        li.appendChild(input);
+        li.appendChild(text);
+        li.setAttribute('onclick', 'this.parentNode.removeChild(this);');
+
+        ul.appendChild(li);
+    }
+</script>
 <!-- jQuery 3 -->
 <script src="<?php echo base_url()."assets/AdminLTE/"; ?>bower_components/jquery/dist/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->

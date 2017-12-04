@@ -161,32 +161,10 @@
                                                 <div class="panel-heading">Academic Qualifications</div>
                                                 <div class="panel-body">
                                                     <div class="form-group">
-                                                        <label for="name">* Accepted Degrees</label>
-                                                        <div>
-                                                            <ul>
-                                                                <li onclick="this.parentNode.removeChild(this);">
-                                                                    <input type="hidden" name="ingredients[]" value="None" />
-                                                                    None
-                                                                </li>
-                                                            </ul>
-                                                            <select class="form-control" onchange="selectIngredient(this);">
-                                                                <option value="1">None</option>
-                                                                <option value="Computer Engineering">Computer Engineering</option>
-                                                                <option value="Computer Science">Computer Science</option>
-                                                                <option value="Information Technology">Information Technology</option>
-                                                                <option value="Information Systems">Information Systems</option>
-                                                                <option value="Physical Sciences(Computer science)">Physical Sciences(Computer science)</option>
-                                                                <option value="Applied Sciences(IT)">Applied Sciences(IT)</option>
-                                                                <option value=">Management">Management</option>
-                                                                <option value="Other">Other</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
                                                         <table>
                                                             <tr>
                                                                 <th>Degree Type</th>
-                                                                <th>Marks</th>
+                                                                <th>Marks/ Perecentage ?</th>
                                                             </tr>
                                                             <tr>
                                                                 <td>Certificate</td>
@@ -219,71 +197,6 @@
                                                                 </td>
                                                             </tr>
                                                         </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="floating-box">
-                                        <div class="col-md-6">
-                                            <div class="panel panel-default">
-                                                <div class="panel-heading">Professional Qualifications</div>
-                                                <div class="panel-body">
-                                                    <div class="form-group">
-                                                        <label for="name">* Accepted Professional Qualifications</label>
-                                                        <ul>
-                                                            <li onclick="this.parentNode.removeChild(this);">
-                                                                <input type="hidden" name="ingredients[]" value="None" />
-                                                                None
-                                                            </li>
-                                                        </ul>
-                                                        <select class="form-control" onchange="selectIngredient(this);">
-                                                            <option value="1">None</option>
-                                                            <option value="2">CIMA</option>
-                                                            <option value="3">CCNA</option>
-                                                            <option value="4">Oracle Certified Java Developer</option>
-                                                            <option value="5">Certified Software Development Associate(IEEE)</option>
-                                                            <option value="6">Certified Software Development Professional(IEEE)</option>
-                                                            <option value="7">Software Quality Engineer Certification (CSQE)</option>
-                                                            <option value="8">Charted Accountant</option>
-                                                            <option value="Other">Other</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="name">* Marks for each</label>
-                                                        <input class="form-control" id="marks11" name="marks11" type="number" required="">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="floating-box">
-                                        <div class="col-md-6">
-                                            <div class="panel panel-default">
-                                                <div class="panel-heading">Extra Curricular Activities</div>
-                                                <div class="panel-body">
-                                                    <div class="form-group">
-                                                        <label for="name">* Accepted Activities</label>
-                                                        <ul>
-                                                            <li onclick="this.parentNode.removeChild(this);">
-                                                                <input type="hidden" name="ingredients[]" value="None" />
-                                                                None
-                                                            </li>
-                                                        </ul>
-                                                        <select class="form-control" onchange="selectIngredient(this);">
-                                                            <option value="1">None</option>
-                                                            <option value="2">Sports</option>
-                                                            <option value="3">Music</option>
-                                                            <option value="4">Hackthons</option>
-                                                            <option value="5">Competitions</option>
-                                                            <option value="Other">Other</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="name">* Marks for each</label>
-                                                        <input class="form-control" id="marks12" name="marks12" type="number" required="">
                                                     </div>
                                                 </div>
                                             </div>
@@ -344,14 +257,83 @@
                                         </div>
                                     </div>
 
+                                    <div class="floating-box">
+                                        <div class="col-md-6">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">Professional Qualifications</div>
+                                                <div class="panel-body">
+                                                    <div class="form-group">
+                                                        <table>
+                                                            <tr>
+                                                                <th>Qualfication type</th>
+                                                                <th>Marks/ Perecentage ?</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Qualification1</td>
+                                                                <td>
+                                                                    <input class="form-control" id="marks1" name="marks1" type="number" required="">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Qualification2</td>
+                                                                <td>
+                                                                    <input class="form-control" id="marks2" name="marks2" type="number" required="">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Qualification3</td>
+                                                                <td>
+                                                                    <input class="form-control" id="marks3" name="marks3" type="number" required="">
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
 
                                     <div class="floating-box">
                                         <div class="col-md-6">
                                             <div class="panel panel-default">
-                                                <div class="panel-heading">Skills</div>
+                                                <div class="panel-heading">Hackthons/Socities/Community works</div>
                                                 <div class="panel-body">
                                                     <div class="form-group">
-                                                        <label for="name">* Accepted Skills</label>
+                                                        <table>
+                                                            <tr>
+                                                                <td>Hackthons</td>
+                                                                <td>
+                                                                    <input class="form-control" id="marks1" name="marks1" type="number" required="">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Societies</td>
+                                                                <td>
+                                                                    <input class="form-control" id="marks2" name="marks2" type="number" required="">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Community works</td>
+                                                                <td>
+                                                                    <input class="form-control" id="marks3" name="marks3" type="number" required="">
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="floating-box">
+                                        <div class="col-md-6">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">Required Skills</div>
+                                                <div class="panel-body">
+                                                    <div class="form-group">
+                                                        <label for="name">* Add your Skills</label>
                                                         <ul>
                                                             <li onclick="this.parentNode.removeChild(this);">
                                                                 <input type="hidden" name="ingredients[]" value="None" />
@@ -359,30 +341,22 @@
                                                             </li>
                                                         </ul>
                                                         <select class="form-control" onchange="selectIngredient(this);">
-                                                            <option value="1">None</option>
-                                                            <option value="2">Singing</option>
-                                                            <option value="3">Instruments playing</option>
-                                                            <option value="4">Dancing</option>
-                                                            <option value="5">Debating</option>
-                                                            <option value="6">Team working</option>
+                                                            <option value="1">Java</option>
+                                                            <option value="2">Php</option>
+                                                            <option value="3">Android</option>
+                                                            <option value="4">C</option>
+                                                            <option value="5">C++</option>
+                                                            <option value="6">Scrum</option>
+                                                            <option value="7">Firebase</option>
                                                             <option value="Other">Other</option>
                                                         </select>
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label for="name">* Marks for each</label>
-                                                        <input class="form-control" id="marks12" name="marks12" type="number" required="">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <div align="right">
-                                                    <a href="#sectionC" class="btn btn-success" role="button">Next</a>
-                                                    <a href="#" class="btn btn-default" role="button">Reset</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+
+
                                 </div>
                             </div>
                         </div>
