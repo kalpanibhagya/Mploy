@@ -27,6 +27,15 @@ class Company_m extends CI_Model{
         $query = $this->db->get("registered_company");
         return $query;
     }
+
+    public function showAllEmployers(){
+        $query = $this->db->get('registered_company');
+        if($query->num_rows() > 0){
+            return $query->result();
+        }else{
+            return false;
+        }
+    }
 }
 
 ?>

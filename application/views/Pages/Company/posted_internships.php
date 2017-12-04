@@ -154,7 +154,7 @@
             </div>
             <br/>
             <div align="center">
-                <button class="btn btn-success" href="<?php echo base_url(); ?>Company/posted_internships"><span class="glyphicon glyphicon-plus-sign"></span> Post an new Internship</button>
+                <button class="btn btn-success" href="<?php echo base_url(); ?>Company/post_a_job"><span class="glyphicon glyphicon-plus-sign"></span> Post an new Internship</button>
             </div>
             <br/>
 

@@ -197,11 +197,20 @@ class Company extends CI_Controller {
         $this->load->view('Pages/Company/posted_job');
     }
 
+    function post_a_job(){
+        $this->load->view('Pages/Company/job');
+    }
+
     function employers(){
         $this->load->view('Pages/Company/employers');
     }
 
     function notifications(){
         $this->load->view('Pages/Company/notifications');
+    }
+
+    public function showAllEmployers(){
+        $result = $this->m->showAllEmployers();
+        echo json_encode($result);
     }
 }

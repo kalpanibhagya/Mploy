@@ -153,7 +153,21 @@
             </div>
             <br/>
 
+            <table class="table table-bordered table-responsive" style="margin-top: 20px;" id="userTbl">
+                <thead>
+                <tr>
+                    <!--<td>ID</td>-->
+                    <td>Company Name</td>
+                    <td>Email</td>
+                    <td>Address</td>
+                    <td>Telephone</td>
+                    <td>Website</td>
+                </tr>
+                </thead>
+                <tbody id="showdata">
 
+                </tbody>
+            </table>
         </section>
 
     </div>
@@ -165,7 +179,51 @@
     </footer>
 </div>
 <!-- ./wrapper -->
+<script>
+    $(function(){
+        showAllEmployers();
 
+        function showAllEmployers(){
+            $.ajax({
+                type: 'ajax',
+                url: '<?php echo base_url() ?>Company/showAllEmployers',
+                async: false,
+                dataType: 'json',
+                success: function(data){
+                    var html = '';
+                    var i;
+                    for(i=0; i<data.length; i++){
+                        html +='<tr>'+
+                            //'<td>'+data[i].id+'</td>'+
+                            '<td>'+data[i].company_name+'</td>'+
+                            '<td>'+data[i].email+'</td>'+
+                            '<td>'+data[i].address+'</td>'+
+                            '<td>'+data[i].telephone+'</td>'+
+                            '<td>'+data[i].website+'</td>;
+                    }
+                    $('#showdata').html(html);
+                },
+                error: function(){
+                    alert('Could not get Data from Database');
+                }
+            });
+        }
+    });
+
+    $(document).ready(function(){
+        $('.search').on('keyup',function(){
+            var searchTerm = $(this).val().toLowerCase();
+            $('#userTbl tbody tr').each(function(){
+                var lineStr = $(this).text().toLowerCase();
+                if(lineStr.indexOf(searchTerm) === -1){
+                    $(this).hide();
+                }else{
+                    $(this).show();
+                }
+            });
+        });
+    });
+</script>
 <!-- jQuery 3 -->
 <script src="<?php echo base_url()."assets/AdminLTE/"; ?>bower_components/jquery/dist/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->

@@ -154,7 +154,7 @@
             </div>
             <br/>
             <div align="center">
-                <a class="btn btn-success" href="<?php echo base_url(); ?>Company/posted_jobs"><span class="glyphicon glyphicon-plus-sign"></span> Post a new Job</a>
+                <a class="btn btn-success" href="<?php echo base_url(); ?>Company/post_a_job"><span class="glyphicon glyphicon-plus-sign"></span> Post a new Job</a>
             </div>
             <br/>
 
