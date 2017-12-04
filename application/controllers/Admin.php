@@ -38,7 +38,10 @@ class Admin extends CI_Controller {
 
     function enter(){
         if ($this->session->userdata('email') != ''){
-            $this->load->view('Pages/Admin/dashboard');
+            $email = $this->session->userdata('email');
+            $this->load->model('Admin_m');
+            $data = $this->Admin_m->get_data($email);
+            $this->load->view('Pages/Admin/dashboard',$data);
         } else {
             redirect(base_url().'Admin');
         }
@@ -53,5 +56,4 @@ class Admin extends CI_Controller {
     function dashboard(){
         $this->load->view('Pages/Admin/dashboard');
     }
-
 }
