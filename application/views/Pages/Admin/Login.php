@@ -1,8 +1,8 @@
 <section style="margin-top: 80px">
     <div class="container" align="center">
-        <img src='<?php echo base_url();?>assets/images/logo.png' width="100px" height="100px"><br/>
+        <!--img src='<?php echo base_url();?>assets/images/logo.png' width="100px" height="100px"><br/>
     </div>
-</section>
+</section-->
 
 
 <section>
