@@ -151,6 +151,7 @@
                 <!-- Profile Image -->
                 <div class="box box-primary">
                     <div class="box-body box-profile">
+                        <a class="glyphicon glyphicon-pencil" role="button"></a>
                         <img class="profile-user-img img-responsive img-square" src="#" alt="User profile picture" style="height: 200px;width: 200px">
 
                         <h3  class="profile-username text-center"><b><?php echo $username?></b></h3>
@@ -166,6 +167,7 @@
                 <!-- /.box -->
 
                 <div class="box box-primary">
+                    <a class="glyphicon glyphicon-pencil" role="button"></a>
                     <div class="box-header with-border">
                         <h3 class="box-title">Contact Details</h3>
                     </div>
