@@ -21,7 +21,7 @@
         <thead>
         <tr>
             <th>Company Name</th>
-            <th>Company Registration Number</th>
+            <th>Company Registration No.</th>
             <th>Country</th>
             <th>Email</th>
             <th>Address</th>
@@ -242,7 +242,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-3">Company Registration Number</label>
+                            <label class="control-label col-md-3">Company Registration No.</label>
                             <div class="col-md-9">
                                 <input name="register_no" placeholder="Company Registration Number" class="form-control" type="text">
                             </div>
@@ -460,7 +460,7 @@
                                     <option value="GS">South Georgia and the South Sandwich Islands</option>
                                     <option value="SS">South Sudan</option>
                                     <option value="ES">Spain</option>
-                                    <option value="Sri Lanka">Sri Lanka</option>
+                                    <option value="LK">Sri Lanka</option>
                                     <option value="SD">Sudan</option>
                                     <option value="SR">Suriname</option>
                                     <option value="SJ">Svalbard and Jan Mayen</option>

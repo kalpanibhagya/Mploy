@@ -90,12 +90,12 @@ class Admin_dashboard extends CI_Controller
     public function ajax_add()
     {
         $data = array(
-            'company_name' => $this->input->post('firstName'),
-            'register_no' => $this->input->post('lastName'),
-            'country' => $this->input->post('gender'),
-            'email' => $this->input->post('gender'),
+            'company_name' => $this->input->post('company_name'),
+            'register_no' => $this->input->post('register_no'),
+            'country' => $this->input->post('country'),
+            'email' => $this->input->post('email'),
             'address' => $this->input->post('address'),
-            'contact_no' => $this->input->post('dob'),
+            'contact_no' => $this->input->post('contact_no'),
             'hiring_status' => $this->input->post('hiring_status'),
         );
         $insert = $this->person->save($data);
@@ -105,12 +105,12 @@ class Admin_dashboard extends CI_Controller
     public function ajax_update()
     {
         $data = array(
-            'company_name' => $this->input->post('firstName'),
-            'register_no' => $this->input->post('lastName'),
-            'country' => $this->input->post('gender'),
-            'email' => $this->input->post('gender'),
+            'company_name' => $this->input->post('company_name'),
+            'register_no' => $this->input->post('register_no'),
+            'country' => $this->input->post('country'),
+            'email' => $this->input->post('email'),
             'address' => $this->input->post('address'),
-            'contact_no' => $this->input->post('dob'),
+            'contact_no' => $this->input->post('contact_no'),
             'hiring_status' => $this->input->post('hiring_status'),
         );
         $this->person->update(array('company_id' => $this->input->post('company_id')), $data);
