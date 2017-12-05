@@ -47,7 +47,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-left">
-                    <li><a href="<?php echo base_url('aboutus');?>">About us</a></li>
+                    <li><a href="<?php echo base_url(); ?>Welcome/aboutus">About us</a></li>
                 </ul>
                 <form class="navbar-form navbar-right">
                     <a class="btn btn-success" href="<?php echo base_url(); ?>Welcome/Applicant_main" role="button">For Job Seekers</a>
