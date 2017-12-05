@@ -7,12 +7,13 @@ class Company_m extends CI_Model{
     }
 
     function can_login($email, $password){
+        $this->db->select('*');
+        $this->db->from('registered_company');
         $this->db->where('email', $email);
         $this->db->where('password', $password);
-        $query = $this->db->get('registered_company');
 
-        if ($query -> num_rows() > 0){
-            return true;
+        if ($query = $this->db->get()){
+            return $query->row_array();
         }else {
             return false;
         }
@@ -25,6 +26,15 @@ class Company_m extends CI_Model{
     public function fetch_data(){
         $query = $this->db->get("registered_company");
         return $query;
+    }
+
+    public function showAllEmployers(){
+        $query = $this->db->get('registered_company');
+        if($query->num_rows() > 0){
+            return $query->result();
+        }else{
+            return false;
+        }
     }
 }
 

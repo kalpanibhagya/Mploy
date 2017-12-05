@@ -28,12 +28,19 @@
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="<?php echo base_url()."assets/AdminLTE/"; ?>plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.min.css') ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap-theme.min.css') ?>">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
     <![endif]-->
+
 
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -62,7 +69,7 @@
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <img src="<?php echo base_url()."assets/AdminLTE/"; ?>dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                            <span class="hidden-xs">Alexander Pierce</span>
+                            <span class="hidden-xs"><?php echo $this->session->userdata('username'); ?></span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
@@ -70,8 +77,8 @@
                                 <img src="<?php echo base_url()."assets/AdminLTE/"; ?>dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                                 <p>
-                                    Alexander Pierce - Web Developer
-                                    <small>Member since Nov. 2012</small>
+                                    <?php echo $this->session->userdata('username'); ?>
+                                    <small><?php echo $this->session->userdata('email'); ?></small>
                                 </p>
                             </li>
                             <!-- Menu Footer-->
@@ -99,7 +106,7 @@
                     <img src="<?php echo base_url()."assets/AdminLTE/"; ?>dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p>Alexander Pierce</p>
+                    <p><?php echo $this->session->userdata('username'); ?></p>
                 </div>
             </div>
             <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -153,7 +160,21 @@
             </div>
             <br/>
 
+            <table class="table table-bordered table-responsive" style="margin-top: 20px;" id="userTbl">
+                <thead>
+                <tr>
+                    <!--<td>ID</td>-->
+                    <td>Company Name</td>
+                    <td>Email</td>
+                    <td>Address</td>
+                    <td>Telephone</td>
+                    <td>Website</td>
+                </tr>
+                </thead>
+                <tbody id="showdata">
 
+                </tbody>
+            </table>
         </section>
 
     </div>
@@ -165,7 +186,51 @@
     </footer>
 </div>
 <!-- ./wrapper -->
+<script>
+    $(function(){
+        showAllEmployers();
 
+        function showAllEmployers(){
+            $.ajax({
+                type: 'ajax',
+                url: '<?php echo base_url() ?>Company/showAllEmployers',
+                async: false,
+                dataType: 'json',
+                success: function(data){
+                    var html = '';
+                    var i;
+                    for(i=0; i<data.length; i++){
+                        html +='<tr>'+
+                            //'<td>'+data[i].id+'</td>'+
+                            '<td>'+data[i].company_name+'</td>'+
+                            '<td>'+data[i].email+'</td>'+
+                            '<td>'+data[i].address+'</td>'+
+                            '<td>'+data[i].telephone+'</td>'+
+                            '<td>'+data[i].website+'</td>;
+                    }
+                    $('#showdata').html(html);
+                },
+                error: function(){
+                    alert('Could not get Data from Database');
+                }
+            });
+        }
+    });
+
+    $(document).ready(function(){
+        $('.search').on('keyup',function(){
+            var searchTerm = $(this).val().toLowerCase();
+            $('#userTbl tbody tr').each(function(){
+                var lineStr = $(this).text().toLowerCase();
+                if(lineStr.indexOf(searchTerm) === -1){
+                    $(this).hide();
+                }else{
+                    $(this).show();
+                }
+            });
+        });
+    });
+</script>
 <!-- jQuery 3 -->
 <script src="<?php echo base_url()."assets/AdminLTE/"; ?>bower_components/jquery/dist/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->

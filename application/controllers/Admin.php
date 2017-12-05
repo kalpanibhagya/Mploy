@@ -38,7 +38,10 @@ class Admin extends CI_Controller {
 
     function enter(){
         if ($this->session->userdata('email') != ''){
-            $this->load->view('Pages/Admin/dashboard');
+            $email = $this->session->userdata('email');
+            $this->load->model('Admin_m');
+            $data = $this->Admin_m->get_data($email);
+            $this->load->view('Pages/Admin/dashboard',$data);
         } else {
             redirect(base_url().'Admin');
         }
@@ -49,35 +52,8 @@ class Admin extends CI_Controller {
         redirect(base_url().'Admin');
     }
 
-    function addAdmin(){
-
-    }
 
     function dashboard(){
         $this->load->view('Pages/Admin/dashboard');
-    }
-
-    function employers(){
-        $this->load->view('Pages/Admin/employers');
-    }
-
-    function interns(){
-        $this->load->view('Pages/Admin/interns');
-    }
-
-    function jobapplicants(){
-        $this->load->view('Pages/Admin/jobapplicants');
-    }
-
-    function selection_interns(){
-        $this->load->view('Pages/Admin/internSelections');
-    }
-
-    function selection_jobapplicants(){
-        $this->load->view('Pages/Admin/jobSelections');
-    }
-
-    function notifications(){
-        $this->load->view('Pages/Admin/notifications');
     }
 }

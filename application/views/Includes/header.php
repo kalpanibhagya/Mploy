@@ -49,7 +49,7 @@
                 <ul class="nav navbar-nav navbar-left">
                     <li><a href="<?php echo base_url(); ?>Welcome/aboutus">About us</a></li>
                 </ul>
-                <form class="navbar-form navbar-right" action="<?php echo base_url()?>main/login_validation" method="post">
+                <form class="navbar-form navbar-right">
                     <a class="btn btn-success" href="<?php echo base_url(); ?>Welcome/Applicant_main" role="button">For Job Seekers</a>
                     <a class="btn btn-success" href="<?php echo base_url(); ?>Welcome/Company_main" role="button">For Employers</a>
                 </form>
