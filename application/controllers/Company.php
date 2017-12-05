@@ -134,8 +134,8 @@ class Company extends CI_Controller {
         //$this->form_validation->set_rules('email', 'Email', 'required');
         $this->form_validation->set_rules('telephone', 'Phone Number', 'required|numeric');
         $this->form_validation->set_rules('address', 'Address', 'required');
-        //$this->form_validation->set_rules('linkedin', 'Linked In', 'required|valid_url');
-        //$this->form_validation->set_rules('website', 'Website', 'required|valid_url');
+        $this->form_validation->set_rules('linkedin', 'Linked In', 'required|valid_url');
+        $this->form_validation->set_rules('website', 'Website', 'required|valid_url');
         $this->form_validation->set_rules('cname', 'Name', 'required');
         $this->form_validation->set_rules('cemail', 'Email Address', 'required|valid_email');
         $this->form_validation->set_rules('ctelephone', 'Contact Number', 'required|numeric');
@@ -249,6 +249,35 @@ class Company extends CI_Controller {
         echo json_encode($output);
     }
 
+    public function ajax_list_min()
+    {
+        $list = $this->person->get_datatables();
+        $data = array();
+        $no = $_POST['start'];
+        foreach ($list as $person) {
+            $no++;
+            $row = array();
+            $row[] = $person->company_name;
+            $row[] = $person->register_no;
+            $row[] = $person->verified_status;
+
+            //add html for action
+            $row[] = '<a class="btn btn-sm btn-primary" href="javascript:void(0)" title="Edit" onclick="edit_person('."'".$person->company_id."'".')"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
+            <a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Delete" onclick="delete_person('."'".$person->company_id."'".')"><i class="glyphicon glyphicon-trash"></i> Delete</a>';
+
+            $data[] = $row;
+        }
+
+        $output = array(
+            "draw" => $_POST['draw'],
+            "recordsTotal" => $this->person->count_all(),
+            "recordsFiltered" => $this->person->count_filtered(),
+            "data" => $data,
+        );
+        //output to json format
+        echo json_encode($output);
+    }
+
     public function ajax_edit($company_id)
     {
         $data = $this->person->get_by_id($company_id);
@@ -280,6 +309,17 @@ class Company extends CI_Controller {
             'address' => $this->input->post('address'),
             'contact_no' => $this->input->post('contact_no'),
             'hiring_status' => $this->input->post('hiring_status'),
+        );
+        $this->person->update(array('company_id' => $this->input->post('company_id')), $data);
+        echo json_encode(array("status" => TRUE));
+    }
+
+    public function ajax_update_min()
+    {
+        $data = array(
+            'company_name' => $this->input->post('company_name'),
+            'register_no' => $this->input->post('register_no'),
+            'verified_status' => $this->input->post('verified_status'),
         );
         $this->person->update(array('company_id' => $this->input->post('company_id')), $data);
         echo json_encode(array("status" => TRUE));

@@ -85,7 +85,7 @@
             success: function(data)
             {
 
-                $('[name="admin_id"]').val(data.admin_id);
+                $('[name="username"]').val(data.username);
                 $('[name="email"]').val(data.email);
                 $('[name="password"]').val(data.password);
 
@@ -149,8 +149,8 @@
             text: "You won't be able to revert this!",
             type: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
             confirmButtonText: 'Yes, delete it!',
             closeOnConfirm: false
         }).then(function(isConfirm) {

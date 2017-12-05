@@ -13,7 +13,7 @@
 <!-- Horizontal Form -->
 <div class="box-header with-border">
     <div class="col-md-6">
-        <h3 class="box-title">Administrators</h3>
+        <h3 class="box-title">Profile</h3>
     </div>
 
     <div class="col-md-6">

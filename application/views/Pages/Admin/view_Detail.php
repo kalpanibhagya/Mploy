@@ -13,7 +13,7 @@
   <!-- Horizontal Form -->
   <div class="box-header with-border">
     <div class="col-md-6">
-      <h3 class="box-title">Companies</h3>
+      <h3 class="box-title">Profile</h3>
     </div>
 
     <div class="col-md-6">
@@ -41,7 +41,7 @@
       </div>
 
       <div class="form-group">
-        <label for="" class="col-sm-2 control-label">Company Registration Number : </label>
+        <label for="" class="col-sm-2 control-label">Company Registration No. : </label>
 
         <div class="col-sm-6">
           <h5 class="col-sm-6 "><?php echo $data->register_no; ?></h5>
