@@ -53,7 +53,7 @@
 
             // Load data for the table's content from an Ajax source
             "ajax": {
-                "url": "<?php echo site_url('Admin_dashboard/ajax_list')?>",
+                "url": "<?php echo site_url('Company/ajax_list')?>",
                 "type": "POST"
             },
 
@@ -83,7 +83,7 @@
 
         //Ajax Load data from ajax
         $.ajax({
-            url : "<?php echo site_url('Admin_dashboard/ajax_edit/')?>/" + company_id,
+            url : "<?php echo site_url('Company/ajax_edit/')?>/" + company_id,
             type: "GET",
             dataType: "JSON",
             success: function(data)
@@ -119,11 +119,11 @@
         var url;
         if(save_method == 'add')
         {
-            url = "<?php echo site_url('Admin_dashboard/ajax_add')?>";
+            url = "<?php echo site_url('Company/ajax_add')?>";
         }
         else
         {
-            url = "<?php echo site_url('Admin_dashboard/ajax_update')?>";
+            url = "<?php echo site_url('Company/ajax_update')?>";
         }
 
         // ajax adding data to database
@@ -167,7 +167,7 @@
 
                 // ajax delete data to database
                 $.ajax({
-                    url : "<?php echo site_url('Admin_dashboard/ajax_delete')?>/"+company_id,
+                    url : "<?php echo site_url('Company/ajax_delete')?>/"+company_id,
                     type: "POST",
                     dataType: "JSON",
                     success: function(data)
@@ -196,7 +196,7 @@
     function view_person(company_id)
     {
         $.ajax({
-            url : "<?php echo site_url('Admin_dashboard/list_by_id')?>/" + company_id,
+            url : "<?php echo site_url('Company/list_by_id')?>/" + company_id,
             type: "GET",
             success: function(result)
             {

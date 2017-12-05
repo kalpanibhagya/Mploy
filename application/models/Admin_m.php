@@ -2,9 +2,9 @@
 
 class Admin_m extends CI_Model{
 
-    var $table = 'registered_company';
-    var $column = array('company_name','register_no','country','email','address','contact_no','hiring_status');
-    var $order = array('company_id' => 'desc');
+    var $table = 'administrator';
+    var $column = array('username','email','password');
+    var $order = array('admin_id' => 'desc');
 
     public function __construct()
     {
@@ -74,10 +74,10 @@ class Admin_m extends CI_Model{
         return $this->db->count_all_results();
     }
 
-    public function get_by_id($company_id)
+    public function get_by_id($admin_id)
     {
         $this->db->from($this->table);
-        $this->db->where('company_id',$company_id);
+        $this->db->where('admin_id',$admin_id);
         $query = $this->db->get();
 
         return $query->row();
@@ -95,16 +95,16 @@ class Admin_m extends CI_Model{
         return $this->db->affected_rows();
     }
 
-    public function delete_by_id($company_id)
+    public function delete_by_id($admin_id)
     {
-        $this->db->where('company_id', $company_id);
+        $this->db->where('admin_id', $admin_id);
         $this->db->delete($this->table);
     }
 
-    public function get_by_id_view($company_id)
+    public function get_by_id_view($admin_id)
     {
         $this->db->from($this->table);
-        $this->db->where('company_id',$company_id);
+        $this->db->where('admin_id',$admin_id);
         $query = $this->db->get();
         if($query->num_rows() > 0) {
             $results = $query->result();

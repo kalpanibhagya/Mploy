@@ -55,18 +55,14 @@ class Admin_dashboard extends CI_Controller
         foreach ($list as $person) {
             $no++;
             $row = array();
-            $row[] = $person->company_name;
-            $row[] = $person->register_no;
-            $row[] = $person->country;
+            $row[] = $person->username;
             $row[] = $person->email;
-            $row[] = $person->address;
-            $row[] = $person->contact_no;
-            $row[] = $person->hiring_status;
+            $row[] = $person->password;
 
             //add html for action
-            $row[] = '<a class="btn btn-sm btn-primary" href="javascript:void(0)" title="Edit" onclick="edit_person('."'".$person->company_id."'".')"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-            <a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Delete" onclick="delete_person('."'".$person->company_id."'".')"><i class="glyphicon glyphicon-trash"></i> Delete</a>
-            <a class="btn btn-sm btn-default" href="javascript:void(0)" title="View" onclick="view_person('."'".$person->company_id."'".')"><i class="glyphicon glyphicon-file"></i> View</a>';
+            $row[] = '<a class="btn btn-sm btn-primary" href="javascript:void(0)" title="Edit" onclick="edit_person('."'".$person->admin_id."'".')"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
+            <a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Delete" onclick="delete_person('."'".$person->admin_id."'".')"><i class="glyphicon glyphicon-trash"></i> Delete</a>
+            <a class="btn btn-sm btn-default" href="javascript:void(0)" title="View" onclick="view_person('."'".$person->admin_id."'".')"><i class="glyphicon glyphicon-file"></i> View</a>';
 
             $data[] = $row;
         }
@@ -81,22 +77,18 @@ class Admin_dashboard extends CI_Controller
         echo json_encode($output);
     }
 
-    public function ajax_edit($company_id)
+    public function ajax_edit($admin_id)
     {
-        $data = $this->person->get_by_id($company_id);
+        $data = $this->person->get_by_id($admin_id);
         echo json_encode($data);
     }
 
     public function ajax_add()
     {
         $data = array(
-            'company_name' => $this->input->post('company_name'),
-            'register_no' => $this->input->post('register_no'),
-            'country' => $this->input->post('country'),
+            'username' => $this->input->post('username'),
             'email' => $this->input->post('email'),
-            'address' => $this->input->post('address'),
-            'contact_no' => $this->input->post('contact_no'),
-            'hiring_status' => $this->input->post('hiring_status'),
+            'password' => $this->input->post('password'),
         );
         $insert = $this->person->save($data);
         echo json_encode(array("status" => TRUE));
@@ -105,27 +97,23 @@ class Admin_dashboard extends CI_Controller
     public function ajax_update()
     {
         $data = array(
-            'company_name' => $this->input->post('company_name'),
-            'register_no' => $this->input->post('register_no'),
-            'country' => $this->input->post('country'),
+            'username' => $this->input->post('username'),
             'email' => $this->input->post('email'),
-            'address' => $this->input->post('address'),
-            'contact_no' => $this->input->post('contact_no'),
-            'hiring_status' => $this->input->post('hiring_status'),
+            'password' => $this->input->post('password'),
         );
-        $this->person->update(array('company_id' => $this->input->post('company_id')), $data);
+        $this->person->update(array('admin_id' => $this->input->post('admin_id')), $data);
         echo json_encode(array("status" => TRUE));
     }
 
-    public function ajax_delete($company_id)
+    public function ajax_delete($admin_id)
     {
-        $this->person->delete_by_id($company_id);
+        $this->person->delete_by_id($admin_id);
         echo json_encode(array("status" => TRUE));
     }
 
-    public function list_by_id($company_id){
+    public function list_by_id($admin_id){
 
-        $data['output'] = $this->person->get_by_id_view($company_id);
-        $this->load->view('Pages/Admin/view_Detail', $data);
+        $data['output'] = $this->person->get_by_id_view($admin_id);
+        $this->load->view('Pages/Admin/view_addAdmin', $data);
     }
 }
