@@ -13,7 +13,7 @@ class Admin_dashboard extends CI_Controller
     {
         $this->load->helper('url');
         $this->load->view('Pages/Admin/dashboard');
-}
+    }
 
     function employers(){
         $this->load->view('Pages/Admin/employers');

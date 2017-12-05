@@ -12,6 +12,12 @@ class Company extends CI_Controller {
 
     }
 
+    public function index()
+    {
+        $this->load->helper('url');
+        $this->load->view('Pages/Company/dashboard');
+    }
+
     public function Login(){
         $this->load->view('Includes/Company/header');
         $this->load->view('Pages/Company/Login');
