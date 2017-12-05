@@ -81,14 +81,22 @@ class Applicant extends CI_Controller {
 
     function enter(){
         if ($this->session->userdata('email') != ''){
+            $header_data['title'] = 'Dashboard';
+            $this->load->view('Pages/Applicant/loggedInHeader',$header_data);
+            $this->load->view('Pages/Applicant/sideBar');
             $this->load->view('Pages/Applicant/dashboard');
+            $this->load->view('Pages/Applicant/footer');
         } else {
             redirect(base_url().'Applicant/Login');
         }
     }
 
     function dashboard(){
+        $header_data['title'] = 'Dashboard';
+        $this->load->view('Pages/Applicant/loggedInHeader',$header_data);
+        $this->load->view('Pages/Applicant/sideBar');
         $this->load->view('Pages/Applicant/dashboard');
+        $this->load->view('Pages/Applicant/footer');
     }
 
     function profile(){
@@ -96,7 +104,13 @@ class Applicant extends CI_Controller {
         $email = $this->session->userdata('email');
         $this->load->model('Applicant_m');
         $data = $this->Applicant_m->get_data($email);
+
+        $header_data['title'] = $data['full_name'];
+
+        $this->load->view('Pages/Applicant/loggedInHeader',$header_data);
+        $this->load->view('Pages/Applicant/sideBar');
         $this->load->view('Pages/Applicant/profile',$data);
+        $this->load->view('Pages/Applicant/footer');
     }
 
     function logout(){
@@ -106,14 +120,26 @@ class Applicant extends CI_Controller {
 
 
     function employers(){
+        $header_data['title'] = 'Companies';
+        $this->load->view('Pages/Applicant/loggedInHeader',$header_data);
+        $this->load->view('Pages/Applicant/sideBar');
         $this->load->view('Pages/Applicant/employers');
+        $this->load->view('Pages/Applicant/footer');
     }
 
     function interviewRequests(){
+        $header_data['title'] = 'Requests';
+        $this->load->view('Pages/Applicant/loggedInHeader',$header_data);
+        $this->load->view('Pages/Applicant/sideBar');
         $this->load->view('Pages/Applicant/interviewRequests');
+        $this->load->view('Pages/Applicant/footer');
     }
 
     function notifications(){
+        $header_data['title'] = 'Notifications';
+        $this->load->view('Pages/Applicant/loggedInHeader',$header_data);
+        $this->load->view('Pages/Applicant/sideBar');
         $this->load->view('Pages/Applicant/notifications');
+        $this->load->view('Pages/Applicant/footer');
     }
 }
