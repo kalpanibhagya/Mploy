@@ -18,15 +18,17 @@
             <div class="row featurette" style="margin-top: 30px">
                 <div class="col-md-7">
                     <h2 class="featurette-heading" style="color: saddlebrown; font-weight: bold">How M-Ploy helps you to find best employees?</h2>
-                    <p class="lead" style="font-size: 130%">Want to live and learn on organic farms? Want to share your life with other like-minded people?
+                    <p class="lead" style="font-size: 130%">Want to recruit the best professional for higher productivity?
                         <br/><br/>
-                        Farm_Hands is a island wide community linking volunteers with organic farmers and growers to promote cultural and educational experiences based on trust and non-monetary exchange, thereby helping to build a sustainable community.
+                        Since IT industry is a service related industry, high competition to recruit the best energetic employees in the industry. M-Ploy is the best place to identify the reliable and talented individuals for the betterment of the company.
+
+                                                <br/><br/>
+                        M-Ploy saves your time and cost to recruit employees. You will be able to identify the employees who eager to have a job.
+
+                       Your Selection Cycle time will be lower and you able to compare the employees and to select the best one for yoour company.
                         <br/><br/>
-                        As a volunteer, you will live alongside  a farmer helping with daily tasks and experiencing life as a farmer.
 
-                        As a farmer you will receive visitors from your own district or another who want to connect with the land and support the organic movement.
-
-                        As a volunteer house you can share your house with volunteers from all around the country.</p>
+                        It's the time to select the best in a newer way with M-Ploy.</p>
                 </div>
                 <div class="col-md-5">
                     <img class="featurette-image img-responsive center-block" src="<?php echo base_url(); ?>assets/images/companyMain.jpg" alt="Generic placeholder image">
