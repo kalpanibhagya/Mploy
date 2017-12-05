@@ -36,7 +36,7 @@
             </li>
             <li>
                 <a class="ayam" href="<?php echo base_url(); ?>Company/employers">
-                    <i class="fa fa-building"></i> <span>Other Employers</span>
+                    <i class="fa fa-building"></i> <span>Companies</span>
                 </a>
             </li>
             <li>
