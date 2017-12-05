@@ -31,7 +31,6 @@
                             <div class="form-group" align="center">
                                 <input type="submit" class="btn btn-success" value="Login">
                                 <br/>
-                                <a href="#">Forget password?</a>
                             </div>
                         </form>
                     </div>

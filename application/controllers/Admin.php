@@ -26,7 +26,7 @@ class Admin extends CI_Controller {
                 $this->session->set_userdata($session_data);
                 redirect(base_url().'Admin/enter');
             }else {
-                $this->session->set_flashdata('error', 'Invalid username or password!');
+                $this->session->set_flashdata('error', '<div class="alert alert-danger" role="alert">Invalid email or password!</div>');
                 redirect(base_url().'Admin');
             }
 
@@ -38,7 +38,10 @@ class Admin extends CI_Controller {
 
     function enter(){
         if ($this->session->userdata('email') != ''){
-            $this->load->view('Pages/Admin/dashboard');
+            $email = $this->session->userdata('email');
+            $this->load->model('Admin_m');
+            $data = $this->Admin_m->get_data($email);
+            $this->load->view('Pages/Admin/dashboard',$data);
         } else {
             redirect(base_url().'Admin');
         }
@@ -49,7 +52,8 @@ class Admin extends CI_Controller {
         redirect(base_url().'Admin');
     }
 
-    function addAdmin(){
 
+    function dashboard(){
+        $this->load->view('Pages/Admin/dashboard');
     }
 }
