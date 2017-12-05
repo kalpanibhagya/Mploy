@@ -62,7 +62,7 @@
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <img src="<?php echo base_url()."assets/AdminLTE/"; ?>dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                            <span class="hidden-xs">Alexander Pierce</span>
+                            <span class="hidden-xs"><?php echo $username?></span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
@@ -70,7 +70,7 @@
                                 <img src="<?php echo base_url()."assets/AdminLTE/"; ?>dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                                 <p>
-                                    Alexander Pierce - Web Developer
+                                    <?php echo $username?> - Web Developer
                                     <small>Member since Nov. 2012</small>
                                 </p>
                             </li>
@@ -99,7 +99,7 @@
                     <img src="<?php echo base_url()."assets/AdminLTE/"; ?>dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p>Alexander Pierce</p>
+                    <p><?php echo $username?></p>
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
@@ -151,6 +151,7 @@
                 <!-- Profile Image -->
                 <div class="box box-primary">
                     <div class="box-body box-profile">
+                        <a class="glyphicon glyphicon-pencil" role="button"></a>
                         <img class="profile-user-img img-responsive img-square" src="#" alt="User profile picture" style="height: 200px;width: 200px">
 
                         <h3  class="profile-username text-center"><b><?php echo $username?></b></h3>
@@ -166,6 +167,7 @@
                 <!-- /.box -->
 
                 <div class="box box-primary">
+                    <a class="glyphicon glyphicon-pencil" role="button"></a>
                     <div class="box-header with-border">
                         <h3 class="box-title">Contact Details</h3>
                     </div>

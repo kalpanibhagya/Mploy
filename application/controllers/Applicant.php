@@ -81,7 +81,10 @@ class Applicant extends CI_Controller {
 
     function enter(){
         if ($this->session->userdata('email') != ''){
-            $this->load->view('Pages/Applicant/dashboard');
+            $email = $this->session->userdata('email');
+            $this->load->model('Applicant_m');
+            $data = $this->Applicant_m->get_data($email);
+            $this->load->view('Pages/Applicant/dashboard',$data);
         } else {
             redirect(base_url().'Applicant/Login');
         }
