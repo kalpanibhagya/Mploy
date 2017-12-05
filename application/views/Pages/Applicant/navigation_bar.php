@@ -5,10 +5,10 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="<?php echo base_url(); ?>assets/images/a.png" class="img-circle" alt="User Image">
+                <img src="<?php echo base_url()."assets/AdminLTE/"; ?>dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <p style="font-weight: 100"><?php echo $this->session->userdata('username'); ?></p>
+                <p style="font-weight: 100"><?php echo $username?></p>
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
@@ -21,26 +21,22 @@
                 </a>
             </li>
             <li>
-                <a class="ayam" href="<?php echo base_url(); ?>Company/profile">
-                    <i class="fa fa-user"></i> <span>My Profile</span>
-                </a>
-            </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-send"></i> <span>Job Posts</span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a class = "ayam" href="<?php echo base_url(); ?>Company/posted_internships"><i class="fa fa-circle-o"></i> Interns Selection</a></li>
-                    <li><a class = "ayam" href="<?php echo base_url(); ?>Company/posted_jobs"><i class="fa fa-circle-o"></i> Job Applicants Selection</a></li>
-                </ul>
-            </li>
-            <li>
-                <a class="ayam" href="<?php echo base_url(); ?>Company/employers">
-                    <i class="fa fa-building"></i> <span>Other Employers</span>
+                <a class="ayam" href="<?php echo base_url(); ?>Applicant/profile">
+                    <i class="fa fa-user"></i> <span>Profile</span>
                 </a>
             </li>
             <li>
-                <a class="ayam" href="<?php echo base_url(); ?>Company/notifications">
+                <a class="ayam" href="<?php echo base_url(); ?>Applicant/interviewRequests">
+                    <i class="fa fa-user"></i> <span>Interview Requests</span>
+                </a>
+            </li>
+            <li>
+                <a class="ayam" href="<?php echo base_url(); ?>Applicant/employers">
+                    <i class="fa fa-building"></i> <span>Companies</span>
+                </a>
+            </li>
+            <li>
+                <a class="ayam" href="<?php echo base_url(); ?>Applicant/notifications">
                     <i class="fa fa-bell"></i> <span>Notifications</span>
                 </a>
             </li>
