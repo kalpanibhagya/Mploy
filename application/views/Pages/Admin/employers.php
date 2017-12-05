@@ -14,7 +14,9 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/sweetalert2/1.3.3/sweetalert2.min.js"></script>
 
 <div class = "row">
+    <h4 style="text-align: center;font-weight: bolder">Companies</h4><br/>
 
+    <br/>
     <button class="btn btn-success" onclick="add_person()"><i class="glyphicon glyphicon-plus"></i> Add New Teacher</button>
     <br />
     <br />

@@ -27,7 +27,7 @@
             </li>
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-folder"></i> <span>Selections</span><i class="fa fa-angle-left pull-right"></i>
+                    <i class="fa fa-check-square-o"></i> <span>Selections</span><i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
                     <li><a class = "ayam" href="<?php echo base_url(); ?>Admin_dashboard/selection_interns"><i class="fa fa-circle-o"></i> Interns Selection</a></li>
