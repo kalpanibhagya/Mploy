@@ -126,6 +126,6 @@ class Admin_dashboard extends CI_Controller
     public function list_by_id($company_id){
 
         $data['output'] = $this->person->get_by_id_view($company_id);
-        $this->load->view('view_Detail', $data);
+        $this->load->view('Pages/Admin/view_Detail', $data);
     }
 }
