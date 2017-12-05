@@ -20,18 +20,18 @@ class Applicant_m extends CI_Model{
 
     function get_data($email)
     {
-        $this->db->select('username, full_name, dob, gender');
         $this->db->where('email', $email);
         $query = $this->db->get('applicant');
         $result = $query->row();
 
 
-        $data = array('username'=> ($result->username), 'full_name'=> ($result->full_name), 'dob'=>($result->dob), 'gender'=>($result->gender));
+        $data = array('username'=> ($result->username), 'full_name'=> ($result->full_name),
+            'dob'=>($result->dob), 'gender'=>($result->gender),
+            'age'=>($result->age), 'address'=>($result->address),
+            'contact'=>($result->contact),'preffered_area'=>($result->preffered_area),
+            'comp_1'=>($result->company_one), 'comp_2'=>($result->company_two), 'comp_3'=>($result->company_three));
 
         return $data;
-
-
-
 
     }
 }
