@@ -94,13 +94,13 @@ class Applicant extends CI_Controller
         }
     }
 
-    function enter()
-    {
-        if ($this->session->userdata('email') != '') {
-            $email = $this->session->userdata('email');
+    function enter(){
+        if ($this->session->userdata('email') != ''){
+            $email=$this->session->userdata('email');
             $this->load->model('Applicant_m');
-            $data = $this->Applicant_m->get_data($email);
+            $data= $this->Applicant_m->get_data($email);
             $this->load->view('Pages/Applicant/dashboard',$data);
+//            log_message('debug', var_export($data));
         } else {
             redirect(base_url() . 'Applicant/Login');
         }
