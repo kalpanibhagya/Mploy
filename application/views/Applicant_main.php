@@ -42,7 +42,7 @@
                 <img class="img-circle" src="<?php echo base_url(); ?>assets/images/signup.png" alt="Generic placeholder image" width="140" height="140">
                 <h2 style="font-weight: bold">Step 1</h2>
                 <p>Sign up as a Job Seeker</p><br/>
-                <p><a class="btn btn-primary" href="<?php echo base_url(); ?>main" role="button">Sign up &raquo;</a></p>
+                <p><a class="btn btn-primary" href="<?php echo base_url(); ?>Applicant/Signup" role="button">Sign up &raquo;</a></p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
                 <img class="img-circle" src="<?php echo base_url(); ?>assets/images/update.png" alt="Generic placeholder image" width="140" height="140">
