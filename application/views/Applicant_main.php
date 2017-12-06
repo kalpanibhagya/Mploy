@@ -22,11 +22,11 @@
                         <br/><br/>
                         M-ploy is a web portal for you to find recent, well paid and reliable job opportunities which give values to the qualifications and skills that your have. This website will evaluate your profiles and matches with the opportunities posted by the companies.
                         <br/><br/>
-                        As a Internship Applicant, you can find any IT related.
+                        As a Internship Applicant, you can find any IT related internship oppertunity. M-Ploy is the best place for the interns to find their internship and lead them to access the best IT companies.
+                        You would be able to find your passionate job according to your qualifications.
+                        <br/><br/>
+                        The IT job applicant can achieve their dream job with the leading IT companies in Sri Lanka. You will recieve the best job which suite you with your experience and qualification. M-Ploy will help your dream job to be a reality</p>
 
-                        As a farmer you will receive visitors from your own district or another who want to connect with the land and support the organic movement.
-
-                        As a volunteer house you can share your house with volunteers from all around the country.</p>
                 </div>
                 <div class="col-md-5">
                     <img class="featurette-image img-responsive center-block" style="width: 500px;height: 350px" src="<?php echo base_url(); ?>assets/images/programmer.jpg" alt="Generic placeholder image">
@@ -42,7 +42,7 @@
                 <img class="img-circle" src="<?php echo base_url(); ?>assets/images/signup.png" alt="Generic placeholder image" width="140" height="140">
                 <h2 style="font-weight: bold">Step 1</h2>
                 <p>Sign up as a Job Seeker</p><br/>
-                <p><a class="btn btn-primary" href="<?php echo base_url(); ?>main" role="button">Sign up &raquo;</a></p>
+                <p><a class="btn btn-primary" href="<?php echo base_url(); ?>Applicant/Signup" role="button">Sign up &raquo;</a></p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
                 <img class="img-circle" src="<?php echo base_url(); ?>assets/images/update.png" alt="Generic placeholder image" width="140" height="140">
