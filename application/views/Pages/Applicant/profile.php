@@ -17,7 +17,11 @@
             <!-- Profile Image -->
             <div class="box box-primary">
                 <div class="box-body box-profile">
+<<<<<<< HEAD
                     <a class="glyphicon glyphicon-pencil" role="button"></a>
+=======
+                    <a class="glyphicon glyphicon-pencil" href="javascript:void(0)" role="button" onclick="edit_person()"></a>
+>>>>>>> dev-udith
                     <img class="profile-user-img img-responsive img-square" src="#" alt="User profile picture" style="height: 200px;width: 200px">
 
                     <h3  class="profile-username text-center"><b><?php echo $username?></b></h3>
@@ -28,6 +32,69 @@
                     <p class="text-muted text-center"><?php echo $dob ?></p>
                     <p class="text-muted text-center"><?php echo $gender ?></p>
 
+<<<<<<< HEAD
+=======
+
+                    <script type="text/javascript">
+
+                        var save_method; //for save method string
+                        var table;
+                        $(document).ready(function() {
+                            table = $('#table').DataTable({
+
+                                "processing": true, //Feature control the processing indicator.
+                                "serverSide": true, //Feature control DataTables' server-side processing mode.
+
+                                // Load data for the table's content from an Ajax source
+                                "ajax": {
+                                    "url": "<?php echo site_url('Applicant/ajax_list')?>",
+                                    "type": "POST"
+                                },
+
+                                //Set column definition initialisation properties.
+                                "columnDefs": [
+                                    {
+                                        "targets": [ -1 ], //last column
+                                        "orderable": false, //set not orderable
+                                    },
+                                ],
+
+                            });
+                        });
+
+                        function edit_person()
+                        {
+                            save_method = 'update';
+                            $('#form')[0].reset(); // reset form on modals
+
+                            //Ajax Load data from ajax
+                            $.ajax({
+                                url : "<?php echo site_url('Applicant/ajax_edit/')?>/" ,
+                                type: "GET",
+                                dataType: "JSON",
+                                success: function(data)
+                                {
+
+                                    $('[name="full_name"]').val(data.full_name);
+                                    $('[name="username"]').val(data.username);
+                                    $('[name="dob"]').val(data.dob);
+                                    $('[name="gender"]').val(data.gender);
+
+                                    $('#modal_form').modal('show'); // show bootstrap modal when complete loaded
+                                    $('.modal-title').text('Edit Personal Info'); // Set title to Bootstrap modal title
+
+                                },
+                                error: function (jqXHR, textStatus, errorThrown)
+                                {
+                                    alert('Error get data from ajax');
+                                }
+                            });
+                        }
+
+
+
+                    </script>
+>>>>>>> dev-udith
                 </div>
                 <!-- /.box-body -->
             </div>
@@ -628,6 +695,55 @@
             ul.appendChild(li);
         }
     </script>
+<div class="modal fade" id="modal_form" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title">Personal Info Form</h3>
+            </div>
+            <div class="modal-body form">
+                <form action="#" id="form" class="form-horizontal">
+                    <input type="hidden" value="" name="company_id"/>
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="control-label col-md-3">full Name</label>
+                            <div class="col-md-9">
+                                <input name="full_name" placeholder="full name" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">User Name</label>
+                            <div class="col-md-9">
+                                <input name="username" placeholder="User name" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Date of Birth</label>
+                            <div class="col-md-9">
+                                <input name="dob" placeholder="Date of Birth" class="form-control" type="date">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Gender</label>
+                            <div class="col-md-9">
+                                <select class="form-control" name= "gender" style="height: 50px">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnSave" onclick="save()" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- End Bootstrap modal -->
 
 
 </body>
