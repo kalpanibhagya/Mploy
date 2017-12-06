@@ -94,14 +94,10 @@ class Applicant extends CI_Controller
         }
     }
 
-<<<<<<< HEAD
-    function enter(){
-        if ($this->session->userdata('email') != ''){
-=======
+
     function enter()
     {
         if ($this->session->userdata('email') != '') {
->>>>>>> dev-udith
             $email = $this->session->userdata('email');
             $this->load->model('Applicant_m');
             $data = $this->Applicant_m->get_data($email);
@@ -155,6 +151,30 @@ class Applicant extends CI_Controller
         $email = $this->session->userdata('email');
         $data = $this->person->get_by_email($email);
         echo json_encode($data);
+    }
+
+    public function ajax_add()
+    {
+        $data = array(
+            'full_name' => $this->input->post('full_name'),
+            'username' => $this->input->post('username'),
+            'dob' => $this->input->post('dob'),
+            'gender' => $this->input->post('gender'),
+        );
+        $insert = $this->person->save($data);
+        echo json_encode(array("status" => TRUE));
+    }
+
+    public function ajax_update()
+    {
+        $data = array(
+            'full_name' => $this->input->post('full_name'),
+            'username' => $this->input->post('username'),
+            'dob' => $this->input->post('dob'),
+            'gender' => $this->input->post('gender'),
+        );
+        $this->person->update(array('applicant_id' => $this->input->post('applicant_id')), $data);
+        echo json_encode(array("status" => TRUE));
     }
 
 }

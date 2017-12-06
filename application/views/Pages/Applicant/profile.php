@@ -17,11 +17,8 @@
             <!-- Profile Image -->
             <div class="box box-primary">
                 <div class="box-body box-profile">
-<<<<<<< HEAD
-                    <a class="glyphicon glyphicon-pencil" role="button"></a>
-=======
+
                     <a class="glyphicon glyphicon-pencil" href="javascript:void(0)" role="button" onclick="edit_person()"></a>
->>>>>>> dev-udith
                     <img class="profile-user-img img-responsive img-square" src="#" alt="User profile picture" style="height: 200px;width: 200px">
 
                     <h3  class="profile-username text-center"><b><?php echo $username?></b></h3>
@@ -32,8 +29,7 @@
                     <p class="text-muted text-center"><?php echo $dob ?></p>
                     <p class="text-muted text-center"><?php echo $gender ?></p>
 
-<<<<<<< HEAD
-=======
+
 
                     <script type="text/javascript">
 
@@ -92,9 +88,45 @@
                         }
 
 
+                        function save()
+                        {
+                            var url;
+                            if(save_method == 'add')
+                            {
+                                url = "<?php echo site_url('Applicant/ajax_add')?>";
+                            }
+                            else
+                            {
+                                url = "<?php echo site_url('Applicant/ajax_update')?>";
+                            }
+
+                            // ajax adding data to database
+                            $.ajax({
+                                url : url,
+                                type: "POST",
+                                data: $('#form').serialize(),
+                                dataType: "JSON",
+                                success: function(data)
+                                {
+                                    //if success close modal and reload ajax table
+                                    $('#modal_form').modal('hide');
+                                    reload_table();
+                                    swal(
+                                        'Good job!',
+                                        'Data has been save!',
+                                        'success'
+                                    )
+                                },
+                                error: function (jqXHR, textStatus, errorThrown)
+                                {
+                                    alert('Error adding / update data');
+                                }
+                            });
+                        }
+
+
 
                     </script>
->>>>>>> dev-udith
                 </div>
                 <!-- /.box-body -->
             </div>
