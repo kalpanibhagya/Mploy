@@ -34,4 +34,29 @@ class Welcome extends CI_Controller {
         $this->load->view('Company_main');
         $this->load->view('Includes/footer_contact');
     }
+    public function aboutus() {
+        $this->load->view('Includes/header');
+        $this->load->view('About');
+        $this->load->view('Includes/footer_contact');
+    }
+    function sendMail()
+    {
+
+        $name = $_POST['name'];
+        $message = $_POST['comments'];
+        $email = $_POST['email'];
+
+        $this->load->library('email');
+
+        $this->email->from($email, $name);
+        $this->email->to('mployit@gmail.com');
+//        $this->email->cc('another@another-example.com');
+//        $this->email->bcc('them@their-example.com');
+
+        $this->email->subject('Receiving email from user');
+        $this->email->message("$message from $email");
+
+        $this->email->send();
+
+    }
 }

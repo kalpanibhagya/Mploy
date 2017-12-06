@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -101,8 +102,39 @@
                 <div class="pull-left info">
                     <p><?php echo $username?></p>
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+=======
+<link href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css')?>" rel="stylesheet">
+<link href="<?php echo base_url('assets/datatables/css/dataTables.bootstrap.css')?>" rel="stylesheet">
+<link href="<?php echo base_url('assets/bootstrap-datepicker/css/bootstrap-datepicker3.min.css')?>" rel="stylesheet">
+
+<script src="<?php echo base_url('assets/jquery/jquery-2.1.4.min.js')?>"></script>
+<script src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js')?>"></script>
+<script src="<?php echo base_url('assets/datatables/js/jquery.dataTables.min.js')?>"></script>
+<script src="<?php echo base_url('assets/datatables/js/dataTables.bootstrap.js')?>"></script>
+<script src="<?php echo base_url('assets/bootstrap-datepicker/js/bootstrap-datepicker.min.js')?>"></script>
+
+
+
+    <div class="row">
+        <div class="col-md-3">
+
+            <!-- Profile Image -->
+            <div class="box box-primary">
+                <div class="box-body box-profile">
+                    <img class="profile-user-img img-responsive img-square" src="#" alt="User profile picture" style="height: 200px;width: 200px">
+
+                    <h3  class="profile-username text-center"><b><?php echo $username?></b></h3>
+
+                    <h3 class="profile-username text-center"><?php echo $full_name?></h3>
+
+                    <p class="text-muted text-center">Software Engineer</p>
+                    <p class="text-muted text-center"><?php echo $dob ?></p>
+                    <p class="text-muted text-center"><?php echo $gender ?></p>
+>>>>>>> master
                 </div>
+                <!-- /.box-body -->
             </div>
+<<<<<<< HEAD
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
                 <li>
@@ -174,52 +206,63 @@
                     <!-- /.box-header -->
                     <div class="box-body">
                         <strong><i class="fa fa-envelope margin-r-5"></i> Email</strong>
+=======
+            <!-- /.box -->
 
-                        <p class="text-muted">
-                            john@gmail.com
-                        </p>
-
-                        <hr>
-
-                        <strong><i class="fa fa-map-marker margin-r-5"></i> Address</strong>
-
-                        <p class="text-muted">Colombo, Sri Lanka</p>
-
-                        <hr>
-
-                        <strong><i class="fa fa-pencil margin-r-5"></i> Contact Number</strong>
-
-                        <p class="text-muted">
-                            011-94734221
-                        </p>
-
-                        <hr>
-
-                        <strong><i class="fa fa-linkedin-square margin-r-5"></i> Linked In</strong>
-
-                        <p>http://www.linedin.com/in/john</p>
-
-                        <hr>
-
-                        <strong><i class="fa fa-internet-explorer margin-r-5"></i> Website</strong>
-
-                        <p>http://www.computer.com</p>
-                    </div>
-                    <!-- /.box-body -->
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Contact Details</h3>
                 </div>
-                <!-- /.box -->
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <strong><i class="fa fa-envelope margin-r-5"></i> Email</strong>
+>>>>>>> master
+
+                    <p class="text-muted">
+                        john@gmail.com
+                    </p>
+
+                    <hr>
+
+                    <strong><i class="fa fa-map-marker margin-r-5"></i> Address</strong>
+
+                    <p class="text-muted">Colombo, Sri Lanka</p>
+
+                    <hr>
+
+                    <strong><i class="fa fa-pencil margin-r-5"></i> Contact Number</strong>
+
+                    <p class="text-muted">
+                        011-94734221
+                    </p>
+
+                    <hr>
+
+                    <strong><i class="fa fa-linkedin-square margin-r-5"></i> Linked In</strong>
+
+                    <p>http://www.linedin.com/in/john</p>
+
+                    <hr>
+
+                    <strong><i class="fa fa-internet-explorer margin-r-5"></i> Website</strong>
+
+                    <p>http://www.computer.com</p>
+                </div>
+                <!-- /.box-body -->
             </div>
-            <!-- /.col -->
-            <div class="col-md-9">
-                <div class="nav-tabs-custom">
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#sectionA">Personal Details</a></li>
-                        <li><a data-toggle="tab" href="#sectionB">Education qualifications</a></li>
-                        <li><a data-toggle="tab" href="#sectionC">Experience</a></li>
-                        <li><a data-toggle="tab" href="#sectionD">Other qualifications</a></li>
-                    </ul>
-                    <div class="tab-content">
-                        <div id="sectionA" class="tab-pane fade in active">
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-9">
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#sectionA">Personal Details</a></li>
+                    <li><a data-toggle="tab" href="#sectionB">Education qualifications</a></li>
+                    <li><a data-toggle="tab" href="#sectionC">Experience</a></li>
+                    <li><a data-toggle="tab" href="#sectionD">Other qualifications</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="sectionA" class="tab-pane fade in active">
                         <br/>
                         <div class="container-fluid">
                             <div class="row">
@@ -726,88 +769,44 @@
                             }
                         }
                     </script>
-                    </div>
-                    <!-- /.tab-content -->
                 </div>
-                <!-- /.nav-tabs-custom -->
+                <!-- /.tab-content -->
             </div>
-            <!-- /.col -->
+            <!-- /.nav-tabs-custom -->
         </div>
-        <!-- /.row -->
+        <!-- /.col -->
+    </div>
 
-    </section>
-    <!-- /.content -->
-</div>
-<!-- /.content-wrapper -->
-    <footer class="main-footer">
-        <strong>&copy; 2017 M-Ploy  &middot; <a href="<?php echo base_url();?>About">About</a> &middot; <a href="<?php echo base_url(); ?>Blog">Blog</a> &middot; <a href="#">Privacy Policy</a> &middot; <a href="#">Terms</a>
-        </strong> All rights reserved.
 
-    </footer>
-</div>
-<!-- ./wrapper -->
-<script>
-    function selectIngredient(select)
-    {
-        var option = select.options[select.selectedIndex];
-        var ul = select.parentNode.getElementsByTagName('ul')[0];
+    <script>
+        function selectIngredient(select)
+        {
+            var option = select.options[select.selectedIndex];
+            var ul = select.parentNode.getElementsByTagName('ul')[0];
 
-        var choices = ul.getElementsByTagName('input');
-        for (var i = 0; i < choices.length; i++)
-            if (choices[i].value == option.value)
-                return;
+            var choices = ul.getElementsByTagName('input');
+            for (var i = 0; i < choices.length; i++)
+                if (choices[i].value == option.value)
+                    return;
 
-        var li = document.createElement('li');
-        var input = document.createElement('input');
-        var text = document.createTextNode(option.firstChild.data);
+            var li = document.createElement('li');
+            var input = document.createElement('input');
+            var text = document.createTextNode(option.firstChild.data);
 
-        input.type = 'hidden';
-        input.name = 'ingredients[]';
-        input.value = option.value;
+            input.type = 'hidden';
+            input.name = 'ingredients[]';
+            input.value = option.value;
 
-        li.appendChild(input);
-        li.appendChild(text);
-        li.setAttribute('onclick', 'this.parentNode.removeChild(this);');
+            li.appendChild(input);
+            li.appendChild(text);
+            li.setAttribute('onclick', 'this.parentNode.removeChild(this);');
 
-        ul.appendChild(li);
-    }
-</script>
-<!-- jQuery 3 -->
-<script src="<?php echo base_url()."assets/AdminLTE/"; ?>bower_components/jquery/dist/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="<?php echo base_url()."assets/AdminLTE/"; ?>bower_components/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-    $.widget.bridge('uibutton', $.ui.button);
-</script>
-<!-- Bootstrap 3.3.7 -->
-<script src="<?php echo base_url()."assets/AdminLTE/"; ?>bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- Morris.js charts -->
-<script src="<?php echo base_url()."assets/AdminLTE/"; ?>bower_components/raphael/raphael.min.js"></script>
-<script src="<?php echo base_url()."assets/AdminLTE/"; ?>bower_components/morris.js/morris.min.js"></script>
-<!-- Sparkline -->
-<script src="<?php echo base_url()."assets/AdminLTE/"; ?>bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
-<!-- jvectormap -->
-<script src="<?php echo base_url()."assets/AdminLTE/"; ?>plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="<?php echo base_url()."assets/AdminLTE/"; ?>plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="<?php echo base_url()."assets/AdminLTE/"; ?>bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
-<!-- daterangepicker -->
-<script src="<?php echo base_url()."assets/AdminLTE/"; ?>bower_components/moment/min/moment.min.js"></script>
-<script src="<?php echo base_url()."assets/AdminLTE/"; ?>bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-<!-- datepicker -->
-<script src="<?php echo base_url()."assets/AdminLTE/"; ?>bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="<?php echo base_url()."assets/AdminLTE/"; ?>plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<!-- Slimscroll -->
-<script src="<?php echo base_url()."assets/AdminLTE/"; ?>bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="<?php echo base_url()."assets/AdminLTE/"; ?>bower_components/fastclick/lib/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="<?php echo base_url()."assets/AdminLTE/"; ?>dist/js/adminlte.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="<?php echo base_url()."assets/AdminLTE/"; ?>dist/js/pages/dashboard.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="<?php echo base_url()."assets/AdminLTE/"; ?>dist/js/demo.js"></script>
+            ul.appendChild(li);
+        }
+    </script>
+
+
 </body>
 </html>
+
+

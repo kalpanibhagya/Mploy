@@ -48,7 +48,7 @@
     </style>
 
 </head>
-<body>
+<body style="background-color: lightgrey">
 <header>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">

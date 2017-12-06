@@ -348,6 +348,18 @@
                     </select>
                 </div>
                 <div class="form-group">
+                    <label>Specialized Area</label>
+                    <select class="form-control" name="area" style="height: 50px">
+                        <option>General</option>
+                        <option>Android</option>
+                        <option>Web</option>
+                        <option>Web and Android</option>
+                        <option>Desktop</option>
+                        <option>CMS</option>
+                        <option>Networking</option>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label>Logo</label><br/>
                     <input type="file" class="btn btn-success" name="logo" value="#">   Select a file to upload.
                 </div>
