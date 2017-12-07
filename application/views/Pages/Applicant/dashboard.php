@@ -11,10 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <title>M-ploy</title>
     <link rel="shortcut icon" href="assets/images/logo.png" type="image/png">
     <style type="text/css">
-
         .un {text-decoration: none; }
-
-
     </style>
 
 

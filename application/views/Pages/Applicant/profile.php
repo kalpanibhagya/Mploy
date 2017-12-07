@@ -192,10 +192,6 @@
                                 }
                             });
                         }
-
-
-
-
                     </script>
                 </div>
                 <!-- /.box-body -->
@@ -223,7 +219,7 @@
 
                     <hr>
 
-                    <strong><i class="fa fa-pencil margin-r-5"></i> Contact Number</strong>
+                    <strong><i class="fa fa-phone margin-r-5"></i> Contact Number</strong>
 
                     <p class="text-muted">
                         <?php echo $contact?>
@@ -340,6 +336,7 @@
                         </div>
 
                     </div>
+
 
                     <div id = "sectionB" class = "row">
                         <button class="btn btn-success" onclick="add_person()"><i class="glyphicon glyphicon-plus"></i> Add New Company</button>

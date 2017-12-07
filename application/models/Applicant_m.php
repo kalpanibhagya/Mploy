@@ -13,16 +13,20 @@ class Applicant_m extends CI_Model{
         $this->search = '';
     }
 
-    public function insert_data($data){
-        $this->db->insert('applicant', $data);
+    public function insert_intern($data){
+        $this->db->insert('intern_applicant', $data);
+    }
+
+    public function insert_job($data){
+        $this->db->insert('job_applicant', $data);
     }
 
     function can_login($email, $password){
         $this->db->where('email', $email);
         $this->db->where('password', $password);
-        $query = $this->db->get('applicant');
-
-        if ($query -> num_rows() > 0){
+        $query1 = $this->db->get('intern_applicant');
+        $query2 = $this->db->get('job_applicant');
+        if ($query1 or $query2-> num_rows() > 0){
             return true;
         }else {
             return false;
@@ -32,18 +36,33 @@ class Applicant_m extends CI_Model{
     function get_data($email)
     {
         $this->db->where('email', $email);
-        $query = $this->db->get('applicant');
-        $result = $query->row();
+
+        $query1 = $this->db->get('intern_applicant');
+        $this->db->where('email', $email);
+        $query2 = $this->db->get('job_applicant');
+        if ($query1->num_rows()>0){
+
+            $result = $query1->row();
+            $data = array('username'=> ($result->username), 'full_name'=> ($result->full_name),
+                'dob'=>($result->dob), 'gender'=>($result->gender), 'email'=>($result->email),
+                'contact'=>($result->contact), 'address'=>($result->address),
+                'preffered_area'=>($result->preffered_area), 'company_one'=>($result->company_one),
+                'company_two'=>($result->company_two), 'company_three'=>($result->company_three),
+                'password'=>($result->password));
+
+            return $data;
+
+        }elseif ($query2->num_rows()>0){
+            $result = $query2->row();
+            $data = array('username'=> ($result->username), 'full_name'=> ($result->full_name),
+                'dob'=>($result->dob), 'gender'=>($result->gender), 'email'=>($result->email),
+                'contact'=>($result->contact), 'address'=>($result->address),
+                'password'=>($result->password));
+
+            return $data;
+        }
 
 
-        $data = array('username'=> ($result->username), 'full_name'=> ($result->full_name),
-            'dob'=>($result->dob), 'gender'=>($result->gender), 'email'=>($result->email),
-            'contact'=>($result->contact), 'address'=>($result->address),
-            'preffered_area'=>($result->preffered_area), 'company_one'=>($result->company_one),
-            'company_two'=>($result->company_two), 'company_three'=>($result->company_three),
-            'password'=>($result->password),'linkedin'=>($result->linkedin), 'website'=>($result->website));
-
-        return $data;
 
 
     }
