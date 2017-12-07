@@ -152,4 +152,32 @@ class Applicant extends CI_Controller
         echo json_encode($data);
     }
 
+    public function ajax_update_personal_info()
+    {
+        $data = array(
+            'full_name' => $this->input->post('full_name'),
+            'username' => $this->input->post('username'),
+            'dob' => $this->input->post('dob'),
+            'gender' => $this->input->post('gender'),
+        );
+
+        $email = $this->session->userdata('email');
+
+        $this->person->update(array('email' =>$email), $data);
+        echo json_encode(array("status" => TRUE));
+    }
+
+    public function ajax_update_contact_info()
+    {
+        $data = array(
+            'address' => $this->input->post('address'),
+            'contact' => $this->input->post('contact'),
+        );
+
+        $email = $this->session->userdata('email');
+
+        $this->person->update(array('email' =>$email), $data);
+        echo json_encode(array("status" => TRUE));
+    }
+
 }
