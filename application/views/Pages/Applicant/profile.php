@@ -179,107 +179,15 @@
         <div class="col-md-9">
             <div class="nav-tabs-custom">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a data-toggle="tab" href="#sectionA">Personal Details</a></li>
-                    <li><a data-toggle="tab" href="#sectionB">Education qualifications</a></li>
-                    <li><a data-toggle="tab" href="#sectionC">Experience</a></li>
-                    <li><a data-toggle="tab" href="#sectionD">Other qualifications</a></li>
+                    <li class="active"><a data-toggle="tab" href="#sectionA">Education qualifications</a></li>
+                    <li><a data-toggle="tab" href="#sectionB">Projects</a></li>
+                    <li><a data-toggle="tab" href="#sectionC">Work Experiences</a></li>
+                    <li><a data-toggle="tab" href="#sectionD">Professional Qualifications</a></li>
+                    <li><a data-toggle="tab" href="#sectionE">Extra Curricular Activities</a></li>
+                    <li><a data-toggle="tab" href="#sectionF">Skills</a></li>
                 </ul>
                 <div class="tab-content">
                     <div id="sectionA" class="tab-pane fade in active">
-                        <br/>
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-6"  class="col-sm-6" >
-                                    <div class="col10">
-                                        <form class="form-inline">
-                                            <div class="form-group">
-                                                <label for="sel1">* Applicant Type</label>
-                                                <select id="sel1" name="sel1" onchange="java_script_:show(this.options[this.selectedIndex].value)" class="form-control">
-                                                    <option selected>job</option>
-                                                    <option>intern</option>
-                                                </select>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6" class="col-sm-6">
-                                    <div class="col11">
-                                        <fieldset>
-                                            <legend><b>Main Facts</b></legend>
-                                            <div class="form-group">
-                                                <label for="fn"> Full Name</label>
-                                                <input type="text" class="form-control" id="fname">
-                                            </div>
-                                            <div class="form-group"> <!-- Date input -->
-                                                <label class="control-label" for="dob"> Date of Birth:</label>
-                                                <input class="form-control" id="dob" name="date" type="date"/>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="age"> Age</label>
-                                                <input type="text" class="form-control" id="age">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="gen"> Gender</label>
-                                                <select id="sel1" name="sel1" class="form-control">
-                                                    <option selected>Male</option>
-                                                    <option>Female</option>
-                                                </select>
-                                            </div>
-                                        </fieldset>
-                                    </div>
-                                </div>
-                                <div class="col-md-6" class="col-sm-6">
-                                    <div class="col12">
-                                        <div id="hiddenDiv" style="display:none">
-                                            <fieldset>
-                                                <legend><b>Preferred area and companies</b></legend>
-                                                <div class="form-group">
-                                                    <label for="selpa"> Preferred Area</label>
-                                                    <select class="form-control" id="selpa">
-                                                        <option>Developer</option>
-                                                        <option>Business Analyst</option>
-                                                        <option>UX/UI</option>
-                                                        <option>Networking</option>
-                                                        <option>Research</option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="selc"> Companies</label>
-                                                    <form class="form-inline">
-                                                        <input class="form-control" id="sel1" name="company1" type="text"/>
-                                                        <input class="form-control" id="sel2" name="company2" type="text"/>
-                                                        <input class="form-control" id="sel3" name="company3" type="text"/>
-                                                    </form>
-                                                </div>
-                                            </fieldset>
-                                        </div>
-                                        <fieldset>
-                                            <legend><b>Contacts</b></legend>
-                                            <div class="form-group">
-                                                <label for="email"> Email</label>
-                                                <input type="email" class="form-control" id="email">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="cn"> Contact number</label>
-                                                <input type="text" class="form-control" id="cn">
-                                            </div>
-                                        </fieldset>
-                                        <fieldset>
-                                            <legend><b> Address</b></legend>
-                                            <div class="form-group">
-                                                <input class="form-control" id="address" name="address" type="text"/>
-                                            </div>
-                                        </fieldset>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div id="sectionB" class="tab-pane fade">
                         <br/>
                         <div class="container-fluid">
                             <div class="panel panel-default">
@@ -291,22 +199,22 @@
                                                 <fieldset>
                                                     <legend><b>Degree Details</b></legend>
                                                     <div class="form-group">
-                                                        <label for="n1">* Degree</label>
+                                                        <label for="n1">Degree</label>
                                                         <input type="text" class="form-control" id="n1">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="n1">* Degree Level</label>
+                                                        <label for="n1">Degree Level</label>
                                                         <select class="form-control" id="level">
-                                                            <option value="1">Certificate</option>
-                                                            <option value="2">Diploma</option>
-                                                            <option value="3">Bachelor</option>
-                                                            <option value="4">Master</option>
-                                                            <option value="5">PhD</option>
+                                                            <option value="Certificate">Certificate</option>
+                                                            <option value="Diploma">Diploma</option>
+                                                            <option value="Bachelor">Bachelor</option>
+                                                            <option value="Master">Master</option>
+                                                            <option value="PhD">PhD</option>
                                                         </select>
                                                     </div>
                                                     <form method="post">
-                                                        <div class="form-group"> <!-- Date input -->
-                                                            <label class="control-label" for="date">* Date</label>
+                                                        <div class="form-group">
+                                                            <label class="control-label" for="date">Date</label>
                                                             <input class="form-control" id="date" name="date" type="date"/>
                                                         </div>
                                                         <div class="form-group">
@@ -314,16 +222,16 @@
                                                         </div>
                                                     </form>
                                                     <div class="form-group">
-                                                        <label for="n1">* Grade/GPA</label>
+                                                        <label for="n1">Grade/GPA</label>
                                                         <input type="text" class="form-control" id="n1">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="sel1">* Class</label>
+                                                        <label for="sel1">Class</label>
                                                         <select class="form-control" id="sel1">
-                                                            <option>none</option>
                                                             <option>First class</option>
-                                                            <option>Second - upper</option>
-                                                            <option>Second - lower</option>
+                                                            <option>Second - Upper</option>
+                                                            <option>Second - Lower</option>
+                                                            <option>General</option>
                                                         </select>
                                                     </div>
                                                 </fieldset>
@@ -334,23 +242,8 @@
                                                 <fieldset>
                                                     <legend><b>University/Institute details</b></legend>
                                                     <div class="form-group">
-                                                        <label for="sel1">* University/Institute</label>
-                                                        <select class="form-control" id="sel1">
-                                                            <option>University of Colombo</option>
-                                                            <option>University of Moratuwa</option>
-                                                            <option>University of Peradeniya</option>
-                                                            <option>University of Ruhuna</option>
-                                                            <option>University of Kelaniya</option>
-                                                            <option>University of Wayamba</option>
-                                                            <option>SLIIT</option>
-                                                            <option>APIIT</option>
-                                                            <option>NIBM</option>
-                                                            <option>NSBM</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="cn1"></label>
-                                                        <input type="text" class="form-control" id="cn1" placeholder="Other">
+                                                        <label for="sel1">University/Institute</label>
+                                                        <input type="text" class="form-control" id="cn1" name="uni" placeholder="Other">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="web1">Website</label>
@@ -378,8 +271,7 @@
 
                     </div>
 
-                    <div id="sectionC" class="tab-pane fade">
-                        <br/>
+                    <div id="sectionB" class="tab-pane fade">
                         <div class="container-fluid">
                             <div class="panel panel-default">
                                 <div class="panel-heading"><b>Projects</b></div>
@@ -422,6 +314,11 @@
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <div id="sectionC" class="tab-pane fade">
+                        <br/>
                             <div class="panel panel-default">
                                 <div class="panel-heading"><b>Work Experience</b></div>
                                 <div class="panel-body">
@@ -487,8 +384,6 @@
                             </div>
                         </div>
 
-                    </div>
-
                     <div id="sectionD" class="tab-pane fade">
                         <br/>
                         <div class="container-fluid">
@@ -501,11 +396,11 @@
                                                 <fieldset>
                                                     <legend><b>Qualification Details</b></legend>
                                                     <div class="form-group">
-                                                        <label for="n1">* Title</label>
+                                                        <label for="n1">Title</label>
                                                         <input type="text" class="form-control" id="n1">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="n1">* Licence no.</label>
+                                                        <label for="n1">Licence no.</label>
                                                         <select class="form-control" id="level">
                                                             <option value="1">Certificate</option>
                                                             <option value="2">Diploma</option>
@@ -544,23 +439,8 @@
                                                 <fieldset>
                                                     <legend><b>Professional Organization details</b></legend>
                                                     <div class="form-group">
-                                                        <label for="sel1">* University/Institute</label>
-                                                        <select class="form-control" id="sel1">
-                                                            <option>University of Colombo</option>
-                                                            <option>University of Moratuwa</option>
-                                                            <option>University of Peradeniya</option>
-                                                            <option>University of Ruhuna</option>
-                                                            <option>University of Kelaniya</option>
-                                                            <option>University of Wayamba</option>
-                                                            <option>SLIIT</option>
-                                                            <option>APIIT</option>
-                                                            <option>NIBM</option>
-                                                            <option>NSBM</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="cn1"></label>
-                                                        <input type="text" class="form-control" id="cn1" placeholder="Other">
+                                                        <label for="sel1">Professional Body</label>
+                                                        <input type="text" class="form-control" id="cn1" placeholder="Name of the Professional Body">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="web1">Website</label>
@@ -584,114 +464,89 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="container-fluid">
-                            <div class="panel panel-default">
-                                <div class="panel-heading"><b>Hackathons/ Societies/ Community works</b></div>
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="col-sm-6" class="col-md-6">
-                                            <div class="col1">
-                                                <form>
-                                                    <div class="form-group">
-                                                        <label for="n1">* Name</label>
-                                                        <input type="text" class="form-control" id="n1">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="selt">* Type</label>
-                                                        <select class="form-control" id="selt">
-                                                            <option>Hackthons</option>
-                                                            <option>Societies</option>
-                                                            <option>Community works</option>
-                                                        </select>
-                                                    </div>
-                                                    <form method="post">
-                                                        <div class="form-group"> <!-- Date input -->
-                                                            <label class="control-label" for="date">* Date</label>
-                                                            <input class="form-control" id="date" name="date" type="date"/>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input class="form-control" id="date" name="date" type="date"/>
-                                                        </div>
-                                                    </form>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6" class="col-md-6">
-                                            <div class="col2">
-                                                <div class="form-group">
-                                                    <textarea class="form-control" rows="12" id="comment" placeholder="Description and Achievements, any links"></textarea>
-                                                </div>
-
-                                                <div>
-                                                    <ul>
-                                                        <li><input type="submit" name="" value="save" class="btn" id="save1"></li>
-                                                        <li><input type="submit" name="" value="cancel" class="btn" id="cancel1"></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-6" class="col-sm-6">
-                                    <div class="col3">
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading"><b>Skill</b></div>
-                                            <div class="panel-body">
-                                                <div class="form-group">
-                                                    <label for="name">* Add your Skills</label>
-                                                    <ul>
-                                                        <li onclick="this.parentNode.removeChild(this);">
-                                                            <input type="hidden" name="ingredients[]" value="None" />
-                                                            None
-                                                        </li>
-                                                    </ul>
-                                                    <select class="form-control" onchange="selectIngredient(this);">
-                                                        <option value="1">Java</option>
-                                                        <option value="2">Php</option>
-                                                        <option value="3">Android</option>
-                                                        <option value="4">C</option>
-                                                        <option value="5">C++</option>
-                                                        <option value="6">Scrum</option>
-                                                        <option value="7">Firebase</option>
-                                                        <option value="Other">Other</option>
-                                                    </select>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!--div id="dropdown1" class="tab-pane fade">
-
-                            <p>Dropdown 1 content…</p>
-
-                        </div>
-
-                        <div id="dropdown2" class="tab-pane fade">
-
-                            <p>Dropdown 2 content…</p>
-
-                        </div-->
-
                     </div>
 
-                    <script>
-                        function show(aval) {
-                            if (aval == "intern") {
-                                hiddenDiv.style.display='block';
-                                Form.fileURL.focus();
-                            }
-                            else{
-                                hiddenDiv.style.display='none';
-                            }
-                        }
-                    </script>
+                    <div id="sectionE" class="tab-pane fade">
+                            <div class="container-fluid">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"><b>Extra Curricular Activities</b></div>
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-sm-6" class="col-md-6">
+                                                <div class="col1">
+                                                        <div class="form-group">
+                                                            <label for="n1">Name</label>
+                                                            <input type="text" class="form-control" id="n1">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="selt">Type</label>
+                                                            <select class="form-control" id="selt">
+                                                                <option>Hackathons</option>
+                                                                <option>Societies</option>
+                                                                <option>Volunteering</option>
+                                                                <option>Sports</option>
+                                                                <option>Aesthetic</option>
+                                                                <option>Blogging</option>
+                                                            </select>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6" class="col-md-6">
+                                                <div class="col2">
+                                                    <div class="form-group">
+                                                        <textarea class="form-control" rows="5" id="comment" placeholder="Description and Achievements, any links"></textarea>
+                                                    </div>
+
+                                                    <div>
+                                                        <ul>
+                                                            <li><input type="submit" name="" value="save" class="btn" id="save1"></li>
+                                                            <li><input type="submit" name="" value="cancel" class="btn" id="cancel1"></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+
+                                </div>
+                            </div>
+
+                    <div id="sectionF" class="tab-pane fade">
+                        <div class="row">
+                            <div class="col-sm-6" class="col-sm-6">
+                                <div class="col3">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading"><b>Skill</b></div>
+                                        <div class="panel-body">
+                                            <div class="form-group">
+                                                <label for="name">* Add your Skills</label>
+                                                <ul>
+                                                    <li onclick="this.parentNode.removeChild(this);">
+                                                        <input type="hidden" name="ingredients[]" value="None" />
+                                                        None
+                                                    </li>
+                                                </ul>
+                                                <select class="form-control" onchange="selectIngredient(this);">
+                                                    <option value="1">Java</option>
+                                                    <option value="2">Php</option>
+                                                    <option value="3">Android</option>
+                                                    <option value="4">C</option>
+                                                    <option value="5">C++</option>
+                                                    <option value="6">Scrum</option>
+                                                    <option value="7">Firebase</option>
+                                                    <option value="Other">Other</option>
+                                                </select>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+
                 </div>
                 <!-- /.tab-content -->
             </div>
