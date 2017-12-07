@@ -116,6 +116,11 @@ class Applicant_m extends CI_Model{
         return $query->row();
     }
 
+    public function update($where, $data)
+    {
+        $this->db->update($this->table, $data, $where);
+        return $this->db->affected_rows();
+    }
 
 }
 

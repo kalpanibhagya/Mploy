@@ -72,19 +72,20 @@
         $('.modal-title').text('Add New Admin'); // Set Title to Bootstrap modal title
     }
 
-    function edit_person(company_id)
+    function edit_person(admin_id)
     {
         save_method = 'update';
         $('#form')[0].reset(); // reset form on modals
 
         //Ajax Load data from ajax
         $.ajax({
-            url : "<?php echo site_url('Admin_dashboard/ajax_edit/')?>/" + company_id,
+            url : "<?php echo site_url('Admin_dashboard/ajax_edit/')?>/" + admin_id,
             type: "GET",
             dataType: "JSON",
             success: function(data)
             {
 
+                $('[name="admin_id"]').val(data.admin_id);
                 $('[name="username"]').val(data.username);
                 $('[name="email"]').val(data.email);
                 $('[name="password"]').val(data.password);

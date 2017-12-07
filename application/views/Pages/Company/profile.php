@@ -16,10 +16,140 @@
             <!-- Profile Image -->
             <div class="box box-success">
                 <div class="box-body box-profile">
-                    <a class="glyphicon glyphicon-pencil" role="button" href="javascript:void(0)" onclick="edit_person()"></a>
+
+                    <a class="glyphicon glyphicon-pencil" role="button" href="javascript:void(0)" role="button" onclick="edit_company()"></a>
                     <img class="profile-user-img img-responsive img-square" src="<?php echo $this->session->userdata('logo'); ?>" alt="User profile picture" style="height: 200px;width: 200px">
 
                     <h3 class="profile-username text-center"><?php echo $this->session->userdata('username'); ?></h3>
+
+                    <script type="text/javascript">
+
+                        var save_method; //for save method string
+                        var table;
+                        var save_type;
+                        $(document).ready(function() {
+                            table = $('#table').DataTable({
+
+                                "processing": true, //Feature control the processing indicator.
+                                "serverSide": true, //Feature control DataTables' server-side processing mode.
+
+                                // Load data for the table's content from an Ajax source
+                                "ajax": {
+                                    "url": "<?php echo site_url('Company/ajax_list')?>",
+                                    "type": "POST"
+                                },
+
+                                //Set column definition initialisation properties.
+                                "columnDefs": [
+                                    {
+                                        "targets": [ -1 ], //last column
+                                        "orderable": false, //set not orderable
+                                    },
+                                ],
+
+                            });
+                        });
+
+                        function edit_company()
+                        {
+                            save_method = 'update';
+                            save_type = 'company';
+                            $('#form_company')[0].reset(); // reset form on modals
+
+                            //Ajax Load data from ajax
+                            $.ajax({
+                                url : "<?php echo site_url('Company/ajax_edit/')?>/" ,
+                                type: "GET",
+                                dataType: "JSON",
+                                success: function(data)
+                                {
+
+                                    $('[name="username"]').val(data.username);
+                                    //$('[name="logo"]').val(data.logo);
+
+                                    $('#modal_form_company').modal('show'); // show bootstrap modal when complete loaded
+                                    $('.modal-title').text('Edit Personal Info'); // Set title to Bootstrap modal title
+
+                                },
+                                error: function (jqXHR, textStatus, errorThrown)
+                                {
+                                    alert('Error get data from ajax');
+                                }
+                            });
+                        }
+
+                        function edit_company_contact()
+                        {
+                            save_method = 'update';
+                            save_type = 'contact';
+                            $('#form_contact')[0].reset(); // reset form on modals
+
+                            //Ajax Load data from ajax
+                            $.ajax({
+                                url : "<?php echo site_url('Company/ajax_edit/')?>/" ,
+                                type: "GET",
+                                dataType: "JSON",
+                                success: function(data)
+                                {
+
+                                    $('[name="email"]').val(data.email);
+                                    $('[name="address"]').val(data.address);
+                                    $('[name="contact"]').val(data.contact);
+                                    $('[name="linkedin"]').val(data.linkedin);
+                                    $('[name="website"]').val(data.website);
+
+                                    $('#modal_form_contact').modal('show'); // show bootstrap modal when complete loaded
+                                    $('.modal-title').text('Edit Contact Info'); // Set title to Bootstrap modal title
+
+                                },
+                                error: function (jqXHR, textStatus, errorThrown)
+                                {
+                                    alert('Error get data from ajax');
+                                }
+                            });
+                        }
+
+                        function save()
+                        {
+                            var url;
+                            if (save_type == 'company')
+                            {
+                                url = "<?php echo site_url('Company/ajax_update_company_info')?>";
+                            }
+                            else if (save_type == 'contact')
+                            {
+                                url = "<?php echo site_url('Company/ajax_update_contact_info')?>";
+                            }
+
+
+                            // ajax adding data to database
+                            $.ajax({
+                                url : url,
+                                type: "POST",
+                                data: $('#form_'.concat(save_type)).serialize(),
+                                dataType: "JSON",
+                                success: function(data)
+                                {
+                                    //if success close modal and reload ajax table
+                                    $('#modal_form_'.concat(save_type)).modal('hide');
+                                    //reload_table();
+                                    swal(
+                                        'Good job!',
+                                        'Data has been save!',
+                                        'success'
+                                    )
+                                },
+                                error: function (jqXHR, textStatus, errorThrown)
+                                {
+                                    alert('Error adding / update data');
+                                }
+                            });
+                        }
+
+
+
+
+                    </script>
                 </div>
                 <!-- /.box-body -->
             </div>
@@ -27,7 +157,7 @@
 
             <div class="box box-success">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Contact Details</h3> <a class="glyphicon glyphicon-pencil" role="button"></a>
+                    <h3 class="box-title">Contact Details</h3> <a class="glyphicon glyphicon-pencil" role="button" href="javascript:void(0)" role="button" onclick="edit_company()"></a>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
@@ -121,68 +251,8 @@
 
 </div>
 
-<script type="text/javascript">
 
-    var save_method; //for save method string
-    var table;
-    $(document).ready(function() {
-        table = $('#table').DataTable({
-
-            "processing": true, //Feature control the processing indicator.
-            "serverSide": true, //Feature control DataTables' server-side processing mode.
-
-            // Load data for the table's content from an Ajax source
-            "ajax": {
-                "url": "<?php echo site_url('Applicant/ajax_list')?>",
-                "type": "POST"
-            },
-
-            //Set column definition initialisation properties.
-            "columnDefs": [
-                {
-                    "targets": [ -1 ], //last column
-                    "orderable": false, //set not orderable
-                },
-            ],
-
-        });
-    });
-
-    function edit_person()
-    {
-        save_method = 'update';
-        $('#form')[0].reset(); // reset form on modals
-
-        //Ajax Load data from ajax
-        $.ajax({
-            url : "<?php echo site_url('Applicant/ajax_edit/')?>/" ,
-            type: "GET",
-            dataType: "JSON",
-            success: function(data)
-            {
-
-                $('[name="full_name"]').val(data.full_name);
-                $('[name="username"]').val(data.username);
-                $('[name="dob"]').val(data.dob);
-                $('[name="gender"]').val(data.gender);
-
-                $('#modal_form').modal('show'); // show bootstrap modal when complete loaded
-                $('.modal-title').text('Edit Personal Info'); // Set title to Bootstrap modal title
-
-            },
-            error: function (jqXHR, textStatus, errorThrown)
-            {
-                alert('Error get data from ajax');
-            }
-        });
-    }
-
-
-
-</script>
-
-
-<div class="modal fade" id="modal_form" role="dialog">
+<div class="modal fade" id="modal_form_personal" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -190,34 +260,13 @@
                 <h3 class="modal-title">Personal Info Form</h3>
             </div>
             <div class="modal-body form">
-                <form action="#" id="form" class="form-horizontal">
+                <form action="#" id="form_company" class="form-horizontal">
                     <input type="hidden" value="" name="company_id"/>
                     <div class="form-body">
                         <div class="form-group">
-                            <label class="control-label col-md-3">full Name</label>
+                            <label class="control-label col-md-3">Username</label>
                             <div class="col-md-9">
-                                <input name="full_name" placeholder="full name" class="form-control" type="text">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-md-3">User Name</label>
-                            <div class="col-md-9">
-                                <input name="username" placeholder="User name" class="form-control" type="text">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-md-3">Date of Birth</label>
-                            <div class="col-md-9">
-                                <input name="dob" placeholder="Date of Birth" class="form-control" type="date">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-md-3">Gender</label>
-                            <div class="col-md-9">
-                                <select class="form-control" name= "gender" style="height: 50px">
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
-                                </select>
+                                <input name="username" placeholder="full name" class="form-control" type="text">
                             </div>
                         </div>
                     </div>
@@ -230,6 +279,60 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+<!-- End Bootstrap modal -->
+<div class="modal fade" id="modal_form_contact" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title">Contact Details Form</h3>
+            </div>
+            <div class="modal-body form">
+                <form action="#" id="form_contact" class="form-horizontal">
+                    <input type="hidden" value="" name="company_id"/>
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Email</label>
+                            <div class="col-md-9">
+                                <input name="email" readonly placeholder="Email" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Address</label>
+                            <div class="col-md-9">
+                                <input name="address" placeholder="Address" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Contact Number</label>
+                            <div class="col-md-9">
+                                <input name="contact" placeholder="Contact Number" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Linke In</label>
+                            <div class="col-md-9">
+                                <input name="contact" placeholder="Contact Number" class="form-control" type="text">
+                            </div>
+                        </div
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Website</label>
+                            <div class="col-md-9">
+                                <input name="contact" placeholder="Contact Number" class="form-control" type="text">
+                            </div>
+                      </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnSave" onclick="save()" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- End Bootstrap modal -->
 
 </body>
 </html>
