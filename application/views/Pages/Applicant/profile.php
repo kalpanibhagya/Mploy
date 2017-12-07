@@ -8,6 +8,10 @@
 <script src="<?php echo base_url('assets/datatables/js/dataTables.bootstrap.js')?>"></script>
 <script src="<?php echo base_url('assets/bootstrap-datepicker/js/bootstrap-datepicker.min.js')?>"></script>
 
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/sweetalert2/1.3.3/sweetalert2.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/sweetalert2/0.4.5/sweetalert2.css">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/sweetalert2/1.3.3/sweetalert2.min.js"></script>
+
 
 
     <div class="row">
@@ -32,6 +36,7 @@
 
                         var save_method; //for save method string
                         var table;
+                        var save_type;
                         $(document).ready(function() {
                             table = $('#table').DataTable({
 
@@ -58,6 +63,7 @@
                         function edit_person()
                         {
                             save_method = 'update';
+                            save_type = 'personal';
                             $('#form')[0].reset(); // reset form on modals
 
                             //Ajax Load data from ajax
@@ -73,7 +79,7 @@
                                     $('[name="dob"]').val(data.dob);
                                     $('[name="gender"]').val(data.gender);
 
-                                    $('#modal_form').modal('show'); // show bootstrap modal when complete loaded
+                                    $('#modal_form_personal').modal('show'); // show bootstrap modal when complete loaded
                                     $('.modal-title').text('Edit Personal Info'); // Set title to Bootstrap modal title
 
                                 },
@@ -83,6 +89,74 @@
                                 }
                             });
                         }
+
+                        function edit_person_contact()
+                        {
+                            save_method = 'update';
+                            save_type = 'contact';
+                            $('#form')[0].reset(); // reset form on modals
+
+                            //Ajax Load data from ajax
+                            $.ajax({
+                                url : "<?php echo site_url('Applicant/ajax_edit/')?>/" ,
+                                type: "GET",
+                                dataType: "JSON",
+                                success: function(data)
+                                {
+
+                                    $('[name="email"]').val(data.email);
+                                    $('[name="address"]').val(data.address);
+                                    $('[name="contact"]').val(data.contact);
+                                    $('[name="gender"]').val(data.gender);
+
+                                    $('#modal_form_contact').modal('show'); // show bootstrap modal when complete loaded
+                                    $('.modal-title').text('Edit Contact Info'); // Set title to Bootstrap modal title
+
+                                },
+                                error: function (jqXHR, textStatus, errorThrown)
+                                {
+                                    alert('Error get data from ajax');
+                                }
+                            });
+                        }
+
+                        function save()
+                        {
+                            var url;
+                            if (save_type == 'personal')
+                            {
+                                url = "<?php echo site_url('Applicant/ajax_update_personal_info')?>";
+                            }
+                            else if (save_type == 'contact')
+                            {
+                                url = "<?php echo site_url('Applicant/ajax_update_contact_info')?>";
+                            }
+
+
+                            // ajax adding data to database
+                            $.ajax({
+                                url : url,
+                                type: "POST",
+                                data: $('#form').serialize(),
+                                dataType: "JSON",
+                                success: function(data)
+                                {
+                                    //if success close modal and reload ajax table
+                                    $('#modal_form_'.concat(save_type)).modal('hide');
+                                    //reload_table();
+                                    swal(
+                                        'Good job!',
+                                        'Data has been save!',
+                                        'success'
+                                    )
+                                },
+                                error: function (jqXHR, textStatus, errorThrown)
+                                {
+                                    alert('Error adding / update data');
+                                }
+                            });
+                        }
+
 
 
 
@@ -94,6 +168,7 @@
 
             <div class="box box-primary">
                 <div class="box-header with-border">
+                    <a class="glyphicon glyphicon-pencil" href="javascript:void(0)" role="button" onclick="edit_person_contact()"></a>
                     <h3 class="box-title">Contact Details</h3>
                 </div>
                 <!-- /.box-header -->
@@ -101,21 +176,21 @@
                     <strong><i class="fa fa-envelope margin-r-5"></i> Email</strong>
 
                     <p class="text-muted">
-                        john@gmail.com
+                        <?php echo $email?>
                     </p>
 
                     <hr>
 
                     <strong><i class="fa fa-map-marker margin-r-5"></i> Address</strong>
 
-                    <p class="text-muted">Colombo, Sri Lanka</p>
+                    <p class="text-muted"><?php echo $address ?></p>
 
                     <hr>
 
                     <strong><i class="fa fa-pencil margin-r-5"></i> Contact Number</strong>
 
                     <p class="text-muted">
-                        011-94734221
+                        <?php echo $contact?>
                     </p>
 
                     <hr>
@@ -686,7 +761,7 @@
             ul.appendChild(li);
         }
     </script>
-<div class="modal fade" id="modal_form" role="dialog">
+<div class="modal fade" id="modal_form_personal" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -736,6 +811,46 @@
 </div><!-- /.modal -->
 <!-- End Bootstrap modal -->
 
+<div class="modal fade" id="modal_form_contact" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title">Contact Details Form</h3>
+            </div>
+            <div class="modal-body form">
+                <form action="#" id="form" class="form-horizontal">
+                    <input type="hidden" value="" name="company_id"/>
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Email</label>
+                            <div class="col-md-9">
+                                <input name="email" readonly placeholder="Email" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Address</label>
+                            <div class="col-md-9">
+                                <input name="address" placeholder="Address" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Contact Number</label>
+                            <div class="col-md-9">
+                                <input name="contact" placeholder="Contact Number" class="form-control" type="text">
+                            </div>
+                        </div
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnSave" onclick="save()" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- End Bootstrap modal -->
 
 </body>
 </html>
