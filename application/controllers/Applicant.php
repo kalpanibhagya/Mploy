@@ -31,7 +31,11 @@ class Applicant extends CI_Controller
         //echo 'OK';
         $this->load->library('form_validation');
         $this->form_validation->set_rules('username', 'Username', 'required');
-        $this->form_validation->set_rules('email', 'Email', 'required');
+        $this->form_validation->set_rules('email', 'Email', 'required|trim|is_unique[intern_applicant.email]|is_unique[job_applicant.email]',
+            array(
+            'required'      => 'You have not provided %s.',
+            'is_unique'     => 'This %s already exists.'
+        ));
         $this->form_validation->set_rules('password', 'Password', 'required|min_length[6]');
         $this->form_validation->set_rules('confirm_password', 'Confirm Password', 'required|min_length[6]|matches[password]');
 
@@ -43,8 +47,15 @@ class Applicant extends CI_Controller
                 'password' => base64_encode(strrev(md5($this->input->post('password')))),
                 'email' => $this->input->post('email')
             );
+            $applicanttype = $this->input->post('applicanttype');
+            if ($applicanttype =='1'){
+                $this->load->model('Applicant_m');
+                $this->Applicant_m->insert_intern($data);
+            }elseif ($applicanttype=='2'){
+                $this->load->model('Applicant_m');
+                $this->Applicant_m->insert_job($data);
+            }
 
-            $this->Applicant_m->insert_data($data);
 
             redirect(base_url() . 'Applicant/inserted');
 
@@ -100,7 +111,6 @@ class Applicant extends CI_Controller
             $this->load->model('Applicant_m');
             $data= $this->Applicant_m->get_data($email);
             $this->load->view('Pages/Applicant/dashboard',$data);
-//            log_message('debug', var_export($data));
         } else {
             redirect(base_url() . 'Applicant/Login');
         }

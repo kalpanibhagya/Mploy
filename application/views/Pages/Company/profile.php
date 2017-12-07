@@ -16,6 +16,7 @@
             <!-- Profile Image -->
             <div class="box box-success">
                 <div class="box-body box-profile">
+
                     <a class="glyphicon glyphicon-pencil" role="button" href="javascript:void(0)" role="button" onclick="edit_company()"></a>
                     <img class="profile-user-img img-responsive img-square" src="<?php echo $this->session->userdata('logo'); ?>" alt="User profile picture" style="height: 200px;width: 200px">
 
@@ -250,6 +251,7 @@
 
 </div>
 
+
 <div class="modal fade" id="modal_form_personal" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -318,7 +320,7 @@
                             <div class="col-md-9">
                                 <input name="contact" placeholder="Contact Number" class="form-control" type="text">
                             </div>
-                        </div
+                      </div>
                     </div>
                 </form>
             </div>
@@ -329,6 +331,7 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
 <!-- End Bootstrap modal -->
 
 </body>
