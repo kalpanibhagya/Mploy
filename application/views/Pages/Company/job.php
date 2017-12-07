@@ -81,7 +81,7 @@
                                             <div class="form-group">
                                                 <label for="name">Job title</label>
                                                 <input type="text" class="form-control" id="name" name="name"
-                                                       placeholder="Eg:- Business Analyst" required="">
+                                                       placeholder="Eg:- Software Engineer" required="">
                                             </div>
                                             <div class="form-group">
                                                 <label for="registerNo">Location</label>
@@ -89,15 +89,14 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="number">Required no. of Employees</label>
-                                                <input type="number" class="form-control" id="number" name="number"
-                                                       placeholder="Eg:- Business Analyst" required="">
+                                                <input type="number" class="form-control" id="number" name="number" required="">
                                             </div>
                                             <div class="form-group">
                                                 <label for="from">Application Duration</label>
-                                                <input type="date_from" class="form-control" id="from" name="from" required="">
+                                                <input type="date" class="form-control" id="from" name="from" required="">
                                             </div>
                                             <div class="form-group">
-                                                <input type="date_to" class="form-control" id="to" name="to" required="">
+                                                <input type="date" class="form-control" id="to" name="to" required="">
                                             </div>
                                             <div class="form-group">
                                                 <label for="salary">Salary</label>
@@ -108,15 +107,8 @@
                                     <div class="floating-box">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="name">Opportunity Type</label>
-                                                <select class="form-control" id="size" name="size" onchange="java_script_:show(this.options[this.selectedIndex].value)">
-                                                    <option value="internship">Internship</option>
-                                                    <option value="job">Job</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
                                                 <label for="description">Description</label>
-                                                <textarea class="form-control" id="description" name="description" required="" rows="4"></textarea>
+                                                <textarea class="form-control" id="description" name="description" required="" rows="10"></textarea>
                                             </div>
                                             <div class="form-group" align="right">
                                                 <a href="#sectionB" class="btn btn-success" role="button">Next</a>
@@ -244,23 +236,29 @@
                                                     <div class="form-group">
                                                         <table>
                                                             <tr>
-                                                                <th>Qualfication type</th>
-                                                                <th>Marks/ Perecentage ?</th>
+                                                                <th>Qualification type</th>
+                                                                <th>Marks</th>
                                                             </tr>
                                                             <tr>
-                                                                <td>Qualification1</td>
+                                                                <td>
+                                                                    <input class="form-control" id="marks1" name="marks1" type="text" required="">
+                                                                </td>
                                                                 <td>
                                                                     <input class="form-control" id="marks1" name="marks1" type="number" required="">
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td>Qualification2</td>
+                                                                <td>
+                                                                    <input class="form-control" id="marks1" name="marks1" type="text" required="">
+                                                                </td>
                                                                 <td>
                                                                     <input class="form-control" id="marks2" name="marks2" type="number" required="">
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td>Qualification3</td>
+                                                                <td>
+                                                                    <input class="form-control" id="marks1" name="marks1" type="text" required="">
+                                                                </td>
                                                                 <td>
                                                                     <input class="form-control" id="marks3" name="marks3" type="number" required="">
                                                                 </td>

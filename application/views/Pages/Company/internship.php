@@ -265,22 +265,28 @@
                                                     <table>
                                                         <tr>
                                                             <th>Qualification type</th>
-                                                            <th>Marks/ Perecentage ?</th>
+                                                            <th>Marks</th>
                                                         </tr>
                                                         <tr>
-                                                            <td>Qualification1</td>
+                                                            <td>
+                                                                <input class="form-control" id="marks1" name="marks1" type="text" required="">
+                                                            </td>
                                                             <td>
                                                                 <input class="form-control" id="marks1" name="marks1" type="number" required="">
                                                             </td>
                                                         </tr>
                                                         <tr>
-                                                            <td>Qualification2</td>
+                                                            <td>
+                                                                <input class="form-control" id="marks1" name="marks1" type="text" required="">
+                                                            </td>
                                                             <td>
                                                                 <input class="form-control" id="marks2" name="marks2" type="number" required="">
                                                             </td>
                                                         </tr>
                                                         <tr>
-                                                            <td>Qualification3</td>
+                                                            <td>
+                                                                <input class="form-control" id="marks1" name="marks1" type="text" required="">
+                                                            </td>
                                                             <td>
                                                                 <input class="form-control" id="marks3" name="marks3" type="number" required="">
                                                             </td>
