@@ -152,24 +152,8 @@ class Applicant extends CI_Controller
         echo json_encode($data);
     }
 
-<<<<<<< HEAD
-    public function ajax_add()
-=======
-    public function ajax_update_personal_info()
->>>>>>> dev-udith
-    {
-        $data = array(
-            'full_name' => $this->input->post('full_name'),
-            'username' => $this->input->post('username'),
-            'dob' => $this->input->post('dob'),
-            'gender' => $this->input->post('gender'),
-        );
-<<<<<<< HEAD
-        $insert = $this->person->save($data);
-        echo json_encode(array("status" => TRUE));
-    }
 
-    public function ajax_update()
+    public function ajax_update_personal_info()
     {
         $data = array(
             'full_name' => $this->input->post('full_name'),
@@ -177,8 +161,6 @@ class Applicant extends CI_Controller
             'dob' => $this->input->post('dob'),
             'gender' => $this->input->post('gender'),
         );
-        $this->person->update(array('applicant_id' => $this->input->post('applicant_id')), $data);
-=======
 
         $email = $this->session->userdata('email');
 
@@ -196,7 +178,6 @@ class Applicant extends CI_Controller
         $email = $this->session->userdata('email');
 
         $this->person->update(array('email' =>$email), $data);
->>>>>>> dev-udith
         echo json_encode(array("status" => TRUE));
     }
 

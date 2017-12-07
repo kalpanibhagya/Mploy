@@ -209,12 +209,8 @@
 
             <div class="box box-primary">
                 <div class="box-header with-border">
-<<<<<<< HEAD
-                    <h3 class="box-title">Contact Details</h3>  <a class="glyphicon glyphicon-pencil" role="button"></a>
-=======
                     <a class="glyphicon glyphicon-pencil" href="javascript:void(0)" role="button" onclick="edit_person_contact()"></a>
                     <h3 class="box-title">Contact Details</h3>
->>>>>>> dev-udith
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
