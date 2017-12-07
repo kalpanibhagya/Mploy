@@ -16,7 +16,7 @@
                         <form method="post" action="<?php echo base_url()?>Company/form_validation">
                             <div class="form-group">
                                 <label for="name">Username</label>
-                                <input type="text" class="form-control" id="username" name="username" placeholder="Userame" required="">
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Userame" required="" autofocus="autofocus">
                                 <span class="text-danger"><?php echo form_error('username')?></span>
                             </div>
                             <div class="form-group">

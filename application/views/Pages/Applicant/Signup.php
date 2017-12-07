@@ -22,7 +22,7 @@
                             ?>
                             <div class="form-group">
                                 <label for="username">Username</label>
-                                <input type="text" class="form-control" id="username" name="username" placeholder="Enter a username">
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Enter a username" autofocus="autofocus">
                                 <span class="text-danger"><?php echo form_error('username')?></span>
                                 <!--<p class="help-block">At least 4 characters, letters or numbers only</p>-->
                             </div>
