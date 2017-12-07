@@ -19,7 +19,7 @@
     </div>
     <br/>
     <div align="center">
-        <a class="btn btn-success" href="<?php echo base_url(); ?>Company/post_a_job"><span class="glyphicon glyphicon-plus-sign"></span> Post a new Job</a>
+        <a class="btn btn-success" href="<?php echo base_url(); ?>Company/post_an_internship"><span class="glyphicon glyphicon-plus-sign"></span> Post an new Internship</a>
     </div>
     <br/>
 
