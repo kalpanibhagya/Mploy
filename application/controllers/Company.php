@@ -155,10 +155,6 @@ class Company extends CI_Controller {
     function profile(){
         $this->load->view('Pages/Company/profile');
     }
-    public function fetch(){
-        $this->load->model("Company_m");
-        $data["fetch_data"] = $this->Company_m->fetch_data();
-    }
 
     function dashboard(){
         $this->load->view('Pages/Company/dashboard');
@@ -188,10 +184,6 @@ class Company extends CI_Controller {
         $this->load->view('Pages/Company/notifications');
     }
 
-    public function showAllEmployers(){
-        $result = $this->m->showAllEmployers();
-        echo json_encode($result);
-    }
 
     public function ajax_list()
     {
@@ -259,6 +251,13 @@ class Company extends CI_Controller {
     public function ajax_edit($company_id)
     {
         $data = $this->person->get_by_id($company_id);
+        echo json_encode($data);
+    }
+
+    public function ajax_edit_profile()
+    {
+        $email = $this->session->userdata('email');
+        $data = $this->person->get_by_email($email);
         echo json_encode($data);
     }
 

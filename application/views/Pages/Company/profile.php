@@ -58,7 +58,7 @@
 
                             //Ajax Load data from ajax
                             $.ajax({
-                                url : "<?php echo site_url('Company/ajax_edit/')?>/" ,
+                                url : "<?php echo site_url('Company/ajax_edit_profile/')?>/" ,
                                 type: "GET",
                                 dataType: "JSON",
                                 success: function(data)
@@ -68,7 +68,7 @@
                                     //$('[name="logo"]').val(data.logo);
 
                                     $('#modal_form_company').modal('show'); // show bootstrap modal when complete loaded
-                                    $('.modal-title').text('Edit Personal Info'); // Set title to Bootstrap modal title
+                                    $('.modal-title').text('Edit Username'); // Set title to Bootstrap modal title
 
                                 },
                                 error: function (jqXHR, textStatus, errorThrown)
@@ -86,7 +86,7 @@
 
                             //Ajax Load data from ajax
                             $.ajax({
-                                url : "<?php echo site_url('Company/ajax_edit/')?>/" ,
+                                url : "<?php echo site_url('Company/ajax_edit_profile/')?>/" ,
                                 type: "GET",
                                 dataType: "JSON",
                                 success: function(data)
@@ -94,9 +94,42 @@
 
                                     $('[name="email"]').val(data.email);
                                     $('[name="address"]').val(data.address);
-                                    $('[name="contact"]').val(data.contact);
+                                    $('[name="contact_no"]').val(data.contact_no);
                                     $('[name="linkedin"]').val(data.linkedin);
                                     $('[name="website"]').val(data.website);
+
+                                    $('#modal_form_contact').modal('show'); // show bootstrap modal when complete loaded
+                                    $('.modal-title').text('Edit Contact Info'); // Set title to Bootstrap modal title
+
+                                },
+                                error: function (jqXHR, textStatus, errorThrown)
+                                {
+                                    alert('Error get data from ajax');
+                                }
+                            });
+                        }
+
+                        function edit_company_details()
+                        {
+                            save_method = 'update';
+                            save_type = 'details';
+                            $('#form_details')[0].reset(); // reset form on modals
+
+                            //Ajax Load data from ajax
+                            $.ajax({
+                                url : "<?php echo site_url('Company/ajax_edit_profile/')?>/" ,
+                                type: "GET",
+                                dataType: "JSON",
+                                success: function(data)
+                                {
+
+                                    $('[name="company_name"]').val(data.email);
+                                    $('[name="register_no"]').val(data.address);
+                                    $('[name="country"]').val(data.contact);
+                                    $('[name="company_type"]').val(data.linkedin);
+                                    $('[name="company_size"]').val(data.website);
+                                    $('[name="company_size"]').val(data.website);
+                                    $('[name="company_size"]').val(data.website);
 
                                     $('#modal_form_contact').modal('show'); // show bootstrap modal when complete loaded
                                     $('.modal-title').text('Edit Contact Info'); // Set title to Bootstrap modal title
@@ -157,7 +190,7 @@
 
             <div class="box box-success">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Contact Details</h3> <a class="glyphicon glyphicon-pencil" role="button" href="javascript:void(0)" role="button" onclick="edit_company()"></a>
+                    <h3 class="box-title">Contact Details</h3> <a class="glyphicon glyphicon-pencil" role="button" href="javascript:void(0)" role="button" onclick="edit_company_contact()"></a>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
@@ -175,7 +208,7 @@
 
                     <strong><i class="fa fa-pencil margin-r-5"></i> Contact Number</strong>
 
-                    <input type="text" name="telephone" class="form-control" placeholder="Contact Number" value="<?php echo $this->session->userdata('username'); ?>"/>
+                    <input type="text" name="telephone" class="form-control" placeholder="Contact Number" value="<?php echo $this->session->userdata('contact_no'); ?>"/>
 
                     <hr>
 
@@ -252,12 +285,12 @@
 </div>
 
 
-<div class="modal fade" id="modal_form_personal" role="dialog">
+<div class="modal fade" id="modal_form_company" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h3 class="modal-title">Personal Info Form</h3>
+                <h3 class="modal-title">Company Info Form</h3>
             </div>
             <div class="modal-body form">
                 <form action="#" id="form_company" class="form-horizontal">
@@ -292,12 +325,6 @@
                     <input type="hidden" value="" name="company_id"/>
                     <div class="form-body">
                         <div class="form-group">
-                            <label class="control-label col-md-3">Email</label>
-                            <div class="col-md-9">
-                                <input name="email" readonly placeholder="Email" class="form-control" type="text">
-                            </div>
-                        </div>
-                        <div class="form-group">
                             <label class="control-label col-md-3">Address</label>
                             <div class="col-md-9">
                                 <input name="address" placeholder="Address" class="form-control" type="text">
@@ -306,21 +333,21 @@
                         <div class="form-group">
                             <label class="control-label col-md-3">Contact Number</label>
                             <div class="col-md-9">
-                                <input name="contact" placeholder="Contact Number" class="form-control" type="text">
+                                <input name="contact_no" placeholder="Contact Number" class="form-control" type="text">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-3">Linke In</label>
+                            <label class="control-label col-md-3">Linked In</label>
                             <div class="col-md-9">
-                                <input name="contact" placeholder="Contact Number" class="form-control" type="text">
+                                <input name="linkedin" placeholder="Contact Number" class="form-control" type="url">
                             </div>
-                        </div
+                        </div>
                         <div class="form-group">
                             <label class="control-label col-md-3">Website</label>
                             <div class="col-md-9">
-                                <input name="contact" placeholder="Contact Number" class="form-control" type="text">
+                                <input name="website" placeholder="Contact Number" class="form-control" type="url">
                             </div>
-                      </div>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -331,7 +358,6 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-
 <!-- End Bootstrap modal -->
 
 </body>
