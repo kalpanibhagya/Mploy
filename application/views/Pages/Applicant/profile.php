@@ -107,10 +107,42 @@
                                     $('[name="email"]').val(data.email);
                                     $('[name="address"]').val(data.address);
                                     $('[name="contact"]').val(data.contact);
-                                    $('[name="gender"]').val(data.gender);
+                                    $('[name="linkedin"]').val(data.linkedin);
+                                    $('[name="website"]').val(data.website);
 
                                     $('#modal_form_contact').modal('show'); // show bootstrap modal when complete loaded
                                     $('.modal-title').text('Edit Contact Info'); // Set title to Bootstrap modal title
+
+                                },
+                                error: function (jqXHR, textStatus, errorThrown)
+                                {
+                                    alert('Error get data from ajax');
+                                }
+                            });
+                        }
+
+                        function edit_project()
+                        {
+                            save_method = 'update';
+                            save_type = 'project';
+                            $('#form_projects')[0].reset(); // reset form on modals
+
+                            //Ajax Load data from ajax
+                            $.ajax({
+                                url : "<?php echo site_url('Applicant/ajax_edit/')?>/" ,
+                                type: "GET",
+                                dataType: "JSON",
+                                success: function(data)
+                                {
+
+                                    $('[name="name"]').val(data.name);
+                                    $('[name="date_from"]').val(data.date_from);
+                                    $('[name="date_to"]').val(data.date_to);
+                                    $('[name="link"]').val(data.link);
+                                    $('[name="description"]').val(data.description);
+
+                                    $('#modal_form_projects').modal('show'); // show bootstrap modal when complete loaded
+                                    $('.modal-title').text('Edit Project Info'); // Set title to Bootstrap modal title
 
                                 },
                                 error: function (jqXHR, textStatus, errorThrown)
@@ -130,6 +162,10 @@
                             else if (save_type == 'contact')
                             {
                                 url = "<?php echo site_url('Applicant/ajax_update_contact_info')?>";
+                            }
+                            else if(save_type == 'project')
+                            {
+                                url = "<?php echo site_url('Applicant/ajax_update_project_data')?>";
                             }
 
 
@@ -193,13 +229,13 @@
 
                     <strong><i class="fa fa-linkedin-square margin-r-5"></i> Linked In</strong>
 
-                    <p>http://www.linedin.com/in/john</p>
+                    <p><?php echo $linkedin ?></p>
 
                     <hr>
 
                     <strong><i class="fa fa-internet-explorer margin-r-5"></i> Website</strong>
 
-                    <p>http://www.computer.com</p>
+                    <p><?php echo $website ?></p>
                 </div>
                 <!-- /.box-body -->
             </div>
@@ -301,50 +337,29 @@
 
                     </div>
 
-                    <div id="sectionB" class="tab-pane fade">
-                        <div class="container-fluid">
-                            <div class="panel panel-default">
-                                <div class="panel-heading"><b>Projects</b></div>
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="col-sm-6" class="col-md-6">
-                                            <div class="col4">
-                                                <div class="form-group">
-                                                    <label for="n2">Name</label>
-                                                    <input type="text" class="form-control" id="n2">
-                                                </div>
-                                                <div class="form-group"> <!-- Date input -->
-                                                    <label class="control-label" for="date">* Date</label>
-                                                    <input class="form-control" id="date" name="date" type="date"/>
-                                                </div>
-                                                <div class="form-group">
-                                                    <input class="form-control" id="date" name="date" type="date"/>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="git">Github Link</label>
-                                                    <input type="url" class="form-control" id="git">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6" class="col-md-6">
-                                            <div class="col5">
-                                                <div class="form-group">
-                                                    <textarea class="form-control" rows="9" id="comment" placeholder="Description and Achievements"></textarea>
-                                                </div>
-                                                <p id="req">* Required</p>
-                                                <div>
-                                                    <ul>
-                                                        <li><input type="submit" name="" value="save" class="btn" id="save3"></li>
-                                                        <li><input type="submit" name="" value="cancel" class="btn" id="cancel3"></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
+
+                    <div id = "sectionB" class = "row">
+                        <button class="btn btn-success" onclick="add_person()"><i class="glyphicon glyphicon-plus"></i> Add New Company</button>
+                        <br />
+                        <br />
+                        <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>From</th>
+                                <th>To</th>
+                                <th></th>
+                                <th>Address</th>
+                                <th>Contact Number</th>
+                                <th>Hiring Status</th>
+                                <th style="width:189px;">Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+
+
+                        </table>
                     </div>
 
                     <div id="sectionC" class="tab-pane fade">
@@ -667,7 +682,72 @@
                             <div class="col-md-9">
                                 <input name="contact" placeholder="Contact Number" class="form-control" type="text">
                             </div>
-                        </div
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Linked In</label>
+                            <div class="col-md-9">
+                                <input name="linkedin" placeholder="Linked In" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Website</label>
+                            <div class="col-md-9">
+                                <input name="website" placeholder="Website" class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnSave" onclick="save()" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- End Bootstrap modal -->
+
+<div class="modal fade" id="modal_form_projects" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title">Projects Details Form</h3>
+            </div>
+            <div class="modal-body form">
+                <form action="#" id="form_projects" class="form-horizontal">
+                    <input type="hidden" value="" name="company_id"/>
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="control-label col-md-3">* Name</label>
+                            <div class="col-md-9">
+                                <input name="email" readonly placeholder="Email" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">* From</label>
+                            <div class="col-md-9">
+                                <input name="date_from" placeholder="From" class="form-control" type="date">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">* To</label>
+                            <div class="col-md-9">
+                                <input name="date_to" placeholder="To" class="form-control" type="date">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Github Link</label>
+                            <div class="col-md-9">
+                                <input name="link" placeholder="Github Link" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Description</label>
+                            <div class="col-md-9">
+                                <textarea class="form-control" rows="9" id="" name="description" placeholder="Description and Achievements"></textarea>
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>

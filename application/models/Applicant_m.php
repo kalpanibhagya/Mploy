@@ -36,6 +36,7 @@ class Applicant_m extends CI_Model{
     function get_data($email)
     {
         $this->db->where('email', $email);
+
         $query1 = $this->db->get('intern_applicant');
         $this->db->where('email', $email);
         $query2 = $this->db->get('job_applicant');
@@ -60,6 +61,7 @@ class Applicant_m extends CI_Model{
 
             return $data;
         }
+
 
 
 
@@ -120,6 +122,11 @@ class Applicant_m extends CI_Model{
     {
         $this->db->update($this->table, $data, $where);
         return $this->db->affected_rows();
+    }
+
+    public function update_table($table, $where, $data)
+    {
+
     }
 
 }
