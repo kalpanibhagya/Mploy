@@ -64,7 +64,7 @@
                         {
                             save_method = 'update';
                             save_type = 'personal';
-                            $('#form')[0].reset(); // reset form on modals
+                            $('#form_personal')[0].reset(); // reset form on modals
 
                             //Ajax Load data from ajax
                             $.ajax({
@@ -94,7 +94,7 @@
                         {
                             save_method = 'update';
                             save_type = 'contact';
-                            $('#form')[0].reset(); // reset form on modals
+                            $('#form_contact')[0].reset(); // reset form on modals
 
                             //Ajax Load data from ajax
                             $.ajax({
@@ -137,7 +137,7 @@
                             $.ajax({
                                 url : url,
                                 type: "POST",
-                                data: $('#form').serialize(),
+                                data: $('#form_'.concat(save_type)).serialize(),
                                 dataType: "JSON",
                                 success: function(data)
                                 {
@@ -600,7 +600,7 @@
                 <h3 class="modal-title">Personal Info Form</h3>
             </div>
             <div class="modal-body form">
-                <form action="#" id="form" class="form-horizontal">
+                <form action="#" id="form_personal" class="form-horizontal">
                     <input type="hidden" value="" name="company_id"/>
                     <div class="form-body">
                         <div class="form-group">
@@ -651,7 +651,7 @@
                 <h3 class="modal-title">Contact Details Form</h3>
             </div>
             <div class="modal-body form">
-                <form action="#" id="form" class="form-horizontal">
+                <form action="#" id="form_contact" class="form-horizontal">
                     <input type="hidden" value="" name="company_id"/>
                     <div class="form-body">
                         <div class="form-group">
