@@ -41,7 +41,7 @@ class Applicant_m extends CI_Model{
             'contact'=>($result->contact), 'address'=>($result->address),
             'preffered_area'=>($result->preffered_area), 'company_one'=>($result->company_one),
             'company_two'=>($result->company_two), 'company_three'=>($result->company_three),
-            'password'=>($result->password));
+            'password'=>($result->password),'linkedin'=>($result->linkedin), 'website'=>($result->website));
 
         return $data;
 
@@ -103,6 +103,11 @@ class Applicant_m extends CI_Model{
     {
         $this->db->update($this->table, $data, $where);
         return $this->db->affected_rows();
+    }
+
+    public function update_table($table, $where, $data)
+    {
+
     }
 
 }
