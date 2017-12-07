@@ -156,10 +156,6 @@
                                 }
                             });
                         }
-
-
-
-
                     </script>
                 </div>
                 <!-- /.box-body -->
@@ -187,7 +183,7 @@
 
                     <hr>
 
-                    <strong><i class="fa fa-pencil margin-r-5"></i> Contact Number</strong>
+                    <strong><i class="fa fa-phone margin-r-5"></i> Contact Number</strong>
 
                     <p class="text-muted">
                         <?php echo $contact?>
@@ -314,7 +310,7 @@
                                         <div class="col-sm-6" class="col-md-6">
                                             <div class="col4">
                                                 <div class="form-group">
-                                                    <label for="n2">* Name</label>
+                                                    <label for="n2">Name</label>
                                                     <input type="text" class="form-control" id="n2">
                                                 </div>
                                                 <div class="form-group"> <!-- Date input -->
