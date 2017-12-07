@@ -208,6 +208,10 @@ class Company extends CI_Controller {
         $this->load->view('Pages/Company/job');
     }
 
+    function post_an_internship(){
+        $this->load->view('Pages/Company/internship');
+    }
+
     function employers(){
         $this->load->view('Pages/Company/employers');
     }
