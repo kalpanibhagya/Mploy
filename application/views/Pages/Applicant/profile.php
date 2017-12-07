@@ -162,44 +162,6 @@
 
 
 
-                        function save()
-                        {
-                            var url;
-                            if(save_method == 'add')
-                            {
-                                url = "<?php echo site_url('Applicant/ajax_add')?>";
-                            }
-                            else
-                            {
-                                url = "<?php echo site_url('Applicant/ajax_update')?>";
-                            }
-
-                            // ajax adding data to database
-                            $.ajax({
-                                url : url,
-                                type: "POST",
-                                data: $('#form').serialize(),
-                                dataType: "JSON",
-                                success: function(data)
-                                {
-                                    //if success close modal and reload ajax table
-                                    $('#modal_form').modal('hide');
-                                    reload_table();
-                                    swal(
-                                        'Good job!',
-                                        'Data has been save!',
-                                        'success'
-                                    )
-                                },
-                                error: function (jqXHR, textStatus, errorThrown)
-                                {
-                                    alert('Error adding / update data');
-                                }
-                            });
-                        }
-
-
-
                     </script>
                 </div>
                 <!-- /.box-body -->
