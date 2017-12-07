@@ -101,7 +101,7 @@
                     <strong><i class="fa fa-envelope margin-r-5"></i> Email</strong>
 
                     <p class="text-muted">
-                        john@gmail.com
+                        <?php echo $email ?>
                     </p>
 
                     <hr>
@@ -115,7 +115,7 @@
                     <strong><i class="fa fa-pencil margin-r-5"></i> Contact Number</strong>
 
                     <p class="text-muted">
-                        011-94734221
+                        <?php echo $contact ?>
                     </p>
 
                     <hr>
