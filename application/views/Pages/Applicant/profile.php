@@ -253,13 +253,8 @@
                                                         <label for="con1">Country</label>
                                                         <input type="text" class="form-control" id="con1">
                                                     </div>
+                                                    <button type="submit" id="save1" class="btn btn-success">Save</button>
 
-                                                    <div>
-                                                        <ul>
-                                                            <li><input type="submit" name="" value="save" class="btn" id="save5"></li>
-                                                            <li><input type="submit" name="" value="cancel" class="btn" id="cancel5"></li>
-                                                        </ul>
-                                                    </div>
                                                 </fieldset>
                                             </div>
                                         </div>
@@ -302,12 +297,7 @@
                                                     <textarea class="form-control" rows="9" id="comment" placeholder="Description and Achievements"></textarea>
                                                 </div>
                                                 <p id="req">* Required</p>
-                                                <div>
-                                                    <ul>
-                                                        <li><input type="submit" name="" value="save" class="btn" id="save3"></li>
-                                                        <li><input type="submit" name="" value="cancel" class="btn" id="cancel3"></li>
-                                                    </ul>
-                                                </div>
+                                                <button type="submit" id="save2" class="btn btn-success">Save</button>
                                             </div>
                                         </div>
                                     </div>
@@ -368,13 +358,7 @@
                                                         <label for="con">Country</label>
                                                         <input type="text" class="form-control" id="con">
                                                     </div>
-
-                                                    <div>
-                                                        <ul>
-                                                            <li><input type="submit" name="" value="save" class="btn" id="save4"></li>
-                                                            <li><input type="submit" name="" value="cancel" class="btn" id="cancel4"></li>
-                                                        </ul>
-                                                    </div>
+                                                    <button type="submit" id="save3" class="btn btn-success">Save</button>
                                                 </fieldset>
                                             </div>
                                         </div>
@@ -450,12 +434,7 @@
                                                         <label for="con1">Country</label>
                                                         <input type="text" class="form-control" id="con1">
                                                     </div>
-                                                    <div>
-                                                        <ul>
-                                                            <li><input type="submit" name="" value="save" class="btn" id="save5"></li>
-                                                            <li><input type="submit" name="" value="cancel" class="btn" id="cancel5"></li>
-                                                        </ul>
-                                                    </div>
+                                                    <button type="submit" id="save4" class="btn btn-success">Save</button>
                                                 </fieldset>
                                             </div>
                                         </div>
@@ -496,13 +475,7 @@
                                                     <div class="form-group">
                                                         <textarea class="form-control" rows="5" id="comment" placeholder="Description and Achievements, any links"></textarea>
                                                     </div>
-
-                                                    <div>
-                                                        <ul>
-                                                            <li><input type="submit" name="" value="save" class="btn" id="save1"></li>
-                                                            <li><input type="submit" name="" value="cancel" class="btn" id="cancel1"></li>
-                                                        </ul>
-                                                    </div>
+                                                    <button type="submit" id="save5" class="btn btn-success">Save</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -540,6 +513,7 @@
                                                 </select>
                                             </div>
                                             <div class="clearfix"></div>
+                                            <button type="submit" id="save6" class="btn btn-success">Save</button>
                                         </div>
                                     </div>
                                 </div>

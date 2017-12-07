@@ -94,17 +94,9 @@ class Applicant extends CI_Controller
         }
     }
 
-<<<<<<< HEAD
-
-    function enter()
-    {
-        if ($this->session->userdata('email') != '') {
-            $email = $this->session->userdata('email');
-=======
     function enter(){
         if ($this->session->userdata('email') != ''){
             $email=$this->session->userdata('email');
->>>>>>> master
             $this->load->model('Applicant_m');
             $data= $this->Applicant_m->get_data($email);
             $this->load->view('Pages/Applicant/dashboard',$data);
