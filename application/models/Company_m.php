@@ -35,12 +35,8 @@ class Company_m extends CI_Model{
         $this->db->insert('registered_company', $data);
     }
 
-    public function fetch_data(){
-        $query = $this->db->get("registered_company");
-        return $query;
-    }
-
     public function showAllEmployers(){
+        //$this->db->order_by('created_at', 'desc');
         $query = $this->db->get('registered_company');
         if($query->num_rows() > 0){
             return $query->result();
@@ -146,6 +142,15 @@ class Company_m extends CI_Model{
         $data = array('username'=> ($result->username), 'email'=>($result->email), 'password'=>($result->password));
 
         return $data;
+    }
+
+    function get_by_email($email)
+    {
+        $this->db->from($this->table);
+        $this->db->where('email',$email);
+        $query = $this->db->get();
+
+        return $query->row();
     }
 }
 

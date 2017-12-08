@@ -22,7 +22,7 @@
                         <form method="post" action="<?php echo base_url()?>Company/login_validation">
                             <div class="form-group">
                                 <label for="email">Email address</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required="">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required="" autofocus="autofocus">
                                 <span class="text-danger"><?php echo form_error('email')?></span>
                             </div>
                             <div class="form-group">

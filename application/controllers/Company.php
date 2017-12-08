@@ -28,38 +28,6 @@ class Company extends CI_Controller {
         $this->load->view('Pages/Company/createProfile');
     }
 
-    /*
-    public function form_validation(){
-        //echo 'OK';
-        $this->load->library('form_validation');
-        $this->form_validation->set_rules('username', 'Username', 'required');
-        $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
-        $this->form_validation->set_rules('password', 'Password', 'required|min_length[6]');
-        $this->form_validation->set_rules('confirm_password', 'Confirm Password', 'required|min_length[6]|matches[password]');
-
-        if($this->form_validation->run()){
-            //true
-            $this->load->model('Company_m');
-            $data = array(
-                'username' => $this->input->post('username'),
-                'password' => $this->input->post('password'),
-                'email' => $this->input->post('email')
-            );
-
-            $this->Company_m->insert_data($data);
-
-            redirect(base_url().'Company/inserted');
-
-        }else{
-            //false
-            $this->Signup();
-        }
-    }
-
-    public function inserted(){
-        $this->Login();
-    }
-*/
     public function createProfile(){
         $this->load->view('Pages/Company/createProfile');
     }
@@ -187,10 +155,6 @@ class Company extends CI_Controller {
     function profile(){
         $this->load->view('Pages/Company/profile');
     }
-    public function fetch(){
-        $this->load->model("Company_m");
-        $data["fetch_data"] = $this->Company_m->fetch_data();
-    }
 
     function dashboard(){
         $this->load->view('Pages/Company/dashboard');
@@ -208,6 +172,10 @@ class Company extends CI_Controller {
         $this->load->view('Pages/Company/job');
     }
 
+    function post_an_internship(){
+        $this->load->view('Pages/Company/internship');
+    }
+
     function employers(){
         $this->load->view('Pages/Company/employers');
     }
@@ -216,8 +184,9 @@ class Company extends CI_Controller {
         $this->load->view('Pages/Company/notifications');
     }
 
+
     public function showAllEmployers(){
-        $result = $this->m->showAllEmployers();
+        $result = $this->person->showAllEmployers();
         echo json_encode($result);
     }
 
@@ -255,6 +224,39 @@ class Company extends CI_Controller {
         echo json_encode($output);
     }
 
+    public function ajax_list_company()
+    {
+        $list = $this->person->get_datatables();
+        $data = array();
+        $no = $_POST['start'];
+        foreach ($list as $person) {
+            $no++;
+            $row = array();
+            $row[] = $person->company_name;
+            $row[] = $person->register_no;
+            $row[] = $person->country;
+            $row[] = $person->email;
+            $row[] = $person->address;
+            $row[] = $person->contact_no;
+            $row[] = $person->hiring_status;
+
+            //add html for action
+            $row[] = '<a class="btn btn-sm btn-default" href="javascript:void(0)" title="View" onclick="view_person('."'".$person->company_id."'".')"><i class="glyphicon glyphicon-file"></i> View</a>';
+
+            $data[] = $row;
+        }
+
+        $output = array(
+            "draw" => $_POST['draw'],
+            "recordsTotal" => $this->person->count_all(),
+            "recordsFiltered" => $this->person->count_filtered(),
+            "data" => $data,
+        );
+        //output to json format
+        echo json_encode($output);
+    }
+
+
     public function ajax_list_min()
     {
         $list = $this->person->get_datatables();
@@ -287,6 +289,13 @@ class Company extends CI_Controller {
     public function ajax_edit($company_id)
     {
         $data = $this->person->get_by_id($company_id);
+        echo json_encode($data);
+    }
+
+    public function ajax_edit_profile()
+    {
+        $email = $this->session->userdata('email');
+        $data = $this->person->get_by_email($email);
         echo json_encode($data);
     }
 
@@ -341,5 +350,32 @@ class Company extends CI_Controller {
 
         $data['output'] = $this->person->get_by_id_view($company_id);
         $this->load->view('Pages/Admin/view_Detail', $data);
+    }
+
+    public function ajax_update_company_info()
+    {
+        $data = array(
+            'username' => $this->input->post('username'),
+        );
+
+        $email = $this->session->userdata('email');
+
+        $this->person->update(array('email' =>$email), $data);
+        echo json_encode(array("status" => TRUE));
+    }
+
+    public function ajax_update_contact_info()
+    {
+        $data = array(
+            'address' => $this->input->post('address'),
+            'contact' => $this->input->post('contact'),
+            'linkedin' => $this->input->post('linkedin'),
+            'website' => $this->input->post('website'),
+        );
+
+        $email = $this->session->userdata('email');
+
+        $this->person->update(array('email' =>$email), $data);
+        echo json_encode(array("status" => TRUE));
     }
 }

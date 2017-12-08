@@ -27,11 +27,11 @@
             </li>
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-send"></i> <span>Job Posts</span>
+                    <i class="fa fa-send"></i> <span>My Posts</span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a class = "ayam" href="<?php echo base_url(); ?>Company/posted_internships"><i class="fa fa-circle-o"></i> Interns Selection</a></li>
-                    <li><a class = "ayam" href="<?php echo base_url(); ?>Company/posted_jobs"><i class="fa fa-circle-o"></i> Job Applicants Selection</a></li>
+                    <li><a class = "ayam" href="<?php echo base_url(); ?>Company/posted_internships"><i class="fa fa-circle-o"></i> Internships</a></li>
+                    <li><a class = "ayam" href="<?php echo base_url(); ?>Company/posted_jobs"><i class="fa fa-circle-o"></i> Jobs</a></li>
                 </ul>
             </li>
             <li>

@@ -9,117 +9,93 @@
 <script src="<?php echo base_url('assets/bootstrap-datepicker/js/bootstrap-datepicker.min.js')?>"></script>
 
 
-<div class="row">
+<div class="container">
+
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-10">
+                    <form method="post" action="#">
+                            <legend class="text-center">Main Facts</legend>
+                            <div class="form-group">
+                                <label>Username</label>
+                                <input type="text" class="form-control" name="username" value="<?php echo $this->session->userdata('username'); ?>" required="">
+                            </div>
+                            <div class="form-group">
+                                <label>Company Name</label>
+                                <input type="text" class="form-control" name="name" value="<?php echo $this->session->userdata('company_name'); ?>" required="">
+                            </div>
+                            <div class="form-group">
+                                <label>Company Register Certificate No.</label>
+                                <input type="text" class="form-control" name="register_no" value="<?php echo $this->session->userdata('register_no'); ?>" required="">
+                            </div>
+                            <div class="form-group">
+                                <label>Company Type</label>
+                                <input type="text" class="form-control" name="type" value="<?php echo $this->session->userdata('type'); ?>" required="">
 
-            <!-- Profile Image -->
-            <div class="box box-success">
-                <div class="box-body box-profile">
-                    <a class="glyphicon glyphicon-pencil" role="button"></a>
-                    <img class="profile-user-img img-responsive img-square" src="<?php echo $this->session->userdata('logo'); ?>" alt="User profile picture" style="height: 200px;width: 200px">
+                            </div>
+                            <div class="form-group">
+                                <label>Company size</label>
+                                <input type="texr" class="form-control" id="size" name="size"  value="<?php echo $this->session->userdata('size'); ?>" required="">
+                            </div>
+                            <div class="form-group">
+                                <label>Currently hiring ?</label>
+                                <input type="text" class="form-control" name="hiring_status" value="<?php echo $this->session->userdata('hiring_status'); ?>">
+                            </div>
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea name="description" rows="5" class="form-control" placeholder="About your company"><?php echo $this->session->userdata('about'); ?></textarea>
+                            </div>
 
-                    <h3 class="profile-username text-center"><?php echo $this->session->userdata('username'); ?></h3>
-                </div>
-                <!-- /.box-body -->
-            </div>
-            <!-- /.box -->
+                            <legend class="text-center">Company Contact Details</legend>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" class="form-control" name="email" value="<?php echo $this->session->userdata('email'); ?>" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Contact Number</label>
+                                <input type="tel" class="form-control" name="contact_no" value="<?php echo $this->session->userdata('contact_no'); ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="linkedin">Linked In</label>
+                                <input type="url" class="form-control" name="linkedin" value="<?php echo $this->session->userdata('linkedin'); ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="website">Website URL</label>
+                                <input type="url" class="form-control" name="website" value="<?php echo $this->session->userdata('website'); ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Country</label>
+                                <input type="text" class="form-control" name="country" value="<?php echo $this->session->userdata('country'); ?>" required="">
+                            </div>
+                            <div class="form-group">
+                                <label for="city">Address</label>
+                                <input type="text" class="form-control" name="address" value="<?php echo $this->session->userdata('address'); ?>" required="">
+                            </div>
 
-            <div class="box box-success">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Contact Details</h3> <a class="glyphicon glyphicon-pencil" role="button"></a>
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body">
-                    <strong><i class="fa fa-envelope margin-r-5"></i> Email</strong>
-
-                    <input type="email" name="email" class="form-control" placeholder="Email" value="<?php echo $this->session->userdata('email'); ?>" readonly/>
-
-                    <hr>
-
-                    <strong><i class="fa fa-map-marker margin-r-5"></i> Address</strong>
-
-                    <input type="text" name="address" class="form-control" placeholder="Address" value="<?php echo $this->session->userdata('address'); ?>"/>
-
-                    <hr>
-
-                    <strong><i class="fa fa-pencil margin-r-5"></i> Contact Number</strong>
-
-                    <input type="text" name="telephone" class="form-control" placeholder="Contact Number" value="<?php echo $this->session->userdata('username'); ?>"/>
-
-                    <hr>
-
-                    <strong><i class="fa fa-linkedin-square margin-r-5"></i> Linked In</strong>
-
-                    <input type="url" name="linkedin" class="form-control" placeholder="Linkedin" value="<?php echo $this->session->userdata('linkedin'); ?>"/>
-
-                    <hr>
-
-                    <strong><i class="fa fa-internet-explorer margin-r-5"></i> Website</strong>
-
-                    <input type="url" name="website" class="form-control" placeholder="Website" value="<?php echo $this->session->userdata('website'); ?>"/>
-                </div>
-                <!-- /.box-body -->
-            </div>
-            <!-- /.box -->
+                            <legend class="text-center">Contact Person Details</legend>
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" class="form-control" value="<?php echo $this->session->userdata('cname'); ?>" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Contact Number</label>
+                                <input type="tel" class="form-control" name="ctelephone" value="<?php echo $this->session->userdata('ctelephone'); ?>" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="url" class="form-control" name="cemail" value="<?php echo $this->session->userdata('cemail'); ?>">
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-success" type="submit" value="Submit">Update</button>
+                                <a href="<?php echo base_url(); ?>Company/enter" class="btn btn-default" role="button">Cancel</a>
+                                <br/>
+                            </div>
+                            <br/>
+                    </form>
         </div>
-        <!-- /.col -->
-        <div class="col-md-8">
-            <div class="box box-success" style="padding: 20px">
-                <form action="<?php echo base_url()?>Company/profile_validation" method="post">
-                    <a class="glyphicon glyphicon-pencil" role="button"></a>
-                    <h3 align="center" style="font-weight: bold">Company details</h3>
-                    <div class="form-group">
-                        <label>Company Name</label>
-                        <input type="text" name="company_name" class="form-control" placeholder="Company Name" value="<?php echo $this->session->userdata('company_name'); ?>"/>
-                    </div>
-                    <div class="form-group">
-                        <label>Company Registration Number</label>
-                        <input type="text" name="reg_number" class="form-control" placeholder="2 letters followed by 6 numbers" value="<?php echo $this->session->userdata('register_no'); ?>"/>
-                    </div>
-                    <div class="form-group">
-                        <label>Country</label>
-                        <input type="text" name="country" class="form-control" placeholder="country" value="<?php echo $this->session->userdata('country'); ?>"/>
-                    </div>
-                    <div class="form-group">
-                        <label>Company Type</label>
-                        <input type="text" name="company_type" class="form-control" placeholder="eg: Public Organization" value="<?php echo $this->session->userdata('type'); ?>"/>
-                    </div>
-                    <div class="form-group">
-                        <label>Company Size</label>
-                        <input type="text" name="company_size" class="form-control" placeholder="100-500" value="<?php echo $this->session->userdata('size'); ?>"/>
-                    </div>
-                    <div class="form-group">
-                        <label>Currently Hiring ?</label>
-                        <input type="text" name="hiriing_status" class="form-control" placeholder="eg: yes" value="<?php echo $this->session->userdata('hiring_status'); ?>"/>
-                    </div>
-                    <div class="form-group">
-                        <label>Description</label>
-                        <textarea name="description" rows="5" class="form-control" placeholder="About your company"><?php echo $this->session->userdata('about'); ?></textarea>
-                    </div>
-
-                    <hr/>
-
-                    <a class="glyphicon glyphicon-pencil" role="button"></a>
-                    <h3 align="center" style="font-weight: bold">Contact person's details</h3>
-                    <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" name="cname" class="form-control" placeholder="Contact person name" value="<?php echo $this->session->userdata('cname'); ?>"/>
-                    </div>
-                    <div class="form-group">
-                        <label>Email Address</label>
-                        <input type="email" name="cemail" class="form-control" placeholder="Contact person email address" value="<?php echo $this->session->userdata('cemail'); ?>"/>
-                    </div>
-                    <div class="form-group">
-                        <label>Contact Number</label>
-                        <input type="text" name="ctelephone" class="form-control" placeholder="Contact person telephone number" value="<?php echo $this->session->userdata('ctelephone'); ?>"/>
-                    </div>
-                </form>
+                </div>
             </div>
-        </div>
-    </div>
 
-</div>
+
 
 
 </body>

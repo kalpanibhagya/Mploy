@@ -17,13 +17,14 @@
                         <?php
                         echo $this->session->flashdata('error');
                         if ($this->uri->segment(2) == 'inserted'){
-                            echo '<div class="alert alert-success" role="alert">Data Inserted Successfully</div>';
+                            echo '<div class="alert alert-success" role="alert">Signed up successfully!</div>';
                         }
                         ?>
                         <form method="post" action="<?php echo base_url()?>Applicant/login_validation">
+
                             <div class="form-group">
                                 <label for="email">E-mail</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Your E-mail">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Your E-mail" autofocus="autofocus">
                                 <span class="text-danger"><?php echo form_error('email')?></span>
                             </div>
                             <div class="form-group">

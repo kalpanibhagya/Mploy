@@ -20,9 +20,18 @@
                                 echo '<div class="alert alert-success" role="alert">Data Inserted Successfully</div>';
                             }
                             ?>
+
+                            <div class="form-group">
+                                <label for="type">Applicant type</label>
+                                <select class="form-control" id="type" name="applicanttype">
+                                    <option value="1">Internship</option>
+                                    <option value="2">Job</option>
+                                </select>
+                            </div>
+
                             <div class="form-group">
                                 <label for="username">Username</label>
-                                <input type="text" class="form-control" id="username" name="username" placeholder="Enter a username">
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Enter a username" autofocus="autofocus">
                                 <span class="text-danger"><?php echo form_error('username')?></span>
                                 <!--<p class="help-block">At least 4 characters, letters or numbers only</p>-->
                             </div>

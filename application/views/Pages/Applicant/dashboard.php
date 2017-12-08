@@ -11,10 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <title>M-ploy</title>
     <link rel="shortcut icon" href="assets/images/logo.png" type="image/png">
     <style type="text/css">
-
         .un {text-decoration: none; }
-
-
     </style>
 
 
@@ -136,6 +133,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!-- AdminLTE App -->
 <script src="<?php echo base_url(); ?>assets/crud-assets/js/app.min.js" type="text/javascript"></script>
 <script src="<?php echo base_url()."assets/AdminLTE/"; ?>dist/js/adminlte.min.js"></script>
+
+
+
+
 
 </body>
 </html>
