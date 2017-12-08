@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <title>Sign Up</title>
+    <link rel="shortcut icon" href="../assets/images/logo.png" type="image/png">
     <link href="<?php echo base_url()."assets/form-wizard/"; ?>css/bootstrap.min.css" rel="stylesheet"/>
     <link href="<?php echo base_url()."assets/form-wizard/"; ?>css/font-awesome.min.css" rel="stylesheet"/>
     <link href="<?php echo base_url()."assets/form-wizard/"; ?>style.css" rel="stylesheet"/>

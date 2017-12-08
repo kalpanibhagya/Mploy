@@ -79,7 +79,10 @@ class Company extends CI_Controller {
 
     function enter(){
         if ($this->session->userdata('email') != ''){
-            $this->load->view('Pages/Company/dashboard');
+            $email = $this->session->userdata('email');
+            $this->load->model('Company_m');
+            $data = $this->Company_m->get_data($email);
+            $this->load->view('Pages/Company/dashboard',$data);
         } else {
             redirect(base_url().'Company/Login');
         }
@@ -153,7 +156,10 @@ class Company extends CI_Controller {
     }
 
     function profile(){
-        $this->load->view('Pages/Company/profile');
+        $email = $this->session->userdata('email');
+        $this->load->model('Company_m');
+        $data = $this->Company_m->get_data($email);
+        $this->load->view('Pages/Company/profile',$data);
     }
 
     function dashboard(){
@@ -186,7 +192,7 @@ class Company extends CI_Controller {
 
 
     public function showAllEmployers(){
-        $result = $this->person->showAllEmployers();
+        $result = $this->person ->showAllEmployers();
         echo json_encode($result);
     }
 
@@ -368,7 +374,7 @@ class Company extends CI_Controller {
     {
         $data = array(
             'address' => $this->input->post('address'),
-            'contact' => $this->input->post('contact'),
+            'contact_no' => $this->input->post('contact_no'),
             'linkedin' => $this->input->post('linkedin'),
             'website' => $this->input->post('website'),
         );
@@ -378,4 +384,40 @@ class Company extends CI_Controller {
         $this->person->update(array('email' =>$email), $data);
         echo json_encode(array("status" => TRUE));
     }
+
+    public function ajax_update_company_details()
+    {
+        $data = array(
+            'company_name' => $this->input->post('company_name'),
+            'register_no' => $this->input->post('register_no'),
+            'country' => $this->input->post('country'),
+            'type' => $this->input->post('type'),
+            'size' => $this->input->post('size'),
+            'hiring_status' => $this->input->post('hiring_status'),
+            'about' => $this->input->post('about'),
+        );
+
+        $email = $this->session->userdata('email');
+
+        $this->person->update(array('email' =>$email), $data);
+        echo json_encode(array("status" => TRUE));
+    }
+
+    public function ajax_update_contact_person()
+    {
+        $data = array(
+            'cname' => $this->input->post('cname'),
+            'cemail' => $this->input->post('cemail'),
+            'ctelephone' => $this->input->post('ctelephone'),
+        );
+
+        $email = $this->session->userdata('email');
+
+        $this->person->update(array('email' =>$email), $data);
+        echo json_encode(array("status" => TRUE));
+    }
+
+
+
+
 }
