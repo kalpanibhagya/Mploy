@@ -35,6 +35,16 @@ class Company_m extends CI_Model{
         $this->db->insert('registered_company', $data);
     }
 
+    public function showAllEmployers(){
+        //$this->db->order_by('created_at', 'desc');
+        $query = $this->db->get('registered_company');
+        if($query->num_rows() > 0){
+            return $query->result();
+        }else{
+            return false;
+        }
+    }
+
     private function _get_datatables_query()
     {
 

@@ -185,6 +185,11 @@ class Company extends CI_Controller {
     }
 
 
+    public function showAllEmployers(){
+        $result = $this->person->showAllEmployers();
+        echo json_encode($result);
+    }
+
     public function ajax_list()
     {
         $list = $this->person->get_datatables();
@@ -218,6 +223,39 @@ class Company extends CI_Controller {
         //output to json format
         echo json_encode($output);
     }
+
+    public function ajax_list_company()
+    {
+        $list = $this->person->get_datatables();
+        $data = array();
+        $no = $_POST['start'];
+        foreach ($list as $person) {
+            $no++;
+            $row = array();
+            $row[] = $person->company_name;
+            $row[] = $person->register_no;
+            $row[] = $person->country;
+            $row[] = $person->email;
+            $row[] = $person->address;
+            $row[] = $person->contact_no;
+            $row[] = $person->hiring_status;
+
+            //add html for action
+            $row[] = '<a class="btn btn-sm btn-default" href="javascript:void(0)" title="View" onclick="view_person('."'".$person->company_id."'".')"><i class="glyphicon glyphicon-file"></i> View</a>';
+
+            $data[] = $row;
+        }
+
+        $output = array(
+            "draw" => $_POST['draw'],
+            "recordsTotal" => $this->person->count_all(),
+            "recordsFiltered" => $this->person->count_filtered(),
+            "data" => $data,
+        );
+        //output to json format
+        echo json_encode($output);
+    }
+
 
     public function ajax_list_min()
     {
