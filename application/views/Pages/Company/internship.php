@@ -234,20 +234,6 @@
                                                         </tr>
                                                         <tr>
                                                             <td>Work Experience</td>
-                                                            <td>Full time</td>
-                                                            <td>
-                                                                <input class="form-control" id="marks6" name="marks6" type="number" required="">
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Work Experience</td>
-                                                            <td>Part time</td>
-                                                            <td>
-                                                                <input class="form-control" id="marks7" name="marks7" type="number" required="">
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Work Experience</td>
                                                             <td>Internship - Full time</td>
                                                             <td>
                                                                 <input class="form-control" id="marks8" name="marks8" type="number" required="">
