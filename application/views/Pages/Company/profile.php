@@ -136,7 +136,7 @@
 
 
                                     $('#modal_form_details').modal('show'); // show bootstrap modal when complete loaded
-                                    $('.modal-title').text('Edit Contact Info'); // Set title to Bootstrap modal title
+                                    $('.modal-title').text('Edit Company Info'); // Set title to Bootstrap modal title
 
                                 },
                                 error: function (jqXHR, textStatus, errorThrown)
@@ -416,7 +416,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-3">Company Registration Number</label>
+                            <label class="control-label col-md-3">Company Registration No.</label>
                             <div class="col-md-9">
                                 <input name="register_no" class="form-control" type="text">
                             </div>
