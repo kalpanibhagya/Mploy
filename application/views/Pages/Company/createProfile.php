@@ -464,35 +464,6 @@
     <script src="<?php echo base_url()."assets/form-wizard/"; ?>js/bootstrap.min.js"></script>
     <script src="<?php echo base_url()."assets/form-wizard/"; ?>script.js"></script>
 
-<!--<script>-->
-<!--    $("#next").click(function(){-->
-<!--        var form = $("#myform");-->
-<!--        form.validate({-->
-<!--                rules: {-->
-<!--                    username: {-->
-<!--                        required: true,-->
-<!--                        minlength: 6,-->
-<!--                    },-->
-<!--                    ........-->
-<!--                },-->
-<!--                messages: {-->
-<!--                    username: {-->
-<!--                        required: "Username required",-->
-<!--                    },-->
-<!--        ........-->
-<!--                }-->
-<!--        });-->
-<!--        if (form.valid() == true){-->
-<!--            current_fs = $('#account');-->
-<!--            next_fs = $('#company_details');-->
-<!--            next_fs.show();-->
-<!--            current_fs.hide();-->
-<!--        }else {-->
-<!--            next_fs.hide();-->
-<!--            current_fs.show();-->
-<!--        }-->
-<!--    });-->
-<!--</script>-->
 
 
 </body>

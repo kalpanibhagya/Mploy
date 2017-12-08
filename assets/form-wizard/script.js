@@ -26,23 +26,6 @@ jQuery(document).ready(function() {
     
     $('form .btn-next').on('click', function() {
 
-        // $("#form1").valid({
-        //
-        //     rules : {
-        //         username:{
-        //             required: true,
-        //             minLength: 6
-        //         }
-        //     },
-        //
-        //     messages:{
-        //         username:{
-        //             required: "please enter the username",
-        //             minLength: "username should be more than 6 characters"
-        //         }
-        //     }
-        // })
-
 
     	var parent_fieldset = $(this).parents('fieldset');
     	var next_step = true;
@@ -104,11 +87,5 @@ jQuery(document).ready(function() {
     		}
     	});
     });
-
-
-
-    // $('#next').click(function() {
-    //     $("#form1").valid();
-    // });
 
 });
