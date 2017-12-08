@@ -52,6 +52,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <form class="navbar-form navbar-right">
+                    <a class="btn btn-success" href="<?php echo base_url(); ?>Company/post_an_internship" role="button">Post an new Internship</a>
                     <a class="btn btn-success" href="<?php echo base_url(); ?>Company/dashboard" role="button">Dashboard</a>
                     <a class="btn btn-success" href="<?php echo base_url(); ?>Company/logout" role="button">Logout</a>
                 </form>
@@ -61,7 +62,7 @@
 
 </header>
 
-<section style="margin-top: 80px">
+<section style="margin-top: 50px;background-color: lightgrey">
     <div class="alert alert-success text-center" role="alert">Post your job opportunity here.</div>
 
     <div class="container">
@@ -84,6 +85,13 @@
                                                        placeholder="Eg:- Software Engineer" required="">
                                             </div>
                                             <div class="form-group">
+                                                <label for="salary">Contract Type</label>
+                                                <select class="form-control" id="type" name="type">
+                                                    <option value="full-time">Full Time</option>
+                                                    <option value="part-time">Part Time</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
                                                 <label for="registerNo">Location</label>
                                                 <textarea class="form-control" id="location" rows="3" required=""></textarea>
                                             </div>
@@ -98,20 +106,20 @@
                                             <div class="form-group">
                                                 <input type="date" class="form-control" id="to" name="to" required="">
                                             </div>
-                                            <div class="form-group">
-                                                <label for="salary">Salary</label>
-                                                <input type="text" class="form-control" id="salary" name="salary" required="">
-                                            </div>
                                         </div>
                                     </div>
                                     <div class="floating-box">
                                         <div class="col-md-6">
                                             <div class="form-group">
+                                                <label for="salary">Salary</label>
+                                                <input type="text" class="form-control" id="salary" name="salary" required="">
+                                            </div>
+                                            <div class="form-group">
                                                 <label for="description">Description</label>
                                                 <textarea class="form-control" id="description" name="description" required="" rows="10"></textarea>
                                             </div>
                                             <div class="form-group" align="right">
-                                                <a href="#sectionB" class="btn btn-success" role="button">Next</a>
+                                                <a href="#sectionB" class="btn btn-success" role="button">Save</a>
                                                 <a href="createOpportunity.php" class="btn btn-default" role="button">Reset</a>
                                             </div>
                                         </div>
@@ -131,6 +139,12 @@
                                             <div class="panel panel-default">
                                                 <div class="panel-heading">Academic Qualifications</div>
                                                 <div class="panel-body">
+                                                    <div class="inline">
+                                                        <label>Total Percentage:</label>
+                                                        <div class="input-group">
+                                                            <input class="form-control" type="number" name="academic_percentage"><br/>
+                                                            <span class="input-group-addon">%</span>
+                                                        </div></div>
                                                     <div class="form-group">
                                                         <table>
                                                             <tr>
@@ -179,6 +193,12 @@
                                             <div class="panel panel-default">
                                                 <div class="panel-heading">Experiences</div>
                                                 <div class="panel-body">
+                                                    <div class="inline">
+                                                        <label>Total Percentage:</label>
+                                                        <div class="input-group">
+                                                            <input class="form-control" type="number" name="experience_percentage"><br/>
+                                                            <span class="input-group-addon">%</span>
+                                                        </div></div>
                                                     <div class="form-group">
                                                         <table>
                                                             <tr>
@@ -233,6 +253,13 @@
                                             <div class="panel panel-default">
                                                 <div class="panel-heading">Professional Qualifications</div>
                                                 <div class="panel-body">
+                                                    <div class="inline">
+                                                        <label>Total Percentage:</label>
+                                                        <div class="input-group">
+                                                            <input class="form-control" type="number" name="pqualification_percentage"><br/>
+                                                            <span class="input-group-addon">%</span>
+                                                        </div>
+                                                    </div>
                                                     <div class="form-group">
                                                         <table>
                                                             <tr>
@@ -263,6 +290,22 @@
                                                                     <input class="form-control" id="marks3" name="marks3" type="number" required="">
                                                                 </td>
                                                             </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <input class="form-control" id="marks1" name="marks1" type="text" required="">
+                                                                </td>
+                                                                <td>
+                                                                    <input class="form-control" id="marks3" name="marks3" type="number" required="">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <input class="form-control" id="marks1" name="marks1" type="text" required="">
+                                                                </td>
+                                                                <td>
+                                                                    <input class="form-control" id="marks3" name="marks3" type="number" required="">
+                                                                </td>
+                                                            </tr>
                                                         </table>
                                                     </div>
                                                 </div>
@@ -278,6 +321,13 @@
                                                 <div class="panel-heading">Extra Curricular Activities</div>
                                                 <div class="panel-body">
                                                     <div class="form-group">
+                                                        <div class="inline">
+                                                            <label>Total Percentage:</label>
+                                                            <div class="input-group">
+                                                                <input class="form-control" type="number" name="extra_percentage"><br/>
+                                                                <span class="input-group-addon">%</span>
+                                                            </div>
+                                                        </div>
                                                         <table>
                                                             <tr>
                                                                 <td>Hackathons</td>
@@ -336,21 +386,26 @@
                                                             </li>
                                                         </ul>
                                                         <select class="form-control" onchange="selectIngredient(this);">
-                                                            <option value="1">Java</option>
-                                                            <option value="2">Php</option>
-                                                            <option value="3">Android</option>
-                                                            <option value="4">C</option>
-                                                            <option value="5">C++</option>
-                                                            <option value="6">Scrum</option>
-                                                            <option value="7">Firebase</option>
-                                                            <option value="Other">Other</option>
+                                                            <option value="Java">Java</option>
+                                                            <option value="Php">Php</option>
+                                                            <option value="Android">Android</option>
+                                                            <option value="C">C</option>
+                                                            <option value="C++">C++</option>
+                                                            <option value="Scrum">Scrum</option>
+                                                            <option value="JavaScript">JavaScript</option>
+                                                            <option value="C#">C#</option>
+                                                            <option value="Front-End">Front-End</option>
+                                                            <option value="Back-End">Back-End</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
+                                    <div class="form-group" align="right">
+                                        <a href="#sectionB" class="btn btn-success" role="button">Save</a>
+                                        <a href="createOpportunity.php" class="btn btn-default" role="button">Reset</a>
+                                    </div>
 
                                 </div>
                             </div>
