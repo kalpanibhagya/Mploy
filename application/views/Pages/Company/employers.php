@@ -37,10 +37,10 @@
 
 <script>
     $(function(){
-        showAllEmployee();
+        showAllEmployers();
 
         //function
-        function showAllEmployee(){
+        function showAllEmployers(){
             $.ajax({
                 type: 'ajax',
                 url: '<?php echo base_url() ?>Company/showAllEmployers',
