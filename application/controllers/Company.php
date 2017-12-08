@@ -116,6 +116,7 @@ class Company extends CI_Controller {
         $this->form_validation->set_rules('cname', 'Name', 'required');
         $this->form_validation->set_rules('cemail', 'Email Address', 'required|valid_email');
         $this->form_validation->set_rules('ctelephone', 'Contact Number', 'required|numeric');
+        $this->form_validation->set_rules('area', 'Specialized Area', 'required');
 
         if($this->form_validation->run()){
             //true
@@ -138,7 +139,8 @@ class Company extends CI_Controller {
                 'website' => $this->input->post('website'),
                 'cname' => $this->input->post('cname'),
                 'ctelephone' => $this->input->post('ctelephone'),
-                'cemail' => $this->input->post('cemail')
+                'cemail' => $this->input->post('cemail'),
+                'area' => $this->input->post('area')
             );
 
             $this->Company_m->insert_profile_data($data);
