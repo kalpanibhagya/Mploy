@@ -48,6 +48,22 @@
         </div>
       </div>
 
+        <div class="form-group">
+            <label for="" class="col-sm-2 control-label">Company Type : </label>
+
+            <div class="col-sm-6">
+                <h5 class="col-sm-6 "><?php echo $data->type; ?></h5>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="" class="col-sm-2 control-label">Company Sizie : </label>
+
+            <div class="col-sm-6">
+                <h5 class="col-sm-6 "><?php echo $data->size; ?></h5>
+            </div>
+        </div>
+
 
       <div class="form-group">
         <label for="" class="col-sm-2 control-label">Country : </label>
@@ -81,6 +97,22 @@
           <h5 class="col-sm-6 "><?php echo $data->contact_no; ?></h5>
         </div>
       </div>
+
+        <div class="form-group">
+            <label for="" class="col-sm-2 control-label">Linked In : </label>
+
+            <div class="col-sm-6">
+                <h5 class="col-sm-6 "><?php echo $data->linkedin; ?></h5>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="" class="col-sm-2 control-label">Website : </label>
+
+            <div class="col-sm-6">
+                <h5 class="col-sm-6 "><?php echo $data->website; ?></h5>
+            </div>
+        </div>
 
 
         <div class="form-group">
