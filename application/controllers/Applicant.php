@@ -88,7 +88,13 @@ class Applicant extends CI_Controller
             $password = base64_encode(strrev(md5($this->input->post('password'))));
 
             $this->load->model('Applicant_m');
-            if ($this->Applicant_m->can_login($email, $password)) {
+            if ($this->Applicant_m->can_login_intern($email, $password)) {
+                $session_data = array(
+                    'email' => $email
+                );
+                $this->session->set_userdata($session_data);
+                redirect(base_url() . 'Applicant/enter');
+            } elseif ($this->Applicant_m->can_login_job($email, $password)){
                 $session_data = array(
                     'email' => $email
                 );
