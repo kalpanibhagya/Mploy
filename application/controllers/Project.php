@@ -17,7 +17,7 @@ class Project extends CI_Controller
     public function ajax_add()
     {
         $data = array(
-            'applicant_id'=>'1',
+            'applicant_id'=>$this->input->post('applicant_id'),
             'name' => $this->input->post('name'),
             'type' => $this->input->post('type'),
             'date_from'=>$this->input->post('date_from'),
@@ -34,6 +34,14 @@ class Project extends CI_Controller
         if($type =='job')
         {
             $this->load->model('Project_job_m','Project_job');
+
+            $this->Project_job->insert_data($data);
+
+            echo json_encode(array("status" => TRUE));
+        }
+        elseif($type =='intern')
+        {
+            $this->load->model('Project_intern_m','Project_job');
 
             $this->Project_job->insert_data($data);
 

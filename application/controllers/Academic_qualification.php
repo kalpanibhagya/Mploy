@@ -17,7 +17,7 @@ class Academic_qualification extends CI_Controller
     public function ajax_add()
     {
         $data = array(
-            'applicant_id'=>'1',
+            'applicant_id'=>$this->input->post('applicant_id'),
             'degree' => $this->input->post('degree'),
             'university' => $this->input->post('university'),
             'degree_type' => $this->input->post('degree_type'),
@@ -39,7 +39,14 @@ class Academic_qualification extends CI_Controller
 
             echo json_encode(array("status" => TRUE));
         }
-        //echo json_encode(array("status" => TRUE));
+        elseif($type =='intern')
+        {
+            $this->load->model('Academic_intern_m','Academic');
+
+            $this->Academic->insert_data($data);
+
+            echo json_encode(array("status" => TRUE));
+        }
 
     }
 

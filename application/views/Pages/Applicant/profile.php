@@ -530,7 +530,7 @@
             </div>
             <div class="modal-body form">
                 <form action="#" id="form_personal" class="form-horizontal">
-                    <input type="hidden" value="" name="company_id"/>
+                    <input type="hidden" value="<?php echo $applicant_id?>" name="applicant_id""/>
                     <div class="form-body">
                         <div class="form-group">
                             <label class="control-label col-md-3">full Name</label>
@@ -581,7 +581,7 @@
             </div>
             <div class="modal-body form">
                 <form action="#" id="form_contact" class="form-horizontal" method="post">
-                    <input type="hidden" value="" name="company_id"/>
+                    <input type="hidden" value="<?php echo $applicant_id?>" name="applicant_id"/>
                     <div class="form-body">
                         <div class="form-group">
                             <label class="control-label col-md-3">Email</label>
@@ -634,7 +634,7 @@
             </div>
             <div class="modal-body form">
                 <form action="" id="form_academic" class="form-horizontal">
-                    <input type="hidden" value="" name="company_id"/>
+                    <input type="hidden" value="<?php echo $applicant_id?>" name="applicant_id"/>
                     <div class="form-body">
                         <div class="form-group">
                             <label class="control-label col-md-3">Degree</label>
@@ -693,7 +693,7 @@
             </div>
             <div class="modal-body form">
                 <form action="#" id="form_project" class="form-horizontal">
-                    <input type="hidden" value="" name="applicant_id"/>
+                    <input type="hidden" value="<?php echo $applicant_id?>" name="applicant_id"/>
                     <div class="form-body">
                         <div class="form-group">
                             <label class="control-label col-md-3">* Name</label>
@@ -752,7 +752,7 @@
             </div>
             <div class="modal-body form">
                 <form action="#" id="form_work" class="form-horizontal">
-                    <input type="hidden" value="" name="company_id"/>
+                    <input type="hidden" value="<?php echo $applicant_id?>" name="applicant_id""/>
                     <div class="form-body">
                         <div class="form-group">
                             <label class="control-label col-md-3">Job Title</label>
@@ -823,7 +823,7 @@
             </div>
             <div class="modal-body form">
                 <form action="#" id="form_professional" class="form-horizontal">
-                    <input type="hidden" value="" name="company_id"/>
+                    <input type="hidden" value="<?php echo $applicant_id?>" name="applicant_id""/>
                     <div class="form-body">
                         <div class="form-group">
                             <label class="control-label col-md-3">Title</label>
@@ -834,7 +834,7 @@
                         <div class="form-group">
                             <label class="control-label col-md-3">Professional Body</label>
                             <div class="col-md-9">
-                                <input name="professional body" placeholder="Professional Body" class="form-control" type="date">
+                                <input name="professional body" placeholder="Professional Body" class="form-control" type="name">
                             </div>
                         </div>
                         <div class="form-group">
@@ -894,7 +894,7 @@
             </div>
             <div class="modal-body form">
                 <form action="#" id="form_extra_curricular" class="form-horizontal">
-                    <input type="hidden" value="" name="company_id"/>
+                    <input type="hidden" value="<?php echo $applicant_id?>" name="applicant_id""/>
                     <div class="form-body">
                         <div class="form-group">
                             <label class="control-label col-md-3">Name</label>
