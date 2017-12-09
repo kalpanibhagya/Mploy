@@ -164,7 +164,7 @@ class Applicant extends CI_Controller
     public function ajax_edit()
     {
         $email = $this->session->userdata('email');
-        $data = $this->person->get_by_email($email);
+        $data = $this->person->get_data_by_email($email);
         echo json_encode($data);
     }
 
@@ -198,19 +198,6 @@ class Applicant extends CI_Controller
         echo json_encode(array("status" => TRUE));
     }
 
-    public function ajax_update_project_data()
-    {
-        $data = array(
-            'address' => $this->input->post('address'),
-            'contact' => $this->input->post('contact'),
-            'linkedin' => $this->input->post('linkedin'),
-            'website' => $this->input->post('website'),
-        );
 
-        $email = $this->session->userdata('email');
-
-        $this->person->update(array('email' =>$email), $data);
-        echo json_encode(array("status" => TRUE));
-    }
 
 }

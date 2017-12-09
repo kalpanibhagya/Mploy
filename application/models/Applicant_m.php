@@ -2,7 +2,7 @@
 
 class Applicant_m extends CI_Model{
 
-    var $table = 'applicant';
+    var $table = 'job_applicant';
     var $column = array('fullname','username','dob','gender');
     var $order = array('fullname' => 'desc');
 
@@ -11,6 +11,29 @@ class Applicant_m extends CI_Model{
         parent::__construct();
         $this->load->database();
         $this->search = '';
+    }
+
+    public function check_type($email)
+    {
+        $this->db->where('email', $email);
+
+        $query1 = $this->db->get('intern_applicant');
+        $this->db->where('email', $email);
+        $query2 = $this->db->get('job_applicant');
+
+        if ($query1->num_rows()>0){
+
+            $result = $query1->row();
+
+
+            return 'intern';
+
+        }elseif ($query2->num_rows()>0){
+            $result = $query2->row();
+
+            return 'job';
+        }
+
     }
 
     public function insert_intern($data){
@@ -58,9 +81,8 @@ class Applicant_m extends CI_Model{
             $data = array('username'=> ($result->username), 'full_name'=> ($result->full_name),
                 'dob'=>($result->dob), 'gender'=>($result->gender), 'email'=>($result->email),
                 'contact'=>($result->contact), 'address'=>($result->address),
-                'preffered_area'=>($result->preffered_area), 'company_one'=>($result->company_one),
-                'company_two'=>($result->company_two), 'company_three'=>($result->company_three),
-                'password'=>($result->password));
+                'linkedin'=>($result->linkedin), 'github'=>($result->github),
+                'website'=>($result->website));
 
             return $data;
 
@@ -69,7 +91,8 @@ class Applicant_m extends CI_Model{
             $data = array('username'=> ($result->username), 'full_name'=> ($result->full_name),
                 'dob'=>($result->dob), 'gender'=>($result->gender), 'email'=>($result->email),
                 'contact'=>($result->contact), 'address'=>($result->address),
-                'password'=>($result->password));
+                'linkedin'=>($result->linkedin), 'github'=>($result->github),
+                'website'=>($result->website));
 
             return $data;
         }
@@ -81,7 +104,7 @@ class Applicant_m extends CI_Model{
     function get_data_by_email($email){
 
             $this->db->where('email', $email);
-            $query = $this->db->get('applicant');
+            $query = $this->db->get($this->table);
 
             return $query->row();
     }
