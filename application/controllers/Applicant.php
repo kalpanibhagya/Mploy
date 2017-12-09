@@ -152,7 +152,42 @@ class Applicant extends CI_Controller
         $this->load->view('Pages/Applicant/notifications');
     }
 
+    public function ajax_list_company()
+    {
+        $this->load->model('Applicant_m','person');
+        $list = $this->person->get_datatables();
+        $data = array();
+        $no = $_POST['start'];
+        foreach ($list as $person) {
+            $no++;
+            $row = array();
+            $row[] = $person->company_name;
+            $row[] = $person->country;
+            $row[] = $person->email;
+            $row[] = $person->address;
+            $row[] = $person->contact_no;
 
+            //add html for action
+            $row[] = '<a class="btn btn-sm btn-default" href="javascript:void(0)" title="View" onclick="view_person('."'".$person->company_id."'".')"><i class="glyphicon glyphicon-file"></i> View</a>';
+
+            $data[] = $row;
+        }
+
+        $output = array(
+            "draw" => $_POST['draw'],
+            "recordsTotal" => $this->person->count_all(),
+            "recordsFiltered" => $this->person->count_filtered(),
+            "data" => $data,
+        );
+        //output to json format
+        echo json_encode($output);
+    }
+
+
+    public function list_by_id_company($company_id){
+        $data['output'] = $this->person->get_by_id_view($company_id);
+        $this->load->view('Pages/Applicant/view_Detail', $data);
+    }
 
 
     public function ajax_edit()
