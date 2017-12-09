@@ -21,17 +21,29 @@ class Applicant_m extends CI_Model{
         $this->db->insert('job_applicant', $data);
     }
 
-    function can_login($email, $password){
+    function can_login_intern($email, $password){
         $this->db->where('email', $email);
         $this->db->where('password', $password);
-        $query1 = $this->db->get('intern_applicant');
-        $query2 = $this->db->get('job_applicant');
-        if ($query1 or $query2-> num_rows() > 0){
+        $query = $this->db->get('intern_applicant');
+        if ($query -> num_rows() > 0){
             return true;
         }else {
             return false;
         }
     }
+
+    function can_login_job($email, $password){
+        $this->db->where('email', $email);
+        $this->db->where('password', $password);
+        $query = $this->db->get('job_applicant');
+        if ($query -> num_rows() > 0){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+
 
     function get_data($email)
     {
