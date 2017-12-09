@@ -21,7 +21,7 @@
             <div class="box box-primary">
                 <div class="box-body box-profile">
                     <a class="glyphicon glyphicon-pencil" href="javascript:void(0)" role="button" onclick="edit_person()"></a>
-                    <img class="profile-user-img img-responsive img-square" src="#" alt="User profile picture" style="height: 200px;width: 200px">
+                    <img class="profile-user-img img-responsive img-square" src="<?php echo base_url(); ?>assets/images/employee.png" alt="User profile picture" style="height: 200px;width: 200px">
 
                     <h3  class="profile-username text-center"><b><?php echo $username?></b></h3>
 
