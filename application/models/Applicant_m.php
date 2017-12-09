@@ -144,9 +144,9 @@ class Applicant_m extends CI_Model{
         return $query->result();
     }
 
-    function get_by_email($email)
+    function get_by_email($email,$table)
     {
-        $this->db->from($this->table);
+        $this->db->from($table);
         $this->db->where('email',$email);
         $query = $this->db->get();
 
