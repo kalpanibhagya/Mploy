@@ -164,8 +164,23 @@ class Applicant extends CI_Controller
     public function ajax_edit()
     {
         $email = $this->session->userdata('email');
-        $data = $this->person->get_data_by_email($email);
-        echo json_encode($data);
+
+        $this->load->model('Applicant_m','Applicant');
+
+        $type = $this->Applicant->check_type($email);
+
+        if ($type == 'job')
+        {
+            $table = 'job_applicant';
+            $data = $this->person->get_data_by_email($email,$table);
+            echo json_encode($data);
+        }
+        elseif ($type == 'intern')
+        {
+            $table = 'intern_applicant';
+            $data = $this->person->get_data_by_email($email, $table);
+            echo json_encode($data);
+        }
     }
 
     public function ajax_update_personal_info()
