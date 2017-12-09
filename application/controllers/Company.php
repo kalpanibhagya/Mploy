@@ -241,12 +241,10 @@ class Company extends CI_Controller {
             $no++;
             $row = array();
             $row[] = $person->company_name;
-            $row[] = $person->register_no;
             $row[] = $person->country;
             $row[] = $person->email;
             $row[] = $person->address;
             $row[] = $person->contact_no;
-            $row[] = $person->hiring_status;
 
             //add html for action
             $row[] = '<a class="btn btn-sm btn-default" href="javascript:void(0)" title="View" onclick="view_person('."'".$person->company_id."'".')"><i class="glyphicon glyphicon-file"></i> View</a>';
@@ -358,6 +356,12 @@ class Company extends CI_Controller {
 
         $data['output'] = $this->person->get_by_id_view($company_id);
         $this->load->view('Pages/Admin/view_Detail', $data);
+    }
+
+    public function list_by_id_company($company_id){
+
+        $data['output'] = $this->person->get_by_id_view($company_id);
+        $this->load->view('Pages/Company/view_Detail', $data);
     }
 
     public function ajax_update_company_info()

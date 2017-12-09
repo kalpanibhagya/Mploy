@@ -40,14 +40,6 @@
         </div>
       </div>
 
-      <div class="form-group">
-        <label for="" class="col-sm-2 control-label">Company Registration No. : </label>
-
-        <div class="col-sm-6">
-          <h5 class="col-sm-6 "><?php echo $data->register_no; ?></h5>
-        </div>
-      </div>
-
 
       <div class="form-group">
         <label for="" class="col-sm-2 control-label">Country : </label>
@@ -83,14 +75,6 @@
       </div>
 
 
-        <div class="form-group">
-            <label for="" class="col-sm-2 control-label">Hiring Status : </label>
-
-            <div class="col-sm-6">
-                <h5 class="col-sm-6 "><?php echo $data->hiring_status; ?></h5>
-            </div>
-        </div>
-
 
 
 
@@ -110,7 +94,7 @@ $(document).ready(function () {
 
   $('#butangBack').unbind('click').click(function () {
     $.ajax({
-      url : "<?php echo base_url();?>Admin_dashboard/employers",
+      url : "<?php echo base_url();?>Company/employers",
       success: function (result) {
         $('#haha').empty().html(result).fadeIn('slow');
       }});
