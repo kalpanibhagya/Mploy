@@ -99,7 +99,7 @@
         </div>
 
         <div class="form-group">
-            <label for="" class="col-sm-2 control-label">Linked In : </label>
+            <label for="" class="col-sm-2 control-label">Website : </label>
 
             <div class="col-sm-6">
                 <h5 class="col-sm-6 "><?php echo $data->website; ?></h5>
