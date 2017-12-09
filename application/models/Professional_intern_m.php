@@ -1,9 +1,9 @@
 <?php
 
-class Project_job_m extends CI_Model
+class Professional_intern_m extends CI_Model
 {
 
-    var $table = 'project_job';
+    var $table = 'professional_qualification_intern';
     //var $column = array('fullname', 'username', 'dob', 'gender');
     //var $order = array('fullname' => 'desc');
 
