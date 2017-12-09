@@ -18,7 +18,7 @@ class Professional_qualification extends CI_Controller
     public function ajax_add()
     {
         $data = array(
-            'applicant_id' => '1',
+            'applicant_id'=>$this->input->post('applicant_id'),
             'professional_body_id' => '1',
             'degree' => $this->input->post('degree'),
             'university' => $this->input->post('university'),
@@ -40,7 +40,14 @@ class Professional_qualification extends CI_Controller
 
             echo json_encode(array("status" => TRUE));
         }
-        //echo json_encode(array("status" => TRUE));
+        elseif ($type == 'intern')
+        {
+            $this->load->model('Professional_intern_m', 'Professional');
+
+            $this->Professional->insert_data($data);
+
+            echo json_encode(array("status" => TRUE));
+        }
 
     }
 }

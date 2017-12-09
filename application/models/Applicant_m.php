@@ -78,7 +78,7 @@ class Applicant_m extends CI_Model{
         if ($query1->num_rows()>0){
 
             $result = $query1->row();
-            $data = array('username'=> ($result->username), 'full_name'=> ($result->full_name),
+            $data = array('applicant_id'=>($result->applicant_id), 'username'=> ($result->username), 'full_name'=> ($result->full_name),
                 'dob'=>($result->dob), 'gender'=>($result->gender), 'email'=>($result->email),
                 'contact'=>($result->contact), 'address'=>($result->address),
                 'linkedin'=>($result->linkedin), 'github'=>($result->github),
@@ -88,7 +88,7 @@ class Applicant_m extends CI_Model{
 
         }elseif ($query2->num_rows()>0){
             $result = $query2->row();
-            $data = array('username'=> ($result->username), 'full_name'=> ($result->full_name),
+            $data = array('applicant_id'=>($result->applicant_id),'username'=> ($result->username), 'full_name'=> ($result->full_name),
                 'dob'=>($result->dob), 'gender'=>($result->gender), 'email'=>($result->email),
                 'contact'=>($result->contact), 'address'=>($result->address),
                 'linkedin'=>($result->linkedin), 'github'=>($result->github),
