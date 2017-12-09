@@ -57,7 +57,7 @@
         </div>
 
         <div class="form-group">
-            <label for="" class="col-sm-2 control-label">Company Sizie : </label>
+            <label for="" class="col-sm-2 control-label">Company Size : </label>
 
             <div class="col-sm-6">
                 <h5 class="col-sm-6 "><?php echo $data->size; ?></h5>
@@ -120,6 +120,14 @@
 
             <div class="col-sm-6">
                 <h5 class="col-sm-6 "><?php echo $data->hiring_status; ?></h5>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="" class="col-sm-2 control-label">Verification : </label>
+
+            <div class="col-sm-6">
+                <h5 class="col-sm-6 "><?php echo $data->verified_status; ?></h5>
             </div>
         </div>
 

@@ -213,6 +213,7 @@ class Company extends CI_Controller {
             $row[] = $person->address;
             $row[] = $person->contact_no;
             $row[] = $person->hiring_status;
+            $row[] = $person->verified_status;
 
             //add html for action
             $row[] = '<a class="btn btn-sm btn-primary" href="javascript:void(0)" title="Edit" onclick="edit_person('."'".$person->company_id."'".')"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
@@ -315,6 +316,7 @@ class Company extends CI_Controller {
             'address' => $this->input->post('address'),
             'contact_no' => $this->input->post('contact_no'),
             'hiring_status' => $this->input->post('hiring_status'),
+            'verified_status' => $this->input->post('verified_status'),
         );
         $insert = $this->person->save($data);
         echo json_encode(array("status" => TRUE));
@@ -330,6 +332,7 @@ class Company extends CI_Controller {
             'address' => $this->input->post('address'),
             'contact_no' => $this->input->post('contact_no'),
             'hiring_status' => $this->input->post('hiring_status'),
+            'verified_status' => $this->input->post('verified_status'),
         );
         $this->person->update(array('company_id' => $this->input->post('company_id')), $data);
         echo json_encode(array("status" => TRUE));
