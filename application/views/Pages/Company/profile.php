@@ -14,6 +14,7 @@
 
 <div class="row">
     <div class="row">
+
         <div class="col-md-4">
 
             <!-- Profile Image -->
@@ -23,13 +24,12 @@
                     <a class="glyphicon glyphicon-pencil" role="button" href="javascript:void(0)" role="button" onclick="edit_company()"></a>
                     <img class="profile-user-img img-responsive img-square" src="<?php echo base_url(); ?>assets/images/company.png" alt="User profile picture" style="height: 200px;width: 200px">
 
-                    <h3 class="profile-username text-center" id="username"><?php echo $username ?></h3>
+                    <h3 class="profile-username text-center"><?php echo $username ?></h3>
 
                     <script type="text/javascript">
 
                         var save_method; //for save method string
                         var table;
-                        var username;
                         var save_type;
                         $(document).ready(function() {
                             table = $('#table').DataTable({
@@ -176,11 +176,6 @@
                             });
                         }
 
-                        function reload_username()
-                        {
-                            username.ajax.reload(null,false); //reload username ajax
-                        }
-
                         function save()
                         {
                             var url;
@@ -212,7 +207,7 @@
                                 {
                                     //if success close modal and reload ajax table
                                     $('#modal_form_'.concat(save_type)).modal('hide');
-                                    reload_username();
+                                    //reload_table();
                                     swal(
                                         'Good job!',
                                         'Data has been save!',
