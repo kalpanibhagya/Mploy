@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
 
     <title>M-ploy</title>
-    <link rel="shortcut icon" href="assets/images/logo.png" type="image/png">
+    <link rel="shortcut icon" href="../assets/images/logo.png" type="image/png">
     <style type="text/css">
 
         .un {text-decoration: none; }
@@ -67,7 +67,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
                     <!-- User Account Menu -->
-                    <li class="">
+                    <li class="inline">
                         <!-- Menu Toggle Button -->
                         <a href="<?php echo site_url('Company/logout') ?>"> <i class="fa fa-sign-out"></i>
                             Log out </a>

@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <title>Sign Up</title>
+    <link rel="shortcut icon" href="../assets/images/logo.png" type="image/png">
     <link href="<?php echo base_url()."assets/form-wizard/"; ?>css/bootstrap.min.css" rel="stylesheet"/>
     <link href="<?php echo base_url()."assets/form-wizard/"; ?>css/font-awesome.min.css" rel="stylesheet"/>
     <link href="<?php echo base_url()."assets/form-wizard/"; ?>style.css" rel="stylesheet"/>
@@ -12,7 +13,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-        <form action="<?php echo base_url()?>Company/profile_validation" method="post">
+
+        <form action="<?php echo base_url()?>Company/profile_validation" method="post" id="form1">
             <div class="wizards">
                 <div class="progressbar">
                     <div class="progress-line" data-now-value="12.11" data-number-of-steps="5" style="width: 12.11%;"></div> <!-- 19.66% -->
@@ -38,10 +40,12 @@
                     <p>Finish</p>
                 </div>
             </div>
-            <fieldset>
+
+
+            <fieldset id="account">
                 <div class="form-group">
                     <label for="name">Username</label>
-                    <input type="text" class="form-control" id="username" name="username" placeholder="Userame" required="">
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Username" required="">
                     <span class="text-danger"><?php echo form_error('username')?></span>
                 </div>
                 <div class="form-group">
@@ -64,10 +68,11 @@
                     By continuing you agree to our<a href="<?php echo base_url(); ?>Company/Login"> Terms and Privacy Policy</a>
                 </div>
                 <div class="wizard-buttons">
-                    <button type="button" class="btn btn-next">Next</button>
+                    <button type="button" class="btn btn-next" id="next">Next</button>
                 </div>
             </fieldset>
-            <fieldset>
+
+            <fieldset id="company_details">
                 <div class="form-group">
                     <label>Company Name</label>
                     <input type="text" name="company_name" class="form-control" placeholder="Company Name"/>
@@ -383,7 +388,8 @@
                     <button type="button" class="btn btn-next">Next</button>
                 </div>
             </fieldset>
-            <fieldset>
+
+            <fieldset id="contact_details">
                 <div class="form-group">
                     <label>Phone Number</label>
                     <input type="tel" name="telephone" class="form-control" placeholder="eg: 011-4323521"/>
@@ -409,7 +415,8 @@
                     <button type="button" class="btn btn-next">Next</button>
                 </div>
             </fieldset>
-            <fieldset>
+
+            <fieldset id="contact_person">
                     <div class="form-group">
                     <label>Name</label>
                     <input type="text" name="cname" class="form-control" placeholder="Contact person name"/>
@@ -431,7 +438,8 @@
                     <button type="button" class="btn btn-next">Next</button>
                 </div>
             </fieldset>
-            <fieldset>
+
+            <fieldset id="finish">
                 <div class="jumbotron text-center">
                 <h1>Please click submit button to save your data</h1>
                 </div>
@@ -444,7 +452,10 @@
                     <button type="submit" name="save" class="btn btn-primary btn-submit">Submit</button>
                 </div>
             </fieldset>
-        </form>
+            </form>
+
+
+
             </div>
         </div>
     </div>
@@ -453,5 +464,8 @@
     <script src="<?php echo base_url()."assets/form-wizard/"; ?>js/popper.min.js"></script>
     <script src="<?php echo base_url()."assets/form-wizard/"; ?>js/bootstrap.min.js"></script>
     <script src="<?php echo base_url()."assets/form-wizard/"; ?>script.js"></script>
+
+
+
 </body>
 </html>

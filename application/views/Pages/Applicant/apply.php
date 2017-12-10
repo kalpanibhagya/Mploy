@@ -12,17 +12,19 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/sweetalert2/1.3.3/sweetalert2.min.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/sweetalert2/0.4.5/sweetalert2.css">
 <script type="text/javascript" src="https://cdn.jsdelivr.net/sweetalert2/1.3.3/sweetalert2.min.js"></script>
-
-<div class = "row">
-    <br />
+<div class="row">
+    <h4 style="text-align: center;font-weight: bolder">Jobs</h4>
     <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
         <tr>
-            <th>Company Name</th>
-            <th>Country</th>
-            <th>Email</th>
-            <th>Address</th>
-            <th>Contact Number</th>
+            <th>Job Title</th>
+            <th>Location</th>
+            <th>Number of opportunities</th>
+            <th>Posted Date</th>
+            <th>Valid till</th>
+            <th>Contract Type</th>
+            <th>Salary</th>
+            <th>Description</th>
             <th style="width:189px;">Action</th>
         </tr>
         </thead>
@@ -32,12 +34,9 @@
 
     </table>
 </div>
-
-
-
 <script type="text/javascript">
 
-    var save_method; //for save method string
+    //var save_method; //for save method string
     var table;
     $(document).ready(function() {
         table = $('#table').DataTable({
@@ -47,7 +46,7 @@
 
             // Load data for the table's content from an Ajax source
             "ajax": {
-                "url": "<?php echo site_url('Company/ajax_list_company')?>",
+                "url": "<?php echo site_url('Job_post/ajax_list')?>",
                 "type": "POST"
             },
 
@@ -62,16 +61,10 @@
         });
     });
 
-
-    function reload_table()
-    {
-        table.ajax.reload(null,false); //reload datatable ajax
-    }
-
-    function view_person(company_id)
+    function view_job(opportunity_id)
     {
         $.ajax({
-            url : "<?php echo site_url('Company/list_by_id_company')?>/" + company_id,
+            url : "<?php echo site_url('Job_post/list_by_id')?>/" + opportunity_id,
             type: "GET",
             success: function(result)
             {
@@ -97,6 +90,7 @@
 
 
 </script>
+
 
 </body>
 </html>
