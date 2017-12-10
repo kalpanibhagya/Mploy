@@ -313,7 +313,7 @@ class Company extends CI_Controller {
         $last_id = $arr[0]['opportunity_id'];
         $last_id = intval($last_id);
 
-        $this->load->model('weight_board_job_m');
+        $this->load->model('Weight_board_intern_m');
         $data = array(
             'certificate' => $this->input->post('marks1'),
             'deploma' => $this->input->post('marks2'),
