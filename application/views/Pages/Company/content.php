@@ -27,7 +27,7 @@
     </div>
 
     <div align="center">
-        <a class="btn btn-success" href="<?php echo base_url(); ?>Company/post_an_internship"> Posts</a>
+        <a class="btn btn-success" href="<?php echo base_url(); ?>Company/posts"> Posts</a>
     </div>
 
 </div>

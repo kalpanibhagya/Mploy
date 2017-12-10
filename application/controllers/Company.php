@@ -168,6 +168,10 @@ class Company extends CI_Controller {
         $this->load->view('Pages/Company/dashboard');
     }
 
+    function posts(){
+        $this->load->view('Pages/Company/posts');
+    }
+
     function posted_internships(){
         $this->load->view('Pages/Company/posted_internships');
     }

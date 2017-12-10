@@ -3,7 +3,7 @@
 class Company_m extends CI_Model{
 
     var $table = 'job_opportunity';
-    var $column = array('job_title','location','number_of_opportunities','open_date_from','open_date_to','contract_type','salary','description');
+    var $column = array('job_title','company_id','location','open_date_to','contract_type','salary');
     var $order = array('opportunity_id' => 'desc');
 
     public function __construct()
@@ -64,7 +64,7 @@ class Company_m extends CI_Model{
     public function get_by_id($opportunity_id)
     {
         $this->db->from($this->table);
-        $this->db->where('company_id',$opportunity_id);
+        $this->db->where('$opportunity_id',$opportunity_id);
         $query = $this->db->get();
 
         return $query->row();
@@ -106,5 +106,14 @@ class Company_m extends CI_Model{
         $query = $this->db->get();
 
         return $query->row();
+    }
+
+    public function showAllJobs(){
+        $query = $this->db->get($this->table);
+        if($query->num_rows() > 0){
+            return $query->result();
+        }else{
+            return false;
+        }
     }
 }
