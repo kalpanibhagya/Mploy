@@ -471,6 +471,7 @@
                                                             </li>
                                                         </ul-->
                                                         <select name="selection1" class="form-control" onchange="selectIngredient(this);">
+                                                            <option value="None">None</option>
                                                             <option value="Java">Java</option>
                                                             <option value="Php">Php</option>
                                                             <option value="Android">Android</option>
@@ -483,6 +484,7 @@
                                                             <option value="Back-End">Back-End</option>
                                                         </select>
                                                         <select name="selection2" class="form-control" onchange="selectIngredient(this);">
+                                                            <option value="None">None</option>
                                                             <option value="Java">Java</option>
                                                             <option value="Php">Php</option>
                                                             <option value="Android">Android</option>
@@ -495,6 +497,7 @@
                                                             <option value="Back-End">Back-End</option>
                                                         </select>
                                                         <select name="selection3" class="form-control" onchange="selectIngredient(this);">
+                                                            <option value="None">None</option>
                                                             <option value="Java">Java</option>
                                                             <option value="Php">Php</option>
                                                             <option value="Android">Android</option>
