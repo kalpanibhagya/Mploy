@@ -9,7 +9,7 @@
             </div>
             <div class="pull-left info">
                 <p style="font-weight: 100"><?php echo $username ?></p>
-                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                <a data-original-title="Tooltip" rel="tooltip"  href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
         <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -87,6 +87,10 @@
     })
 
 
+</script>
+
+<script>
+    $('[rel="tooltip"]').tooltip();
 </script>
 
 <style type="text/css">

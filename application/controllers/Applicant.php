@@ -122,9 +122,9 @@ class Applicant extends CI_Controller
         }
     }
 
-    function dashboard()
+    function apply()
     {
-        $this->load->view('Pages/Applicant/dashboard');
+        $this->load->view('Pages/Applicant/apply');
     }
 
     function profile()
