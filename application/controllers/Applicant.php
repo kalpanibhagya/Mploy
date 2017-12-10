@@ -205,6 +205,7 @@ class Applicant extends CI_Controller
             'contact' => $this->input->post('contact'),
             'linkedin' => $this->input->post('linkedin'),
             'website' => $this->input->post('website'),
+            'github' => $this->input->post('github'),
         );
 
         $email = $this->session->userdata('email');

@@ -82,25 +82,56 @@ class Applicant_m extends CI_Model{
                 'dob'=>($result->dob), 'gender'=>($result->gender), 'email'=>($result->email),
                 'contact'=>($result->contact), 'address'=>($result->address),
                 'linkedin'=>($result->linkedin), 'github'=>($result->github),
+                'certificate'=>($result->certificate),
+                'deploma'=>($result->deploma),
+                'degree'=>($result->degree),
+                'masters'=>($result->masters),
+                'phd'=>($result->phd),
+                'work_full'=>($result->work_full),
+                'work_part'=>($result->work_part),
+                'intern_full'=>($result->intern_full),
+                'intern_part'=>($result->intern_part),
+                'project'=>($result->project),
+                'hackathon'=>($result->hackathon),
+                'society'=>($result->society),
+                'volunteering'=>($result->volunteering),
+                'sport'=>($result->sport),
+                'aesthetic'=>($result->aesthetic),
+                'blogging'=>($result->blogging),
                 'website'=>($result->website));
 
             return $data;
 
         }elseif ($query2->num_rows()>0){
             $result = $query2->row();
-            $data = array('applicant_id'=>($result->applicant_id),'username'=> ($result->username), 'full_name'=> ($result->full_name),
+            $data = array('applicant_id'=>($result->applicant_id), 'username'=> ($result->username), 'full_name'=> ($result->full_name),
                 'dob'=>($result->dob), 'gender'=>($result->gender), 'email'=>($result->email),
                 'contact'=>($result->contact), 'address'=>($result->address),
                 'linkedin'=>($result->linkedin), 'github'=>($result->github),
+                'certificate'=>($result->certificate),
+                'deploma'=>($result->deploma),
+                'degree'=>($result->degree),
+                'masters'=>($result->masters),
+                'phd'=>($result->phd),
+                'work_full'=>($result->work_full),
+                'work_part'=>($result->work_part),
+                'intern_full'=>($result->intern_full),
+                'intern_part'=>($result->intern_part),
+                'project'=>($result->project),
+                'hackathon'=>($result->hackathon),
+                'society'=>($result->society),
+                'volunteering'=>($result->volunteering),
+                'sport'=>($result->sport),
+                'aesthetic'=>($result->aesthetic),
+                'blogging'=>($result->blogging),
                 'website'=>($result->website));
 
             return $data;
         }
 
-
-
-
     }
+
+
     function get_data_by_email($email){
 
             $this->db->where('email', $email);
@@ -161,7 +192,8 @@ class Applicant_m extends CI_Model{
 
     public function update_table($table, $where, $data)
     {
-
+        $this->db->update($table, $data, $where);
+        return $this->db->affected_rows();
     }
 }
 
