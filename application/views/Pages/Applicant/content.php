@@ -1,16 +1,4 @@
-<<<<<<< HEAD
-<div id="haha">
-    <div class="row">
-        <h4 style="text-align: center;font-weight: bolder">Jobs</h4>
-        <div class="input-group">
-            <input type="text" class="search form-control" placeholder="Search for: Internships, Jobs, Job Titles, City or Country" width="50px">
-            <span class="input-group-btn">
-                    <button class="btn btn-success" type="button">Go!</button>
-                </span>
-        </div>
-    </div>
 
-=======
 <div id="haha">
     <script src="<?php echo base_url('assets/crud-assets/test/js-image-slider.js')?>"></script>
 
@@ -41,5 +29,5 @@
         <a class="btn btn-success" href="<?php echo base_url(); ?>Applicant/posts"> View Job and Internships</a>
     </div>
 
->>>>>>> master
+
 </div>
