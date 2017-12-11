@@ -35,16 +35,10 @@ class JobController extends CI_Controller
 
     function deleteJob($id){
 
-        $this->Post_job->deleteJob($id);
+        $this->Post_job_m->deleteJob($id);
 
-        $this->posted_internships();
 
-//        print($id);
-//        die();
-
-//        $this->Post_internship->deleteInternShip($id);
-//
-//        $this->posted_internships();
+        redirect('Company/dashboard');
 
     }
 }

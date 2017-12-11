@@ -28,6 +28,7 @@
             <th>Salary</th>
             <th>Deadline</th>
             <th style="width:189px;">Action</th>
+            <th style="width:189px;">Action</th>
         </tr>
         </thead>
         <tbody>
@@ -54,11 +55,27 @@
                         echo $intern->open_date_to;
                         echo "</td>";
                         echo "<td>";?>
-                        <a href="<?php echo base_url()?>InternController/deleteInternShip/<?php echo $intern->opportunity_id?>" title="Delete" data-confirm="Are you sure?" data-method="post">
-                            <span class="glyphicon glyphicon-remove"></span>
+                        
+
+                            <a href="<?php echo base_url() ?>InternController/deleteInternShip/<?php echo $intern->opportunity_id ?>" title="Delete"
+               data-confirm="Are you sure?" data-method="post">
+                <!--span class="glyphicon glyphicon-remove"></span--><button type="submit" class="btn btn-danger">DELETE</button></a>
+
+                    <?php echo "</td>";
+
+                echo "<td>"; ?>
+
+                            <a href="<?php echo base_url() ?>InternController/deleteInternShip/<?php echo $intern->opportunity_id ?>" title="Delete"
+                               data-confirm="Are you sure?" data-method="post">
+                                <button type="submit" class="btn btn-success">SELECTION</button></a>
+
                             <?php echo "</td>";
                             echo "</tr>";
-                            }
+
+
+                    }
+
+
 
                 ?>
             </td>
