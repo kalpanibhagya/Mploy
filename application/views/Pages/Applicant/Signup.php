@@ -17,7 +17,7 @@
                         <form method="post" action="<?php echo base_url()?>Applicant/form_validation">
                             <?php
                             if ($this->uri->segment(2) == 'inserted'){
-                                echo '<div class="alert alert-success" role="alert">Data Inserted Successfully</div>';
+                                echo '<div class="alert alert-success" role="alert">Signed up Successfully</div>';
                             }
                             ?>
 
@@ -54,7 +54,7 @@
                                 <!--<p class="help-block">Must match your password</p>-->
                             </div>
                             <div class="form-group" align="center">
-                                <input type="submit" class="btn btn-success" value="Register">
+                                <input type="submit" class="btn btn-success" data-tooltip title="Click to submit and register" value="Register">
                                 <br/>
                                 Already registered?<a href="<?php echo base_url(); ?>Applicant/Login">Login</a>
                             </div>
@@ -65,3 +65,4 @@
         </div>
     </div>
 </section>
+
