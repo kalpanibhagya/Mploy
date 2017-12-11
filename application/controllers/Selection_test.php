@@ -26,7 +26,7 @@ class Selection_test extends CI_Controller
             'intern_part'=>2,
             'project'=>2,
             'hackathon'=>2,
-            'keyword'=>'abc',
+            'keyword'=>'t',
             'society'=>2,
             'volunteering'=>2,
             'sport'=>2,

@@ -105,7 +105,7 @@ class Job_selection extends CI_Model{
                     ($row2->society)*$weights['society'] +
                     ($row2->volunteering)*$weights['volunteering'] +
                     ($row2->sport)*$weights['sport'] +
-                    ($row2->easthitic)*$weights['easthitic'] +
+                    ($row2->easthetic)*$weights['easthitic'] +
                     ($row2->blogging)*$weights['blogging'] )* $percentage_value['extra']
 
                     );
@@ -138,7 +138,7 @@ class Job_selection extends CI_Model{
         }
 
 
-        return $value_array;
+        //return $value_array;
 
     }
 
