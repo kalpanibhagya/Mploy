@@ -36,7 +36,7 @@
                         var save_method; //for save method string
                         var table;
                         var save_type;
-                        $(document).ready(function() {
+                       /* $(document).ready(function() {
                             table = $('#table').DataTable({
 
                                 "processing": true, //Feature control the processing indicator.
@@ -44,7 +44,7 @@
 
                                 // Load data for the table's content from an Ajax source
                                 "ajax": {
-                                    "url": "<?php echo site_url('Applicant/ajax_list')?>",
+
                                     "type": "POST"
                                 },
 
@@ -57,7 +57,7 @@
                                 ],
 
                             });
-                        });
+                        }); */
 
                         function edit_person()
                         {
@@ -124,7 +124,7 @@
                         {
                             save_method = 'update';
                             save_type = 'project';
-                            $('#form_projects')[0].reset(); // reset form on modals
+                            $('#form_project')[0].reset(); // reset form on modals
 
                             //Ajax Load data from ajax
                             $.ajax({
@@ -140,7 +140,7 @@
                                     $('[name="link"]').val(data.link);
                                     $('[name="description"]').val(data.description);
 
-                                    $('#modal_form_projects').modal('show'); // show bootstrap modal when complete loaded
+                                    $('#modal_form_project').modal('show'); // show bootstrap modal when complete loaded
                                     $('.modal-title').text('Edit Project Info'); // Set title to Bootstrap modal title
 
                                 },
@@ -149,6 +149,94 @@
                                     alert('Error get data from ajax');
                                 }
                             });
+                        }
+
+                        function add_project()
+                        {
+                            save_method = 'add';
+                            save_type = 'project';
+                            $('#form_project')[0].reset(); // reset form on modals
+                            $('#modal_form_project').modal('show'); // show bootstrap modal
+                            $('.modal-title').text('Add New project'); // Set Title to Bootstrap modal title
+                        }
+
+                        function add_academic()
+                        {
+                            save_method = 'add';
+                            save_type = 'academic';
+                            $('#form_academic')[0].reset(); // reset form on modals
+                            $('#modal_form_academic').modal('show'); // show bootstrap modal
+                            $('.modal-title').text('Add New Educational Qualification'); // Set Title to Bootstrap modal title
+                        }
+
+                        function add_work()
+                        {
+                            save_method = 'add';
+                            save_type = 'work';
+                            $('#form_work')[0].reset(); // reset form on modals
+                            $('#modal_form_work').modal('show'); // show bootstrap modal
+                            $('.modal-title').text('Add New Work Experience'); // Set Title to Bootstrap modal title
+                        }
+
+                        function add_professional()
+                        {
+                            save_method = 'add';
+                            save_type = 'professional';
+                            $('#form_professional')[0].reset(); // reset form on modals
+                            $('#modal_form_professional').modal('show'); // show bootstrap modal
+                            $('.modal-title').text('Add New Professional Qualification'); // Set Title to Bootstrap modal title
+                        }
+
+                        function add_extra_curricular()
+                        {
+                            save_method = 'add';
+                            save_type = 'extra_curricular';
+                            $('#form_extra_curricular')[0].reset(); // reset form on modals
+                            $('#modal_form_extra_curricular').modal('show'); // show bootstrap modal
+                            $('.modal-title').text('Add New Extra Curricular Details'); // Set Title to Bootstrap modal title
+                        }
+
+                        function add_skill()
+                        {
+                            save_method = 'add';
+                            save_type = 'skill';
+                            $('#form_skills')[0].reset(); // reset form on modals
+                            $('#modal_form_skills').modal('show'); // show bootstrap modal
+                            $('.modal-title').text('Add New Skill Details'); // Set Title to Bootstrap modal title
+                        }
+
+                        function save_academic() {
+
+                            url = "<?php echo site_url('Academic_qualification/ajax_add')?>";
+
+
+                            // ajax adding data to database
+                            $.ajax({
+                                url : url,
+                                type: "POST",
+                                data: $('#form_academic').serialize(),
+                                dataType: "JSON",
+
+                                success: function(data)
+                                {
+                                    //if success close modal and reload ajax table
+                                    $('#modal_form_academic').modal('hide');
+                                    //reload_table();
+                                    swal(
+                                        'Good job!',
+                                        'Data has been save!',
+                                        'success'
+                                    )
+                                },
+                                error: function (jqXHR, textStatus, errorThrown)
+                                {
+
+                                    alert('Error adding / update data');
+
+                                }
+                            });
+
+
                         }
 
                         function save()
@@ -162,18 +250,34 @@
                             {
                                 url = "<?php echo site_url('Applicant/ajax_update_contact_info')?>";
                             }
+
+                            else if(save_type == 'academic')
+                            {
+                                url = "<?php echo site_url('Academic_qualification/ajax_add')?>";
+                            }
                             else if(save_type == 'project')
                             {
-                                url = "<?php echo site_url('Applicant/ajax_update_project_data')?>";
+                                url = "<?php echo site_url('Project/ajax_add')?>";
                             }
+                            else if(save_type == 'work')
+                            {
+                                url = "<?php echo site_url('Work_experience/ajax_add')?>";
+                            }
+                            else if(save_type == 'professional')
+                            {
+                                url = "<?php echo site_url('Professional_qualification/ajax_add')?>";
+                            }
+
+
 
 
                             // ajax adding data to database
                             $.ajax({
                                 url : url,
                                 type: "POST",
-                                data: $('#form_'.concat(save_type)).serialize(),
+                                data: $('#form_'.concat(save_type)).serializeArray(),
                                 dataType: "JSON",
+
                                 success: function(data)
                                 {
                                     //if success close modal and reload ajax table
@@ -184,10 +288,13 @@
                                         'Data has been save!',
                                         'success'
                                     )
+
                                 },
                                 error: function (jqXHR, textStatus, errorThrown)
                                 {
+
                                     alert('Error adding / update data');
+
                                 }
                             });
                         }
@@ -252,310 +359,122 @@
                     <li><a data-toggle="tab" href="#sectionF">Skills</a></li>
                 </ul>
                 <div class="tab-content">
-                    <div id="sectionA" class="tab-pane fade in active">
+                    <div id="sectionA" class="tab-pane fade">
                         <br/>
-                        <div class="container-fluid">
-                            <div class="panel panel-default">
-                                <div class="panel-heading"><b>University/Institute</b></div>
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="col-sm-6" class="col-md-6">
-                                            <div class="col8">
-                                                <fieldset>
-                                                    <legend><b>Degree Details</b></legend>
-                                                    <div class="form-group">
-                                                        <label for="n1">Degree</label>
-                                                        <input type="text" class="form-control" id="n1">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="n1">Degree Level</label>
-                                                        <select class="form-control" id="level">
-                                                            <option value="Certificate">Certificate</option>
-                                                            <option value="Diploma">Diploma</option>
-                                                            <option value="Bachelor">Bachelor</option>
-                                                            <option value="Master">Master</option>
-                                                            <option value="PhD">PhD</option>
-                                                        </select>
-                                                    </div>
-                                                    <form method="post">
-                                                        <div class="form-group">
-                                                            <label class="control-label" for="date">Date</label>
-                                                            <input class="form-control" id="date" name="date" type="date"/>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input class="form-control" id="date" name="date" type="date"/>
-                                                        </div>
-                                                    </form>
-                                                    <div class="form-group">
-                                                        <label for="n1">Grade/GPA</label>
-                                                        <input type="text" class="form-control" id="n1">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="sel1">Class</label>
-                                                        <select class="form-control" id="sel1">
-                                                            <option>First class</option>
-                                                            <option>Second - Upper</option>
-                                                            <option>Second - Lower</option>
-                                                            <option>General</option>
-                                                        </select>
-                                                    </div>
-                                                </fieldset>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6" class="col-md-6">
-                                            <div class="col9">
-                                                <fieldset>
-                                                    <legend><b>University/Institute details</b></legend>
-                                                    <div class="form-group">
-                                                        <label for="sel1">University/Institute</label>
-                                                        <input type="text" class="form-control" id="cn1" name="uni" placeholder="Other">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="web1">Website</label>
-                                                        <input type="url" class="form-control" id="web1">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="con1">Country</label>
-                                                        <input type="text" class="form-control" id="con1">
-                                                    </div>
-
-                                                    <div>
-                                                        <ul>
-                                                            <li><input type="submit" name="" value="save" class="btn" id="save5"></li>
-                                                            <li><input type="submit" name="" value="cancel" class="btn" id="cancel5"></li>
-                                                        </ul>
-                                                    </div>
-                                                </fieldset>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
+                        <div id = "sectionA" class = "row" >
+                            <button class="btn btn-success" onclick="add_academic();"><i class="glyphicon glyphicon-plus"></i> Add New Qualification</button>
+                            <br />
+                            <br />
+                            <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%" style="overflow: scroll;">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>University/Institute</th>
+                                    <th>Degree Type</th>
+                                    <th>Date From</th>
+                                    <th>Date To</th>
+                                    <th>Grade/GPA</th>
+                                    <th style="width:189px;">Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
                         </div>
-
                     </div>
 
-
-                    <div id = "sectionB" class = "row">
-                        <button class="btn btn-success" onclick="add_person()"><i class="glyphicon glyphicon-plus"></i> Add New Company</button>
-                        <br />
-                        <br />
-                        <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                            <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>From</th>
-                                <th>To</th>
-                                <th></th>
-                                <th>Address</th>
-                                <th>Contact Number</th>
-                                <th>Hiring Status</th>
-                                <th style="width:189px;">Action</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-
-
-                        </table>
+                    <div id="sectionB" class="tab-pane fade">
+                        <br/>
+                        <div id = "sectionB" class = "row">
+                            <button class="btn btn-success" onclick="add_project()"><i class="glyphicon glyphicon-plus"></i> Add New Project</button>
+                            <br />
+                            <br />
+                            <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                    <th>Date From</th>
+                                    <th>Date To</th>
+                                    <th>Github Link</th>
+                                    <th>Description</th>
+                                    <th style="width:189px;">Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
 
                     <div id="sectionC" class="tab-pane fade">
                         <br/>
-                            <div class="panel panel-default">
-                                <div class="panel-heading"><b>Work Experience</b></div>
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="col-sm-6" class="col-md-6">
-                                            <div class="col6">
-                                                <fieldset>
-                                                    <legend><b>Job/Internship details</b></legend>
-                                                    <div class="form-group">
-                                                        <label for="jt">* Job Title</label>
-                                                        <input type="text" class="form-control" id="jt">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="selct">* Contract Type</label>
-                                                        <select class="form-control" id="selct">
-                                                            <option>Full time</option>
-                                                            <option>Part time</option>
-                                                            <option>Internship - Full time</option>
-                                                            <option>Internship - Part time</option>
-                                                        </select>
-                                                    </div>
-                                                    <form method="post">
-                                                        <div class="form-group"> <!-- Date input -->
-                                                            <label class="control-label" for="date">* Date</label>
-                                                            <input class="form-control" id="date" name="date" type="date"/>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input class="form-control" id="date" name="date" type="date"/>
-                                                        </div>
-                                                    </form>
-                                                </fieldset>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6" class="col-md-6">
-                                            <div class="col7">
-                                                <fieldset>
-                                                    <legend><b>Company details</b></legend>
-                                                    <div class="form-group">
-                                                        <label for="cn">* Company Name</label>
-                                                        <input type="text" class="form-control" id="cn">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="web">Website</label>
-                                                        <input type="url" class="form-control" id="web">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="con">Country</label>
-                                                        <input type="text" class="form-control" id="con">
-                                                    </div>
-
-                                                    <div>
-                                                        <ul>
-                                                            <li><input type="submit" name="" value="save" class="btn" id="save4"></li>
-                                                            <li><input type="submit" name="" value="cancel" class="btn" id="cancel4"></li>
-                                                        </ul>
-                                                    </div>
-                                                </fieldset>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                    <div id="sectionD" class="tab-pane fade">
-                        <br/>
-                        <div class="container-fluid">
-                            <div class="panel panel-default">
-                                <div class="panel-heading"><b>Professional Qualifications</b></div>
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="col-sm-6" class="col-md-6">
-                                            <div class="col8">
-                                                <fieldset>
-                                                    <legend><b>Qualification Details</b></legend>
-                                                    <div class="form-group">
-                                                        <label for="n1">Title</label>
-                                                        <input type="text" class="form-control" id="n1">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="n1">Licence no.</label>
-                                                        <select class="form-control" id="level">
-                                                            <option value="1">Certificate</option>
-                                                            <option value="2">Diploma</option>
-                                                            <option value="3">Bachelor</option>
-                                                            <option value="4">Master</option>
-                                                            <option value="5">PhD</option>
-                                                        </select>
-                                                    </div>
-                                                    <form method="post">
-                                                        <div class="form-group"> <!-- Date input -->
-                                                            <label class="control-label" for="date">* Date</label>
-                                                            <input class="form-control" id="date" name="date" type="date"/>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input class="form-control" id="date" name="date" type="date"/>
-                                                        </div>
-                                                    </form>
-                                                    <div class="form-group">
-                                                        <label for="n1">* Grade/GPA</label>
-                                                        <input type="text" class="form-control" id="n1">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="sel1">* Class</label>
-                                                        <select class="form-control" id="sel1">
-                                                            <option>none</option>
-                                                            <option>First class</option>
-                                                            <option>Second - upper</option>
-                                                            <option>Second - lower</option>
-                                                        </select>
-                                                    </div>
-                                                </fieldset>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6" class="col-md-6">
-                                            <div class="col9">
-                                                <fieldset>
-                                                    <legend><b>Professional Organization details</b></legend>
-                                                    <div class="form-group">
-                                                        <label for="sel1">Professional Body</label>
-                                                        <input type="text" class="form-control" id="cn1" placeholder="Name of the Professional Body">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="web1">Website</label>
-                                                        <input type="url" class="form-control" id="web1">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="con1">Country</label>
-                                                        <input type="text" class="form-control" id="con1">
-                                                    </div>
-                                                    <div>
-                                                        <ul>
-                                                            <li><input type="submit" name="" value="save" class="btn" id="save5"></li>
-                                                            <li><input type="submit" name="" value="cancel" class="btn" id="cancel5"></li>
-                                                        </ul>
-                                                    </div>
-                                                </fieldset>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
+                        <div id = "sectionC" class = "row">
+                            <button class="btn btn-success" onclick="add_work()"><i class="glyphicon glyphicon-plus"></i> Add New Work Experience Details</button>
+                            <br />
+                            <br />
+                            <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                <thead>
+                                <tr>
+                                    <th>Job Title</th>
+                                    <th>Company Name</th>
+                                    <th>Contract Type</th>
+                                    <th>Date From</th>
+                                    <th>Date To</th>
+                                    <th>Company Country</th>
+                                    <th>Company Website</th>
+                                    <th style="width:189px;">Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
 
                     <div id="sectionE" class="tab-pane fade">
-                            <div class="container-fluid">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading"><b>Extra Curricular Activities</b></div>
-                                    <div class="panel-body">
-                                        <div class="row">
-                                            <div class="col-sm-6" class="col-md-6">
-                                                <div class="col1">
-                                                        <div class="form-group">
-                                                            <label for="n1">Name</label>
-                                                            <input type="text" class="form-control" id="n1">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="selt">Type</label>
-                                                            <select class="form-control" id="selt">
-                                                                <option>Hackathons</option>
-                                                                <option>Societies</option>
-                                                                <option>Volunteering</option>
-                                                                <option>Sports</option>
-                                                                <option>Aesthetic</option>
-                                                                <option>Blogging</option>
-                                                            </select>
-                                                        </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6" class="col-md-6">
-                                                <div class="col2">
-                                                    <div class="form-group">
-                                                        <textarea class="form-control" rows="5" id="comment" placeholder="Description and Achievements, any links"></textarea>
-                                                    </div>
+                        <br/>
+                        <div id = "sectionE" class = "row">
+                            <button class="btn btn-success" onclick="add_extra_curricular()"><i class="glyphicon glyphicon-plus"></i> Add New Work Extra Curricular Activities</button>
+                            <br />
+                            <br />
+                            <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th style="width:189px;">Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
 
-                                                    <div>
-                                                        <ul>
-                                                            <li><input type="submit" name="" value="save" class="btn" id="save1"></li>
-                                                            <li><input type="submit" name="" value="cancel" class="btn" id="cancel1"></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-
-                                </div>
-                            </div>
+                    <div id="sectionD" class="tab-pane fade" onclick="">
+                        <br/>
+                        <div id = "sectionD" class = "row">
+                            <button class="btn btn-success" onclick="add_professional()"><i class="glyphicon glyphicon-plus"></i> Add New Work Professional Qualification Details</button>
+                            <br />
+                            <br />
+                            <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Company Name</th>
+                                    <th>Licence Number</th>
+                                    <th>Valid From</th>
+                                    <th>Valid To</th>
+                                    <th>Verify Status</th>
+                                    <th style="width:189px;">Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
 
                     <div id="sectionF" class="tab-pane fade">
                         <div class="row">
@@ -611,7 +530,7 @@
             </div>
             <div class="modal-body form">
                 <form action="#" id="form_personal" class="form-horizontal">
-                    <input type="hidden" value="" name="company_id"/>
+                    <input type="hidden" value="<?php echo $applicant_id?>" name="applicant_id""/>
                     <div class="form-body">
                         <div class="form-group">
                             <label class="control-label col-md-3">full Name</label>
@@ -661,8 +580,8 @@
                 <h3 class="modal-title">Contact Details Form</h3>
             </div>
             <div class="modal-body form">
-                <form action="#" id="form_contact" class="form-horizontal">
-                    <input type="hidden" value="" name="company_id"/>
+                <form action="#" id="form_contact" class="form-horizontal" method="post">
+                    <input type="hidden" value="<?php echo $applicant_id?>" name="applicant_id"/>
                     <div class="form-body">
                         <div class="form-group">
                             <label class="control-label col-md-3">Email</label>
@@ -698,7 +617,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" id="btnSave" onclick="save()" class="btn btn-primary">Save</button>
+                <button type="submit" id="btnSave"  onclick="save()" class="btn btn-primary">Save</button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
             </div>
         </div><!-- /.modal-content -->
@@ -706,7 +625,66 @@
 </div><!-- /.modal -->
 <!-- End Bootstrap modal -->
 
-<div class="modal fade" id="modal_form_projects" role="dialog">
+<div class="modal fade" id="modal_form_academic" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title">Contact Details Form</h3>
+            </div>
+            <div class="modal-body form">
+                <form action="" id="form_academic" class="form-horizontal">
+                    <input type="hidden" value="<?php echo $applicant_id?>" name="applicant_id"/>
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Degree</label>
+                            <div class="col-md-9">
+                                <input name="degree"  placeholder="Degree" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">University/Institute</label>
+                            <div class="col-md-9">
+                                <input name="university" placeholder="Address" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Degree Type</label>
+                            <div class="col-md-9">
+                                <input name="degree_type" placeholder="Degree Type" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                             <label class="control-label col-md-3">Date From</label>
+                             <div class="col-md-9">
+                                 <input name="date_from" placeholder="Date From" class="form-control" type="date">
+                             </div>
+                         </div>
+                        <div class="form-group">
+                             <label class="control-label col-md-3">Date To</label>
+                             <div class="col-md-9">
+                                 <input name="date_to" placeholder="Date To" class="form-control" type="date">
+                             </div>
+                         </div>
+                         <div class="form-group">
+                             <label class="control-label col-md-3">GPA</label>
+                             <div class="col-md-9">
+                                 <input name="gpa" placeholder="GPA" class="form-control" type="text">
+                             </div>
+                         </div>
+                     </div>
+                 </form>
+             </div>
+             <div class="modal-footer">
+                 <button type="submit" id="btnSave"  onclick="save()" class="btn btn-primary">Save</button>
+                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+             </div>
+         </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- End Bootstrap modal -->
+
+<div class="modal fade" id="modal_form_project" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -714,23 +692,29 @@
                 <h3 class="modal-title">Projects Details Form</h3>
             </div>
             <div class="modal-body form">
-                <form action="#" id="form_projects" class="form-horizontal">
-                    <input type="hidden" value="" name="company_id"/>
+                <form action="#" id="form_project" class="form-horizontal">
+                    <input type="hidden" value="<?php echo $applicant_id?>" name="applicant_id"/>
                     <div class="form-body">
                         <div class="form-group">
                             <label class="control-label col-md-3">* Name</label>
                             <div class="col-md-9">
-                                <input name="email" readonly placeholder="Email" class="form-control" type="text">
+                                <input name="name" placeholder="name" class="form-control" type="text">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-3">* From</label>
+                            <label class="control-label col-md-3">Type</label>
+                            <div class="col-md-9">
+                                <input name="type" placeholder="Type" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">*Date From</label>
                             <div class="col-md-9">
                                 <input name="date_from" placeholder="From" class="form-control" type="date">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-3">* To</label>
+                            <label class="control-label col-md-3">*Date To</label>
                             <div class="col-md-9">
                                 <input name="date_to" placeholder="To" class="form-control" type="date">
                             </div>
@@ -739,6 +723,183 @@
                             <label class="control-label col-md-3">Github Link</label>
                             <div class="col-md-9">
                                 <input name="link" placeholder="Github Link" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Description</label>
+                            <div class="col-md-9">
+                                <textarea type="text" class="form-control" rows="9" id="" name="description" placeholder="Description and Achievements"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnSave" onclick="save()" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- End Bootstrap modal -->
+
+<div class="modal fade" id="modal_form_work" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title">Projects Details Form</h3>
+            </div>
+            <div class="modal-body form">
+                <form action="#" id="form_work" class="form-horizontal">
+                    <input type="hidden" value="<?php echo $applicant_id?>" name="applicant_id""/>
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Job Title</label>
+                            <div class="col-md-9">
+                                <input name="job_title" placeholder="Job Title" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Company Name</label>
+                            <div class="col-md-9">
+                                <input name="company_name" placeholder="Company Name" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Contract Type</label>
+                            <div class="col-md-9">
+                                <select class="form-control" id="contract_type" name="contract_type">
+                                    <option value="full time">Full Time</option>
+                                    <option value="part time">Part Time</option>
+                                    <option value="intern full time">Intern - Full Time</option>
+                                    <option value="intern part time">Intern - Part Time</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Date From</label>
+                            <div class="col-md-9">
+                                <input name="date_from" placeholder="Date From" class="form-control" type="date">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Date To</label>
+                            <div class="col-md-9">
+                                <input name="date_to" placeholder="Date To" class="form-control" type="date">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Company Website</label>
+                            <div class="col-md-9">
+                                <input name="company_website" placeholder="Company Website" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Company Country</label>
+                            <div class="col-md-9">
+                                <input name="company_country" placeholder="Company country" class="form-control" type="text">
+                            </div>"
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnSave" onclick="save()" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- End Bootstrap modal -->
+
+<div class="modal fade" id="modal_form_professional" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title">Projects Details Form</h3>
+            </div>
+            <div class="modal-body form">
+                <form action="#" id="form_professional" class="form-horizontal">
+                    <input type="hidden" value="<?php echo $applicant_id?>" name="applicant_id""/>
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Title</label>
+                            <div class="col-md-9">
+                                <input name="title" placeholder="Title" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Professional Body</label>
+                            <div class="col-md-9">
+                                <input name="professional body" placeholder="Professional Body" class="form-control" type="name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Contract Type</label>
+                            <div class="col-md-9">
+                                <select class="form-control" id="level" name="level">
+                                    <option value="full time">Full Time</option>
+                                    <option value="part time">Part Time</option>
+                                    <option value="intern full time">Intern - Full Time</option>
+                                    <option value="intern part time">Intern - Part Time</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Date From</label>
+                            <div class="col-md-9">
+                                <input name="date_from" placeholder="Date From" class="form-control" type="date">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Date To</label>
+                            <div class="col-md-9">
+                                <input name="date_to" placeholder="Date To" class="form-control" type="date">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Website</label>
+                            <div class="col-md-9">
+                                <input name="website" placeholder="Website" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Country</label>
+                            <div class="col-md-9">
+                                <input name="country" placeholder="country" class="form-control" type="text">
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnSave" onclick="save()" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- End Bootstrap modal -->
+
+<div class="modal fade" id="modal_form_extra_curricular" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title">Projects Details Form</h3>
+            </div>
+            <div class="modal-body form">
+                <form action="#" id="form_extra_curricular" class="form-horizontal">
+                    <input type="hidden" value="<?php echo $applicant_id?>" name="applicant_id""/>
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Name</label>
+                            <div class="col-md-9">
+                                <input name="name" placeholder="Name" class="form-control" type="text">
                             </div>
                         </div>
                         <div class="form-group">
@@ -758,6 +919,8 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <!-- End Bootstrap modal -->
+
+
 <script>
     function selectIngredient(select)
     {

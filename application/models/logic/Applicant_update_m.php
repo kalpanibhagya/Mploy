@@ -8,7 +8,14 @@ class Applicant_update_m extends CI_Model{
         $this->load->database();
     }
 
-    function count_certificate($applicant_id){
+    function count_certificate($email){
+        $this->db->where('email', $email);
+        $query = $this->db->get('job_applicant');
+        if ($query -> num_rows() > 0){
+
+        }else {
+
+        }
         //take academic data table and count no of certificates for this applicant
     }
 
