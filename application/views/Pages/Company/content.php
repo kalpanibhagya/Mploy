@@ -13,9 +13,9 @@
             </a>
 
 
-            <img id="image1" src="<?php echo base_url('assets/images/img.jpg'); ?>" alt="Your own Evaluation Criteria"/>
+            <img id="image1" src="<?php echo base_url('assets/images/tt.jpg'); ?>" alt="Your own Evaluation Criteria"/>
             <img id="image2" src="<?php echo base_url('assets/images/3.png'); ?>" alt="Send Interview Requests"/>
-            <img id="image3" src="<?php echo base_url('assets/images/d.jpg'); ?>" />
+            <img id="image3" src="<?php echo base_url('assets/images/selection.png'); ?>" />
         </div>
         <div style="display: none;">
             <div id="cap1">
@@ -25,7 +25,7 @@
     </div>
 
     <div align="center">
-        <a class="btn btn-success" href="<?php echo base_url(); ?>Company/posts"> Posts</a>
+        <a class="btn btn-success" href="<?php echo base_url(); ?>Company/post_an_internship"> Posts</a>
     </div>
 
 </div>
