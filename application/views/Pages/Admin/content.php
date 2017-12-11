@@ -6,7 +6,7 @@
     <div id="sliderFrame">
         <div id="slider">
             <a href="" target="_blank">
-                <img src="<?php echo base_url('assets/images/programmer.jpg'); ?>" alt="#cap1" />
+                <img src="<?php echo base_url('assets/images/image(1).png'); ?>" alt="#cap1" />
             </a>
             <img src="<?php echo base_url('images/la.jpg'); ?>" class="img-rounded" alt="Laboratory" width="304" height="236">
 

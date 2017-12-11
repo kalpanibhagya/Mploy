@@ -5,7 +5,14 @@
                 <div class="jumbotron text-center" style="background-color: black; color: white">
                     <h2>Web Portal to meet Job and Internship applicants with IT Industry</h2>
                     <p>Find your dream job today!!</p>
-                    <p><a class="btn btn-success btn-lg" href="<?php echo base_url(); ?>Applicant/Signup" role="button">Get Started</a></p>
+                    <p><a class="btn btn-success btn-lg" href="<?php echo base_url(); ?>Applicant/Signup" role="button" data-toggle="tooltip" data-placement="right" title="Click here to Sign up">Get Started</a></p>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                    <script>
+                        $(document).ready(function(){
+                            $('[data-toggle="tooltip"]').tooltip();
+                        });
+                    </script>
                 </div>
             </div>
         </div>

@@ -16,6 +16,14 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+
 <body style="background-image: url('<?php echo base_url(); ?>assets/images/company.png')">
 <header>
     <nav class="navbar navbar-inverse">
@@ -47,7 +55,7 @@
                 <div class="jumbotron text-center" style="background-color: black; color: white">
                     <h2>M-Ploy</h2>
                     <p>Web Portal to meet Job and Internship applicants with IT Industry</p>
-                    <form><a class="btn btn-success btn-lg" href="<?php echo base_url(); ?>company" role="button">For Companies</a><a class="btn btn-success btn-lg" href="<?php echo base_url(); ?>loginapplicant" role="button">For Job Seekers</a></form>
+                    <form><a class="btn btn-success btn-lg" href="<?php echo base_url(); ?>company" role="button" data-toggle="tooltip" data-placement="left" title="Click here to get started as an Employer">For Companies</a><a class="btn btn-success btn-lg" href="<?php echo base_url(); ?>loginapplicant" role="button" data-toggle="tooltip" data-placement="right" title="Click here to get started as an Employee">For Job Seekers</a></form>
                 </div>
             </div>
         </div>

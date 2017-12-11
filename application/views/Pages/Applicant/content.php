@@ -3,7 +3,7 @@
 
     <link href="<?php echo base_url('assets/crud-assets/test/js-image-slider.css')?>" rel="stylesheet">
 
-    <div id="sliderFrame">
+    <div id="sliderFrame" style="margin-bottom: 20px">
         <div id="slider">
             <a href="" target="_blank">
                 <img src="<?php echo base_url('assets/images/programmer.jpg'); ?>" alt="#cap1" />
@@ -25,7 +25,7 @@
     </div>
 
     <div align="center">
-        <a class="btn btn-success" href="<?php echo base_url(); ?>Company/post_an_internship"> Posts</a>
+        <a class="btn btn-success" href="<?php echo base_url(); ?>Applicant/posts"> View Job and Internships</a>
     </div>
 
 </div>
