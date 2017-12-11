@@ -2,9 +2,10 @@
 
 class Applicant_m extends CI_Model{
 
-    var $table = 'applicant';
-    var $column = array('fullname','username','dob','gender');
-    var $order = array('fullname' => 'desc');
+    var $table = 'intern_applicant';
+
+    var $column = array('full_name','username','dob','gender','email','contact','address');
+    var $order = array('applicant_id' => 'desc');
 
     public function __construct()
     {
@@ -63,13 +64,37 @@ class Applicant_m extends CI_Model{
         }
 
 
-
-
     }
+
+    public function count_all()
+    {
+        $this->db->from($this->table);
+        return $this->db->count_all_results();
+    }
+
+    function count_filtered()
+    {
+        $this->_get_datatables_query();
+        $query = $this->db->get();
+        return $query->num_rows();
+    }
+
+    public function save($data)
+    {
+        $this->db->insert($this->table, $data);
+        return $this->db->insert_id();
+    }
+
+    public function update($where, $data)
+    {
+        $this->db->update($this->table, $data, $where);
+        return $this->db->affected_rows();
+    }
+
     function get_data_by_email($email){
 
             $this->db->where('email', $email);
-            $query = $this->db->get('applicant');
+            $query = $this->db->get('intern_applicant');
 
             return $query->row();
     }
@@ -118,15 +143,32 @@ class Applicant_m extends CI_Model{
         return $query->row();
     }
 
-    public function update($where, $data)
+
+
+    public function get_by_id($applicant_id)
     {
-        $this->db->update($this->table, $data, $where);
-        return $this->db->affected_rows();
+        $this->db->from($this->table);
+        $this->db->where('applicant_id', $applicant_id);
+        $query = $this->db->get();
+
+        return $query->row();
     }
 
-    public function update_table($table, $where, $data)
+    public function get_by_id_view($applicant_id)
     {
+        $this->db->from($this->table);
+        $this->db->where('applicant_id',$applicant_id);
+        $query = $this->db->get();
+        if($query->num_rows() > 0) {
+            $results = $query->result();
+        }
+        return $results;
+    }
 
+    public function delete_by_id($applicant_id)
+    {
+        $this->db->where('applicant_id', $applicant_id);
+        $this->db->delete($this->table);
     }
 
 }
