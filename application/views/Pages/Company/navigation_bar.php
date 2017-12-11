@@ -5,10 +5,10 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="<?php echo base_url(); ?>assets/images/a.png" class="img-circle" alt="User Image">
+                <img src="<?php echo base_url(); ?>assets/images/company.png" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <p style="font-weight: 100"><?php echo $this->session->userdata('username'); ?></p>
+                <p style="font-weight: 100"><?php echo $this->session->userdata('username');?></p>
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>

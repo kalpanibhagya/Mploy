@@ -33,6 +33,7 @@
             <th>Address</th>
             <th>Contact Number</th>
             <th>Hiring Status</th>
+            <th>Verification</th>
             <th style="width:189px;">Action</th>
         </tr>
         </thead>
@@ -101,6 +102,7 @@
                 $('[name="address"]').val(data.address);
                 $('[name="contact_no"]').val(data.contact_no);
                 $('[name="hiring_status"]').val(data.hiring_status);
+                $('[name="verified_status"]').val(data.verified_status);
 
                 $('#modal_form').modal('show'); // show bootstrap modal when complete loaded
                 $('.modal-title').text('Edit Company'); // Set title to Bootstrap modal title
@@ -531,6 +533,15 @@
                                 <select class="form-control" name= "hiring_status" style="height: 50px">
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Verified Status</label>
+                            <div class="col-md-9">
+                                <select class="form-control" name= "verified_status" style="height: 50px">
+                                    <option value="True">True</option>
+                                    <option value="False">False</option>
                                 </select>
                             </div>
                         </div>
