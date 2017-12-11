@@ -14,17 +14,28 @@
 
 <div class="row">
     <div class="row">
+<<<<<<< HEAD
+        <div class="col-md-4">
+
+=======
 
         <div class="col-md-4">
 
+>>>>>>> master
             <!-- Profile Image -->
             <div class="box box-success">
                 <div class="box-body box-profile">
 
                     <a class="glyphicon glyphicon-pencil" role="button" href="javascript:void(0)" role="button" onclick="edit_company()"></a>
+<<<<<<< HEAD
+                    <img class="profile-user-img img-responsive img-square" src="<?php echo $this->session->userdata('logo'); ?>" alt="User profile picture" style="height: 200px;width: 200px">
+
+                    <h3 class="profile-username text-center"><?php echo $this->session->userdata('username'); ?></h3>
+=======
                     <img class="profile-user-img img-responsive img-square" src="<?php echo base_url(); ?>assets/images/company.png" alt="User profile picture" style="height: 200px;width: 200px">
 
                     <h3 class="profile-username text-center"><?php echo $username ?></h3>
+>>>>>>> master
 
                     <script type="text/javascript">
 
@@ -127,6 +138,18 @@
                                 success: function(data)
                                 {
 
+<<<<<<< HEAD
+                                    $('[name="company_name"]').val(data.email);
+                                    $('[name="register_no"]').val(data.address);
+                                    $('[name="country"]').val(data.contact);
+                                    $('[name="company_type"]').val(data.linkedin);
+                                    $('[name="company_size"]').val(data.website);
+                                    $('[name="company_size"]').val(data.website);
+                                    $('[name="company_size"]').val(data.website);
+
+                                    $('#modal_form_contact').modal('show'); // show bootstrap modal when complete loaded
+                                    $('.modal-title').text('Edit Contact Info'); // Set title to Bootstrap modal title
+=======
                                     $('[name="company_name"]').val(data.company_name);
                                     $('[name="register_no"]').val(data.register_no);
                                     $('[name="country"]').val(data.country);
@@ -167,6 +190,7 @@
 
                                     $('#modal_form_person').modal('show'); // show bootstrap modal when complete loaded
                                     $('.modal-title').text('Edit Contact Person Info'); // Set title to Bootstrap modal title
+>>>>>>> master
 
                                 },
                                 error: function (jqXHR, textStatus, errorThrown)
@@ -187,6 +211,8 @@
                             {
                                 url = "<?php echo site_url('Company/ajax_update_contact_info')?>";
                             }
+<<<<<<< HEAD
+=======
                             else if (save_type == 'details')
                             {
                                 url = "<?php echo site_url('Company/ajax_update_company_details')?>";
@@ -195,6 +221,7 @@
                             {
                                 url = "<?php echo site_url('Company/ajax_update_contact_person')?>";
                             }
+>>>>>>> master
 
 
                             // ajax adding data to database
@@ -238,31 +265,51 @@
                 <div class="box-body">
                     <strong><i class="fa fa-envelope margin-r-5"></i> Email</strong>
 
+<<<<<<< HEAD
+                    <input type="email" name="email" class="form-control" placeholder="Email" value="<?php echo $this->session->userdata('email'); ?>" readonly/>
+=======
                     <input type="email" name="email" class="form-control" placeholder="Email" value="<?php echo $email ?>" readonly/>
+>>>>>>> master
 
                     <hr>
 
                     <strong><i class="fa fa-map-marker margin-r-5"></i> Address</strong>
 
+<<<<<<< HEAD
+                    <input type="text" name="address" class="form-control" placeholder="Address" value="<?php echo $this->session->userdata('address'); ?>"/>
+=======
                     <input type="text" name="address" class="form-control" placeholder="Address" value="<?php echo $address ?>"/>
+>>>>>>> master
 
                     <hr>
 
                     <strong><i class="fa fa-pencil margin-r-5"></i> Contact Number</strong>
 
+<<<<<<< HEAD
+                    <input type="text" name="telephone" class="form-control" placeholder="Contact Number" value="<?php echo $this->session->userdata('contact_no'); ?>"/>
+=======
                     <input type="text" name="contact_no" class="form-control" placeholder="Contact Number" value="<?php echo $contact_no ?>"/>
+>>>>>>> master
 
                     <hr>
 
                     <strong><i class="fa fa-linkedin-square margin-r-5"></i> Linked In</strong>
 
+<<<<<<< HEAD
+                    <input type="url" name="linkedin" class="form-control" placeholder="Linkedin" value="<?php echo $this->session->userdata('linkedin'); ?>"/>
+=======
                     <input type="url" name="linkedin" class="form-control" placeholder="Linkedin" value="<?php echo $linkedin ?>"/>
+>>>>>>> master
 
                     <hr>
 
                     <strong><i class="fa fa-internet-explorer margin-r-5"></i> Website</strong>
 
+<<<<<<< HEAD
+                    <input type="url" name="website" class="form-control" placeholder="Website" value="<?php echo $this->session->userdata('website'); ?>"/>
+=======
                     <input type="url" name="website" class="form-control" placeholder="Website" value="<?php echo $website; ?>"/>
+>>>>>>> master
                 </div>
                 <!-- /.box-body -->
             </div>
@@ -271,6 +318,38 @@
         <!-- /.col -->
         <div class="col-md-8">
             <div class="box box-success" style="padding: 20px">
+<<<<<<< HEAD
+                <form action="<?php echo base_url()?>Company/profile_validation" method="post">
+                    <a class="glyphicon glyphicon-pencil" role="button"></a>
+                    <h3 align="center" style="font-weight: bold">Company details</h3>
+                    <div class="form-group">
+                        <label>Company Name</label>
+                        <input type="text" name="company_name" class="form-control" placeholder="Company Name" value="<?php echo $this->session->userdata('company_name'); ?>"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Company Registration Number</label>
+                        <input type="text" name="reg_number" class="form-control" placeholder="2 letters followed by 6 numbers" value="<?php echo $this->session->userdata('register_no'); ?>"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Country</label>
+                        <input type="text" name="country" class="form-control" placeholder="country" value="<?php echo $this->session->userdata('country'); ?>"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Company Type</label>
+                        <input type="text" name="company_type" class="form-control" placeholder="eg: Public Organization" value="<?php echo $this->session->userdata('type'); ?>"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Company Size</label>
+                        <input type="text" name="company_size" class="form-control" placeholder="100-500" value="<?php echo $this->session->userdata('size'); ?>"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Currently Hiring ?</label>
+                        <input type="text" name="hiriing_status" class="form-control" placeholder="eg: yes" value="<?php echo $this->session->userdata('hiring_status'); ?>"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea name="description" rows="5" class="form-control" placeholder="About your company"><?php echo $this->session->userdata('about'); ?></textarea>
+=======
                     <a class="glyphicon glyphicon-pencil" role="button" href="javascript:void(0)" onclick="edit_company_details()"></a>
                     <h3 align="center" style="font-weight: bold">Company details</h3>
                     <div class="form-group">
@@ -300,10 +379,101 @@
                     <div class="form-group">
                         <label>Description</label>
                         <textarea name="description" rows="5" class="form-control" placeholder="About your company"><?php echo $about ?></textarea>
+>>>>>>> master
                     </div>
 
                     <hr/>
 
+<<<<<<< HEAD
+                    <a class="glyphicon glyphicon-pencil" role="button"></a>
+                    <h3 align="center" style="font-weight: bold">Contact person's details</h3>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" name="cname" class="form-control" placeholder="Contact person name" value="<?php echo $this->session->userdata('cname'); ?>"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" name="cemail" class="form-control" placeholder="Contact person email address" value="<?php echo $this->session->userdata('cemail'); ?>"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Contact Number</label>
+                        <input type="text" name="ctelephone" class="form-control" placeholder="Contact person telephone number" value="<?php echo $this->session->userdata('ctelephone'); ?>"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="modal fade" id="modal_form_company" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title">Company Info Form</h3>
+            </div>
+            <div class="modal-body form">
+                <form action="#" id="form_company" class="form-horizontal">
+                    <input type="hidden" value="" name="company_id"/>
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Username</label>
+                            <div class="col-md-9">
+                                <input name="username" placeholder="full name" class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnSave" onclick="save()" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- End Bootstrap modal -->
+<div class="modal fade" id="modal_form_contact" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title">Contact Details Form</h3>
+            </div>
+            <div class="modal-body form">
+                <form action="#" id="form_contact" class="form-horizontal">
+                    <input type="hidden" value="" name="company_id"/>
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Address</label>
+                            <div class="col-md-9">
+                                <input name="address" placeholder="Address" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Contact Number</label>
+                            <div class="col-md-9">
+                                <input name="contact_no" placeholder="Contact Number" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Linked In</label>
+                            <div class="col-md-9">
+                                <input name="linkedin" placeholder="Contact Number" class="form-control" type="url">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Website</label>
+                            <div class="col-md-9">
+                                <input name="website" placeholder="Contact Number" class="form-control" type="url">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+=======
                     <a class="glyphicon glyphicon-pencil" role="button" href="javascript:void(0)" onclick="edit_contact_person()"></a>
                     <h3 align="center" style="font-weight: bold">Contact person's details</h3>
                     <div class="form-group">
@@ -495,6 +665,7 @@
                     </div>
                 </form>
             </div>
+>>>>>>> master
             <div class="modal-footer">
                 <button type="button" id="btnSave" onclick="save()" class="btn btn-primary">Save</button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>

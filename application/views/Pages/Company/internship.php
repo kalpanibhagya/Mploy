@@ -223,6 +223,62 @@
                                         </div>
                                     </div>
 
+<<<<<<< HEAD
+                                <div class="floating-box">
+                                    <div class="col-md-6">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">Experiences</div>
+                                            <div class="panel-body">
+                                                <div class="inline">
+                                                    <label>Total Percentage:</label>
+                                                    <div class="input-group">
+                                                        <input class="form-control" type="number" name="experience_percentage"><br/>
+                                                        <span class="input-group-addon">%</span>
+                                                    </div></div>
+                                                <div class="form-group">
+                                                    <table>
+                                                        <tr>
+                                                            <th>Experience</th>
+                                                            <th>Contract type</th>
+                                                            <th>Marks</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Work Experience</td>
+                                                            <td>Full time</td>
+                                                            <td>
+                                                                <input class="form-control" id="marks6" name="marks6" type="number" required="">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Work Experience</td>
+                                                            <td>Part time</td>
+                                                            <td>
+                                                                <input class="form-control" id="marks7" name="marks7" type="number" required="">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Work Experience</td>
+                                                            <td>Internship - Full time</td>
+                                                            <td>
+                                                                <input class="form-control" id="marks8" name="marks8" type="number" required="">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Work Experience</td>
+                                                            <td>Internship - Part time</td>
+                                                            <td>
+                                                                <input class="form-control" id="marks9" name="marks9" type="number" required="">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Project</td>
+                                                            <td>--</td>
+                                                            <td>
+                                                                <input class="form-control" id="marks10" name="marks10" type="number" required="">
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+=======
                                     <div class="floating-box">
                                         <div class="col-md-6">
                                             <div class="panel panel-default">
@@ -270,6 +326,7 @@
                                                             </tr>
                                                         </table>
                                                     </div>
+>>>>>>> master
                                                 </div>
                                             </div>
                                         </div>

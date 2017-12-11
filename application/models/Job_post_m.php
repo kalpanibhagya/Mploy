@@ -1,5 +1,4 @@
 <?php
-
 class Job_post_m extends CI_Model{
 
     var $table = 'job_opportunity';
