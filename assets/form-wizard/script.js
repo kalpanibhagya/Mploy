@@ -25,6 +25,8 @@ jQuery(document).ready(function() {
     });
     
     $('form .btn-next').on('click', function() {
+
+
     	var parent_fieldset = $(this).parents('fieldset');
     	var next_step = true;
     	var current_active_step = $(this).parents('form').find('.form-wizard.active');
@@ -85,5 +87,5 @@ jQuery(document).ready(function() {
     		}
     	});
     });
-    
+
 });

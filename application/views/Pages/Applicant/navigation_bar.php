@@ -5,11 +5,11 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="<?php echo base_url()."assets/AdminLTE/"; ?>dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="<?php echo base_url(); ?>assets/images/employee.png" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
                 <p style="font-weight: 100"><?php echo $username ?></p>
-                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                <a data-original-title="Tooltip" rel="tooltip"  href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
         <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -87,6 +87,10 @@
     })
 
 
+</script>
+
+<script>
+    $('[rel="tooltip"]').tooltip();
 </script>
 
 <style type="text/css">

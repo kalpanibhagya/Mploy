@@ -133,13 +133,13 @@ class Company_m extends CI_Model{
 
     function get_data($email)
     {
-        $this->db->select('username, email, password');
+        $this->db->select('username, email, password, logo, company_name, register_no, country, type, size, hiring_status, address, contact_no, linkedin, website, cname, cemail, ctelephone, about');
         $this->db->where('email', $email);
-        $query = $this->db->get('administrator');
+        $query = $this->db->get('registered_company');
         $result = $query->row();
 
 
-        $data = array('username'=> ($result->username), 'email'=>($result->email), 'password'=>($result->password));
+        $data = array('username'=> ($result->username), 'email'=>($result->email), 'password'=>($result->password), 'logo'=>($result->logo), 'company_name'=>($result->company_name), 'register_no'=>($result->register_no), 'country'=>($result->country), 'type'=>($result->type), 'size'=>($result->size), 'hiring_status'=>($result->hiring_status), 'address'=>($result->address), 'contact_no'=>($result->contact_no), 'linkedin'=>($result->linkedin), 'website'=>($result->website), 'cname'=>($result->cname), 'cemail'=>($result->cemail), 'ctelephone'=>($result->ctelephone), 'about'=>($result->about));
 
         return $data;
     }
@@ -152,6 +152,5 @@ class Company_m extends CI_Model{
 
         return $query->row();
     }
-}
 
-?>
+}

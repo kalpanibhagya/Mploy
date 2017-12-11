@@ -88,7 +88,13 @@ class Applicant extends CI_Controller
             $password = base64_encode(strrev(md5($this->input->post('password'))));
 
             $this->load->model('Applicant_m');
-            if ($this->Applicant_m->can_login($email, $password)) {
+            if ($this->Applicant_m->can_login_intern($email, $password)) {
+                $session_data = array(
+                    'email' => $email
+                );
+                $this->session->set_userdata($session_data);
+                redirect(base_url() . 'Applicant/enter');
+            } elseif ($this->Applicant_m->can_login_job($email, $password)){
                 $session_data = array(
                     'email' => $email
                 );
@@ -116,9 +122,9 @@ class Applicant extends CI_Controller
         }
     }
 
-    function dashboard()
+    function apply()
     {
-        $this->load->view('Pages/Applicant/dashboard');
+        $this->load->view('Pages/Applicant/apply');
     }
 
     function profile()
@@ -142,6 +148,11 @@ class Applicant extends CI_Controller
         $this->load->view('Pages/Applicant/employers');
     }
 
+    function posts()
+    {
+        $this->load->view('Pages/Applicant/posts');
+    }
+
     function interviewRequests()
     {
         $this->load->view('Pages/Applicant/interviewRequests');
@@ -158,8 +169,23 @@ class Applicant extends CI_Controller
     public function ajax_edit()
     {
         $email = $this->session->userdata('email');
-        $data = $this->person->get_by_email($email);
-        echo json_encode($data);
+
+        $this->load->model('Applicant_m','Applicant');
+
+        $type = $this->Applicant->check_type($email);
+
+        if ($type == 'job')
+        {
+            $table = 'job_applicant';
+            $data = $this->person->get_data_by_email($email,$table);
+            echo json_encode($data);
+        }
+        elseif ($type == 'intern')
+        {
+            $table = 'intern_applicant';
+            $data = $this->person->get_data_by_email($email, $table);
+            echo json_encode($data);
+        }
     }
 
     public function ajax_update_personal_info()
@@ -184,6 +210,7 @@ class Applicant extends CI_Controller
             'contact' => $this->input->post('contact'),
             'linkedin' => $this->input->post('linkedin'),
             'website' => $this->input->post('website'),
+            'github' => $this->input->post('github'),
         );
 
         $email = $this->session->userdata('email');
@@ -192,19 +219,6 @@ class Applicant extends CI_Controller
         echo json_encode(array("status" => TRUE));
     }
 
-    public function ajax_update_project_data()
-    {
-        $data = array(
-            'address' => $this->input->post('address'),
-            'contact' => $this->input->post('contact'),
-            'linkedin' => $this->input->post('linkedin'),
-            'website' => $this->input->post('website'),
-        );
 
-        $email = $this->session->userdata('email');
-
-        $this->person->update(array('email' =>$email), $data);
-        echo json_encode(array("status" => TRUE));
-    }
 
 }
