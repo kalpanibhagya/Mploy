@@ -632,6 +632,12 @@ class Company extends CI_Controller {
         $this->load->view('Pages/Admin/view_Detail', $data);
     }
 
+    public function list_by_id_company($company_id){
+
+        $data['output'] = $this->person->get_by_id_view($company_id);
+        $this->load->view('Pages/Company/view_Detail', $data);
+    }
+
     public function list_internships_by_id_company($company_id){
 
         $data['output'] = $this->theInternship->get_by_id_view($company_id);

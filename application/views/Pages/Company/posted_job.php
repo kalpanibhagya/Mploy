@@ -16,7 +16,9 @@
 
 
 <div class="row">
-    <h4 style="text-align: center;font-weight: bolder">My Internship Posts</h4>
+    <div class="inline">
+        <a class="btn btn-success" href="<?php echo base_url(); ?>Company/post_a_job"><i class="glyphicon glyphicon-send"></i> Post a Job</a>
+    </div>
     <br/>
     <br/>
     <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -74,11 +76,6 @@
 
 
             }
-
-                    ?>
-
-
-                    }
 
                     ?>
 
