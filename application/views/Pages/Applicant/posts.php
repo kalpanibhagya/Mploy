@@ -28,7 +28,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <form class="navbar-form navbar-right">
-                    <a class="btn btn-success" href="<?php echo base_url(); ?>Applicant/dashboard" role="button">Dashboard</a>
+                    <a class="btn btn-success" href="<?php echo base_url(); ?>Applicant/enter" role="button">Dashboard</a>
                     <a class="btn btn-success" href="<?php echo base_url(); ?>Applicant/logout" role="button">Logout</a>
                 </form>
             </div>
@@ -86,8 +86,7 @@
                             '<td>'+data[i].contract_type+'</td>'+
                             '<td>'+data[i].salary+'</td>'+
                             '<td>'+
-                            '<a href="javascript:;" class="btn btn-info item-edit" data="'+data[i].id+'"><span class="glyphicon glyphicon-edit"></span> Edit</a>'+
-                            '  <a href="javascript:;" class="btn btn-danger item-delete" data="'+data[i].id+'"><span class="glyphicon glyphicon-remove-sign"></span> Delete</a>'+
+                            '<a href="javascript:;" class="btn btn-info item-edit" data="'+data[i].id+'"><span class="glyphicon glyphicon-edit"></span> Apply</a>'+
                             '</td>'+
                             '</tr>';
                     }

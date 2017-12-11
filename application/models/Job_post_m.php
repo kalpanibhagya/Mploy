@@ -1,6 +1,5 @@
 <?php
-
-class Company_m extends CI_Model{
+class Job_post_m extends CI_Model{
 
     var $table = 'job_opportunity';
     var $column = array('job_title','company_id','location','open_date_to','contract_type','salary');
