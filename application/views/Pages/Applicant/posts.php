@@ -86,8 +86,7 @@
                             '<td>'+data[i].contract_type+'</td>'+
                             '<td>'+data[i].salary+'</td>'+
                             '<td>'+
-                            '<a href="javascript:;" class="btn btn-info item-edit" data="'+data[i].id+'"><span class="glyphicon glyphicon-edit"></span> Edit</a>'+
-                            '  <a href="javascript:;" class="btn btn-danger item-delete" data="'+data[i].id+'"><span class="glyphicon glyphicon-remove-sign"></span> Delete</a>'+
+                            '<a href="javascript:;" class="btn btn-info item-edit" data="'+data[i].id+'"><span class="glyphicon glyphicon-edit"></span> Apply</a>'+
                             '</td>'+
                             '</tr>';
                     }
