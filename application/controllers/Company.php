@@ -205,10 +205,10 @@ class Company extends CI_Controller {
             'bachelor' => $this->input->post('marks3'),
             'masters' => $this->input->post('marks4'),
             'phd' => $this->input->post('marks5'),
-            'full_time' => $this->input->post('marks6'),
-            'part_time' => $this->input->post('marks7'),
-            'intern_full_time'=>$this->input->post('marks8'),
-            'intern_part_time' => $this->input->post('marks9'),
+            'job_full' => $this->input->post('marks6'),
+            'job_part' => $this->input->post('marks7'),
+            'intern_full'=>$this->input->post('marks8'),
+            'intern_part' => $this->input->post('marks9'),
             'opportunity_id' => $last_id,
             'project' => $this->input->post('marks10'),
             'professional_qualification' => $this->input->post('marks11'),
@@ -323,7 +323,7 @@ class Company extends CI_Controller {
     //to insert data from job evaluation critaria tab
     public function intern_evaluation_validation(){
         //get last opportunity id
-        $arr = $this->Post_internship->get_last_opportunity_id();
+        $arr = $this->get_last_opportunity_id();
         $key=$this->get_keyword();
         $last_id = $arr[0]['opportunity_id'];
         $last_id = intval($last_id);
@@ -337,8 +337,8 @@ class Company extends CI_Controller {
             //'phd' => $this->input->post('marks5'),
             //'full_time' => $this->input->post('marks6'),
             //'part_time' => $this->input->post('marks7'),
-            'intern_full_time'=>$this->input->post('marks8'),
-            'intern_part_time' => $this->input->post('marks9'),
+            'intern_full'=>$this->input->post('marks8'),
+            'intern_part' => $this->input->post('marks9'),
             'opportunity_id' => $last_id,
             'project' => $this->input->post('marks10'),
             'professional_qualification' => $this->input->post('marks11'),
