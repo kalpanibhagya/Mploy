@@ -31,4 +31,10 @@ class Post_job_m extends CI_Model
         }
         return array();
     }
+
+    public function getPostedJobs($companyID){
+        $query = $this->db->query("select opportunity_id, job_title,location,salary,open_date_to from  job_opportunity where company_id=$companyID");
+        $res = $query->result();
+        return $res;
+    }
 }

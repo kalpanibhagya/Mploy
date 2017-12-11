@@ -9,8 +9,8 @@ class Company extends CI_Controller {
         $this->load->helper('url');
         $this->load->library('session');
         $this->load->model('Company_m','person');
-        $this->load->model('Post_job_m','Post_job_m');
-        $this->load->model('Post_internship','Post_internship');
+        $this->load->model('Post_job_m','theJob');
+        $this->load->model('Post_internship','theInternship');
     }
 
     public function index()
@@ -179,11 +179,21 @@ class Company extends CI_Controller {
     public function job_redirect(){
         $this->load->view('Pages/Company/job');
     }
+    public function get_last_opportunity_id(){
 
+        $query ="select opportunity_id from job_opportunity order by opportunity_id DESC limit 1";
+
+        $res = $this->db->query($query);
+
+        if($res->num_rows() > 0) {
+            return $res->result("array");
+        }
+        return array();
+    }
     //to insert data from job evaluation critaria tab
     public function evaluation_validation(){
         //get last opportunity id
-        $arr = $this->Post_job_m->get_last_opportunity_id();
+        $arr = $this->get_last_opportunity_id();
         $key=$this->get_keyword();
         $last_id = $arr[0]['opportunity_id'];
         $last_id = intval($last_id);
@@ -367,7 +377,23 @@ class Company extends CI_Controller {
     }
 
     function posted_internships(){
-        $this->load->view('Pages/Company/posted_internships');
+        $company_id = $this->session->userdata('company_id');
+        //$this->load->model('Post_internship');
+        //$dila = $this->Post_internship->get_by_id($company_id);
+        //var_dump($dila);
+        $companyID = $this->session->userdata('company_id');
+
+        $result['internships'] = $this->Post_internship->getPostedInternships($companyID);
+
+
+        $this->load->view('Pages/Company/posted_internships',$result);
+
+
+
+
+//        $sql = "SELECT * FROM intern_opportunity WHERE company_id=2";
+//        $query = $this->db->query($sql);
+//        $this->load->view('Pages/Company/posted_internships',$query);
     }
 
     function posted_jobs(){
@@ -461,6 +487,49 @@ class Company extends CI_Controller {
         echo json_encode($output);
     }
 
+
+
+
+    public function ajax_list_interns()
+    {
+        $company_id = $this->session->userdata('company_id');
+
+        var_dump($company_id);
+        $list = $this->theInternship->get_datatables($company_id);
+        var_dump($list);
+        $data = array();
+        $no = $_POST['start'];
+        foreach ($list as $theInternship) {
+            $no++;
+            $row = array();
+            $row[] = $theInternship->job_title;
+            $row[] = $theInternship->job_category;
+            $row[] = $theInternship->location;
+            $row[] = $theInternship->salary;
+            $row[] = $theInternship->deadline;
+
+            //add html for action
+            //view_internships onclick 1 hadandoooooooo
+            //$row[] = '<a class="btn btn-sm btn-default" href="javascript:void(0)" title="View" onclick="view_internships('."'".$theInternship->company_id."'".')"><i class="glyphicon glyphicon-file"></i> View</a>';
+            //$row[] = '<a class="btn btn-sm btn-default" href="javascript:void(0)" title="View" onclick="view_internships('."'".$theInternship->company_id."'".')"><i class="glyphicon glyphicon-file"></i> View</a>';
+            //$row[] = '<a class="btn btn-sm btn-default" href="javascript:void(0)" title="View" onclick="view_internships('."'".$theInternship->company_id."'".')"><i class="glyphicon glyphicon-file"></i> View</a>';
+
+            $row[] = '<a class="btn btn-sm btn-primary" href="javascript:void(0)" title="Edit" onclick="edit_person('."'".$theInternship->admin_id."'".')"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
+            <a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Delete" onclick="delete_person('."'".$theInternship->admin_id."'".')"><i class="glyphicon glyphicon-trash"></i> Delete</a>';
+
+
+            $data[] = $row;
+        }
+
+        $output = array(
+            "draw" => $_POST['draw'],
+            "recordsTotal" => $this->theInternship->count_all(),
+            "recordsFiltered" => $this->theInternship->count_filtered(),
+            "data" => $data,
+        );
+        //output to json format
+        echo json_encode($output);
+    }
 
     public function ajax_list_min()
     {
@@ -559,9 +628,9 @@ class Company extends CI_Controller {
         $this->load->view('Pages/Admin/view_Detail', $data);
     }
 
-    public function list_by_id_company($company_id){
+    public function list_internships_by_id_company($company_id){
 
-        $data['output'] = $this->person->get_by_id_view($company_id);
+        $data['output'] = $this->theInternship->get_by_id_view($company_id);
         $this->load->view('Pages/Company/view_Detail', $data);
     }
 
