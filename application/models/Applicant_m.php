@@ -83,7 +83,7 @@ class Applicant_m extends CI_Model{
                 'contact'=>($result->contact), 'address'=>($result->address),
                 'linkedin'=>($result->linkedin), 'github'=>($result->github),
                 'certificate'=>($result->certificate),
-                'deploma'=>($result->deploma),
+                'diploma'=>($result->diploma),
                 'degree'=>($result->degree),
                 'masters'=>($result->masters),
                 'phd'=>($result->phd),
@@ -96,7 +96,7 @@ class Applicant_m extends CI_Model{
                 'society'=>($result->society),
                 'volunteering'=>($result->volunteering),
                 'sport'=>($result->sport),
-                'aesthetic'=>($result->aesthetic),
+                'easthitic'=>($result->easthitic),
                 'blogging'=>($result->blogging),
                 'website'=>($result->website));
 
@@ -109,7 +109,7 @@ class Applicant_m extends CI_Model{
                 'contact'=>($result->contact), 'address'=>($result->address),
                 'linkedin'=>($result->linkedin), 'github'=>($result->github),
                 'certificate'=>($result->certificate),
-                'deploma'=>($result->deploma),
+                'diploma'=>($result->diploma),
                 'degree'=>($result->degree),
                 'masters'=>($result->masters),
                 'phd'=>($result->phd),
@@ -120,7 +120,7 @@ class Applicant_m extends CI_Model{
                 'society'=>($result->society),
                 'volunteering'=>($result->volunteering),
                 'sport'=>($result->sport),
-                'aesthetic'=>($result->aesthetic),
+                'easthitic'=>($result->easthitic),
                 'blogging'=>($result->blogging),
                 'website'=>($result->website));
 

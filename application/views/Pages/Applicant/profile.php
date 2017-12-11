@@ -791,7 +791,7 @@
                                 <select class="form-control" id="degree_type" name="degree_type">
                                     <option value=""></option>
                                     <option value="certificate">Certificate</option>
-                                    <option value="deploma">Diploma</option>
+                                    <option value="diploma">Diploma</option>
                                     <option value="degree">Degree</option>
                                     <option value="masters">Masters</option>
                                     <option value="phd">PhD</option>
