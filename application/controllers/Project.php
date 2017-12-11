@@ -69,24 +69,38 @@ class Project extends CI_Controller
         $this->load->model('Project_job_m', 'Project');
         $list = $this->Project->get_datatables();
         $data = array();
+
+        $email = $this->session->userdata['email'];
+
+        $this->load->model('Applicant_m','Applicant');
+        $data1 = $this->Applicant->get_data($email);
+
+        $id = $data1['applicant_id'];
+
         $no = $_POST['start'];
         foreach ($list as $project) {
-            $no++;
-            $row = array();
-            //$row[] = $project->id;
-            $row[] = $project->name;
-            $row[] = $project->type;
-            $row[] = $project->date_from;
-            $row[] = $project->date_to;
-            $row[] = $project->github;
-            $row[] = $project->description;
 
-            //add html for action
-            $row[] = '<a class="btn btn-sm btn-primary" href="javascript:void(0)" title="Edit" onclick="edit_project(' . "'" . $project->project_id . "'" . ')"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
+            if ($id == $project->applicant_id)
+            {
+                $no++;
+                $row = array();
+                //$row[] = $project->id;
+                $row[] = $project->name;
+                $row[] = $project->type;
+                $row[] = $project->date_from;
+                $row[] = $project->date_to;
+                $row[] = $project->github;
+                $row[] = $project->description;
+
+                //add html for action
+                $row[] = '<a class="btn btn-sm btn-primary" href="javascript:void(0)" title="Edit" onclick="edit_project(' . "'" . $project->project_id . "'" . ')"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
             <a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Delete" onclick="delete_project(' . "'" . $project->project_id . "'" . ')"><i class="glyphicon glyphicon-trash"></i> Delete</a>
             <a class="btn btn-sm btn-default" href="javascript:void(0)" title="View" onclick="view_project(' . "'" . $project->project_id . "'" . ')"><i class="glyphicon glyphicon-file"></i> View</a>';
 
-            $data[] = $row;
+                $data[] = $row;
+            }
+
+
         }
 
         $output = array(

@@ -4,7 +4,7 @@ class Academic_job_m extends CI_Model
 {
 
     var $table = 'academic_qualification_job';
-    var $column = array('degree', 'university', 'degree_type', 'date_from', 'date_to', 'gpa');
+    var $column = array('degree', 'university', 'degree_type', 'date_from', 'date_to', 'gpa', 'applicant_id');
     var $order = array('degree' => 'desc');
 
     public function __construct()

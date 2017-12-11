@@ -4,7 +4,7 @@ class Work_experience_job_m extends CI_Model
 {
 
     var $table = 'work_experience_job';
-    var $column = array('job_title', 'company_name', 'contract_type', 'date_from', 'date_to', 'company_country', 'company_website');
+    var $column = array('job_title', 'company_name', 'contract_type', 'date_from', 'date_to', 'company_country', 'company_website', 'applicant_id');
     var $order = array('job_title' => 'desc');
 
     public function __construct()

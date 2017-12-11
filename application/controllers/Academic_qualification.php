@@ -72,24 +72,36 @@ class Academic_qualification extends CI_Controller
         $this->load->model('Academic_job_m','Academic');
         $list = $this->Academic->get_datatables();
         $data = array();
+
+        $email = $this->session->userdata['email'];
+
+        $this->load->model('Applicant_m','Applicant');
+        $data1 = $this->Applicant->get_data($email);
+
+        $id = $data1['applicant_id'];
+
         $no = $_POST['start'];
         foreach ($list as $academic) {
-            $no++;
-            $row = array();
-            //$row[] = $academic->id;
-            $row[] = $academic->degree;
-            $row[] = $academic->university;
-            $row[] = $academic->degree_type;
-            $row[] = $academic->date_from;
-            $row[] = $academic->date_to;
-            $row[] = $academic->gpa;
+            if ($id == $academic->applicant_id)
+            {
+                $no++;
+                $row = array();
+                //$row[] = $academic->id;
+                $row[] = $academic->degree;
+                $row[] = $academic->university;
+                $row[] = $academic->degree_type;
+                $row[] = $academic->date_from;
+                $row[] = $academic->date_to;
+                $row[] = $academic->gpa;
 
-            //add html for action
-            $row[] = '<a class="btn btn-sm btn-primary" href="javascript:void(0)" title="Edit" onclick="edit_academic('."'".$academic->id."'".')"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
+                //add html for action
+                $row[] = '<a class="btn btn-sm btn-primary" href="javascript:void(0)" title="Edit" onclick="edit_academic('."'".$academic->id."'".')"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
             <a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Delete" onclick="delete_academic('."'".$academic->id."'".')"><i class="glyphicon glyphicon-trash"></i> Delete</a>
             <a class="btn btn-sm btn-default" href="javascript:void(0)" title="View" onclick="view_academic('."'".$academic->id."'".')"><i class="glyphicon glyphicon-file"></i> View</a>';
 
-            $data[] = $row;
+                $data[] = $row;
+            }
+
         }
 
         $output = array(

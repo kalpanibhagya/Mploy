@@ -51,7 +51,7 @@
                                // Load data for the table's content from an Ajax source
                                "ajax": {
 
-                                   "url":  "<?php echo site_url('Academic_qualification/ajax_list')?>",
+                                   "url":  "<?php echo site_url('Academic_qualification/ajax_list')?>" ,
                                    "type": "POST"
                                },
 
@@ -119,9 +119,9 @@
                                     "columnDefs": [
                                         {
                                             "targets": [ -1 ], //last column
-                                            "orderable": false, //set not orderable
-                                        },
-                                    ],
+                                            "orderable": false //set not orderable
+                                        }
+                                    ]
 
                                 });
                             });
@@ -497,13 +497,13 @@
                 <ul class="nav nav-tabs">
                     <li class="active"><a data-toggle="tab" href="#sectionA" onclick="display_academic()">Education qualifications</a></li>
                     <li><a data-toggle="tab" href="#sectionB" onclick="display_projects()">Projects</a></li>
-                    <li><a data-toggle="tab" href="#sectionC">Work Experiences</a></li>
-                    <li><a data-toggle="tab" href="#sectionD">Professional Qualifications</a></li>
+                    <li><a data-toggle="tab" href="#sectionC" onclick="display_work()">Work Experiences</a></li>
+                    <li><a data-toggle="tab" href="#sectionD" onclick="display_professional()">Professional Qualifications</a></li>
                     <li><a data-toggle="tab" href="#sectionE" >Extra Curricular Activities</a></li>
                     <li><a data-toggle="tab" href="#sectionF" >Skills</a></li>
                 </ul>
                 <div class="tab-content">
-                    <div id="sectionA" class="tab-pane fade">
+                    <div id="sectionA" class="tab-pane active">
                         <br/>
                         <div id = "sectionA" class = "row" >
                             <button class="btn btn-success" onclick="add_academic()"><i class="glyphicon glyphicon-plus"></i> Add New Qualification</button>

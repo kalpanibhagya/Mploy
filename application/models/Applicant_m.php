@@ -113,8 +113,6 @@ class Applicant_m extends CI_Model{
                 'degree'=>($result->degree),
                 'masters'=>($result->masters),
                 'phd'=>($result->phd),
-                'work_full'=>($result->work_full),
-                'work_part'=>($result->work_part),
                 'intern_full'=>($result->intern_full),
                 'intern_part'=>($result->intern_part),
                 'project'=>($result->project),

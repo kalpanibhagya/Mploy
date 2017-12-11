@@ -70,28 +70,40 @@ class Work_experience extends CI_Controller
 
     public function ajax_list()
     {
-        $this->load->model('Work_experience_job_m', 'Work');
+        $this->load->model('Work_experience_job_m','Work');
         $list = $this->Work->get_datatables();
         $data = array();
+
+        $email = $this->session->userdata['email'];
+
+        $this->load->model('Applicant_m','Applicant');
+        $data1 = $this->Applicant->get_data($email);
+
+        $id = $data1['applicant_id'];
+
         $no = $_POST['start'];
         foreach ($list as $work) {
-            $no++;
-            $row = array();
-            //$row[] = $work->id;
-            $row[] = $work->job_title;
-            $row[] = $work->company_name;
-            $row[] = $work->contract_type;
-            $row[] = $work->date_from;
-            $row[] = $work->date_to;
-            $row[] = $work->company_country;
-            $row[] = $work->company_website;
+            if ($id == $work->applicant_id)
+            {
+                $no++;
+                $row = array();
+                //$row[] = $work->id;
+                $row[] = $work->job_title;
+                $row[] = $work->company_name;
+                $row[] = $work->contract_type;
+                $row[] = $work->date_from;
+                $row[] = $work->date_to;
+                $row[] = $work->company_country;
+                $row[] = $work->company_website;
 
-            //add html for action
-            $row[] = '<a class="btn btn-sm btn-primary" href="javascript:void(0)" title="Edit" onclick="edit_work(' . "'" . $work->work_id . "'" . ')"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
+                //add html for action
+                $row[] = '<a class="btn btn-sm btn-primary" href="javascript:void(0)" title="Edit" onclick="edit_work(' . "'" . $work->work_id . "'" . ')"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
             <a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Delete" onclick="delete_work(' . "'" . $work->work_id . "'" . ')"><i class="glyphicon glyphicon-trash"></i> Delete</a>
             <a class="btn btn-sm btn-default" href="javascript:void(0)" title="View" onclick="view_work(' . "'" . $work->work_id . "'" . ')"><i class="glyphicon glyphicon-file"></i> View</a>';
 
-            $data[] = $row;
+                $data[] = $row;
+            }
+
         }
 
         $output = array(
