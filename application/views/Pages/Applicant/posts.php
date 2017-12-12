@@ -7,6 +7,10 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/crud-assets/bootstrap/css/bootstrap-theme.min.css') ?>">
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/crud-assets/bootstrap/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/sweetalert2/1.3.3/sweetalert2.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/sweetalert2/0.4.5/sweetalert2.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/sweetalert2/1.3.3/sweetalert2.min.js"></script>
 </head>
 
 <body>
@@ -72,7 +76,7 @@
         function showAllJobs(){
             $.ajax({
                 type: 'ajax',
-                url: '<?php echo base_url() ?>Job_post/showAllJobs',
+                url: '<?php echo base_url() ?>Professional_qualification/ajax_list2',
                 async: false,
                 dataType: 'json',
                 success: function(data){
@@ -86,7 +90,7 @@
                             '<td>'+data[i].contract_type+'</td>'+
                             '<td>'+data[i].salary+'</td>'+
                             '<td>'+
-                            '<a href="javascript:;" class="btn btn-info item-edit" data="'+data[i].id+'"><span class="glyphicon glyphicon-edit"></span> Apply</a>'+
+                            '<a href="javascript:;" onclick="apply_job('+data[i].opportunity_id+')" class="btn btn-info item-edit" data="'+data[i].id+'" ><span class="glyphicon glyphicon-edit"></span> Apply</a>'+
                             '</td>'+
                             '</tr>';
                     }
@@ -113,6 +117,38 @@
         });
     });
 </script>
+
+<script>
+
+    function apply_job(opportunity_id) {
+
+        var sex = 'yes';
+
+        $.ajax({
+            url : "<?php echo site_url('Job_post/apply/')?>/"+opportunity_id,
+            type: "POST",
+            dataType: "JSON",
+            //data : result,
+
+            success: function(data)
+            {
+                swal(
+                    'Good job!',
+                    'Data has been save!',
+                    'success'
+                )
+
+            },
+            error: function (jqXHR, textStatus, errorThrown)
+            {
+                alert('Error get data from ajax');
+            }
+        });
+    }
+
+</script>
+
+
 
 </body>
 </html>

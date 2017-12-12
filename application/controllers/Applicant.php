@@ -12,6 +12,8 @@ class Applicant extends CI_Controller
 
     }
 
+
+
     public function Login()
     {
         $this->load->view('Includes/Applicant/header');
