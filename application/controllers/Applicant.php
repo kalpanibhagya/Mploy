@@ -41,9 +41,9 @@ class Applicant extends CI_Controller
         $this->form_validation->set_rules('username', 'Username', 'required');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|is_unique[intern_applicant.email]|is_unique[job_applicant.email]',
             array(
-            'required'      => 'You have not provided %s.',
-            'is_unique'     => 'This %s already exists.'
-        ));
+            'required'   => 'You have not provided %s.',
+            'is_unique'  => 'This %s already exists.'
+            ));
         $this->form_validation->set_rules('password', 'Password', 'required|min_length[6]');
         $this->form_validation->set_rules('confirm_password', 'Confirm Password', 'required|min_length[6]|matches[password]');
 
@@ -56,10 +56,10 @@ class Applicant extends CI_Controller
                 'email' => $this->input->post('email')
             );
             $applicanttype = $this->input->post('applicanttype');
-            if ($applicanttype =='1'){
+            if ($applicanttype == '1') {
                 $this->load->model('Applicant_m');
                 $this->Applicant_m->insert_intern($data);
-            }elseif ($applicanttype=='2'){
+            } elseif ($applicanttype == '2') {
                 $this->load->model('Applicant_m');
                 $this->Applicant_m->insert_job($data);
             }
@@ -102,7 +102,7 @@ class Applicant extends CI_Controller
                 );
                 $this->session->set_userdata($session_data);
                 redirect(base_url() . 'Applicant/enter');
-            } elseif ($this->Applicant_m->can_login_job($email, $password)){
+            } elseif ($this->Applicant_m->can_login_job($email, $password)) {
                 $session_data = array(
                     'email' => $email
                 );
@@ -119,12 +119,13 @@ class Applicant extends CI_Controller
         }
     }
 
-    function enter(){
-        if ($this->session->userdata('email') != ''){
-            $email=$this->session->userdata('email');
+    function enter()
+    {
+        if ($this->session->userdata('email') != '') {
+            $email = $this->session->userdata('email');
             $this->load->model('Applicant_m');
-            $data= $this->Applicant_m->get_data($email);
-            $this->load->view('Pages/Applicant/dashboard',$data);
+            $data = $this->Applicant_m->get_data($email);
+            $this->load->view('Pages/Applicant/dashboard', $data);
         } else {
             redirect(base_url() . 'Applicant/Login');
         }
@@ -172,23 +173,19 @@ class Applicant extends CI_Controller
     }
 
 
-
     public function ajax_edit()
     {
         $email = $this->session->userdata('email');
 
-        $this->load->model('Applicant_m','Applicant');
+        $this->load->model('Applicant_m', 'Applicant');
 
         $type = $this->Applicant->check_type($email);
 
-        if ($type == 'job')
-        {
+        if ($type == 'job') {
             $table = 'job_applicant';
-            $data = $this->person->get_data_by_email($email,$table);
+            $data = $this->person->get_data_by_email($email, $table);
             echo json_encode($data);
-        }
-        elseif ($type == 'intern')
-        {
+        } elseif ($type == 'intern') {
             $table = 'intern_applicant';
             $data = $this->person->get_data_by_email($email, $table);
             echo json_encode($data);
@@ -206,7 +203,7 @@ class Applicant extends CI_Controller
 
         $email = $this->session->userdata('email');
 
-        $this->person->update(array('email' =>$email), $data);
+        $this->person->update(array('email' => $email), $data);
         echo json_encode(array("status" => TRUE));
     }
 
@@ -222,7 +219,7 @@ class Applicant extends CI_Controller
 
         $email = $this->session->userdata('email');
 
-        $this->person->update(array('email' =>$email), $data);
+        $this->person->update(array('email' => $email), $data);
         echo json_encode(array("status" => TRUE));
     }
 
@@ -278,7 +275,7 @@ class Applicant extends CI_Controller
             $row[] = $person->address;
 
             //add html for action
-            $row[] = '<a class="btn btn-sm btn-default" href="javascript:void(0)" title="View" onclick="view_person('."'".$person->applicant_id."'".')"><i class="glyphicon glyphicon-file"></i> View</a>';
+            $row[] = '<a class="btn btn-sm btn-default" href="javascript:void(0)" title="View" onclick="view_person(' . "'" . $person->applicant_id . "'" . ')"><i class="glyphicon glyphicon-file"></i> View</a>';
 
             $data[] = $row;
         }
@@ -294,13 +291,13 @@ class Applicant extends CI_Controller
     }
 
 
-
     public function ajax_edit_profile()
     {
         $email = $this->session->userdata('email');
         $data = $this->person->get_by_email($email);
         echo json_encode($data);
     }
+
     public function ajax_edit_intern($applicant_id)
     {
         $data = $this->person->get_by_id($applicant_id);
@@ -322,6 +319,7 @@ class Applicant extends CI_Controller
         $insert = $this->person->save($data);
         echo json_encode(array("status" => TRUE));
     }
+
     public function ajax_update()
     {
         $data = array(
@@ -344,11 +342,7 @@ class Applicant extends CI_Controller
         echo json_encode(array("status" => TRUE));
     }
 
-    public function list_by_id($applicant_id){
 
-        $data['output'] = $this->person->get_by_id_view($applicant_id);
-        $this->load->view('Pages/Admin/view_jobs', $data);
-    }
 
 
 }
