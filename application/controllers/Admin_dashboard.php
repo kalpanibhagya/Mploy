@@ -49,6 +49,10 @@ class Admin_dashboard extends CI_Controller
         $this->load->view('Pages/Admin/addAdmin');
     }
 
+    function jobs(){
+        $this->load->view('Pages/Admin/jobapplicants');
+    }
+
     public function ajax_list()
     {
         $list = $this->person->get_datatables();
