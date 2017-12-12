@@ -12,13 +12,23 @@ class Applicant extends CI_Controller
 
     }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+=======
+
+>>>>>>> d221c0b0ad3dd50addf0f975bf6519ae2dcb34ad
     public function index()
     {
         $this->load->helper('url');
         $this->load->view('Pages/Applicant/dashboard');
     }
+<<<<<<< HEAD
+>>>>>>> master
+=======
 
+>>>>>>> d221c0b0ad3dd50addf0f975bf6519ae2dcb34ad
 
     public function Login()
     {
