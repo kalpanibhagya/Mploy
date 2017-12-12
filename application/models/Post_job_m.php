@@ -37,4 +37,13 @@ class Post_job_m extends CI_Model
         $res = $query->result();
         return $res;
     }
+
+    public function deleteJob($id){
+//        /*$query = $this->db->query("delete from job_opportunity where opportunity_id=$id");
+//         $query->result;*/
+        $this->db->where('opportunity_id',$id);
+        $this->db->delete('job_opportunity');
+
+
+    }
 }

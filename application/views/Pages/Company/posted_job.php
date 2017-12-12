@@ -61,7 +61,7 @@
 
             <a href="<?php echo base_url() ?>JobController/deleteJob/<?php echo $job->opportunity_id ?>" title="Delete"
                data-confirm="Are you sure?" data-method="post">
-                <span class="glyphicon glyphicon-remove"></span></a>
+                <!--span class="glyphicon glyphicon-remove"></span--><button type="submit" class="btn btn-danger">DELETE</button></a>
 
                     <?php echo "</td>";
 
@@ -69,15 +69,13 @@
 
                 <a href="<?php echo base_url() ?>JobController/deleteJob/<?php echo $job->opportunity_id ?>" title="Delete"
                    data-confirm="Are you sure?" data-method="post">
-                    <button type="submit" class="btn btn-success">Save</button></a>
+                    <button type="submit" class="btn btn-success">SELECTION</button></a>
 
                 <?php echo "</td>";
                 echo "</tr>";
 
 
-            }
 
-                    ?>
 
         </td>
         </tbody>
