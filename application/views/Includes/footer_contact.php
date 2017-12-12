@@ -53,7 +53,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <p>&copy; 2017 M-Ploy  &middot; <a href="<?php echo base_url();?>About">About</a> &middot; <a href="#">Blog</a> &middot; <a href="#">Privacy Policy</a> &middot; <a href="#">Terms</a></p>
+                <p>&copy; 2017 M-Ploy  &middot; <a href="<?php echo base_url();?>Welcome/aboutus">About</a> &middot; <a href="<?php echo base_url(); ?>Blog">Blog</a> &middot; <a href="<?php echo base_url(); ?>Welcome/terms">Privacy Policy</a> &middot; <a href="<?php echo base_url(); ?>Welcome/terms">Terms</a></p>
             </div>
         </div>
     </div>

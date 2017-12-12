@@ -4,7 +4,7 @@
     bottom: 0px;
     left: 0px;
     text-align: center;">
-    <p style="color: #ffffff;">&copy; 2017 M-Ploy  &middot; <a style="color: white" href="<?php echo base_url();?>About">About</a> &middot; <a style="color: white" href="<?php echo base_url(); ?>Blog">Blog</a> &middot; <a style="color: white" href="#">Privacy Policy</a> &middot; <a style="color: white" href="#">Terms</a></p>
+    <p style="color: #ffffff;">&copy; 2017 M-Ploy  &middot; <a style="color: white" href="<?php echo base_url();?>Welcome/aboutus">About</a> &middot; <a style="color: white" href="<?php echo base_url(); ?>Blog">Blog</a> &middot; <a style="color: white" href="<?php echo base_url(); ?>Welcome/terms">Privacy Policy</a> &middot; <a style="color: white" href="<?php echo base_url(); ?>Welcome/terms">Terms</a></p>
 </footer>
 
 </body>
