@@ -205,10 +205,10 @@ class Company extends CI_Controller {
             'bachelor' => $this->input->post('marks3'),
             'masters' => $this->input->post('marks4'),
             'phd' => $this->input->post('marks5'),
-            'full_time' => $this->input->post('marks6'),
-            'part_time' => $this->input->post('marks7'),
-            'intern_full_time'=>$this->input->post('marks8'),
-            'intern_part_time' => $this->input->post('marks9'),
+            'job_full' => $this->input->post('marks6'),
+            'job_part' => $this->input->post('marks7'),
+            'intern_full'=>$this->input->post('marks8'),
+            'intern_part' => $this->input->post('marks9'),
             'opportunity_id' => $last_id,
             'project' => $this->input->post('marks10'),
             'professional_qualification' => $this->input->post('marks11'),
@@ -323,7 +323,7 @@ class Company extends CI_Controller {
     //to insert data from job evaluation critaria tab
     public function intern_evaluation_validation(){
         //get last opportunity id
-        $arr = $this->Post_internship->get_last_opportunity_id();
+        $arr = $this->get_last_opportunity_id();
         $key=$this->get_keyword();
         $last_id = $arr[0]['opportunity_id'];
         $last_id = intval($last_id);
@@ -337,8 +337,8 @@ class Company extends CI_Controller {
             //'phd' => $this->input->post('marks5'),
             //'full_time' => $this->input->post('marks6'),
             //'part_time' => $this->input->post('marks7'),
-            'intern_full_time'=>$this->input->post('marks8'),
-            'intern_part_time' => $this->input->post('marks9'),
+            'intern_full'=>$this->input->post('marks8'),
+            'intern_part' => $this->input->post('marks9'),
             'opportunity_id' => $last_id,
             'project' => $this->input->post('marks10'),
             'professional_qualification' => $this->input->post('marks11'),
@@ -374,6 +374,10 @@ class Company extends CI_Controller {
 
     function dashboard(){
         $this->load->view('Pages/Company/dashboard');
+    }
+
+    function posts(){
+        $this->load->view('Pages/Company/posts');
     }
 
     function posted_internships(){
@@ -626,6 +630,12 @@ class Company extends CI_Controller {
 
         $data['output'] = $this->person->get_by_id_view($company_id);
         $this->load->view('Pages/Admin/view_Detail', $data);
+    }
+
+    public function list_by_id_company($company_id){
+
+        $data['output'] = $this->person->get_by_id_view($company_id);
+        $this->load->view('Pages/Company/view_Detail', $data);
     }
 
     public function list_internships_by_id_company($company_id){

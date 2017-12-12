@@ -3,16 +3,19 @@
 
     <link href="<?php echo base_url('assets/crud-assets/test/js-image-slider.css')?>" rel="stylesheet">
 
-    <div id="sliderFrame">
+    <div id="sliderFrame" style="margin-bottom: 20px">
         <div id="slider">
             <a href="" target="_blank">
-                <img src="<?php echo base_url('assets/images/programmer.jpg'); ?>" alt="#cap1" />
+                <img src="<?php echo base_url('assets/images/cover_bg_3.jpg'); ?>" alt="#cap1" />
+                <img src="<?php echo base_url('assets/images/e.jpg'); ?>" class="img-rounded" alt="Find the best employees for your company" width="304" height="236">
             </a>
-            <img src="<?php echo base_url('images/la.jpg'); ?>" class="img-rounded" alt="Laboratory" width="304" height="236">
 
-            <img id="image1" src="<?php echo base_url('assets/images/welcomeMploy.jpg'); ?>" alt="Welcome to Our Class."/>
-            <img id="image1" src="<?php echo base_url('assets/images/field.jpg'); ?>" alt="Many type of classes."/>
-            <img id="image1" src="<?php echo base_url('assets/images/canteen.jpg'); ?>" />
+
+            <img id="image1" src="<?php echo base_url('assets/images/tt.jpg'); ?>" alt="Your own Evaluation Criteria"/>
+            <img id="image2" src="<?php echo base_url('assets/images/3.png'); ?>" alt="Automated CV selection"/>
+            <img id="image3" src="<?php echo base_url('assets/images/selection.png'); ?>" />
+            <img id="image4" src="<?php echo base_url('assets/images/group.jpg'); ?>" alt="Send Interview Requests"/>
+            <img id="image4" src="<?php echo base_url('assets/images/companyit.jpg'); ?>" alt="Reduce your paper works"/>
         </div>
         <div style="display: none;">
             <div id="cap1">
@@ -25,7 +28,7 @@
     </div>
 
     <div align="center">
-        <a class="btn btn-success" href="<?php echo base_url(); ?>Company/post_an_internship"> Posts</a>
+        <a class="btn btn-success btn-lg btn-blockbtn-lg btn-block" href="<?php echo base_url(); ?>Applicant/posts"> Apply for a Job</a>
     </div>
 
 </div>
