@@ -112,7 +112,7 @@
 
         $('#butangBack').unbind('click').click(function () {
             $.ajax({
-                url : "<?php echo base_url();?>Admin_dashboard/Job",
+                url : "<?php echo base_url();?>Admin_dashboard/interns",
                 success: function (result) {
                     $('#haha').empty().html(result).fadeIn('slow');
                 }});

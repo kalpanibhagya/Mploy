@@ -56,7 +56,7 @@
 
             // Load data for the table's content from an Ajax source
             "ajax": {
-                "url": "<?php echo site_url('Applicant/ajax_list')?>",
+                "url": "<?php echo site_url('Intern/ajax_list')?>",
                 "type": "POST"
             },
 
@@ -86,7 +86,7 @@
 
         //Ajax Load data from ajax
         $.ajax({
-            url : "<?php echo site_url('Applicant/ajax_edit_intern/')?>/" + applicant_id,
+            url : "<?php echo site_url('Intern/ajax_edit_intern/')?>/" + applicant_id,
             type: "GET",
             dataType: "JSON",
             success: function(data)
@@ -122,11 +122,11 @@
         var url;
         if(save_method == 'add')
         {
-            url = "<?php echo site_url('Applicant/ajax_add')?>";
+            url = "<?php echo site_url('Intern/ajax_add')?>";
         }
         else
         {
-            url = "<?php echo site_url('Applicant/ajax_update')?>";
+            url = "<?php echo site_url('Intern/ajax_update')?>";
         }
 
         // ajax adding data to database
@@ -170,7 +170,7 @@
 
                 // ajax delete data to database
                 $.ajax({
-                    url : "<?php echo site_url('Applicant/ajax_delete')?>/"+applicant_id,
+                    url : "<?php echo site_url('Intern/ajax_delete')?>/"+applicant_id,
                     type: "POST",
                     dataType: "JSON",
                     success: function(data)
@@ -199,7 +199,7 @@
     function view_person(applicant_id)
     {
         $.ajax({
-            url : "<?php echo site_url('Applicant/list_by_id')?>/" + applicant_id,
+            url : "<?php echo site_url('Intern/list_by_id')?>/" + applicant_id,
             type: "GET",
             success: function(result)
             {
