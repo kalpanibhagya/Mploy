@@ -27,7 +27,7 @@ class Job_selection_m extends CI_Model
 
 
         $this->db->where('weight_id',$weight_id);
-        $result = $this->db->get('weight_borad_job');
+        $result = $this->db->get('weight_board_job');
 
         foreach ($result->result() as $row)
         {
@@ -154,7 +154,7 @@ class Job_selection_m extends CI_Model
         }
 
 
-        //return $value_array;
+        return array('o_id' => $opportunity_id);
 
     }
 

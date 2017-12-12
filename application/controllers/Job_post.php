@@ -84,4 +84,6 @@ class Job_post extends CI_Controller {
 
 
     }
+
+
 }

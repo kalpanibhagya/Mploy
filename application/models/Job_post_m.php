@@ -133,4 +133,15 @@ class Job_post_m extends CI_Model{
             return false;
         }
     }
+
+    public function showAllApplicants($opportunity_id){
+
+        $this->db->where('opportunity_id',$opportunity_id);
+        $query = $this->db->get('applicant_rank_job');
+        if($query->num_rows() > 0){
+            return $query->result();
+        }else{
+            return false;
+        }
+    }
 }

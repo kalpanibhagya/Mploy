@@ -76,7 +76,7 @@
         function showAllJobs(){
             $.ajax({
                 type: 'ajax',
-                url: '<?php echo base_url() ?>Professional_qualification/ajax_list2',
+                url: '<?php echo base_url() ?>Job_post/showAllJobs',
                 async: false,
                 dataType: 'json',
                 success: function(data){

@@ -22,6 +22,16 @@ class Job_selection extends CI_Controller
 
         $data = $this->Selection->run_selection($opportunity_id);
 
-        $this->load->view('selection',$data);
+        //$this->load->model('Job_post_m','Job');
+        $this->load->view('Pages/Company/selected_list',$data);
+
+    }
+
+    public function showAllApplicants($opportunity_id)
+    {
+        $this->load->model('Job_selection_m','Job');
+        $data = $this->Job->showAllApplicants($opportunity_id);
+
+        //$this->load->view('Pages/Company/selected_list',$data);
     }
 }
