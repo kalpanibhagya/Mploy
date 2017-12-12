@@ -14,7 +14,7 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/sweetalert2/1.3.3/sweetalert2.min.js"></script>
 
 <div class = "row">
-    <button class="btn btn-success" onclick="add_person()"><i class="glyphicon glyphicon-plus"></i> Add New Admin</button>
+    <button class="btn btn-success" onclick="add_person()" title="Add new Administrator"><i class="glyphicon glyphicon-plus"></i> Add New Administrator</button>
     <br />
     <br />
     <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%">

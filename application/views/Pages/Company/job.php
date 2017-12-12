@@ -302,6 +302,7 @@
                                                         <tr>
                                                             <td>
                                                                 <select class="form-control" onchange="selectIngredient(this);">
+                                                                    <option value="None">None</option>
                                                                     <option value="(OCP): Java SE Programmer">(OCP): Java SE Programmer</option>
                                                                     <option value="(OCP): Java ME Mobile Application Developer">(OCP): Java ME Mobile Application Developer</option>
                                                                     <option value="CIMA">CIMA</option>
@@ -320,6 +321,7 @@
                                                         <tr>
                                                             <td>
                                                                 <select class="form-control" onchange="selectIngredient(this);">
+                                                                    <option value="None">None</option>
                                                                     <option value="(OCP): Java SE Programmer">(OCP): Java SE Programmer</option>
                                                                     <option value="(OCP): Java ME Mobile Application Developer">(OCP): Java ME Mobile Application Developer</option>
                                                                     <option value="CIMA">CIMA</option>
@@ -338,6 +340,7 @@
                                                         <tr>
                                                             <td>
                                                                 <select class="form-control" onchange="selectIngredient(this);">
+                                                                    <option value="None">None</option>
                                                                     <option value="(OCP): Java SE Programmer">(OCP): Java SE Programmer</option>
                                                                     <option value="(OCP): Java ME Mobile Application Developer">(OCP): Java ME Mobile Application Developer</option>
                                                                     <option value="CIMA">CIMA</option>
@@ -356,6 +359,7 @@
                                                         <tr>
                                                             <td>
                                                                 <select class="form-control" onchange="selectIngredient(this);">
+                                                                    <option value="None">None</option>
                                                                     <option value="(OCP): Java SE Programmer">(OCP): Java SE Programmer</option>
                                                                     <option value="(OCP): Java ME Mobile Application Developer">(OCP): Java ME Mobile Application Developer</option>
                                                                     <option value="CIMA">CIMA</option>
@@ -374,6 +378,7 @@
                                                         <tr>
                                                             <td>
                                                                 <select class="form-control" onchange="selectIngredient(this);">
+                                                                    <option value="None">None</option>
                                                                     <option value="(OCP): Java SE Programmer">(OCP): Java SE Programmer</option>
                                                                     <option value="(OCP): Java ME Mobile Application Developer">(OCP): Java ME Mobile Application Developer</option>
                                                                     <option value="CIMA">CIMA</option>

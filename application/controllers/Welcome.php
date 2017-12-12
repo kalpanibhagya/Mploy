@@ -39,6 +39,13 @@ class Welcome extends CI_Controller {
         $this->load->view('About');
         $this->load->view('Includes/footer_contact');
     }
+
+    public function terms(){
+        $this->load->view('Includes/header');
+        $this->load->view('Terms');
+        $this->load->view('Includes/footer_contact');
+    }
+
     function sendMail()
     {
 

@@ -31,4 +31,19 @@ class Post_job_m extends CI_Model
         }
         return array();
     }
+
+    public function getPostedJobs($companyID){
+        $query = $this->db->query("select opportunity_id, job_title,location,salary,open_date_to from  job_opportunity where company_id=$companyID");
+        $res = $query->result();
+        return $res;
+    }
+
+    public function deleteJob($id){
+//        /*$query = $this->db->query("delete from job_opportunity where opportunity_id=$id");
+//         $query->result;*/
+        $this->db->where('opportunity_id',$id);
+        $this->db->delete('job_opportunity');
+
+
+    }
 }
