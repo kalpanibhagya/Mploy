@@ -188,6 +188,52 @@ class Applicant_m extends CI_Model{
         $this->db->update($table, $data, $where);
         return $this->db->affected_rows();
     }
+
+    public function count_all()
+    {
+        $this->db->from($this->table);
+        return $this->db->count_all_results();
+    }
+
+    function count_filtered()
+    {
+        $this->_get_datatables_query();
+        $query = $this->db->get();
+        return $query->num_rows();
+    }
+
+    public function save($data)
+    {
+        $this->db->insert($this->table, $data);
+        return $this->db->insert_id();
+    }
+
+    public function get_by_id_view($applicant_id)
+    {
+        $this->db->from($this->table);
+        $this->db->where('applicant_id',$applicant_id);
+        $query = $this->db->get();
+        if($query->num_rows() > 0) {
+            $results = $query->result();
+        }
+        return $results;
+    }
+
+    public function delete_by_id($applicant_id)
+    {
+        $this->db->where('applicant_id', $applicant_id);
+        $this->db->delete($this->table);
+    }
+
+    public function get_by_id($applicant_id)
+    {
+        $this->db->from($this->table);
+        $this->db->where('applicant_id', $applicant_id);
+        $query = $this->db->get();
+
+        return $query->row();
+    }
+
 }
 
 ?>

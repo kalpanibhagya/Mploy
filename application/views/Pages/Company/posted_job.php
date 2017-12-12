@@ -67,14 +67,18 @@
 
                 echo "<td>"; ?>
 
-                <a href="<?php echo base_url() ?>JobController/deleteJob/<?php echo $job->opportunity_id ?>" title="Delete"
+                <a href="<?php echo base_url() ?>Job_selection/run_selection/<?php echo $job->opportunity_id ?>" title="Selection"
                    data-confirm="Are you sure?" data-method="post">
                     <button type="submit" class="btn btn-success">SELECTION</button></a>
 
                 <?php echo "</td>";
                 echo "</tr>";
 
+            }
 
+
+
+            ?>
 
 
         </td>
@@ -86,46 +90,7 @@
 </div>
 
 
-<!--<script type="text/javascript">-->
-<!---->
-<!--    var save_method; //for save method string-->
-<!--    var table;-->
-<!---->
-<!---->
-<!--    function reload_table()-->
-<!--    {-->
-<!--        table.ajax.reload(null,false); //reload datatable ajax-->
-<!--    }-->
-<!---->
-<!--   /* function view_internships(company_id)-->
-<!--    {-->
-<!--        $.ajax({-->
-<!--            url : "<!--?php echo site_url('Company/list_by_id_company')?>/" + company_id,-->
-<!--            type: "GET",-->
-<!--            success: function(result)-->
-<!--            {-->
-<!--                $('#haha').empty().html(result).fadeIn('slow');-->
-<!--            },-->
-<!--            error: function (jqXHR, textStatus, errorThrown)-->
-<!--            {-->
-<!---->
-<!--            }-->
-<!--        });-->
-<!--    }*/-->
-<!---->
-<!---->
-<!--    //datepicker-->
-<!--    $('.datepicker').datepicker({-->
-<!--        autoclose: true,-->
-<!--        format: "yyyy-mm-dd",-->
-<!--        todayHighlight: true,-->
-<!--        orientation: "top auto",-->
-<!--        todayBtn: true,-->
-<!--        todayHighlight: true,-->
-<!--    });-->
-<!---->
-<!---->
-<!--</script>-->
+
 
 </body>
 </html>
