@@ -35,20 +35,10 @@ class InternController extends CI_Controller
 
     function deleteInternShip($id){
 
-        if( $this->products->deleteProductBy($id) == false ){
+        $this->Post_internship->deleteInternship($id);
 
-            // fail message is sad
-        }
-        else{
-            $this->posted_internships();
-        }
 
-//        print($id);
-//        die();
-
-//        $this->Post_internship->deleteInternShip($id);
-//
-//        $this->posted_internships();
+        redirect('Company/dashboard');
 
     }
 }
