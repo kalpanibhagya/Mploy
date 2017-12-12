@@ -13,6 +13,7 @@ class Job_post_m extends CI_Model{
         $this->search = '';
 
     }
+
     private function _get_datatables_query()
     {
 
@@ -37,6 +38,22 @@ class Job_post_m extends CI_Model{
             $order = $this->order;
             $this->db->order_by(key($order), $order[key($order)]);
         }
+    }
+
+    function insert_data_rank($data)
+    {
+        $this->db->insert('applicant_rank_job',$data);
+        return $this->db->affected_rows();
+    }
+
+    function check_data_rank($opportunity_id)
+    {
+        $this->db->select('applicant_id');
+        $this->db->where('opportunity_id',$opportunity_id);
+
+        $query = $this->db->get('applicant_rank_job');
+
+        return $query->result();
     }
 
     function get_datatables()
@@ -110,6 +127,17 @@ class Job_post_m extends CI_Model{
 
     public function showAllJobs(){
         $query = $this->db->get($this->table);
+        if($query->num_rows() > 0){
+            return $query->result();
+        }else{
+            return false;
+        }
+    }
+
+    public function showAllApplicants($opportunity_id){
+
+        $this->db->where('opportunity_id',$opportunity_id);
+        $query = $this->db->get('applicant_rank_job');
         if($query->num_rows() > 0){
             return $query->result();
         }else{

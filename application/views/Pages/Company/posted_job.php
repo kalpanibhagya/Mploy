@@ -67,7 +67,7 @@
 
                 echo "<td>"; ?>
 
-                <a href="<?php echo base_url() ?>JobController/deleteJob/<?php echo $job->opportunity_id ?>" title="Delete"
+                <a href="<?php echo base_url() ?>Job_selection/run_selection/<?php echo $job->opportunity_id ?>" title="Selection"
                    data-confirm="Are you sure?" data-method="post">
                     <button type="submit" class="btn btn-success">SELECTION</button></a>
 

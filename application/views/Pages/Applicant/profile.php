@@ -420,7 +420,7 @@
                                 {
                                     //if success close modal and reload ajax table
                                     $('#modal_form_'.concat(save_type)).modal('hide');
-                                    //reload_table();
+                                    reload_table();
                                     swal(
                                         'Good job!',
                                         'Data has been save!',
@@ -498,7 +498,7 @@
                     <li class="active"><a data-toggle="tab" href="#sectionA" onclick="display_academic()">Education qualifications</a></li>
                     <li><a data-toggle="tab" href="#sectionB" onclick="display_projects()">Projects</a></li>
                     <li><a data-toggle="tab" href="#sectionC" onclick="display_work()">Work Experiences</a></li>
-                    <li><a data-toggle="tab" href="#sectionD" onclick="display_professional()">Professional Qualifications</a></li>
+                    <li><a data-toggle="tab" href="#sectionD" onclick="showPro()">Professional Qualifications</a></li>
                     <li><a data-toggle="tab" href="#sectionE" >Extra Curricular Activities</a></li>
                     <li><a data-toggle="tab" href="#sectionF" >Skills</a></li>
                 </ul>
@@ -1175,6 +1175,59 @@
         ul.appendChild(li);
     }
 </script>
+
+<script>
+    $(function(){
+        showPro();
+
+        //function
+        function showPro(){
+            $.ajax({
+                type: 'ajax',
+                url: '<?php echo base_url() ?>Job_post/showAllJobs',
+                async: false,
+                dataType: 'json',
+                success: function(data){
+                    var html = '';
+                    var i;
+                    for(i=0; i<data.length; i++){
+                        html +='<tr>'+
+                            '<td>'+data[i].title+'</td>'+
+                            '<td>'+data[i].professional_body+'</td>'+
+                            '<td>'+data[i].valid_form+'</td>'+
+                            '<td>'+data[i].valid_to+'</td>'+
+                            '<td>'+data[i].status+'</td>'+
+                            '<td>'+
+                            '<a href="javascript:;" onclick="apply_job('+data[i].opportunity_id+')" class="btn btn-info item-edit" data="'+data[i].id+'" ><span class="glyphicon glyphicon-edit"></span> Apply</a>'+
+                            '</td>'+
+                            '</tr>';
+                    }
+                    $('#showdata').html(html);
+                },
+                error: function(){
+                    alert('Could not get Data from Database');
+                }
+            });
+        }
+    });
+
+    $(document).ready(function(){
+        $('.search').on('keyup',function(){
+            var searchTerm = $(this).val().toLowerCase();
+            $('#userTbl tbody tr').each(function(){
+                var lineStr = $(this).text().toLowerCase();
+                if(lineStr.indexOf(searchTerm) === -1){
+                    $(this).hide();
+                }else{
+                    $(this).show();
+                }
+            });
+        });
+    });
+</script>
+
+
+
 
 </body>
 </html>
