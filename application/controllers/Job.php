@@ -18,12 +18,6 @@ class Job extends CI_Controller
         $this->load->view('Pages/Applicant/dashboard');
     }
 
-
-
-
-
-
-
     public function ajax_edit()
     {
         $email = $this->session->userdata('email');

@@ -27,7 +27,7 @@
     </div>
 
     <div align="center">
-        <a class="btn btn-success btn-lg btn-blockbtn-lg btn-block" href="<?php echo base_url(); ?>Company/post_a_job"> Posts</a>
+        <a class="btn btn-success btn-lg btn-blockbtn-lg btn-block" href="<?php echo base_url(); ?>Company/All_posts_db"> Posts</a>
     </div>
 
 </div>

@@ -461,6 +461,11 @@ class Company extends CI_Controller {
         echo json_encode($output);
     }
 
+
+    function All_posts_db(){
+        $this->load->view('Pages/Company/allPosts');
+    }
+
     public function ajax_list_company()
     {
         $list = $this->person->get_datatables();

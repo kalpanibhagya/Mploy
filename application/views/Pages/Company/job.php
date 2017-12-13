@@ -525,7 +525,7 @@
                                 </div>
                                 <div class="form-group" align="right">
                                     <button type="submit" class="btn btn-success">Save</button>
-                                    <a href="createOpportunity.php" class="btn btn-default" role="button">Reset</a>
+                                    <a href="#" class="btn btn-default" role="button">Reset</a>
                                 </div>
 
                                 </form>

@@ -17,7 +17,7 @@
 
 <div class="row">
     <div class="inline">
-        <a class="btn btn-success" href="<?php echo base_url(); ?>Company/post_a_job"><i class="glyphicon glyphicon-send"></i> Post a Job</a>
+        <a class="btn btn-success" href="<?php echo base_url(); ?>Company/post_a_job"><i class="glyphicon glyphicon-send"></i> Post new Job</a>
     </div>
     <br/>
     <br/>

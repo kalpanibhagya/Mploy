@@ -66,14 +66,9 @@ class Intern_selection extends CI_Model
             $weights['certificate'] = $row->certificate;
             $weights['diploma'] = $row->deploma;
             $weights['bachelor'] = $row->bachelor;
-            //$weights['masters'] = $row->masters;
-            //$weights['phd'] = $row->phd;
-            //$weights['job_full'] = $row->job_full;
-            //$weights['job_part'] = $row->job_part;
             $weights['intern_full'] = $row->intern_full;
             $weights['intern_part'] = $row->intern_part;
             $weights['project'] = $row->project;
-            //$weights['professional'] = $row->job_full;
             $weights['hackathon'] = $row->hackathon;
             $weights['keyword'] = $row->keyword;
             $weights['society'] = $row->society;

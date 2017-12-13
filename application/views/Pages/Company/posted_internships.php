@@ -16,7 +16,7 @@
 
 <div class="row">
     <div class="inline">
-        <a class="btn btn-success" href="<?php echo base_url(); ?>Company/post_an_internship"><i class="glyphicon glyphicon-send"></i> Post a Internship</a>
+        <a class="btn btn-success" href="<?php echo base_url(); ?>Company/post_an_internship"><i class="glyphicon glyphicon-send"></i> Post new Internship</a>
     </div>
     <br/>
     <br />

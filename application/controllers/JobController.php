@@ -36,8 +36,6 @@ class JobController extends CI_Controller
     function deleteJob($id){
 
         $this->Post_job_m->deleteJob($id);
-
-
         redirect('Company/dashboard');
 
     }
