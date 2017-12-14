@@ -26,14 +26,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<?php echo base_url(); ?>Applicant/enter">M-Ploy</a>
+                <a class="navbar-brand" href="<?php echo base_url(); ?>Company/enter">M-Ploy</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <form class="navbar-form navbar-right">
-                    <a class="btn btn-success" href="<?php echo base_url(); ?>Applicant/enter" role="button">Dashboard</a>
-                    <a class="btn btn-success" href="<?php echo base_url(); ?>Applicant/logout" role="button">Logout</a>
+                    <a class="btn btn-success" href="<?php echo base_url(); ?>Company/enter" role="button">Dashboard</a>
+                    <a class="btn btn-success" href="<?php echo base_url(); ?>Company/logout" role="button">Logout</a>
                 </form>
             </div>
         </div>

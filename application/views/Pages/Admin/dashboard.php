@@ -10,14 +10,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <title>M-ploy</title>
     <link rel="shortcut icon" href="../assets/images/logo.png" type="image/png">
-    <style type="text/css">
-
-        .un {text-decoration: none; }
-
-
-    </style>
-
-
     <script src="<?php echo base_url();?>assets/crud-assets/js/jquery-1.11.2.min.js"></script>
 
     <script type = "text/javascript" src="<?php echo base_url('assets/crud-assets/datatables/js/jquery.dataTables.min.js')?>"></script>
@@ -135,7 +127,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script src="<?php echo base_url(); ?>assets/crud-assets/js/bootstrap.min.js" type="text/javascript"></script>
 <!-- AdminLTE App -->
 <script src="<?php echo base_url(); ?>assets/crud-assets/js/app.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url()."assets/AdminLTE/"; ?>dist/js/adminlte.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/crud-assets/js/adminlte.js"></script>
 
 </body>
 </html>

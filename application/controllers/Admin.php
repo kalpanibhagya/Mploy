@@ -16,7 +16,7 @@ class Admin extends CI_Controller {
             //true
 
             $email = $this->input->post('email');
-            $password = $this->input->post('password');
+            $password = base64_encode(strrev(md5($this->input->post('password'))));
 
             $this->load->model('Admin_m');
             if ($this->Admin_m->can_login($email, $password)){
@@ -52,8 +52,10 @@ class Admin extends CI_Controller {
         redirect(base_url().'Admin');
     }
 
-
+/*
     function dashboard(){
         $this->load->view('Pages/Admin/dashboard');
     }
+
+*/
 }

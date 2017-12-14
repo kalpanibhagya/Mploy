@@ -71,7 +71,7 @@
     function view_person(company_id)
     {
         $.ajax({
-            url : "<?php echo site_url('Company/list_by_id_company')?>/" + company_id,
+            url : "<?php echo site_url('Company/list_by_id_company_applicant')?>/" + company_id,
             type: "GET",
             success: function(result)
             {

@@ -19,27 +19,22 @@
 
     <style>
 
-        .marketing .col-lg-4 {
+        .intro .col-lg-4 {
             margin-bottom: 20px;
             text-align: center;
         }
-        .marketing h2 {
+        .intro h2 {
             font-weight: normal;
         }
-        .marketing .col-lg-4 p {
+        .intro .col-lg-4 p {
             margin-right: 10px;
             margin-left: 10px;
-        }
-
-        .bg-4 {
-            background-color: lightgrey; /* Black Gray */
         }
 
         .featurette-divider {
             margin: 80px 0; /* Space out the Bootstrap <hr> more */
         }
 
-        /* Thin out the marketing headings */
         .featurette-heading {
             font-weight: 300;
             line-height: 1;
@@ -68,7 +63,7 @@
                 <ul class="nav navbar-nav navbar-right">
 
                     <li><a href="<?php echo base_url(); ?>Company/Login">Login</a></li>
-                    <li><a href="<?php echo base_url(); ?>Company/Signup">Sign up</a></li>
+                    <li><a href="<?php echo base_url(); ?>Company/createProfile">Sign up</a></li>
 
                 </ul>
                 <form class="navbar-form navbar-right">

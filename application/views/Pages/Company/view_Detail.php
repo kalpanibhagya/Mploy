@@ -127,7 +127,7 @@ $(document).ready(function () {
     $.ajax({
       url : "<?php echo base_url();?>Company/employers",
       success: function (result) {
-        $('#haha').empty().html(result).fadeIn('slow');
+        $('#dynamicPart').empty().html(result).fadeIn('slow');
       }});
   })
 })

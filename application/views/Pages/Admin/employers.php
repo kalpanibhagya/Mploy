@@ -97,6 +97,7 @@
                 $('[name="contact_no"]').val(data.contact_no);
                 $('[name="hiring_status"]').val(data.hiring_status);
                 $('[name="verified_status"]').val(data.verified_status);
+                $('[name="password"]').val(data.password);
 
                 $('#modal_form').modal('show'); // show bootstrap modal when complete loaded
                 $('.modal-title').text('Edit Company'); // Set title to Bootstrap modal title
@@ -200,7 +201,7 @@
             type: "GET",
             success: function(result)
             {
-                $('#haha').empty().html(result).fadeIn('slow');
+                $('#dynamicPart').empty().html(result).fadeIn('slow');
             },
             error: function (jqXHR, textStatus, errorThrown)
             {
@@ -239,6 +240,12 @@
                             <label class="control-label col-md-3">Company Name</label>
                             <div class="col-md-9">
                                 <input name="company_name" placeholder="Company Name" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Password</label>
+                            <div class="col-md-9">
+                                <input type="password" name="password" placeholder="Password" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
@@ -316,8 +323,8 @@
                                     <option value="Dominica">Dominica</option>
                                     <option value="Dominican Republic">Dominican Republic</option>
                                     <option value="Ecuador">Ecuador</option>
-                                    <option value="EG">Egypt</option>
-                                    <option value="SV">El Salvador</option>
+                                    <option value="Egypt">Egypt</option>
+                                    <option value="El Salvador">El Salvador</option>
                                     <option value="GQ">Equatorial Guinea</option>
                                     <option value="ER">Eritrea</option>
                                     <option value="EE">Estonia</option>
@@ -460,7 +467,7 @@
                                     <option value="GS">South Georgia and the South Sandwich Islands</option>
                                     <option value="SS">South Sudan</option>
                                     <option value="ES">Spain</option>
-                                    <option value="LK">Sri Lanka</option>
+                                    <option value="Sri Lanka">Sri Lanka</option>
                                     <option value="SD">Sudan</option>
                                     <option value="SR">Suriname</option>
                                     <option value="SJ">Svalbard and Jan Mayen</option>

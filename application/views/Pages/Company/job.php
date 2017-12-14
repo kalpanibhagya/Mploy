@@ -56,7 +56,7 @@
                 <form class="navbar-form navbar-right">
                     <a class="btn btn-success" href="<?php echo base_url(); ?>Company/post_an_internship" role="button">Post
                         an new Internship</a>
-                    <a class="btn btn-success" href="<?php echo base_url(); ?>Company/dashboard"
+                    <a class="btn btn-success" href="<?php echo base_url(); ?>Company/enter"
                        role="button">Dashboard</a>
                     <a class="btn btn-success" href="<?php echo base_url(); ?>Company/logout" role="button">Logout</a>
                 </form>

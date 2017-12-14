@@ -39,7 +39,7 @@
                                 <button type="submit" class="btn btn-success">Login</button>
                                 <br/>
                                 <a href="<?php echo base_url(); ?>Common/forget_password2">Forgot password?</a><br/>
-                                Not a member?<a href="<?php echo base_url(); ?>Company/Signup">Join Now</a>
+                                Not a member?<a href="<?php echo base_url(); ?>Company/createProfile">Join Now</a>
                             </div>
                         </form>
                     </div>

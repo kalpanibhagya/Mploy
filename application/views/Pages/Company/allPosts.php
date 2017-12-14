@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Jobs and Internships</title>
+    <link rel="shortcut icon" href="../assets/images/logo.png" type="image/png">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/crud-assets/bootstrap/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/crud-assets/bootstrap/css/bootstrap-theme.min.css') ?>">
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-3.1.1.min.js"></script>
@@ -32,7 +33,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <form class="navbar-form navbar-right">
-                    <a class="btn btn-success" href="<?php echo base_url(); ?>Company/dashboard" role="button">Dashboard</a>
+                    <a class="btn btn-success" href="<?php echo base_url(); ?>Company/enter" role="button">Dashboard</a>
                     <a class="btn btn-success" href="<?php echo base_url(); ?>Company/logout" role="button">Logout</a>
                 </form>
             </div>

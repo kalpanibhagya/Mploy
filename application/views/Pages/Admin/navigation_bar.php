@@ -64,7 +64,7 @@
     $(document).on('click','.ayam',function(){
 
         var href = $(this).attr('href');
-        $('#haha').empty().load(href).fadeIn('slow');
+        $('#dynamicPart').empty().load(href).fadeIn('slow');
         return false;
 
     });

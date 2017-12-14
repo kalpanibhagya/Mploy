@@ -135,7 +135,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script src="<?php echo base_url(); ?>assets/crud-assets/js/bootstrap.min.js" type="text/javascript"></script>
 <!-- AdminLTE App -->
 <script src="<?php echo base_url(); ?>assets/crud-assets/js/app.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url()."assets/AdminLTE/"; ?>dist/js/adminlte.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/crud-assets/js/adminlte.js"></script>
 
 </body>
 </html>

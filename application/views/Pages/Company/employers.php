@@ -75,7 +75,7 @@
             type: "GET",
             success: function(result)
             {
-                $('#haha').empty().html(result).fadeIn('slow');
+                $('#dynamicPart').empty().html(result).fadeIn('slow');
             },
             error: function (jqXHR, textStatus, errorThrown)
             {

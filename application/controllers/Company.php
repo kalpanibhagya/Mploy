@@ -6,36 +6,31 @@ class Company extends CI_Controller {
     public function __construct(){
 
         parent::__construct();
-        $this->load->helper('url');
-        $this->load->library('session');
+        //$this->load->helper('url');
+        //$this->load->library('session');
         $this->load->model('Company_m','person');
         $this->load->model('Post_job_m','theJob');
         $this->load->model('Post_internship','theInternship');
     }
-
+/*
     public function index()
     {
         $this->load->helper('url');
         $this->load->view('Pages/Company/dashboard');
     }
-
+*/
     public function Login(){
         $this->load->view('Includes/Company/header');
         $this->load->view('Pages/Company/Login');
     }
 
-    //I think this function is useless
-    public function Signup(){
-        //$this->load->view('Includes/Company/header');
-        $this->load->view('Pages/Company/createProfile');
-    }
-
+    //when click signup button in company_main
     public function createProfile(){
         $this->load->view('Pages/Company/createProfile');
     }
 
     function login_validation(){
-        $this->load->library('form_validation');
+        //$this->load->library('form_validation');
         $this->form_validation->set_rules('email', 'Email Address', 'required|valid_email');
         $this->form_validation->set_rules('password', 'Password', 'required|min_length[6]');
 
@@ -44,8 +39,8 @@ class Company extends CI_Controller {
             $email = $this->input->post('email');
             $password = base64_encode(strrev(md5($this->input->post('password'))));
 
-            $this->load->model('Company_m');
-            $data = $this->Company_m->can_login($email, $password);
+            //$this->load->model('Company_m');
+            $data = $this->person->can_login($email, $password);
             if ($data){
                 $this->session->set_userdata('company_id',$data['company_id']);
                 $this->session->set_userdata('email', $data['email'] );
@@ -96,8 +91,7 @@ class Company extends CI_Controller {
     }
 
     public function profile_validation(){
-        //echo 'OK';
-        $this->load->library('form_validation');
+        //$this->load->library('form_validation');
         $this->form_validation->set_rules('username', 'Username', 'required');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
         $this->form_validation->set_rules('password', 'Password', 'required|min_length[6]');
@@ -122,7 +116,7 @@ class Company extends CI_Controller {
 
         if($this->form_validation->run()){
             //true
-            $this->load->model('Company_m');
+            //$this->load->model('Company_m');
             $data = array(
                 'username' => $this->input->post('username'),
                 'password' => base64_encode(strrev(md5($this->input->post('password')))),
@@ -145,7 +139,7 @@ class Company extends CI_Controller {
                 'area' => $this->input->post('area')
             );
 
-            $this->Company_m->insert_profile_data($data);
+            $this->person->insert_profile_data($data);
 
             redirect(base_url().'Company/inserted_profile');
 
@@ -371,11 +365,11 @@ class Company extends CI_Controller {
         $data = $this->Company_m->get_data($email);
         $this->load->view('Pages/Company/profile',$data);
     }
-
+/*
     function dashboard(){
         $this->load->view('Pages/Company/dashboard');
     }
-
+*/
     function posts(){
         $this->load->view('Pages/Company/posts');
     }
@@ -518,7 +512,6 @@ class Company extends CI_Controller {
             $row[] = $theInternship->deadline;
 
             //add html for action
-            //view_internships onclick 1 hadandoooooooo
             //$row[] = '<a class="btn btn-sm btn-default" href="javascript:void(0)" title="View" onclick="view_internships('."'".$theInternship->company_id."'".')"><i class="glyphicon glyphicon-file"></i> View</a>';
             //$row[] = '<a class="btn btn-sm btn-default" href="javascript:void(0)" title="View" onclick="view_internships('."'".$theInternship->company_id."'".')"><i class="glyphicon glyphicon-file"></i> View</a>';
             //$row[] = '<a class="btn btn-sm btn-default" href="javascript:void(0)" title="View" onclick="view_internships('."'".$theInternship->company_id."'".')"><i class="glyphicon glyphicon-file"></i> View</a>';
@@ -593,6 +586,7 @@ class Company extends CI_Controller {
             'contact_no' => $this->input->post('contact_no'),
             'hiring_status' => $this->input->post('hiring_status'),
             'verified_status' => $this->input->post('verified_status'),
+            'password' => base64_encode(strrev(md5($this->input->post('password')))),
         );
         $insert = $this->person->save($data);
         echo json_encode(array("status" => TRUE));
@@ -609,6 +603,7 @@ class Company extends CI_Controller {
             'contact_no' => $this->input->post('contact_no'),
             'hiring_status' => $this->input->post('hiring_status'),
             'verified_status' => $this->input->post('verified_status'),
+            'password' => base64_encode(strrev(md5($this->input->post('password')))),
         );
         $this->person->update(array('company_id' => $this->input->post('company_id')), $data);
         echo json_encode(array("status" => TRUE));
@@ -641,6 +636,12 @@ class Company extends CI_Controller {
 
         $data['output'] = $this->person->get_by_id_view($company_id);
         $this->load->view('Pages/Company/view_Detail', $data);
+    }
+
+    public function list_by_id_company_applicant($company_id){
+
+        $data['output'] = $this->person->get_by_id_view($company_id);
+        $this->load->view('Pages/Applicant/view_Detail', $data);
     }
 
     public function list_internships_by_id_company($company_id){

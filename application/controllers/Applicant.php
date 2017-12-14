@@ -11,13 +11,13 @@ class Applicant extends CI_Controller
         $this->load->model('Applicant_m','person');
 
     }
-
+/*
     public function index()
     {
         $this->load->helper('url');
         $this->load->view('Pages/Applicant/dashboard');
     }
-
+*/
 
     public function Login()
     {

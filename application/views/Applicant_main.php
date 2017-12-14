@@ -60,7 +60,7 @@
             <div class="col-lg-4">
                 <img class="img-circle" src="<?php echo base_url(); ?>assets/images/apply.png" alt="Generic placeholder image" width="140" height="140">
                 <h2 style="font-weight: bold">Step 3</h2>
-                <p>Apply for a job and Wait for the Interview Request!!</p>
+                <p>Apply for a job and Wait for the Interview Request!!</p><br/>
                 <p><a class="btn btn-primary" href="<?php echo base_url(); ?>Applicant/Login" role="button">Apply &raquo;</a></p><br/>
             </div>
         </div>

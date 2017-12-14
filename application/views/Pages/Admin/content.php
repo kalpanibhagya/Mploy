@@ -1,4 +1,4 @@
-<div id="haha">
+<div id="dynamicPart">
     <script src="<?php echo base_url('assets/crud-assets/test/js-image-slider.js')?>"></script>
 
     <link href="<?php echo base_url('assets/crud-assets/test/js-image-slider.css')?>" rel="stylesheet">

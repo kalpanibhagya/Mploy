@@ -114,7 +114,7 @@
             $.ajax({
                 url : "<?php echo base_url();?>Admin_dashboard/jobs",
                 success: function (result) {
-                    $('#haha').empty().html(result).fadeIn('slow');
+                    $('#dynamicPart').empty().html(result).fadeIn('slow');
                 }});
         })
     })

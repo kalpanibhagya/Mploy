@@ -65,7 +65,7 @@
                 </div>
                 <div class="text-center">
                     Already registered?<a href="<?php echo base_url(); ?>Company/Login"> Login</a><br/>
-                    By continuing you agree to our<a href="<?php echo base_url(); ?>Company/Login"> Terms and Privacy Policy</a>
+                    By continuing you agree to our<a href="<?php echo base_url(); ?>Welcome/terms"> Terms and Privacy Policy</a>
                 </div>
                 <div class="wizard-buttons">
                     <button type="button" class="btn btn-next" id="next">Next</button>
@@ -381,7 +381,7 @@
                 </div>
                 <div class="text-center">
                     Already registered?<a href="<?php echo base_url(); ?>Company/Login"> Login</a><br/>
-                    By continuing you agree to our<a href="<?php echo base_url(); ?>Company/Login"> Terms and Privacy Policy</a>
+                    By continuing you agree to our<a href="<?php echo base_url(); ?>Welcome/terms"> Terms and Privacy Policy</a>
                 </div>
                 <div class="wizard-buttons">
                     <button type="button" class="btn btn-previous">Previous</button>
@@ -408,7 +408,7 @@
                 </div>
                 <div class="text-center">
                     Already registered?<a href="<?php echo base_url(); ?>Company/Login"> Login</a><br/>
-                    By continuing you agree to our<a href="<?php echo base_url(); ?>Company/Login"> Terms and Privacy Policy</a>
+                    By continuing you agree to our<a href="<?php echo base_url(); ?>Welcome/terms"> Terms and Privacy Policy</a>
                 </div>
                 <div class="wizard-buttons">
                     <button type="button" class="btn btn-previous">Previous</button>
@@ -431,7 +431,7 @@
                 </div>
                 <div class="text-center">
                     Already registered?<a href="<?php echo base_url(); ?>Company/Login"> Login</a><br/>
-                    By continuing you agree to our<a href="<?php echo base_url(); ?>Company/Login"> Terms and Privacy Policy</a>
+                    By continuing you agree to our<a href="<?php echo base_url(); ?>Welcome/terms"> Terms and Privacy Policy</a>
                 </div>
                 <div class="wizard-buttons">
                     <button type="button" class="btn btn-previous">Previous</button>
@@ -445,16 +445,15 @@
                 </div>
                 <div class="text-center">
                     Already registered?<a href="<?php echo base_url(); ?>Company/Login"> Login</a><br/>
-                    By continuing you agree to our<a href="<?php echo base_url(); ?>Company/Login"> Terms and Privacy Policy</a>
+                    By continuing you agree to our<a href="<?php echo base_url(); ?>Welcome/terms"> Terms and Privacy Policy</a>
                 </div>
                 <div class="wizard-buttons">
                     <button type="button" class="btn btn-previous">Previous</button>
                     <button type="submit" name="save" class="btn btn-primary btn-submit">Submit</button>
                 </div>
             </fieldset>
+
             </form>
-
-
 
             </div>
         </div>
@@ -464,8 +463,5 @@
     <script src="<?php echo base_url()."assets/form-wizard/"; ?>js/popper.min.js"></script>
     <script src="<?php echo base_url()."assets/form-wizard/"; ?>js/bootstrap.min.js"></script>
     <script src="<?php echo base_url()."assets/form-wizard/"; ?>script.js"></script>
-
-
-
 </body>
 </html>

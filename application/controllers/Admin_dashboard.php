@@ -94,7 +94,7 @@ class Admin_dashboard extends CI_Controller
         $data = array(
             'username' => $this->input->post('username'),
             'email' => $this->input->post('email'),
-            'password' => $this->input->post('password'),
+            'password' => base64_encode(strrev(md5($this->input->post('password')))),
         );
         $insert = $this->person->save($data);
         echo json_encode(array("status" => TRUE));
@@ -105,7 +105,7 @@ class Admin_dashboard extends CI_Controller
         $data = array(
             'username' => $this->input->post('username'),
             'email' => $this->input->post('email'),
-            'password' => $this->input->post('password'),
+            'password' => base64_encode(strrev(md5($this->input->post('password')))),
         );
         $this->person->update(array('admin_id' => $this->input->post('admin_id')), $data);
         echo json_encode(array("status" => TRUE));

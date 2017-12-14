@@ -64,6 +64,7 @@
         });
     });
 
+    //add admin
     function add_person()
     {
         save_method = 'add';
@@ -72,6 +73,8 @@
         $('.modal-title').text('Add New Admin'); // Set Title to Bootstrap modal title
     }
 
+
+    //edit admin
     function edit_person(admin_id)
     {
         save_method = 'update';
@@ -105,6 +108,7 @@
     {
         table.ajax.reload(null,false); //reload datatable ajax
     }
+
 
     function save()
     {
@@ -142,6 +146,8 @@
         });
     }
 
+
+    //delete admin
     function delete_person(admin_id)
     {
 
@@ -185,6 +191,8 @@
 
     }
 
+
+    //view person
     function view_person(admin_id)
     {
         $.ajax({
@@ -192,7 +200,7 @@
             type: "GET",
             success: function(result)
             {
-                $('#haha').empty().html(result).fadeIn('slow');
+                $('#dynamicPart').empty().html(result).fadeIn('slow');
             },
             error: function (jqXHR, textStatus, errorThrown)
             {
@@ -236,13 +244,13 @@
                         <div class="form-group">
                             <label class="control-label col-md-3">Email</label>
                             <div class="col-md-9">
-                                <input name="email" placeholder="Email" class="form-control" type="text">
+                                <input name="email" placeholder="Email" class="form-control" type="email">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-3">Password</label>
                             <div class="col-md-9">
-                                <input type="text" name="password" placeholder="Password" class="form-control">
+                                <input type="password" name="password" placeholder="Password" class="form-control">
                             </div>
                         </div>
                     </div>

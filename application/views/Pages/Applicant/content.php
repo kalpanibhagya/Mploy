@@ -11,7 +11,7 @@
             </a>
 
 
-            <img id="image1" src="<?php echo base_url('assets/images/tt.jpg'); ?>" alt="Your own Evaluation Criteria"/>
+            <img id="image1" src="<?php echo base_url('assets/images/tt.jpg'); ?>" alt="Maintain your profile to select"/>
             <img id="image2" src="<?php echo base_url('assets/images/3.png'); ?>" alt="Automated CV selection"/>
             <img id="image3" src="<?php echo base_url('assets/images/selection.png'); ?>" />
             <img id="image4" src="<?php echo base_url('assets/images/group.jpg'); ?>" alt="Send Interview Requests"/>

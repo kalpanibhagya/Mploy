@@ -20,7 +20,7 @@
 </section>
 
 <section>
-    <div class="container marketing">
+    <div class="container intro">
         <div id="about">
             <div class="row featurette" style="margin-top: 30px">
                 <div class="col-md-7">
