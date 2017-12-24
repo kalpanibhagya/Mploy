@@ -25,6 +25,7 @@ class JobController extends CI_Controller
         //$company_id = $this->session->userdata('company_id');
 
         $companyID = $this->session->userdata('company_id');
+        echo $companyID;
 
         $result['jobs'] = $this->Post_job_m->getPostedJobs($companyID);
 
